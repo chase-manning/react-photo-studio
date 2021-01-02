@@ -35,6 +35,7 @@ const MenuItem = styled.div`
 
 type Props = {
   open: boolean;
+  close: () => void;
 };
 
 const ContextMenu = (props: Props) => {
@@ -42,7 +43,7 @@ const ContextMenu = (props: Props) => {
 
   return (
     <StyledContextMenu>
-      <Exit />
+      <Exit onClick={() => props.close()} />
       <Menu>
         <MenuItem>test</MenuItem>
         <MenuItem>test</MenuItem>

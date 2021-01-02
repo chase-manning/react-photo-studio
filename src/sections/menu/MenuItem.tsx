@@ -10,6 +10,10 @@ type StyledMenuItemProps = {
 const StyledMenuItem = styled.div`
   position: relative;
   height: 100%;
+`;
+
+const MenuItemButton = styled.div`
+  height: 100%;
   padding: 0 1rem;
   color: var(--text);
   font-size: 1.4rem;
@@ -35,9 +39,11 @@ const MenuItem = (props: Props) => {
   const [open, setOpen] = useState(false);
 
   return (
-    <StyledMenuItem onClick={() => setOpen(true)} open={open}>
-      {props.menuItem.name}
-      <ContextMenu open={open} />
+    <StyledMenuItem>
+      <MenuItemButton onClick={() => setOpen(true)} open={open}>
+        {props.menuItem.name}
+      </MenuItemButton>
+      <ContextMenu open={open} close={() => setOpen(false)} />
     </StyledMenuItem>
   );
 };
