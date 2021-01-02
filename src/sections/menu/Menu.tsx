@@ -9,13 +9,13 @@ const StyledMenu = styled.div`
   height: 3rem;
   background-color: var(--panel);
   border-bottom: solid 1px var(--border);
-  padding: 5px;
   display: flex;
 `;
 
 const Logo = styled.img`
+  padding: 5px;
   height: 100%;
-  margin-right: 2rem;
+  margin-right: 1rem;
 `;
 
 const Menu = () => {
