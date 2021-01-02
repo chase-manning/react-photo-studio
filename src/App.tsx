@@ -1,7 +1,7 @@
 import React from "react";
 
-function App() {
+const App = () => {
   return <div>Meow</div>;
-}
+};
 
 export default App;
