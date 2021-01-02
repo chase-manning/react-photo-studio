@@ -36,6 +36,10 @@ const MenuItem = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  :hover {
+    background-color: var(--context-hover);
+  }
 `;
 
 const ItemText = styled.div`
