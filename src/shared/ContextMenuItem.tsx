@@ -1,9 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import { MenuItemType } from "../sections/menu/menu-items";
 import { ReactComponent as ArrowIcon } from "../assets/svgs/navigation/triangle-right.svg";
+import ContextMenu from "./ContextMenu";
 
-const StyledContextMenuItem = styled.div``;
+const StyledContextMenuItem = styled.div`
+  position: relative;
+`;
 
 const Button = styled.button`
   padding: 0.2rem 0.4rem;
@@ -33,12 +36,24 @@ type Props = {
 };
 
 const ContextMenuItem = (props: Props) => {
+  const [open, setOpen] = useState(false);
+
   return (
     <StyledContextMenuItem key={props.menuItem.name}>
-      <Button>
+      <Button
+        onMouseEnter={() => setOpen(true)}
+        onMouseLeave={() => setOpen(false)}
+        onClick={() => setOpen(true)}
+      >
         <ItemText>{props.menuItem.name}</ItemText>
         {props.menuItem.items.length > 0 && <Arrow />}
       </Button>
+      <ContextMenu
+        open={open}
+        menuItems={props.menuItem.items}
+        close={() => setOpen(false)}
+        subMenu={true}
+      />
     </StyledContextMenuItem>
   );
 };
