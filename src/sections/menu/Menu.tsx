@@ -1,6 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 import logo from "../../assets/images/photoshop-logo-small.png";
+import { menuItems, MenuItemType } from "./menu-items";
+import MenuItem from "./MenuItem";
 
 const StyledMenu = styled.div`
   width: 100%;
@@ -8,6 +10,7 @@ const StyledMenu = styled.div`
   background-color: var(--panel);
   border-bottom: solid 1px var(--border);
   padding: 5px;
+  display: flex;
 `;
 
 const Logo = styled.img`
@@ -18,6 +21,9 @@ const Menu = () => {
   return (
     <StyledMenu>
       <Logo src={logo} />
+      {menuItems.map((menuItem: MenuItemType) => (
+        <MenuItem menuItem={menuItem} />
+      ))}
     </StyledMenu>
   );
 };
