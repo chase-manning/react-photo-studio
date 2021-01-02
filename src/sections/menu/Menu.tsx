@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import logo from "../../assets/images/photoshop-logo-small.png";
 
 const StyledMenu = styled.div`
   width: 100%;
@@ -9,8 +10,16 @@ const StyledMenu = styled.div`
   padding: 5px;
 `;
 
+const Logo = styled.img`
+  height: 100%;
+`;
+
 const Menu = () => {
-  return <StyledMenu></StyledMenu>;
+  return (
+    <StyledMenu>
+      <Logo src={logo} />
+    </StyledMenu>
+  );
 };
 
 export default Menu;
