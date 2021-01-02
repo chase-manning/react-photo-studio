@@ -3,10 +3,22 @@ import styled from "styled-components";
 import { MenuItemType } from "../sections/menu/menu-items";
 import ContextMenuItem from "./ContextMenuItem";
 
+type StyledContextMenuProps = {
+  position: Position;
+};
+
 const StyledContextMenu = styled.div`
   position: absolute;
-  left: 0;
-  top: 100%;
+  left: ${(props: StyledContextMenuProps) => {
+    if (props.position === Position.BOTTOM_LEFT) return "0";
+    else if (props.position === Position.TOP_RIGHT) return "100%";
+    else throw new Error("Position Not Supported");
+  }};
+  top: ${(props: StyledContextMenuProps) => {
+    if (props.position === Position.BOTTOM_LEFT) return "100%";
+    else if (props.position === Position.TOP_RIGHT) return "0";
+    else throw new Error("Position Not Supported");
+  }};
 `;
 
 const Exit = styled.div`
@@ -27,18 +39,24 @@ const Menu = styled.div`
   z-index: 2;
 `;
 
+export enum Position {
+  TOP_RIGHT,
+  BOTTOM_LEFT,
+}
+
 type Props = {
   open: boolean;
   close: () => void;
   menuItems: MenuItemType[];
   subMenu?: boolean;
+  position?: Position;
 };
 
 const ContextMenu = (props: Props) => {
   if (!props.open) return null;
 
   return (
-    <StyledContextMenu>
+    <StyledContextMenu position={props.position || Position.TOP_RIGHT}>
       {!props.subMenu && <Exit onClick={() => props.close()} />}
       <Menu>
         {props.menuItems.map((menuItem: MenuItemType) => (

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import ContextMenu from "../../shared/ContextMenu";
+import ContextMenu, { Position } from "../../shared/ContextMenu";
 import { MenuItemType } from "./menu-items";
 
 type StyledMenuItemProps = {
@@ -48,6 +48,7 @@ const MenuItem = (props: Props) => {
         open={open}
         close={() => setOpen(false)}
         menuItems={props.menuItem.items}
+        position={Position.BOTTOM_LEFT}
       />
     </StyledMenuItem>
   );
