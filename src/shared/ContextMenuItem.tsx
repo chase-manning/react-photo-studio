@@ -39,12 +39,11 @@ const ContextMenuItem = (props: Props) => {
   const [open, setOpen] = useState(false);
 
   return (
-    <StyledContextMenuItem key={props.menuItem.name}>
-      <Button
-        onMouseEnter={() => setOpen(true)}
-        onMouseLeave={() => setOpen(false)}
-        onClick={() => setOpen(true)}
-      >
+    <StyledContextMenuItem
+      onMouseEnter={() => setOpen(true)}
+      onMouseLeave={() => setOpen(false)}
+    >
+      <Button>
         <ItemText>{props.menuItem.name}</ItemText>
         {props.menuItem.items.length > 0 && <Arrow />}
       </Button>
