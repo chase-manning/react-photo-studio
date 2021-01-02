@@ -6,9 +6,7 @@ import ContextMenuItem from "./ContextMenuItem";
 const StyledContextMenu = styled.div`
   position: absolute;
   left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
+  top: 100%;
 `;
 
 const Exit = styled.div`
@@ -21,9 +19,7 @@ const Exit = styled.div`
 `;
 
 const Menu = styled.div`
-  position: absolute;
-  left: 0;
-  top: 100%;
+  position: relative;
   background-color: var(--panel);
   display: flex;
   flex-direction: column;
