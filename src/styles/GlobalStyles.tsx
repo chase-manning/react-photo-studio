@@ -10,6 +10,7 @@ const GlobalStyle = createGlobalStyle`
         --hover-bg: #454545;
         --hover-border: #666666;
         --selected: #383838;
+        --context-hover: #6b6b6b;
     }
   
     * {
