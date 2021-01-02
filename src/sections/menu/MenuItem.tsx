@@ -6,6 +6,7 @@ const StyledMenuItem = styled.div`
   height: 100%;
   margin-right: 3rem;
   color: var(--text);
+  font-size: 1.3rem;
 `;
 
 type Props = {
