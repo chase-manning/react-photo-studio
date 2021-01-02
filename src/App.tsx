@@ -4,6 +4,7 @@ import Documents from "./sections/documents/Documents";
 import Menu from "./sections/menu/Menu";
 import Options from "./sections/options/Options";
 import Tools from "./sections/tools/Tools";
+import Windows from "./sections/windows/Windows";
 
 const StyledApp = styled.div`
   position: fixed;
@@ -31,6 +32,7 @@ const App = () => {
       <Horizontal>
         <Tools />
         <Documents />
+        <Windows />
       </Horizontal>
     </StyledApp>
   );
