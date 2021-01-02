@@ -10,6 +10,7 @@ const StyledMenuItem = styled.div`
   display: flex;
   align-items: center;
   padding: 0.2rem;
+  cursor: pointer;
 `;
 
 type Props = {
