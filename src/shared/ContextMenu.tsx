@@ -31,7 +31,7 @@ const Menu = styled.div`
   z-index: 2;
 `;
 
-const MenuItem = styled.div`
+const MenuItem = styled.button`
   padding: 0.2rem 0.4rem;
   display: flex;
   justify-content: space-between;
