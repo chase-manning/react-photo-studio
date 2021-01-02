@@ -51,7 +51,7 @@ const ItemText = styled.div`
 const Arrow = styled(ArrowIcon)`
   height: 1rem;
   fill: var(--text);
-  margin-left: 1rem;
+  margin-left: 2rem;
 `;
 
 type Props = {
