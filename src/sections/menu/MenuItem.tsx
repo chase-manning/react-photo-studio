@@ -12,14 +12,13 @@ const StyledMenuItem = styled.div`
   height: 100%;
 `;
 
-const MenuItemButton = styled.div`
+const MenuItemButton = styled.button`
   height: 100%;
   padding: 0 1rem;
   color: var(--text);
   font-size: 1.4rem;
   display: flex;
   align-items: center;
-  cursor: pointer;
 
   background-color: ${(props: StyledMenuItemProps) =>
     props.open ? "var(--selected)" : "var(--panel)"};
