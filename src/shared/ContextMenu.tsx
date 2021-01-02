@@ -45,7 +45,7 @@ const ContextMenu = (props: Props) => {
       <Exit onClick={() => props.close()} />
       <Menu>
         {props.menuItems.map((menuItem: MenuItemType) => (
-          <ContextMenuItem menuItem={menuItem} />
+          <ContextMenuItem key={menuItem.name} menuItem={menuItem} />
         ))}
       </Menu>
     </StyledContextMenu>
