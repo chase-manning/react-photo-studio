@@ -6,10 +6,10 @@ const StyledMenuItem = styled.div`
   height: 100%;
   margin-right: 2rem;
   color: var(--text);
-  font-size: 1.3rem;
+  font-size: 1.4rem;
   display: flex;
   align-items: center;
-  padding: 0.2rem;
+  padding: 0.3rem;
   cursor: pointer;
 `;
 
