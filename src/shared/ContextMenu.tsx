@@ -68,7 +68,7 @@ const ContextMenu = (props: Props) => {
       <Exit onClick={() => props.close()} />
       <Menu>
         {props.menuItems.map((menuItem: MenuItemType) => (
-          <MenuItem>
+          <MenuItem key={menuItem.name}>
             <ItemText>{menuItem.name}</ItemText>
             {menuItem.items.length > 0 && <Arrow />}
           </MenuItem>
