@@ -35,6 +35,7 @@ type Props = {
   open: boolean;
   close: () => void;
   menuItems: MenuItemType[];
+  subMenu?: boolean;
 };
 
 const ContextMenu = (props: Props) => {
@@ -42,7 +43,7 @@ const ContextMenu = (props: Props) => {
 
   return (
     <StyledContextMenu>
-      <Exit onClick={() => props.close()} />
+      {!props.subMenu && <Exit onClick={() => props.close()} />}
       <Menu>
         {props.menuItems.map((menuItem: MenuItemType) => (
           <ContextMenuItem key={menuItem.name} menuItem={menuItem} />
