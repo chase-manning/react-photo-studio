@@ -43,7 +43,11 @@ const MenuItem = (props: Props) => {
       <MenuItemButton onClick={() => setOpen(true)} open={open}>
         {props.menuItem.name}
       </MenuItemButton>
-      <ContextMenu open={open} close={() => setOpen(false)} />
+      <ContextMenu
+        open={open}
+        close={() => setOpen(false)}
+        menuItems={props.menuItem.items}
+      />
     </StyledMenuItem>
   );
 };

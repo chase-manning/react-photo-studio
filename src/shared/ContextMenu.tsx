@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { MenuItemType } from "../sections/menu/menu-items";
 
 const StyledContextMenu = styled.div`
   position: absolute;
@@ -30,14 +31,20 @@ const Menu = styled.div`
 `;
 
 const MenuItem = styled.div`
+  padding: 0.2rem 0.4rem;
+  display: flex;
+  justify-content: space-between;
+`;
+
+const ItemText = styled.div`
   color: var(--text);
   font-size: 1.4rem;
-  padding: 0.2rem 0.4rem;
 `;
 
 type Props = {
   open: boolean;
   close: () => void;
+  menuItems: MenuItemType[];
 };
 
 const ContextMenu = (props: Props) => {
@@ -47,10 +54,12 @@ const ContextMenu = (props: Props) => {
     <StyledContextMenu>
       <Exit onClick={() => props.close()} />
       <Menu>
-        <MenuItem>test</MenuItem>
-        <MenuItem>test</MenuItem>
-        <MenuItem>test</MenuItem>
-        <MenuItem>test</MenuItem>
+        {props.menuItems.map((menuItem: MenuItemType) => (
+          <MenuItem>
+            <ItemText>{menuItem.name}</ItemText>
+            {menuItem.items.length > 0 && <div>{">"}</div>}
+          </MenuItem>
+        ))}
       </Menu>
     </StyledContextMenu>
   );
