@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 const StyledOptions = styled.div`
   width: 100%;
-  height: 3rem;
+  height: 4rem;
   background-color: yellow;
 `;
 

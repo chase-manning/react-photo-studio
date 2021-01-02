@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 const StyledTools = styled.div`
   height: 100%;
-  width: 3rem;
+  width: 4rem;
   background-color: red;
 `;
 
