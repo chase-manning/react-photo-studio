@@ -15,6 +15,7 @@ const Exit = styled.div`
   left: 0;
   width: 100%;
   height: 100%;
+  z-index: 1;
 `;
 
 const Menu = styled.div`
@@ -25,6 +26,7 @@ const Menu = styled.div`
   display: flex;
   flex-direction: column;
   border: solid 1px var(--menu-border);
+  z-index: 2;
 `;
 
 const MenuItem = styled.div`
