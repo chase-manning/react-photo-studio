@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { MenuItemType } from "../sections/menu/menu-items";
+import { ReactComponent as ArrowIcon } from "../assets/svgs/navigation/triangle-right.svg";
 
 const StyledContextMenu = styled.div`
   position: absolute;
@@ -34,11 +35,19 @@ const MenuItem = styled.div`
   padding: 0.2rem 0.4rem;
   display: flex;
   justify-content: space-between;
+  align-items: center;
 `;
 
 const ItemText = styled.div`
   color: var(--text);
   font-size: 1.4rem;
+  white-space: nowrap;
+`;
+
+const Arrow = styled(ArrowIcon)`
+  height: 1rem;
+  fill: var(--text);
+  margin-left: 1rem;
 `;
 
 type Props = {
@@ -57,7 +66,7 @@ const ContextMenu = (props: Props) => {
         {props.menuItems.map((menuItem: MenuItemType) => (
           <MenuItem>
             <ItemText>{menuItem.name}</ItemText>
-            {menuItem.items.length > 0 && <div>{">"}</div>}
+            {menuItem.items.length > 0 && <Arrow />}
           </MenuItem>
         ))}
       </Menu>
