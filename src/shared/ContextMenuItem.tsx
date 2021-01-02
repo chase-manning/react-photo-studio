@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import { MenuItemType } from "../sections/menu/menu-items";
+import { ItemType, MenuItemType } from "../sections/menu/menu-items";
 import { ReactComponent as ArrowIcon } from "../assets/svgs/navigation/triangle-right.svg";
 import ContextMenu from "./ContextMenu";
 
@@ -32,7 +32,7 @@ const Arrow = styled(ArrowIcon)`
 `;
 
 type Props = {
-  menuItem: MenuItemType;
+  menuItem: ItemType;
 };
 
 const ContextMenuItem = (props: Props) => {
@@ -43,7 +43,11 @@ const ContextMenuItem = (props: Props) => {
       onMouseEnter={() => setOpen(true)}
       onMouseLeave={() => setOpen(false)}
     >
-      <Button>
+      <Button
+        onClick={() => {
+          if (props.menuItem.action) props.menuItem.action();
+        }}
+      >
         <ItemText>{props.menuItem.name}</ItemText>
         {props.menuItem.items.length > 0 && <Arrow />}
       </Button>
