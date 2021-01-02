@@ -6,6 +6,7 @@ const GlobalStyle = createGlobalStyle`
         --text: #E3E3E3;
         --panel: #535353;
         --border: #383838;
+        --menu-border: #3d3e3e;
         --hover-bg: #454545;
         --hover-border: #666666;
     }
