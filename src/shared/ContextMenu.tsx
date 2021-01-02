@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { MenuItemType } from "../sections/menu/menu-items";
-import { ReactComponent as ArrowIcon } from "../assets/svgs/navigation/triangle-right.svg";
+import ContextMenuItem from "./ContextMenuItem";
 
 const StyledContextMenu = styled.div`
   position: absolute;
@@ -31,29 +31,6 @@ const Menu = styled.div`
   z-index: 2;
 `;
 
-const MenuItem = styled.button`
-  padding: 0.2rem 0.4rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-
-  :hover {
-    background-color: var(--context-hover);
-  }
-`;
-
-const ItemText = styled.div`
-  color: var(--text);
-  font-size: 1.4rem;
-  white-space: nowrap;
-`;
-
-const Arrow = styled(ArrowIcon)`
-  height: 1rem;
-  fill: var(--text);
-  margin-left: 2rem;
-`;
-
 type Props = {
   open: boolean;
   close: () => void;
@@ -68,10 +45,7 @@ const ContextMenu = (props: Props) => {
       <Exit onClick={() => props.close()} />
       <Menu>
         {props.menuItems.map((menuItem: MenuItemType) => (
-          <MenuItem key={menuItem.name}>
-            <ItemText>{menuItem.name}</ItemText>
-            {menuItem.items.length > 0 && <Arrow />}
-          </MenuItem>
+          <ContextMenuItem menuItem={menuItem} />
         ))}
       </Menu>
     </StyledContextMenu>
