@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
+import ContextMenu from "../../shared/ContextMenu";
 import { MenuItemType } from "./menu-items";
 
 const StyledMenuItem = styled.div`
+  position: relative;
   height: 100%;
   padding: 0 1rem;
   color: var(--text);
@@ -23,7 +25,14 @@ type Props = {
 };
 
 const MenuItem = (props: Props) => {
-  return <StyledMenuItem>{props.menuItem.name}</StyledMenuItem>;
+  const [open, setOpen] = useState(false);
+
+  return (
+    <StyledMenuItem onClick={() => setOpen(true)}>
+      {props.menuItem.name}
+      <ContextMenu open={open} />
+    </StyledMenuItem>
+  );
 };
 
 export default MenuItem;
