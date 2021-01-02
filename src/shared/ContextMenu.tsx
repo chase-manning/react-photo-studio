@@ -24,12 +24,13 @@ const Menu = styled.div`
   background-color: var(--panel);
   display: flex;
   flex-direction: column;
-  border: solid 1px var(--border);
+  border: solid 1px var(--menu-border);
 `;
 
 const MenuItem = styled.div`
   color: var(--text);
   font-size: 1.4rem;
+  padding: 0.2rem 0.4rem;
 `;
 
 type Props = {
