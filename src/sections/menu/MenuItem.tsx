@@ -22,7 +22,9 @@ const MenuItemButton = styled.button`
 
   background-color: ${(props: StyledMenuItemProps) =>
     props.open ? "var(--selected)" : "var(--panel)"};
-  border: solid 1px var(--panel);
+  border: solid 1px
+    ${(props: StyledMenuItemProps) =>
+      props.open ? "var(--hover-border)" : "var(--panel)"};
   :hover {
     background-color: ${(props: StyledMenuItemProps) =>
       props.open ? "var(--selected)" : "var(--hover-bg)"};
