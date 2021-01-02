@@ -4,7 +4,7 @@ import { MenuItemType } from "./menu-items";
 
 const StyledMenuItem = styled.div`
   height: 100%;
-  margin-right: 3rem;
+  margin-right: 2rem;
   color: var(--text);
   font-size: 1.3rem;
 `;
