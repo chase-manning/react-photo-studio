@@ -15,6 +15,7 @@ const StyledMenu = styled.div`
 
 const Logo = styled.img`
   height: 100%;
+  margin-right: 2rem;
 `;
 
 const Menu = () => {
