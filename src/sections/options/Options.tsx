@@ -4,7 +4,7 @@ import styled from "styled-components";
 const StyledOptions = styled.div`
   width: 100%;
   height: 4rem;
-  background-color: yellow;
+  background-color: var(--panel);
 `;
 
 const Options = () => {

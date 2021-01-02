@@ -4,6 +4,8 @@ import { createGlobalStyle } from "styled-components";
 const GlobalStyle = createGlobalStyle`
     :root {
         --text: white;
+        --panel: #535353;
+        --border: #383838;
     }
   
     * {
