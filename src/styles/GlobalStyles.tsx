@@ -9,6 +9,7 @@ const GlobalStyle = createGlobalStyle`
         --menu-border: #3d3e3e;
         --hover-bg: #454545;
         --hover-border: #666666;
+        --selected: #383838;
     }
   
     * {
