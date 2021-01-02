@@ -24,6 +24,12 @@ const Menu = styled.div`
   background-color: var(--panel);
   display: flex;
   flex-direction: column;
+  border: solid 1px var(--border);
+`;
+
+const MenuItem = styled.div`
+  color: var(--text);
+  font-size: 1.4rem;
 `;
 
 type Props = {
@@ -37,10 +43,10 @@ const ContextMenu = (props: Props) => {
     <StyledContextMenu>
       <Exit />
       <Menu>
-        <div>test</div>
-        <div>test</div>
-        <div>test</div>
-        <div>test</div>
+        <MenuItem>test</MenuItem>
+        <MenuItem>test</MenuItem>
+        <MenuItem>test</MenuItem>
+        <MenuItem>test</MenuItem>
       </Menu>
     </StyledContextMenu>
   );
