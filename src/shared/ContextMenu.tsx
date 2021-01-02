@@ -21,7 +21,7 @@ const Exit = styled.div`
 const Menu = styled.div`
   position: absolute;
   left: 0;
-  bottom: 0;
+  top: 100%;
   background-color: var(--panel);
   display: flex;
   flex-direction: column;
