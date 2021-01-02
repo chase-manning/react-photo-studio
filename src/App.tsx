@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import Documents from "./sections/documents/Documents";
 import Menu from "./sections/menu/Menu";
 import Options from "./sections/options/Options";
 import Tools from "./sections/tools/Tools";
@@ -29,6 +30,7 @@ const App = () => {
       <Options />
       <Horizontal>
         <Tools />
+        <Documents />
       </Horizontal>
     </StyledApp>
   );
