@@ -23,7 +23,7 @@ const Menu = () => {
     <StyledMenu>
       <Logo src={logo} />
       {menuItems.map((menuItem: MenuItemType) => (
-        <MenuItem menuItem={menuItem} />
+        <MenuItem key={menuItem.name} menuItem={menuItem} />
       ))}
     </StyledMenu>
   );
