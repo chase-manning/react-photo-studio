@@ -71,7 +71,7 @@ const ContextMenu = (props: Props) => {
       {!props.subMenu && <Exit onClick={() => props.close()} />}
       <Menu>
         {props.itemSets.map((itemSet: ItemSetType, index: number) => (
-          <ItemSet last={index === props.itemSets.length - 1}>
+          <ItemSet key={index} last={index === props.itemSets.length - 1}>
             {itemSet.items.map((item: MenuItemType) => (
               <ContextMenuItem
                 key={item.name}
