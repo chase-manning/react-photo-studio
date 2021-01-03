@@ -1,4 +1,4 @@
-import { select } from "../select";
+import { select } from "./select";
 import { edit } from "./edit";
 import { file } from "./file";
 import { image } from "./image";

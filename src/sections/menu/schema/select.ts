@@ -1,4 +1,4 @@
-import { ItemType } from "./schema/menu-items";
+import { ItemType } from "./menu-items";
 
 export const select: ItemType = {
   name: "Select",
