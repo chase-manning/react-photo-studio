@@ -3,6 +3,11 @@ import styled from "styled-components";
 import { ItemSetType, ItemType } from "../sections/menu/schema/menu-items";
 import ContextMenuItem from "./ContextMenuItem";
 
+export enum Position {
+  TOP_RIGHT,
+  BOTTOM_LEFT,
+}
+
 type StyledContextMenuProps = {
   position: Position;
 };
@@ -61,11 +66,6 @@ const ItemSet = styled.div`
     props.last ? "none" : "solid 2px var(--disabled)"};
   margin-bottom: ${(props: ItemSetProps) => (props.last ? "0" : "0.4rem")};
 `;
-
-export enum Position {
-  TOP_RIGHT,
-  BOTTOM_LEFT,
-}
 
 type Props = {
   open: boolean;
