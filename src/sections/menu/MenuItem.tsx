@@ -47,7 +47,7 @@ const MenuItem = (props: Props) => {
       <ContextMenu
         open={open}
         close={() => setOpen(false)}
-        menuItems={props.menuItem.items}
+        itemSets={props.menuItem.itemSets}
         position={Position.BOTTOM_LEFT}
       />
     </StyledMenuItem>

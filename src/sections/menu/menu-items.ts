@@ -1,101 +1,38 @@
 export type ItemType = {
   name: string;
-  items: ItemType[];
+  itemSets: ItemSetType[];
   action?: () => void;
+};
+
+export type ItemSetType = {
+  items: ItemType[];
 };
 
 export type MenuItemType = {
   name: string;
-  items: ItemType[];
+  itemSets: ItemSetType[];
 };
 
 export const menuItems: MenuItemType[] = [
   {
     name: "File",
-    items: [
+    itemSets: [
       {
-        name: "----",
-        items: [],
-        action: () => console.log("meow"),
-      },
-      {
-        name: "----",
-        items: [],
-        action: () => console.log("meow"),
-      },
-      {
-        name: "----",
         items: [
-          {
-            name: "----",
-            items: [],
-            action: () => console.log("meow"),
-          },
-          {
-            name: "----",
-            items: [],
-            action: () => console.log("meow"),
-          },
+          { name: "test", itemSets: [] },
+          { name: "test", itemSets: [] },
         ],
       },
       {
-        name: "----",
         items: [
-          {
-            name: "----",
-            items: [],
-            action: () => console.log("meow"),
-          },
-          {
-            name: "----",
-            items: [],
-            action: () => console.log("meow"),
-          },
-        ],
-      },
-    ],
-  },
-  {
-    name: "Edit",
-    items: [
-      {
-        name: "----",
-        items: [],
-        action: () => console.log("meow"),
-      },
-      {
-        name: "----",
-        items: [],
-        action: () => console.log("meow"),
-      },
-      {
-        name: "----",
-        items: [
-          {
-            name: "----",
-            items: [],
-            action: () => console.log("meow"),
-          },
-          {
-            name: "----",
-            items: [],
-            action: () => console.log("meow"),
-          },
+          { name: "test", itemSets: [] },
+          { name: "test", itemSets: [] },
         ],
       },
       {
-        name: "----",
         items: [
-          {
-            name: "----",
-            items: [],
-            action: () => console.log("meow"),
-          },
-          {
-            name: "----",
-            items: [],
-            action: () => console.log("meow"),
-          },
+          { name: "test", itemSets: [] },
+          { name: "test", itemSets: [] },
         ],
       },
     ],

@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { MenuItemType } from "../sections/menu/menu-items";
+import { ItemSetType, MenuItemType } from "../sections/menu/menu-items";
 import ContextMenuItem from "./ContextMenuItem";
 
 type StyledContextMenuProps = {
@@ -39,6 +39,12 @@ const Menu = styled.div`
   z-index: 2;
 `;
 
+const ItemSet = styled.div`
+  padding-bottom: 1rem;
+  border-bottom: solid 1px var(--disabled);
+  margin-bottom: 1rem;
+`;
+
 export enum Position {
   TOP_RIGHT,
   BOTTOM_LEFT,
@@ -47,7 +53,7 @@ export enum Position {
 type Props = {
   open: boolean;
   close: () => void;
-  menuItems: MenuItemType[];
+  itemSets: ItemSetType[];
   subMenu?: boolean;
   position?: Position;
 };
@@ -59,12 +65,16 @@ const ContextMenu = (props: Props) => {
     <StyledContextMenu position={props.position || Position.TOP_RIGHT}>
       {!props.subMenu && <Exit onClick={() => props.close()} />}
       <Menu>
-        {props.menuItems.map((menuItem: MenuItemType) => (
-          <ContextMenuItem
-            key={menuItem.name}
-            menuItem={menuItem}
-            close={() => props.close()}
-          />
+        {props.itemSets.map((itemSet: ItemSetType) => (
+          <ItemSet>
+            {itemSet.items.map((item: MenuItemType) => (
+              <ContextMenuItem
+                key={item.name}
+                menuItem={item}
+                close={() => props.close()}
+              />
+            ))}
+          </ItemSet>
         ))}
       </Menu>
     </StyledContextMenu>

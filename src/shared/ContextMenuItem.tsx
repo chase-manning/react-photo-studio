@@ -51,11 +51,11 @@ const ContextMenuItem = (props: Props) => {
         }}
       >
         <ItemText>{props.menuItem.name}</ItemText>
-        {props.menuItem.items.length > 0 && <Arrow />}
+        {props.menuItem.itemSets.length > 0 && <Arrow />}
       </Button>
       <ContextMenu
         open={open}
-        menuItems={props.menuItem.items}
+        itemSets={props.menuItem.itemSets}
         close={() => {
           setOpen(false);
           props.close();
