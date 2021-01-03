@@ -8,6 +8,7 @@ import { filter } from "./filter";
 import { threeD } from "./three-d";
 import { view } from "./view";
 import { window } from "./window";
+import { help } from "./help";
 
 export type ItemType = {
   name: string;
@@ -30,4 +31,5 @@ export const menuItems: ItemType[] = [
   threeD,
   view,
   window,
+  help,
 ];
