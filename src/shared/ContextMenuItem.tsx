@@ -33,6 +33,7 @@ const Arrow = styled(ArrowIcon)`
 
 type Props = {
   menuItem: ItemType;
+  close: () => void;
 };
 
 const ContextMenuItem = (props: Props) => {
@@ -46,6 +47,7 @@ const ContextMenuItem = (props: Props) => {
       <Button
         onClick={() => {
           if (props.menuItem.action) props.menuItem.action();
+          props.close();
         }}
       >
         <ItemText>{props.menuItem.name}</ItemText>
@@ -54,7 +56,10 @@ const ContextMenuItem = (props: Props) => {
       <ContextMenu
         open={open}
         menuItems={props.menuItem.items}
-        close={() => setOpen(false)}
+        close={() => {
+          setOpen(false);
+          props.close();
+        }}
         subMenu={true}
       />
     </StyledContextMenuItem>
