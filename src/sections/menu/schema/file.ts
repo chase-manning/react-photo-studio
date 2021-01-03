@@ -23,6 +23,7 @@ export const file: MenuItemType = {
         },
         {
           name: "Open Recent",
+          itemSets: [],
           action: () => console.log("meow"),
         },
       ],
