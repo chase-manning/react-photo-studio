@@ -5,6 +5,7 @@ import { image } from "./image";
 import { layer } from "./layer";
 import { type } from "./type";
 import { filter } from "./filter";
+import { threeD } from "./three-d";
 
 export type ItemType = {
   name: string;
@@ -24,4 +25,5 @@ export const menuItems: ItemType[] = [
   type,
   select,
   filter,
+  threeD,
 ];
