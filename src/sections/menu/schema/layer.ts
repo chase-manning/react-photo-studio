@@ -207,6 +207,7 @@ export const layer: MenuItemType = {
         },
         {
           name: "Smart Filter",
+          itemSets: [],
           action: () => console.log("meow"),
         },
       ],
@@ -325,11 +326,97 @@ export const layer: MenuItemType = {
       items: [
         {
           name: "Layer Mask",
-          itemSets: [],
+          itemSets: [
+            {
+              items: [
+                {
+                  name: "Reveal All",
+                  action: () => console.log("meow"),
+                },
+                {
+                  name: "Hide All",
+                  action: () => console.log("meow"),
+                },
+                {
+                  name: "Reveal Selection",
+                  action: () => console.log("meow"),
+                },
+                {
+                  name: "Hide Selection",
+                  action: () => console.log("meow"),
+                },
+                {
+                  name: "From Transparency",
+                  action: () => console.log("meow"),
+                },
+              ],
+            },
+            {
+              items: [
+                {
+                  name: "Delete",
+                  action: () => console.log("meow"),
+                },
+                {
+                  name: "Apply",
+                  action: () => console.log("meow"),
+                },
+              ],
+            },
+            {
+              items: [
+                {
+                  name: "Disable",
+                  action: () => console.log("meow"),
+                },
+                {
+                  name: "Unlink",
+                  action: () => console.log("meow"),
+                },
+              ],
+            },
+          ],
         },
         {
           name: "Vector Mask",
-          itemSets: [],
+          itemSets: [
+            {
+              items: [
+                {
+                  name: "Reveal All",
+                  action: () => console.log("meow"),
+                },
+                {
+                  name: "Hide All",
+                  action: () => console.log("meow"),
+                },
+                {
+                  name: "Current Path",
+                  action: () => console.log("meow"),
+                },
+              ],
+            },
+            {
+              items: [
+                {
+                  name: "Delete",
+                  action: () => console.log("meow"),
+                },
+              ],
+            },
+            {
+              items: [
+                {
+                  name: "Enable",
+                  action: () => console.log("meow"),
+                },
+                {
+                  name: "Link",
+                  action: () => console.log("meow"),
+                },
+              ],
+            },
+          ],
         },
         {
           name: "Create Clipping Mask",
@@ -341,15 +428,182 @@ export const layer: MenuItemType = {
       items: [
         {
           name: "Smart Objects",
-          itemSets: [],
+          itemSets: [
+            {
+              items: [
+                {
+                  name: "Convert to Smart Object",
+                  action: () => console.log("meow"),
+                },
+                {
+                  name: "New Smart Object via Copy",
+                  action: () => console.log("meow"),
+                },
+              ],
+            },
+            {
+              items: [
+                {
+                  name: "Reveal in Finder",
+                  action: () => console.log("meow"),
+                },
+              ],
+            },
+            {
+              items: [
+                {
+                  name: "Update Modified Content",
+                  action: () => console.log("meow"),
+                },
+                {
+                  name: "Update All Modified Content",
+                  action: () => console.log("meow"),
+                },
+              ],
+            },
+            {
+              items: [
+                {
+                  name: "Edit Contents",
+                  action: () => console.log("meow"),
+                },
+                {
+                  name: "Relink to File...",
+                  action: () => console.log("meow"),
+                },
+                {
+                  name: "Relink to Library Graphic...",
+                  action: () => console.log("meow"),
+                },
+                {
+                  name: "Replace Contents...",
+                  action: () => console.log("meow"),
+                },
+                {
+                  name: "Export Contents...",
+                  action: () => console.log("meow"),
+                },
+              ],
+            },
+            {
+              items: [
+                {
+                  name: "Embed Linked",
+                  action: () => console.log("meow"),
+                },
+                {
+                  name: "Embed All Linked",
+                  action: () => console.log("meow"),
+                },
+                {
+                  name: "Convert to Linked...",
+                  action: () => console.log("meow"),
+                },
+                {
+                  name: "Convert to Layers",
+                  action: () => console.log("meow"),
+                },
+              ],
+            },
+            {
+              items: [
+                {
+                  name: "Stack Mode",
+                  itemSets: [],
+                },
+                {
+                  name: "Rasterize",
+                  action: () => console.log("meow"),
+                },
+              ],
+            },
+          ],
         },
         {
           name: "Video Layers",
-          itemSets: [],
+          itemSets: [
+            {
+              items: [
+                {
+                  name: "New Video Layer from File...",
+                  action: () => console.log("meow"),
+                },
+              ],
+            },
+            {
+              items: [
+                {
+                  name: "New Blank Video Layer",
+                  action: () => console.log("meow"),
+                },
+                {
+                  name: "Insert Blank Frame",
+                  action: () => console.log("meow"),
+                },
+                {
+                  name: "Duplicate Frame",
+                  action: () => console.log("meow"),
+                },
+                {
+                  name: "Delete Frame",
+                  action: () => console.log("meow"),
+                },
+              ],
+            },
+            {
+              items: [
+                {
+                  name: "Replace Footage...",
+                  action: () => console.log("meow"),
+                },
+                {
+                  name: "Interpret Footage...",
+                  action: () => console.log("meow"),
+                },
+              ],
+            },
+            {
+              items: [
+                {
+                  name: "Show Altered Video",
+                  action: () => console.log("meow"),
+                },
+              ],
+            },
+            {
+              items: [
+                {
+                  name: "Restore Frame",
+                  action: () => console.log("meow"),
+                },
+                {
+                  name: "Restore All Frames",
+                  action: () => console.log("meow"),
+                },
+              ],
+            },
+            {
+              items: [
+                {
+                  name: "Reload Frame",
+                  action: () => console.log("meow"),
+                },
+              ],
+            },
+            {
+              items: [
+                {
+                  name: "Rasterize",
+                  action: () => console.log("meow"),
+                },
+              ],
+            },
+          ],
         },
         {
           name: "Rasterize",
           itemSets: [],
+          action: () => console.log("meow"),
         },
       ],
     },
@@ -357,7 +611,7 @@ export const layer: MenuItemType = {
       items: [
         {
           name: "New Layer Based Slice",
-          itemSets: [],
+          action: () => console.log("meow"),
         },
       ],
     },
@@ -381,23 +635,51 @@ export const layer: MenuItemType = {
       items: [
         {
           name: "Arrange",
-          itemSets: [],
+          itemSets: [
+            {
+              items: [
+                {
+                  name: "Bring to Front",
+                  action: () => console.log("meow"),
+                },
+                {
+                  name: "Bring Forward",
+                  action: () => console.log("meow"),
+                },
+                {
+                  name: "Send Backward",
+                  action: () => console.log("meow"),
+                },
+                {
+                  name: "Send to Back",
+                  action: () => console.log("meow"),
+                },
+                {
+                  name: "Reverse",
+                  action: () => console.log("meow"),
+                },
+              ],
+            },
+          ],
         },
         {
           name: "Combine Shapes",
           itemSets: [],
+          action: () => console.log("meow"),
         },
       ],
     },
     {
       items: [
         {
-          name: "Align Layers to Selection",
+          name: "Align",
           itemSets: [],
+          action: () => console.log("meow"),
         },
         {
           name: "Distribute",
           itemSets: [],
+          action: () => console.log("meow"),
         },
       ],
     },
@@ -441,7 +723,28 @@ export const layer: MenuItemType = {
       items: [
         {
           name: "Matting",
-          itemSets: [],
+          itemSets: [
+            {
+              items: [
+                {
+                  name: "Color Decontaminate...",
+                  action: () => console.log("meow"),
+                },
+                {
+                  name: "Defringe...",
+                  action: () => console.log("meow"),
+                },
+                {
+                  name: "Remove Black Matte",
+                  action: () => console.log("meow"),
+                },
+                {
+                  name: "Remove White Matte",
+                  action: () => console.log("meow"),
+                },
+              ],
+            },
+          ],
         },
       ],
     },
