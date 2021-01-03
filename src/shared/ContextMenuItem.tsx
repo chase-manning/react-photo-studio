@@ -22,7 +22,7 @@ const Button = styled.button`
 
 const ItemText = styled.div`
   color: var(--text);
-  font-size: 1.4rem;
+  font-size: 1.3rem;
   white-space: nowrap;
 `;
 

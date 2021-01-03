@@ -16,7 +16,7 @@ const MenuItemButton = styled.button`
   height: 100%;
   padding: 0 1rem;
   color: var(--text);
-  font-size: 1.4rem;
+  font-size: 1.3rem;
   display: flex;
   align-items: center;
 
