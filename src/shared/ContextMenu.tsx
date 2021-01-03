@@ -39,10 +39,15 @@ const Menu = styled.div`
   z-index: 2;
 `;
 
+type ItemSetProps = {
+  last: boolean;
+};
+
 const ItemSet = styled.div`
-  padding-bottom: 1rem;
-  border-bottom: solid 1px var(--disabled);
-  margin-bottom: 1rem;
+  padding-bottom: ${(props: ItemSetProps) => (props.last ? "0" : "1rem")};
+  border-bottom: ${(props: ItemSetProps) =>
+    props.last ? "none" : "solid 1px var(--disabled)"};
+  margin-bottom: ${(props: ItemSetProps) => (props.last ? "0" : "1rem")};
 `;
 
 export enum Position {
@@ -65,8 +70,8 @@ const ContextMenu = (props: Props) => {
     <StyledContextMenu position={props.position || Position.TOP_RIGHT}>
       {!props.subMenu && <Exit onClick={() => props.close()} />}
       <Menu>
-        {props.itemSets.map((itemSet: ItemSetType) => (
-          <ItemSet>
+        {props.itemSets.map((itemSet: ItemSetType, index: number) => (
+          <ItemSet last={index === props.itemSets.length - 1}>
             {itemSet.items.map((item: MenuItemType) => (
               <ContextMenuItem
                 key={item.name}
