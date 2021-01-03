@@ -7,6 +7,7 @@ import { type } from "./type";
 import { filter } from "./filter";
 import { threeD } from "./three-d";
 import { view } from "./view";
+import { window } from "./window";
 
 export type ItemType = {
   name: string;
@@ -28,4 +29,5 @@ export const menuItems: ItemType[] = [
   filter,
   threeD,
   view,
+  window,
 ];
