@@ -30,13 +30,24 @@ const Exit = styled.div`
   z-index: 1;
 `;
 
+type MenuProps = {
+  squareTop: boolean;
+};
+
 const Menu = styled.div`
+  padding: 0.2rem 0 0.4rem 0;
   position: relative;
   background-color: var(--panel);
   display: flex;
   flex-direction: column;
   border: solid 1px var(--menu-border);
   z-index: 2;
+  border-bottom-left-radius: 0.7rem;
+  border-bottom-right-radius: 0.7rem;
+  border-top-left-radius: ${(props: MenuProps) =>
+    props.squareTop ? "0" : "0.7rem"};
+  border-top-right-radius: ${(props: MenuProps) =>
+    props.squareTop ? "0" : "0.7rem"};
 `;
 
 type ItemSetProps = {
@@ -61,6 +72,7 @@ type Props = {
   itemSets: ItemSetType[];
   subMenu?: boolean;
   position?: Position;
+  squareTop?: boolean;
 };
 
 const ContextMenu = (props: Props) => {
@@ -69,7 +81,7 @@ const ContextMenu = (props: Props) => {
   return (
     <StyledContextMenu position={props.position || Position.TOP_RIGHT}>
       {!props.subMenu && <Exit onClick={() => props.close()} />}
-      <Menu>
+      <Menu squareTop={!!props.squareTop}>
         {props.itemSets.map((itemSet: ItemSetType, index: number) => (
           <ItemSet key={index} last={index === props.itemSets.length - 1}>
             {itemSet.items.map((item: ItemType) => (

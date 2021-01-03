@@ -56,6 +56,7 @@ const MenuItem = (props: Props) => {
           close={() => setOpen(false)}
           itemSets={props.menuItem.itemSets}
           position={Position.BOTTOM_LEFT}
+          squareTop={true}
         />
       )}
     </StyledMenuItem>
