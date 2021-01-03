@@ -1,6 +1,6 @@
 export type ItemType = {
   name: string;
-  itemSets: ItemSetType[];
+  itemSets?: ItemSetType[];
   action?: () => void;
 };
 
@@ -20,38 +20,9 @@ export const menuItems: MenuItemType[] = [
       {
         items: [
           {
-            name: "test",
-            itemSets: [
-              {
-                items: [
-                  {
-                    name: "test",
-                    itemSets: [],
-                  },
-                  { name: "test", itemSets: [] },
-                ],
-              },
-              {
-                items: [
-                  { name: "test", itemSets: [] },
-                  { name: "test", itemSets: [] },
-                ],
-              },
-            ],
+            name: "New...",
+            action: () => console.log("meow"),
           },
-          { name: "test", itemSets: [] },
-        ],
-      },
-      {
-        items: [
-          { name: "test", itemSets: [] },
-          { name: "test", itemSets: [] },
-        ],
-      },
-      {
-        items: [
-          { name: "test", itemSets: [] },
-          { name: "test", itemSets: [] },
         ],
       },
     ],

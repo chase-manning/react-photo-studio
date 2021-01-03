@@ -1,6 +1,10 @@
 import React from "react";
 import styled from "styled-components";
-import { ItemSetType, MenuItemType } from "../sections/menu/menu-items";
+import {
+  ItemSetType,
+  ItemType,
+  MenuItemType,
+} from "../sections/menu/menu-items";
 import ContextMenuItem from "./ContextMenuItem";
 
 type StyledContextMenuProps = {
@@ -74,7 +78,7 @@ const ContextMenu = (props: Props) => {
       <Menu>
         {props.itemSets.map((itemSet: ItemSetType, index: number) => (
           <ItemSet key={index} last={index === props.itemSets.length - 1}>
-            {itemSet.items.map((item: MenuItemType) => (
+            {itemSet.items.map((item: ItemType) => (
               <ContextMenuItem
                 key={item.name}
                 menuItem={item}

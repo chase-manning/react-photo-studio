@@ -52,17 +52,19 @@ const ContextMenuItem = (props: Props) => {
         }}
       >
         <ItemText>{props.menuItem.name}</ItemText>
-        {props.menuItem.itemSets.length > 0 && <Arrow />}
+        {props.menuItem.itemSets && <Arrow />}
       </Button>
-      <ContextMenu
-        open={open}
-        itemSets={props.menuItem.itemSets}
-        close={() => {
-          setOpen(false);
-          props.close();
-        }}
-        subMenu={true}
-      />
+      {props.menuItem.itemSets && (
+        <ContextMenu
+          open={open}
+          itemSets={props.menuItem.itemSets}
+          close={() => {
+            setOpen(false);
+            props.close();
+          }}
+          subMenu={true}
+        />
+      )}
     </StyledContextMenuItem>
   );
 };
