@@ -19,7 +19,26 @@ export const menuItems: MenuItemType[] = [
     itemSets: [
       {
         items: [
-          { name: "test", itemSets: [] },
+          {
+            name: "test",
+            itemSets: [
+              {
+                items: [
+                  {
+                    name: "test",
+                    itemSets: [],
+                  },
+                  { name: "test", itemSets: [] },
+                ],
+              },
+              {
+                items: [
+                  { name: "test", itemSets: [] },
+                  { name: "test", itemSets: [] },
+                ],
+              },
+            ],
+          },
           { name: "test", itemSets: [] },
         ],
       },

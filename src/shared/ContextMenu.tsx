@@ -44,10 +44,12 @@ type ItemSetProps = {
 };
 
 const ItemSet = styled.div`
-  padding-bottom: ${(props: ItemSetProps) => (props.last ? "0" : "1rem")};
+  margin-left: 0.4rem;
+  margin-right: 0.4rem;
+  padding-bottom: ${(props: ItemSetProps) => (props.last ? "0" : "0.4rem")};
   border-bottom: ${(props: ItemSetProps) =>
     props.last ? "none" : "solid 1px var(--disabled)"};
-  margin-bottom: ${(props: ItemSetProps) => (props.last ? "0" : "1rem")};
+  margin-bottom: ${(props: ItemSetProps) => (props.last ? "0" : "0.4rem")};
 `;
 
 export enum Position {
