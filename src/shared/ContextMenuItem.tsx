@@ -26,10 +26,13 @@ const ItemText = styled.div`
   white-space: nowrap;
 `;
 
+const Icon = styled.div`
+  margin-left: 4rem;
+`;
+
 const Arrow = styled(ArrowIcon)`
   height: 1rem;
   fill: var(--text);
-  margin-left: 2rem;
 `;
 
 type Props = {
@@ -52,7 +55,7 @@ const ContextMenuItem = (props: Props) => {
         }}
       >
         <ItemText>{props.menuItem.name}</ItemText>
-        {props.menuItem.itemSets && <Arrow />}
+        <Icon>{props.menuItem.itemSets && <Arrow />}</Icon>
       </Button>
       {props.menuItem.itemSets && (
         <ContextMenu
