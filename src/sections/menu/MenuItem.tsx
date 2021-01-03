@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import ContextMenu, { Position } from "../../shared/ContextMenu";
-import { MenuItemType } from "./schema/menu-items";
+import { ItemType } from "./schema/menu-items";
 
 type StyledMenuItemProps = {
   open: boolean;
@@ -33,7 +33,7 @@ const MenuItemButton = styled.button`
 `;
 
 type Props = {
-  menuItem: MenuItemType;
+  menuItem: ItemType;
 };
 
 const MenuItem = (props: Props) => {
@@ -44,12 +44,14 @@ const MenuItem = (props: Props) => {
       <MenuItemButton onClick={() => setOpen(true)} open={open}>
         {props.menuItem.name}
       </MenuItemButton>
-      <ContextMenu
-        open={open}
-        close={() => setOpen(false)}
-        itemSets={props.menuItem.itemSets}
-        position={Position.BOTTOM_LEFT}
-      />
+      {props.menuItem.itemSets && (
+        <ContextMenu
+          open={open}
+          close={() => setOpen(false)}
+          itemSets={props.menuItem.itemSets}
+          position={Position.BOTTOM_LEFT}
+        />
+      )}
     </StyledMenuItem>
   );
 };

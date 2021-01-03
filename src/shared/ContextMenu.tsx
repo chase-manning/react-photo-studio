@@ -1,10 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import {
-  ItemSetType,
-  ItemType,
-  MenuItemType,
-} from "../sections/menu/schema/menu-items";
+import { ItemSetType, ItemType } from "../sections/menu/schema/menu-items";
 import ContextMenuItem from "./ContextMenuItem";
 
 type StyledContextMenuProps = {

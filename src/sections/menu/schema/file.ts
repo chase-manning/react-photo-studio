@@ -1,6 +1,6 @@
-import { MenuItemType } from "./menu-items";
+import { ItemType } from "./menu-items";
 
-export const file: MenuItemType = {
+export const file: ItemType = {
   name: "File",
   itemSets: [
     {

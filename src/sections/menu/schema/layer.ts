@@ -1,6 +1,6 @@
-import { MenuItemType } from "./menu-items";
+import { ItemType } from "./menu-items";
 
-export const layer: MenuItemType = {
+export const layer: ItemType = {
   name: "Layer",
   itemSets: [
     {

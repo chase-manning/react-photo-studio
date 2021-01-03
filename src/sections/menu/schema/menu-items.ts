@@ -13,9 +13,4 @@ export type ItemSetType = {
   items: ItemType[];
 };
 
-export type MenuItemType = {
-  name: string;
-  itemSets: ItemSetType[];
-};
-
-export const menuItems: MenuItemType[] = [file, edit, image, layer];
+export const menuItems: ItemType[] = [file, edit, image, layer];

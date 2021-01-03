@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import logo from "../../assets/images/photoshop-logo-small.png";
-import { menuItems, MenuItemType } from "./schema/menu-items";
+import { ItemType, menuItems } from "./schema/menu-items";
 import MenuItem from "./MenuItem";
 
 const StyledMenu = styled.div`
@@ -22,7 +22,7 @@ const Menu = () => {
   return (
     <StyledMenu>
       <Logo src={logo} />
-      {menuItems.map((menuItem: MenuItemType) => (
+      {menuItems.map((menuItem: ItemType) => (
         <MenuItem key={menuItem.name} menuItem={menuItem} />
       ))}
     </StyledMenu>
