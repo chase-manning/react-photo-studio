@@ -7,6 +7,7 @@ export const image: MenuItemType = {
       items: [
         {
           name: "Mode",
+          itemSets: [],
           action: () => console.log("meow"),
         },
       ],
