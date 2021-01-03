@@ -4,6 +4,7 @@ import { file } from "./file";
 import { image } from "./image";
 import { layer } from "./layer";
 import { type } from "./type";
+import { filter } from "./filter";
 
 export type ItemType = {
   name: string;
@@ -15,4 +16,12 @@ export type ItemSetType = {
   items: ItemType[];
 };
 
-export const menuItems: ItemType[] = [file, edit, image, layer, type, select];
+export const menuItems: ItemType[] = [
+  file,
+  edit,
+  image,
+  layer,
+  type,
+  select,
+  filter,
+];
