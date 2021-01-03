@@ -46,7 +46,7 @@ type ItemSetProps = {
 const ItemSet = styled.div`
   padding-bottom: ${(props: ItemSetProps) => (props.last ? "0" : "0.4rem")};
   border-bottom: ${(props: ItemSetProps) =>
-    props.last ? "none" : "solid 1px var(--disabled)"};
+    props.last ? "none" : "solid 2px var(--disabled)"};
   margin-bottom: ${(props: ItemSetProps) => (props.last ? "0" : "0.4rem")};
 `;
 
