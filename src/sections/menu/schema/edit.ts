@@ -342,8 +342,97 @@ export const edit: ItemType = {
     {
       items: [
         {
-          name: "Start Dictation...",
-          action: () => console.log("meow"),
+          name: "Preferences",
+          itemSets: [
+            {
+              items: [
+                {
+                  name: "General",
+                  action: () => console.log("meow"),
+                },
+              ],
+            },
+            {
+              items: [
+                {
+                  name: "Interface...",
+                  action: () => console.log("meow"),
+                },
+                {
+                  name: "Workspace...",
+                  action: () => console.log("meow"),
+                },
+                {
+                  name: "Tools...",
+                  action: () => console.log("meow"),
+                },
+                {
+                  name: "History Log...",
+                  action: () => console.log("meow"),
+                },
+                {
+                  name: "File Handling...",
+                  action: () => console.log("meow"),
+                },
+                {
+                  name: "Export...",
+                  action: () => console.log("meow"),
+                },
+                {
+                  name: "Performance...",
+                  action: () => console.log("meow"),
+                },
+                {
+                  name: "Scratch Disks...",
+                  action: () => console.log("meow"),
+                },
+                {
+                  name: "Cursors...",
+                  action: () => console.log("meow"),
+                },
+                {
+                  name: "Transparency & Gamut...",
+                  action: () => console.log("meow"),
+                },
+                {
+                  name: "Units & Rulers...",
+                  action: () => console.log("meow"),
+                },
+                {
+                  name: "Guides, Grid & Slices...",
+                  action: () => console.log("meow"),
+                },
+                {
+                  name: "Plug-ins...",
+                  action: () => console.log("meow"),
+                },
+                {
+                  name: "Type...",
+                  action: () => console.log("meow"),
+                },
+                {
+                  name: "3D...",
+                  action: () => console.log("meow"),
+                },
+                {
+                  name: "Enhanced Controls...",
+                  action: () => console.log("meow"),
+                },
+                {
+                  name: "Technology Previews...",
+                  action: () => console.log("meow"),
+                },
+              ],
+            },
+            {
+              items: [
+                {
+                  name: "Camera Raw...",
+                  action: () => console.log("meow"),
+                },
+              ],
+            },
+          ],
         },
       ],
     },
