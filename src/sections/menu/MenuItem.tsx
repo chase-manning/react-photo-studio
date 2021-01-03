@@ -41,7 +41,13 @@ const MenuItem = (props: Props) => {
 
   return (
     <StyledMenuItem>
-      <MenuItemButton onClick={() => setOpen(true)} open={open}>
+      <MenuItemButton
+        onClick={() => {
+          if (props.menuItem.action) props.menuItem.action();
+          else setOpen(true);
+        }}
+        open={open}
+      >
         {props.menuItem.name}
       </MenuItemButton>
       {props.menuItem.itemSets && (
