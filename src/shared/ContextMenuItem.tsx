@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import { ItemType } from "../sections/menu/menu-items";
+import { ItemType } from "../sections/menu/schema/menu-items";
 import { ReactComponent as ArrowIcon } from "../assets/svgs/navigation/triangle-right.svg";
 import ContextMenu from "./ContextMenu";
 

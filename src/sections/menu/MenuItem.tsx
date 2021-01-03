@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import ContextMenu, { Position } from "../../shared/ContextMenu";
-import { MenuItemType } from "./menu-items";
+import { MenuItemType } from "./schema/menu-items";
 
 type StyledMenuItemProps = {
   open: boolean;

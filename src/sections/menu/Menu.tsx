@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import logo from "../../assets/images/photoshop-logo-small.png";
-import { menuItems, MenuItemType } from "./menu-items";
+import { menuItems, MenuItemType } from "./schema/menu-items";
 import MenuItem from "./MenuItem";
 
 const StyledMenu = styled.div`

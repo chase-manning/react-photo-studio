@@ -4,7 +4,7 @@ import {
   ItemSetType,
   ItemType,
   MenuItemType,
-} from "../sections/menu/menu-items";
+} from "../sections/menu/schema/menu-items";
 import ContextMenuItem from "./ContextMenuItem";
 
 type StyledContextMenuProps = {
