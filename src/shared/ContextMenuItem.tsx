@@ -9,6 +9,7 @@ const StyledContextMenuItem = styled.div`
 `;
 
 const Button = styled.button`
+  width: 100%;
   padding: 0.2rem 0.4rem;
   display: flex;
   justify-content: space-between;
