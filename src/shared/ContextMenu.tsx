@@ -40,7 +40,7 @@ const Menu = styled.div`
   background-color: var(--panel);
   display: flex;
   flex-direction: column;
-  border: solid 1px var(--menu-border);
+  border: solid 1px var(--hover-border);
   z-index: 2;
   border-bottom-left-radius: 0.7rem;
   border-bottom-right-radius: 0.7rem;
@@ -48,6 +48,7 @@ const Menu = styled.div`
     props.squareTop ? "0" : "0.7rem"};
   border-top-right-radius: ${(props: MenuProps) =>
     props.squareTop ? "0" : "0.7rem"};
+  box-shadow: 0.2rem 0.2rem 2rem rgba(0, 0, 0, 0.2);
 `;
 
 type ItemSetProps = {
