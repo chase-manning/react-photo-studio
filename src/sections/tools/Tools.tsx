@@ -12,16 +12,10 @@ const StyledTools = styled.div`
   border: solid 0.1rem var(--border);
 `;
 
-const Test = styled.div`
-  width: 100%;
-`;
-
 const Tools = () => {
-  const [open, setOpen] = useState(false);
-
   return (
     <StyledTools>
-      <Expandable open={open} toggle={() => FeatureRequest("Tools/Expand")} />
+      <Expandable open={false} toggle={() => FeatureRequest("Tools/Expand")} />
     </StyledTools>
   );
 };
