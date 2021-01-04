@@ -6,16 +6,24 @@ import Expandable from "../../shared/Expandable";
 const StyledTools = styled.div`
   height: 100%;
   width: 4rem;
-  display: flex;
   margin-right: 0.1rem;
   background-color: var(--panel);
   border: solid 0.1rem var(--border);
+`;
+
+const Container = styled.div`
+  width: 100%;
+  height: 100%;
+  border-top: solid 0.1rem var(--border);
+  display: flex;
+  flex-direction: column;
 `;
 
 const Tools = () => {
   return (
     <StyledTools>
       <Expandable open={false} toggle={() => FeatureRequest("Tools/Expand")} />
+      <Container></Container>
     </StyledTools>
   );
 };
