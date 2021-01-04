@@ -1,3 +1,4 @@
+import { FeatureRequest } from "../../../services/AnalyticsService";
 import { ItemType } from "./menu-items";
 
 export const edit: ItemType = {
@@ -7,23 +8,23 @@ export const edit: ItemType = {
       items: [
         {
           name: "Undo Deselect",
-          action: () => console.log("meow"),
+          action: () => FeatureRequest("Menu/Edit/Undo Deselect"),
         },
         {
           name: "Redo",
-          action: () => console.log("meow"),
+          action: () => FeatureRequest("Menu/Edit/Redo"),
         },
         {
           name: "Toggle Last State",
-          action: () => console.log("meow"),
+          action: () => FeatureRequest("Menu/Edit/Toggle Last State"),
         },
       ],
     },
     {
       items: [
         {
-          name: "Fade..",
-          action: () => console.log("meow"),
+          name: "Fade...",
+          action: () => FeatureRequest("Menu/Edit/Fade..."),
         },
       ],
     },
@@ -31,19 +32,19 @@ export const edit: ItemType = {
       items: [
         {
           name: "Cut",
-          action: () => console.log("meow"),
+          action: () => FeatureRequest("Menu/Edit/Cut"),
         },
         {
           name: "Copy",
-          action: () => console.log("meow"),
+          action: () => FeatureRequest("Menu/Edit/Copy"),
         },
         {
           name: "Copy Merged",
-          action: () => console.log("meow"),
+          action: () => FeatureRequest("Menu/Edit/Copy Merged"),
         },
         {
           name: "Paste",
-          action: () => console.log("meow"),
+          action: () => FeatureRequest("Menu/Edit/Paste"),
         },
         {
           name: "Paste Special",
@@ -52,19 +53,25 @@ export const edit: ItemType = {
               items: [
                 {
                   name: "Paste without Formatting",
-                  action: () => console.log("meow"),
+                  action: () =>
+                    FeatureRequest(
+                      "Menu/Edit/Paste Special/Paste without Formatting"
+                    ),
                 },
                 {
                   name: "Paste in Place",
-                  action: () => console.log("meow"),
+                  action: () =>
+                    FeatureRequest("Menu/Edit/Paste Special/Paste in Place"),
                 },
                 {
                   name: "Paste Into",
-                  action: () => console.log("meow"),
+                  action: () =>
+                    FeatureRequest("Menu/Edit/Paste Special/Paste Into"),
                 },
                 {
                   name: "Paste Outside",
-                  action: () => console.log("meow"),
+                  action: () =>
+                    FeatureRequest("Menu/Edit/Paste Special/Paste Outside"),
                 },
               ],
             },
@@ -72,7 +79,7 @@ export const edit: ItemType = {
         },
         {
           name: "Clear",
-          action: () => console.log("meow"),
+          action: () => FeatureRequest("Menu/Edit/Clear"),
         },
       ],
     },
@@ -80,15 +87,15 @@ export const edit: ItemType = {
       items: [
         {
           name: "Search",
-          action: () => console.log("meow"),
+          action: () => FeatureRequest("Menu/Edit/Search"),
         },
         {
           name: "Check Spelling...",
-          action: () => console.log("meow"),
+          action: () => FeatureRequest("Menu/Edit/Check Spelling..."),
         },
         {
           name: "Find and Replace Text...",
-          action: () => console.log("meow"),
+          action: () => FeatureRequest("Menu/Edit/Find and Replace Text..."),
         },
       ],
     },
@@ -96,15 +103,15 @@ export const edit: ItemType = {
       items: [
         {
           name: "Fill...",
-          action: () => console.log("meow"),
+          action: () => FeatureRequest("Menu/Edit/Fill..."),
         },
         {
           name: "Stroke...",
-          action: () => console.log("meow"),
+          action: () => FeatureRequest("Menu/Edit/Stroke..."),
         },
         {
           name: "Content-Aware Fill...",
-          action: () => console.log("meow"),
+          action: () => FeatureRequest("Menu/Edit/Content-Aware Fill..."),
         },
       ],
     },
@@ -112,19 +119,19 @@ export const edit: ItemType = {
       items: [
         {
           name: "Content-Aware Scale",
-          action: () => console.log("meow"),
+          action: () => FeatureRequest("Menu/Edit/Content-Aware Scale"),
         },
         {
           name: "Puppet Warp",
-          action: () => console.log("meow"),
+          action: () => FeatureRequest("Menu/Edit/Puppet Warp"),
         },
         {
           name: "Perspective Warp",
-          action: () => console.log("meow"),
+          action: () => FeatureRequest("Menu/Edit/Perspective Warp"),
         },
         {
           name: "Free Transform",
-          action: () => console.log("meow"),
+          action: () => FeatureRequest("Menu/Edit/Free Transform"),
         },
         {
           name: "Transform",
@@ -133,7 +140,7 @@ export const edit: ItemType = {
               items: [
                 {
                   name: "Again",
-                  action: () => console.log("meow"),
+                  action: () => FeatureRequest("Menu/Edit/Transform/Again"),
                 },
               ],
             },
@@ -141,23 +148,24 @@ export const edit: ItemType = {
               items: [
                 {
                   name: "Scale",
-                  action: () => console.log("meow"),
+                  action: () => FeatureRequest("Menu/Edit/Transform/Scale"),
                 },
                 {
                   name: "Rotate",
-                  action: () => console.log("meow"),
+                  action: () => FeatureRequest("Menu/Edit/Transform/Rotate"),
                 },
                 {
                   name: "Skew",
-                  action: () => console.log("meow"),
+                  action: () => FeatureRequest("Menu/Edit/Transform/Skew"),
                 },
                 {
                   name: "Distort",
-                  action: () => console.log("meow"),
+                  action: () => FeatureRequest("Menu/Edit/Transform/Distort"),
                 },
                 {
-                  name: "Perspectiv",
-                  action: () => console.log("meow"),
+                  name: "Perspective",
+                  action: () =>
+                    FeatureRequest("Menu/Edit/Transform/Perspective"),
                 },
               ],
             },
@@ -165,23 +173,29 @@ export const edit: ItemType = {
               items: [
                 {
                   name: "Warp",
-                  action: () => console.log("meow"),
+                  action: () => FeatureRequest("Menu/Edit/Transform/Warp"),
                 },
                 {
                   name: "Split Warp Horizontally",
-                  action: () => console.log("meow"),
+                  action: () =>
+                    FeatureRequest(
+                      "Menu/Edit/Transform/Split Warp Horizontally"
+                    ),
                 },
                 {
                   name: "Split Warp Vertically",
-                  action: () => console.log("meow"),
+                  action: () =>
+                    FeatureRequest("Menu/Edit/Transform/Split Warp Vertically"),
                 },
                 {
                   name: "Split Warp Crosswise",
-                  action: () => console.log("meow"),
+                  action: () =>
+                    FeatureRequest("Menu/Edit/Transform/Split Warp Crosswise"),
                 },
                 {
                   name: "Remote Warp Split",
-                  action: () => console.log("meow"),
+                  action: () =>
+                    FeatureRequest("Menu/Edit/Transform/Remote Warp Split"),
                 },
               ],
             },
@@ -189,15 +203,20 @@ export const edit: ItemType = {
               items: [
                 {
                   name: "Rotate 180°",
-                  action: () => console.log("meow"),
+                  action: () =>
+                    FeatureRequest("Menu/Edit/Transform/Rotate 180"),
                 },
                 {
                   name: "Rotate 90° Clockwise",
-                  action: () => console.log("meow"),
+                  action: () =>
+                    FeatureRequest("Menu/Edit/Transform/Rotate 90 Clockwise"),
                 },
                 {
                   name: "Rotate 90° Counter Clockwise",
-                  action: () => console.log("meow"),
+                  action: () =>
+                    FeatureRequest(
+                      "Menu/Edit/Transform/Rotate 90 Counter Clockwise"
+                    ),
                 },
               ],
             },
@@ -205,11 +224,13 @@ export const edit: ItemType = {
               items: [
                 {
                   name: "Flip Horizontal",
-                  action: () => console.log("meow"),
+                  action: () =>
+                    FeatureRequest("Menu/Edit/Transform/Flip Horizontal"),
                 },
                 {
                   name: "Flip Vertical",
-                  action: () => console.log("meow"),
+                  action: () =>
+                    FeatureRequest("Menu/Edit/Transform/Flip Vertical"),
                 },
               ],
             },
@@ -217,11 +238,11 @@ export const edit: ItemType = {
         },
         {
           name: "Auto-Align Layers...",
-          action: () => console.log("meow"),
+          action: () => FeatureRequest("Menu/Edit/Auto-Align Layers..."),
         },
         {
           name: "Auto-Blend Layers...",
-          action: () => console.log("meow"),
+          action: () => FeatureRequest("Menu/Edit/Auto-Blend Layers..."),
         },
       ],
     },
@@ -229,15 +250,15 @@ export const edit: ItemType = {
       items: [
         {
           name: "Define Brush Preset...",
-          action: () => console.log("meow"),
+          action: () => FeatureRequest("Menu/Edit/Define Brush Preset..."),
         },
         {
           name: "Define Pattern...",
-          action: () => console.log("meow"),
+          action: () => FeatureRequest("Menu/Edit/Define Pattern..."),
         },
         {
           name: "Define Custom Shape...",
-          action: () => console.log("meow"),
+          action: () => FeatureRequest("Menu/Edit/Define Custom Shape..."),
         },
       ],
     },
@@ -250,15 +271,15 @@ export const edit: ItemType = {
               items: [
                 {
                   name: "Clipboard",
-                  action: () => console.log("meow"),
+                  action: () => FeatureRequest("Menu/Edit/Purge/Clipboard"),
                 },
                 {
                   name: "Histories",
-                  action: () => console.log("meow"),
+                  action: () => FeatureRequest("Menu/Edit/Purge/Histories"),
                 },
                 {
                   name: "All",
-                  action: () => console.log("meow"),
+                  action: () => FeatureRequest("Menu/Edit/Purge/All"),
                 },
               ],
             },
@@ -266,7 +287,7 @@ export const edit: ItemType = {
               items: [
                 {
                   name: "Video Cache",
-                  action: () => console.log("meow"),
+                  action: () => FeatureRequest("Menu/Edit/Purge/Video Cache"),
                 },
               ],
             },
@@ -278,7 +299,7 @@ export const edit: ItemType = {
       items: [
         {
           name: "Adobe PDF Presets...",
-          action: () => console.log("meow"),
+          action: () => FeatureRequest("Menu/Edit/Adobe PDF Presets..."),
         },
         {
           name: "Presets",
@@ -287,15 +308,20 @@ export const edit: ItemType = {
               items: [
                 {
                   name: "Preset Manager...",
-                  action: () => console.log("meow"),
+                  action: () =>
+                    FeatureRequest("Menu/Edit/Presets/Preset Manager..."),
                 },
                 {
                   name: "Migrate Presets",
-                  action: () => console.log("meow"),
+                  action: () =>
+                    FeatureRequest("Menu/Edit/Presets/Migrate Presets"),
                 },
                 {
                   name: "Export/Import Presets...",
-                  action: () => console.log("meow"),
+                  action: () =>
+                    FeatureRequest(
+                      "Menu/Edit/Presets/Export/Import Presets..."
+                    ),
                 },
               ],
             },
@@ -303,7 +329,7 @@ export const edit: ItemType = {
         },
         {
           name: "Remote Connections...",
-          action: () => console.log("meow"),
+          action: () => FeatureRequest("Menu/Edit/Remote Connections..."),
         },
       ],
     },
@@ -311,15 +337,15 @@ export const edit: ItemType = {
       items: [
         {
           name: "Color Settings...",
-          action: () => console.log("meow"),
+          action: () => FeatureRequest("Menu/Edit/Color Settings..."),
         },
         {
           name: "Assign Profile...",
-          action: () => console.log("meow"),
+          action: () => FeatureRequest("Menu/Edit/Assign Profile..."),
         },
         {
           name: "Convert to Profile...",
-          action: () => console.log("meow"),
+          action: () => FeatureRequest("Menu/Edit/Convert to Profile..."),
         },
       ],
     },
@@ -327,15 +353,15 @@ export const edit: ItemType = {
       items: [
         {
           name: "Keyboard Shortcuts...",
-          action: () => console.log("meow"),
+          action: () => FeatureRequest("Menu/Edit/Keyboard Shortcuts..."),
         },
         {
           name: "Menus...",
-          action: () => console.log("meow"),
+          action: () => FeatureRequest("Menu/Edit/Menus..."),
         },
         {
           name: "Toolbar...",
-          action: () => console.log("meow"),
+          action: () => FeatureRequest("Menu/Edit/Toolbar..."),
         },
       ],
     },
@@ -348,7 +374,7 @@ export const edit: ItemType = {
               items: [
                 {
                   name: "General",
-                  action: () => console.log("meow"),
+                  action: () => FeatureRequest("Menu/Edit/Preferences/General"),
                 },
               ],
             },
@@ -356,71 +382,94 @@ export const edit: ItemType = {
               items: [
                 {
                   name: "Interface...",
-                  action: () => console.log("meow"),
+                  action: () =>
+                    FeatureRequest("Menu/Edit/Preferences/Interface..."),
                 },
                 {
                   name: "Workspace...",
-                  action: () => console.log("meow"),
+                  action: () =>
+                    FeatureRequest("Menu/Edit/Preferences/Workspace..."),
                 },
                 {
                   name: "Tools...",
-                  action: () => console.log("meow"),
+                  action: () =>
+                    FeatureRequest("Menu/Edit/Preferences/Tools..."),
                 },
                 {
                   name: "History Log...",
-                  action: () => console.log("meow"),
+                  action: () =>
+                    FeatureRequest("Menu/Edit/Preferences/History Log..."),
                 },
                 {
                   name: "File Handling...",
-                  action: () => console.log("meow"),
+                  action: () =>
+                    FeatureRequest("Menu/Edit/Preferences/File Handling..."),
                 },
                 {
                   name: "Export...",
-                  action: () => console.log("meow"),
+                  action: () =>
+                    FeatureRequest("Menu/Edit/Preferences/Export..."),
                 },
                 {
                   name: "Performance...",
-                  action: () => console.log("meow"),
+                  action: () =>
+                    FeatureRequest("Menu/Edit/Preferences/Performance..."),
                 },
                 {
                   name: "Scratch Disks...",
-                  action: () => console.log("meow"),
+                  action: () =>
+                    FeatureRequest("Menu/Edit/Preferences/Scratch Disks..."),
                 },
                 {
                   name: "Cursors...",
-                  action: () => console.log("meow"),
+                  action: () =>
+                    FeatureRequest("Menu/Edit/Preferences/Cursors..."),
                 },
                 {
                   name: "Transparency & Gamut...",
-                  action: () => console.log("meow"),
+                  action: () =>
+                    FeatureRequest(
+                      "Menu/Edit/Preferences/Transparency & Gamut..."
+                    ),
                 },
                 {
                   name: "Units & Rulers...",
-                  action: () => console.log("meow"),
+                  action: () =>
+                    FeatureRequest("Menu/Edit/Preferences/Units & Rulers..."),
                 },
                 {
                   name: "Guides, Grid & Slices...",
-                  action: () => console.log("meow"),
+                  action: () =>
+                    FeatureRequest(
+                      "Menu/Edit/Preferences/Guides, Grid & Slices..."
+                    ),
                 },
                 {
                   name: "Plug-ins...",
-                  action: () => console.log("meow"),
+                  action: () =>
+                    FeatureRequest("Menu/Edit/Preferences/Plug-ins..."),
                 },
                 {
                   name: "Type...",
-                  action: () => console.log("meow"),
+                  action: () => FeatureRequest("Menu/Edit/Preferences/Type..."),
                 },
                 {
                   name: "3D...",
-                  action: () => console.log("meow"),
+                  action: () => FeatureRequest("Menu/Edit/Preferences/3D..."),
                 },
                 {
                   name: "Enhanced Controls...",
-                  action: () => console.log("meow"),
+                  action: () =>
+                    FeatureRequest(
+                      "Menu/Edit/Preferences/Enhanced Controls..."
+                    ),
                 },
                 {
                   name: "Technology Previews...",
-                  action: () => console.log("meow"),
+                  action: () =>
+                    FeatureRequest(
+                      "Menu/Edit/Preferences/Technology Previews..."
+                    ),
                 },
               ],
             },
@@ -428,7 +477,8 @@ export const edit: ItemType = {
               items: [
                 {
                   name: "Camera Raw...",
-                  action: () => console.log("meow"),
+                  action: () =>
+                    FeatureRequest("Menu/Edit/Preferences/Camera Raw..."),
                 },
               ],
             },
