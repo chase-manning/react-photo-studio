@@ -39,3 +39,5 @@ const Handle = () => {
     </StyledHandle>
   );
 };
+
+export default Handle;
