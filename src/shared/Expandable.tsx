@@ -7,7 +7,7 @@ type ExpandableProps = {
 
 const StyledExpandable = styled.div`
   width: 100%;
-  height: 1rem;
+  height: 1.2rem;
   background-color: var(--expandable);
   display: flex;
   justify-content: ${(props: ExpandableProps) =>
@@ -21,6 +21,7 @@ const ToggleButton = styled.button`
   justify-content: center;
   align-items: center;
   color: var(--text);
+  font-size: 0.9rem;
 
   border: solid 0.1rem var(--expandable);
   :hover {
