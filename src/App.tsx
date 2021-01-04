@@ -5,6 +5,10 @@ import Menu from "./sections/menu/Menu";
 import Options from "./sections/options/Options";
 import Tools from "./sections/tools/Tools";
 import Windows from "./sections/windows/Windows";
+import ReactGA from "react-ga";
+
+ReactGA.initialize("UA-186400691-2");
+ReactGA.pageview("/");
 
 const StyledApp = styled.div`
   position: fixed;
