@@ -8,24 +8,24 @@ export const file: ItemType = {
       items: [
         {
           name: "New...",
-          action: () => FeatureRequest("File/New..."),
+          action: () => FeatureRequest("Menu/File/New..."),
         },
         {
           name: "Open...",
-          action: () => console.log("meow"),
+          action: () => FeatureRequest("Menu/File/Open..."),
         },
         {
           name: "Browse in Bridge...",
-          action: () => console.log("meow"),
+          action: () => FeatureRequest("Menu/File/Browse in Bridge..."),
         },
         {
           name: "Open as Smart Object...",
-          action: () => console.log("meow"),
+          action: () => FeatureRequest("Menu/File/Open as Smart Object..."),
         },
         {
           name: "Open Recent",
           itemSets: [],
-          action: () => console.log("meow"),
+          action: () => FeatureRequest("Menu/File/Open Recent"),
         },
       ],
     },
@@ -33,27 +33,27 @@ export const file: ItemType = {
       items: [
         {
           name: "Close",
-          action: () => console.log("meow"),
+          action: () => FeatureRequest("Menu/File/Close"),
         },
         {
           name: "Close All",
-          action: () => console.log("meow"),
+          action: () => FeatureRequest("Menu/File/Close All"),
         },
         {
           name: "Close Others",
-          action: () => console.log("meow"),
+          action: () => FeatureRequest("Menu/File/Close Others"),
         },
         {
           name: "Save",
-          action: () => console.log("meow"),
+          action: () => FeatureRequest("Menu/File/Save"),
         },
         {
           name: "Save As...",
-          action: () => console.log("meow"),
+          action: () => FeatureRequest("Menu/File/Save As..."),
         },
         {
           name: "Revert",
-          action: () => console.log("meow"),
+          action: () => FeatureRequest("Menu/File/Revert"),
         },
       ],
     },
@@ -66,11 +66,12 @@ export const file: ItemType = {
               items: [
                 {
                   name: "Quick Export as PNG",
-                  action: () => console.log("meow"),
+                  action: () =>
+                    FeatureRequest("Menu/File/Export/Quick Export as PNG"),
                 },
                 {
                   name: "Export As...",
-                  action: () => console.log("meow"),
+                  action: () => FeatureRequest("Menu/File/Export/Export As..."),
                 },
               ],
             },
@@ -78,7 +79,8 @@ export const file: ItemType = {
               items: [
                 {
                   name: "Export Preferences...",
-                  action: () => console.log("meow"),
+                  action: () =>
+                    FeatureRequest("Menu/File/Export/Export Preferences..."),
                 },
               ],
             },
@@ -86,7 +88,8 @@ export const file: ItemType = {
               items: [
                 {
                   name: "Save for Web (Legacy)...",
-                  action: () => console.log("meow"),
+                  action: () =>
+                    FeatureRequest("Menu/File/Export/Save for Web (Legacy)..."),
                 },
               ],
             },
@@ -94,31 +97,38 @@ export const file: ItemType = {
               items: [
                 {
                   name: "Artboards to Files...",
-                  action: () => console.log("meow"),
+                  action: () =>
+                    FeatureRequest("Menu/File/Export/Artboards to Files..."),
                 },
                 {
                   name: "Artboards to PDF...",
-                  action: () => console.log("meow"),
+                  action: () =>
+                    FeatureRequest("Menu/File/Export/Artboards to PDF..."),
                 },
                 {
                   name: "Export For Aero...",
-                  action: () => console.log("meow"),
+                  action: () =>
+                    FeatureRequest("Menu/File/Export/Export for Aero..."),
                 },
                 {
                   name: "Layer Comps to Files...",
-                  action: () => console.log("meow"),
+                  action: () =>
+                    FeatureRequest("Menu/File/Export/Layer Comps to Files..."),
                 },
                 {
                   name: "Layer Comps to PDF...",
-                  action: () => console.log("meow"),
+                  action: () =>
+                    FeatureRequest("Menu/File/Export/Layer Comps to PDF..."),
                 },
                 {
                   name: "Layers to Files...",
-                  action: () => console.log("meow"),
+                  action: () =>
+                    FeatureRequest("Menu/File/Export/Layers to Files..."),
                 },
                 {
                   name: "Color Lookup Tables...",
-                  action: () => console.log("meow"),
+                  action: () =>
+                    FeatureRequest("Menu/File/Export/Color Lookup Tables..."),
                 },
               ],
             },
@@ -126,19 +136,22 @@ export const file: ItemType = {
               items: [
                 {
                   name: "Data Sets as Files...",
-                  action: () => console.log("meow"),
+                  action: () =>
+                    FeatureRequest("Menu/File/Export/Data Sets as Files..."),
                 },
                 {
                   name: "Paths to Illustrator...",
-                  action: () => console.log("meow"),
+                  action: () =>
+                    FeatureRequest("Menu/File/Export/Paths to Illustrator..."),
                 },
                 {
                   name: "Render Video...",
-                  action: () => console.log("meow"),
+                  action: () =>
+                    FeatureRequest("Menu/File/Export/Render Video..."),
                 },
                 {
                   name: "Zoomify...",
-                  action: () => console.log("meow"),
+                  action: () => FeatureRequest("Menu/File/Export/Zoomify..."),
                 },
               ],
             },
@@ -151,7 +164,8 @@ export const file: ItemType = {
               items: [
                 {
                   name: "Image Assets",
-                  action: () => console.log("meow"),
+                  action: () =>
+                    FeatureRequest("Menu/File/Generate/Image Assets"),
                 },
               ],
             },
@@ -159,11 +173,11 @@ export const file: ItemType = {
         },
         {
           name: "Share...",
-          action: () => console.log("meow"),
+          action: () => FeatureRequest("Menu/File/Share..."),
         },
         {
           name: "Share on Behance...",
-          action: () => console.log("meow"),
+          action: () => FeatureRequest("Menu/File/Share on Behance..."),
         },
       ],
     },
@@ -171,19 +185,19 @@ export const file: ItemType = {
       items: [
         {
           name: "Search Adobe Stock...",
-          action: () => console.log("meow"),
+          action: () => FeatureRequest("Menu/File/Search Adobe Stock..."),
         },
         {
           name: "Place Embedded...",
-          action: () => console.log("meow"),
+          action: () => FeatureRequest("Menu/File/Place Embedded..."),
         },
         {
           name: "Place Linked...",
-          action: () => console.log("meow"),
+          action: () => FeatureRequest("Menu/File/Place Linked..."),
         },
         {
           name: "Package...",
-          action: () => console.log("meow"),
+          action: () => FeatureRequest("Menu/File/Package..."),
         },
       ],
     },
@@ -196,15 +210,17 @@ export const file: ItemType = {
               items: [
                 {
                   name: "Batch...",
-                  action: () => console.log("meow"),
+                  action: () => FeatureRequest("Menu/File/Automate/Batch..."),
                 },
                 {
                   name: "PDF Presentation...",
-                  action: () => console.log("meow"),
+                  action: () =>
+                    FeatureRequest("Menu/File/Automate/PDF Presentation..."),
                 },
                 {
                   name: "Create Droplet...",
-                  action: () => console.log("meow"),
+                  action: () =>
+                    FeatureRequest("Menu/File/Automate/Create Droplet..."),
                 },
               ],
             },
@@ -212,7 +228,10 @@ export const file: ItemType = {
               items: [
                 {
                   name: "Crop and Straighten Photos",
-                  action: () => console.log("meow"),
+                  action: () =>
+                    FeatureRequest(
+                      "Menu/File/Automate/Croop and Straighten Photos"
+                    ),
                 },
               ],
             },
@@ -220,7 +239,8 @@ export const file: ItemType = {
               items: [
                 {
                   name: "Contact Sheet II...",
-                  action: () => console.log("meow"),
+                  action: () =>
+                    FeatureRequest("Menu/File/Automate/Contact Sheet II..."),
                 },
               ],
             },
@@ -228,23 +248,30 @@ export const file: ItemType = {
               items: [
                 {
                   name: "Conditional Mode Change...",
-                  action: () => console.log("meow"),
+                  action: () =>
+                    FeatureRequest(
+                      "Menu/File/Automate/Conditional Mode Change..."
+                    ),
                 },
                 {
                   name: "Fit Image...",
-                  action: () => console.log("meow"),
+                  action: () =>
+                    FeatureRequest("Menu/File/Automate/Fit Image..."),
                 },
                 {
                   name: "Lens Correction...",
-                  action: () => console.log("meow"),
+                  action: () =>
+                    FeatureRequest("Menu/File/Automate/Lens Correction..."),
                 },
                 {
                   name: "Merge to HDR Pro...",
-                  action: () => console.log("meow"),
+                  action: () =>
+                    FeatureRequest("Menu/File/Automate/Merge to HDR Pro..."),
                 },
                 {
                   name: "Photomerge...",
-                  action: () => console.log("meow"),
+                  action: () =>
+                    FeatureRequest("Menu/File/Automate/Photomerge..."),
                 },
               ],
             },
@@ -257,15 +284,17 @@ export const file: ItemType = {
               items: [
                 {
                   name: "Image Processor...",
-                  action: () => console.log("meow"),
+                  action: () =>
+                    FeatureRequest("Menu/File/Scripts/Image Processor..."),
                 },
               ],
             },
             {
               items: [
                 {
-                  name: "Delete All Emptry Layers",
-                  action: () => console.log("meow"),
+                  name: "Delete All Empty Layers",
+                  action: () =>
+                    FeatureRequest("Menu/File/Scripts/Delete All Empty Layers"),
                 },
               ],
             },
@@ -273,11 +302,15 @@ export const file: ItemType = {
               items: [
                 {
                   name: "Flatten All Layer Effects",
-                  action: () => console.log("meow"),
+                  action: () =>
+                    FeatureRequest(
+                      "Menu/File/Scripts/Flatten All Layers Effects"
+                    ),
                 },
                 {
                   name: "Flatten All Masks",
-                  action: () => console.log("meow"),
+                  action: () =>
+                    FeatureRequest("Menu/File/Scripts/Flatten All Masks"),
                 },
               ],
             },
@@ -285,7 +318,10 @@ export const file: ItemType = {
               items: [
                 {
                   name: "Script Events Manager...",
-                  action: () => console.log("meow"),
+                  action: () =>
+                    FeatureRequest(
+                      "Menu/File/Scripts/Script Events Manager..."
+                    ),
                 },
               ],
             },
@@ -293,15 +329,22 @@ export const file: ItemType = {
               items: [
                 {
                   name: "Load Files into Stack...",
-                  action: () => console.log("meow"),
+                  action: () =>
+                    FeatureRequest(
+                      "Menu/File/Scripts/Load Files into Stack..."
+                    ),
                 },
                 {
                   name: "Load Multiple DICOM Files...",
-                  action: () => console.log("meow"),
+                  action: () =>
+                    FeatureRequest(
+                      "Menu/File/Scripts/Load Multiple DICOM Files..."
+                    ),
                 },
                 {
                   name: "Statistics...",
-                  action: () => console.log("meow"),
+                  action: () =>
+                    FeatureRequest("Menu/File/Scripts/Statistics..."),
                 },
               ],
             },
@@ -309,7 +352,7 @@ export const file: ItemType = {
               items: [
                 {
                   name: "Browse...",
-                  action: () => console.log("meow"),
+                  action: () => FeatureRequest("Menu/File/Scripts/Browse..."),
                 },
               ],
             },
@@ -322,19 +365,24 @@ export const file: ItemType = {
               items: [
                 {
                   name: "Variable Data Sets...",
-                  action: () => console.log("meow"),
+                  action: () =>
+                    FeatureRequest("Menu/File/Import/Variable Data Sets..."),
                 },
                 {
                   name: "Video Frames to Layers...",
-                  action: () => console.log("meow"),
+                  action: () =>
+                    FeatureRequest(
+                      "Menu/File/Import/Video Frames to Layers..."
+                    ),
                 },
                 {
                   name: "Images from Device...",
-                  action: () => console.log("meow"),
+                  action: () =>
+                    FeatureRequest("Menu/File/Import/Images from Device..."),
                 },
                 {
                   name: "Notes...",
-                  action: () => console.log("meow"),
+                  action: () => FeatureRequest("Menu/File/Import/Notes..."),
                 },
               ],
             },
@@ -347,15 +395,24 @@ export const file: ItemType = {
               items: [
                 {
                   name: "Take Photo",
-                  action: () => console.log("meow"),
+                  action: () =>
+                    FeatureRequest(
+                      "Menu/File/Import from iPhone or iPad/Take Photo"
+                    ),
                 },
                 {
                   name: "Scan Documents",
-                  action: () => console.log("meow"),
+                  action: () =>
+                    FeatureRequest(
+                      "Menu/File/Import from iPhone or iPad/Scan Documents"
+                    ),
                 },
                 {
                   name: "Add Sketch",
-                  action: () => console.log("meow"),
+                  action: () =>
+                    FeatureRequest(
+                      "Menu/File/Import from iPhone or iPad/Add Sketch"
+                    ),
                 },
               ],
             },
@@ -367,7 +424,7 @@ export const file: ItemType = {
       items: [
         {
           name: "File Info...",
-          action: () => console.log("meow"),
+          action: () => FeatureRequest("Menu/File/File Info..."),
         },
       ],
     },
@@ -375,11 +432,11 @@ export const file: ItemType = {
       items: [
         {
           name: "Print...",
-          action: () => console.log("meow"),
+          action: () => FeatureRequest("Menu/File/Print..."),
         },
         {
           name: "Print One Copy",
-          action: () => console.log("meow"),
+          action: () => FeatureRequest("Menu/File/Print One Copy"),
         },
       ],
     },
