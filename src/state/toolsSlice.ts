@@ -22,7 +22,7 @@ export const toolsSlice = createSlice({
   },
 });
 
-export const {} = toolsSlice.actions;
+export const { toggleRandomReminders } = toolsSlice.actions;
 
 export const selectSettings = (state: RootState) => state.tools.test;
 
