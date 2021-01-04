@@ -1,3 +1,4 @@
+import { FeatureRequest } from "../../../services/AnalyticsService";
 import { ItemType } from "./menu-items";
 
 export const image: ItemType = {
@@ -8,7 +9,7 @@ export const image: ItemType = {
         {
           name: "Mode",
           itemSets: [],
-          action: () => console.log("meow"),
+          action: () => FeatureRequest("Menu/Image/Mode"),
         },
       ],
     },
@@ -21,19 +22,25 @@ export const image: ItemType = {
               items: [
                 {
                   name: "Brightness/Contrast...",
-                  action: () => console.log("meow"),
+                  action: () =>
+                    FeatureRequest(
+                      "Menu/Image/Adjustments/Brightness/Contrast..."
+                    ),
                 },
                 {
                   name: "Levels...",
-                  action: () => console.log("meow"),
+                  action: () =>
+                    FeatureRequest("Menu/Image/Adjustments/Levels..."),
                 },
                 {
                   name: "Curves...",
-                  action: () => console.log("meow"),
+                  action: () =>
+                    FeatureRequest("Menu/Image/Adjustments/Curves..."),
                 },
                 {
                   name: "Exposure...",
-                  action: () => console.log("meow"),
+                  action: () =>
+                    FeatureRequest("Menu/Image/Adjustments/Exposure..."),
                 },
               ],
             },
@@ -41,31 +48,38 @@ export const image: ItemType = {
               items: [
                 {
                   name: "Vibrance...",
-                  action: () => console.log("meow"),
+                  action: () =>
+                    FeatureRequest("Menu/Image/Adjustments/Vibrance..."),
                 },
                 {
                   name: "Hue/Saturation...",
-                  action: () => console.log("meow"),
+                  action: () =>
+                    FeatureRequest("Menu/Image/Adjustments/Hue/Saturation..."),
                 },
                 {
                   name: "Color Balance...",
-                  action: () => console.log("meow"),
+                  action: () =>
+                    FeatureRequest("Menu/Image/Adjustments/Color Balance..."),
                 },
                 {
                   name: "Black & White...",
-                  action: () => console.log("meow"),
+                  action: () =>
+                    FeatureRequest("Menu/Image/Adjustments/Black & White..."),
                 },
                 {
                   name: "Photo Filter...",
-                  action: () => console.log("meow"),
+                  action: () =>
+                    FeatureRequest("Menu/Image/Adjustments/Photo Filter..."),
                 },
                 {
                   name: "Channel Mixer...",
-                  action: () => console.log("meow"),
+                  action: () =>
+                    FeatureRequest("Menu/Image/Adjustments/Channel Mixer..."),
                 },
                 {
                   name: "Color Lookup...",
-                  action: () => console.log("meow"),
+                  action: () =>
+                    FeatureRequest("Menu/Image/Adjustments/Color Lookup..."),
                 },
               ],
             },
@@ -73,23 +87,27 @@ export const image: ItemType = {
               items: [
                 {
                   name: "Invert",
-                  action: () => console.log("meow"),
+                  action: () => FeatureRequest("Menu/Image/Adjustments/Invert"),
                 },
                 {
                   name: "Posterize...",
-                  action: () => console.log("meow"),
+                  action: () =>
+                    FeatureRequest("Menu/Image/Adjustments/Posterize..."),
                 },
                 {
                   name: "Threshold...",
-                  action: () => console.log("meow"),
+                  action: () =>
+                    FeatureRequest("Menu/Image/Adjustments/Threshold..."),
                 },
                 {
                   name: "Gradient Map...",
-                  action: () => console.log("meow"),
+                  action: () =>
+                    FeatureRequest("Menu/Image/Adjustments/Gradient Map..."),
                 },
                 {
                   name: "Selective Color...",
-                  action: () => console.log("meow"),
+                  action: () =>
+                    FeatureRequest("Menu/Image/Adjustments/Selective Color..."),
                 },
               ],
             },
@@ -97,11 +115,15 @@ export const image: ItemType = {
               items: [
                 {
                   name: "Shadows/Highlights...",
-                  action: () => console.log("meow"),
+                  action: () =>
+                    FeatureRequest(
+                      "Menu/Image/Adjustments/Shadows/Highlights..."
+                    ),
                 },
                 {
                   name: "HDR Toning...",
-                  action: () => console.log("meow"),
+                  action: () =>
+                    FeatureRequest("Menu/Image/Adjustments/HDR Toning..."),
                 },
               ],
             },
@@ -109,19 +131,23 @@ export const image: ItemType = {
               items: [
                 {
                   name: "Desaturate",
-                  action: () => console.log("meow"),
+                  action: () =>
+                    FeatureRequest("Menu/Image/Adjustments/Desaturate"),
                 },
                 {
                   name: "Match Color...",
-                  action: () => console.log("meow"),
+                  action: () =>
+                    FeatureRequest("Menu/Image/Adjustments/Match Color..."),
                 },
                 {
                   name: "Replace Color...",
-                  action: () => console.log("meow"),
+                  action: () =>
+                    FeatureRequest("Menu/Image/Adjustments/Replace Color..."),
                 },
                 {
                   name: "Equalize",
-                  action: () => console.log("meow"),
+                  action: () =>
+                    FeatureRequest("Menu/Image/Adjustments/Equalize"),
                 },
               ],
             },
@@ -133,15 +159,15 @@ export const image: ItemType = {
       items: [
         {
           name: "Auto Tone",
-          action: () => console.log("meow"),
+          action: () => FeatureRequest("Menu/Image/Auto Tone"),
         },
         {
           name: "Auto Contrast",
-          action: () => console.log("meow"),
+          action: () => FeatureRequest("Menu/Image/Auto Contrast"),
         },
         {
           name: "Auto Color",
-          action: () => console.log("meow"),
+          action: () => FeatureRequest("Menu/Image/Auto Color"),
         },
       ],
     },
@@ -149,11 +175,11 @@ export const image: ItemType = {
       items: [
         {
           name: "Image Size...",
-          action: () => console.log("meow"),
+          action: () => FeatureRequest("Menu/Image/Image Size..."),
         },
         {
           name: "Canvas Size...",
-          action: () => console.log("meow"),
+          action: () => FeatureRequest("Menu/Image/Canvas Size..."),
         },
         {
           name: "Image Rotation",
@@ -162,15 +188,19 @@ export const image: ItemType = {
               items: [
                 {
                   name: "180°",
-                  action: () => console.log("meow"),
+                  action: () => FeatureRequest("Menu/Image/Image Rotation/180"),
                 },
                 {
                   name: "90° Clockwise",
-                  action: () => console.log("meow"),
+                  action: () =>
+                    FeatureRequest("Menu/Image/Image Rotation/90 Clockwise"),
                 },
                 {
                   name: "90° Counter Clockwise",
-                  action: () => console.log("meow"),
+                  action: () =>
+                    FeatureRequest(
+                      "Menu/Image/Image Rotation/90 Counter Clockwise"
+                    ),
                 },
               ],
             },
@@ -178,11 +208,17 @@ export const image: ItemType = {
               items: [
                 {
                   name: "Flip Canvas Horizontal",
-                  action: () => console.log("meow"),
+                  action: () =>
+                    FeatureRequest(
+                      "Menu/Image/Image Rotation/Flip Canvas Horizontal"
+                    ),
                 },
                 {
                   name: "Flip Canvas Vertical",
-                  action: () => console.log("meow"),
+                  action: () =>
+                    FeatureRequest(
+                      "Menu/Image/Image Rotation/Flip Canvas Vertical"
+                    ),
                 },
               ],
             },
@@ -190,15 +226,15 @@ export const image: ItemType = {
         },
         {
           name: "Crop",
-          action: () => console.log("meow"),
+          action: () => FeatureRequest("Menu/Image/Crop"),
         },
         {
           name: "Trim...",
-          action: () => console.log("meow"),
+          action: () => FeatureRequest("Menu/Image/Trim..."),
         },
         {
           name: "Reveal All",
-          action: () => console.log("meow"),
+          action: () => FeatureRequest("Menu/Image/Reveal All"),
         },
       ],
     },
@@ -206,15 +242,15 @@ export const image: ItemType = {
       items: [
         {
           name: "Duplicate...",
-          action: () => console.log("meow"),
+          action: () => FeatureRequest("Menu/Image/Duplicate..."),
         },
         {
           name: "Apply Image...",
-          action: () => console.log("meow"),
+          action: () => FeatureRequest("Menu/Image/Apply Image..."),
         },
         {
           name: "Calculations...",
-          action: () => console.log("meow"),
+          action: () => FeatureRequest("Menu/Image/Calculations..."),
         },
       ],
     },
@@ -227,11 +263,13 @@ export const image: ItemType = {
               items: [
                 {
                   name: "Define...",
-                  action: () => console.log("meow"),
+                  action: () =>
+                    FeatureRequest("Menu/Image/Variables/Define..."),
                 },
                 {
                   name: "Data Sets...",
-                  action: () => console.log("meow"),
+                  action: () =>
+                    FeatureRequest("Menu/Image/Variables/Data Sets..."),
                 },
               ],
             },
@@ -239,7 +277,7 @@ export const image: ItemType = {
         },
         {
           name: "Apply Data Set...",
-          action: () => console.log("meow"),
+          action: () => FeatureRequest("Menu/Image/Apply Data Set..."),
         },
       ],
     },
@@ -247,7 +285,7 @@ export const image: ItemType = {
       items: [
         {
           name: "Trap...",
-          action: () => console.log("meow"),
+          action: () => FeatureRequest("Menu/Image/Trap..."),
         },
       ],
     },
@@ -260,15 +298,18 @@ export const image: ItemType = {
               items: [
                 {
                   name: "Set Measurement Scale",
-                  action: () => console.log("meow"),
+                  action: () =>
+                    FeatureRequest("Menu/Image/Analysis/Set Measurement Scale"),
                 },
                 {
                   name: "Select Data Points",
-                  action: () => console.log("meow"),
+                  action: () =>
+                    FeatureRequest("Menu/Image/Analysis/Select Data Points"),
                 },
                 {
                   name: "Record Measurements",
-                  action: () => console.log("meow"),
+                  action: () =>
+                    FeatureRequest("Menu/Image/Analysis/Record Measurements"),
                 },
               ],
             },
@@ -276,11 +317,13 @@ export const image: ItemType = {
               items: [
                 {
                   name: "Ruler Tool",
-                  action: () => console.log("meow"),
+                  action: () =>
+                    FeatureRequest("Menu/Image/Analysis/Ruler Tool"),
                 },
                 {
                   name: "Count Tool",
-                  action: () => console.log("meow"),
+                  action: () =>
+                    FeatureRequest("Menu/Image/Analysis/Count Tool"),
                 },
               ],
             },
@@ -288,7 +331,8 @@ export const image: ItemType = {
               items: [
                 {
                   name: "Place Scale Marker...",
-                  action: () => console.log("meow"),
+                  action: () =>
+                    FeatureRequest("Menu/Image/Analysis/Place Scale Marker..."),
                 },
               ],
             },
