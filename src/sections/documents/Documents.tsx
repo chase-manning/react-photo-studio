@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 const StyledDocuments = styled.div`
-  width: 100%;
+  flex: 1;
   height: 100%;
   background-color: blue;
 `;
