@@ -1,3 +1,4 @@
+import { FeatureRequest } from "../../../services/AnalyticsService";
 import { ItemType } from "./menu-items";
 
 export const file: ItemType = {
@@ -7,7 +8,7 @@ export const file: ItemType = {
       items: [
         {
           name: "New...",
-          action: () => console.log("meow"),
+          action: () => FeatureRequest("File/New..."),
         },
         {
           name: "Open...",
