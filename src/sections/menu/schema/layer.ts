@@ -1,3 +1,4 @@
+import { FeatureRequest } from "../../../services/AnalyticsService";
 import { ItemType } from "./menu-items";
 
 export const layer: ItemType = {
@@ -12,39 +13,45 @@ export const layer: ItemType = {
               items: [
                 {
                   name: "Layer...",
-                  action: () => console.log("meow"),
+                  action: () => FeatureRequest("Menu/Layer/New/Layer..."),
                 },
                 {
                   name: "Layer from Background...",
-                  action: () => console.log("meow"),
+                  action: () =>
+                    FeatureRequest("Menu/Layer/New/Layer from Background..."),
                 },
                 {
                   name: "Group...",
-                  action: () => console.log("meow"),
+                  action: () => FeatureRequest("Menu/Layer/New/Group..."),
                 },
                 {
                   name: "Group from Layers...",
-                  action: () => console.log("meow"),
+                  action: () =>
+                    FeatureRequest("Menu/Layer/New/Group from Layers..."),
                 },
                 {
                   name: "Artboard...",
-                  action: () => console.log("meow"),
+                  action: () => FeatureRequest("Menu/Layer/New/Artboard..."),
                 },
                 {
                   name: "Artboard from Group...",
-                  action: () => console.log("meow"),
+                  action: () =>
+                    FeatureRequest("Menu/Layer/New/Artboard from Group..."),
                 },
                 {
                   name: "Artboard from Layers...",
-                  action: () => console.log("meow"),
+                  action: () =>
+                    FeatureRequest("Menu/Layer/New/Artboard from Layers..."),
                 },
                 {
                   name: "Frame from Layers...",
-                  action: () => console.log("meow"),
+                  action: () =>
+                    FeatureRequest("Menu/Layer/New/Frame from Layers..."),
                 },
                 {
                   name: "Convert to Frame",
-                  action: () => console.log("meow"),
+                  action: () =>
+                    FeatureRequest("Menu/Layer/New/Convert to Frame"),
                 },
               ],
             },
@@ -53,11 +60,11 @@ export const layer: ItemType = {
               items: [
                 {
                   name: "Layer Via Copy",
-                  action: () => console.log("meow"),
+                  action: () => FeatureRequest("Menu/Layer/New/Layer Via Copy"),
                 },
                 {
                   name: "Layer Via Cut",
-                  action: () => console.log("meow"),
+                  action: () => FeatureRequest("Menu/Layer/New/Layer Via Cut"),
                 },
               ],
             },
@@ -65,15 +72,15 @@ export const layer: ItemType = {
         },
         {
           name: "Copy CSS",
-          action: () => console.log("meow"),
+          action: () => FeatureRequest("Menu/Layer/Copy CSS"),
         },
         {
           name: "Copy SVG",
-          action: () => console.log("meow"),
+          action: () => FeatureRequest("Menu/Layer/Copy SVG"),
         },
         {
           name: "Duplicate Layer...",
-          action: () => console.log("meow"),
+          action: () => FeatureRequest("Menu/Layer/Duplicate Layer..."),
         },
         {
           name: "Delete",
@@ -82,11 +89,12 @@ export const layer: ItemType = {
               items: [
                 {
                   name: "Layer",
-                  action: () => console.log("meow"),
+                  action: () => FeatureRequest("Menu/Layer/Delete/Layer"),
                 },
                 {
                   name: "Hidden Layers",
-                  action: () => console.log("meow"),
+                  action: () =>
+                    FeatureRequest("Menu/Layer/Delete/Hidden Layers"),
                 },
               ],
             },
@@ -98,11 +106,11 @@ export const layer: ItemType = {
       items: [
         {
           name: "Quick Export as PNG",
-          action: () => console.log("meow"),
+          action: () => FeatureRequest("Menu/Layer/Quick Export as PNG"),
         },
         {
           name: "Export As...",
-          action: () => console.log("meow"),
+          action: () => FeatureRequest("Menu/Layer/Export As..."),
         },
       ],
     },
@@ -110,7 +118,7 @@ export const layer: ItemType = {
       items: [
         {
           name: "Rename Layer...",
-          action: () => console.log("meow"),
+          action: () => FeatureRequest("Menu/Layer/Rename Layer..."),
         },
         {
           name: "Layer Style",
@@ -119,7 +127,8 @@ export const layer: ItemType = {
               items: [
                 {
                   name: "Blending Options...",
-                  action: () => console.log("meow"),
+                  action: () =>
+                    FeatureRequest("Menu/Layer/Layer Style/Blending Options"),
                 },
               ],
             },
@@ -127,43 +136,55 @@ export const layer: ItemType = {
               items: [
                 {
                   name: "Bevel & Emboss...",
-                  action: () => console.log("meow"),
+                  action: () =>
+                    FeatureRequest("Menu/Layer/Layer Style/Bevel & Emboss..."),
                 },
                 {
                   name: "Stroke...",
-                  action: () => console.log("meow"),
+                  action: () =>
+                    FeatureRequest("Menu/Layer/Layer Style/Stroke..."),
                 },
                 {
                   name: "Inner Shadow...",
-                  action: () => console.log("meow"),
+                  action: () =>
+                    FeatureRequest("Menu/Layer/Layer Style/Inner Shadow..."),
                 },
                 {
                   name: "Inner Glow...",
-                  action: () => console.log("meow"),
+                  action: () =>
+                    FeatureRequest("Menu/Layer/Layer Style/Inner Glow..."),
                 },
                 {
                   name: "Satin...",
-                  action: () => console.log("meow"),
+                  action: () =>
+                    FeatureRequest("Menu/Layer/Layer Style/Satin..."),
                 },
                 {
                   name: "Color Overlay..",
-                  action: () => console.log("meow"),
+                  action: () =>
+                    FeatureRequest("Menu/Layer/Layer Style/Color Overlay..."),
                 },
                 {
                   name: "Gradient Overlay...",
-                  action: () => console.log("meow"),
+                  action: () =>
+                    FeatureRequest(
+                      "Menu/Layer/Layer Style/Gradient Overlay..."
+                    ),
                 },
                 {
                   name: "Pattern Overlay...",
-                  action: () => console.log("meow"),
+                  action: () =>
+                    FeatureRequest("Menu/Layer/Layer Style/Pattern Overlay..."),
                 },
                 {
                   name: "Outer Glow...",
-                  action: () => console.log("meow"),
+                  action: () =>
+                    FeatureRequest("Menu/Layer/Layer Style/Outer Glow..."),
                 },
                 {
                   name: "Drop Shadow...",
-                  action: () => console.log("meow"),
+                  action: () =>
+                    FeatureRequest("Menu/Layer/Layer Style/Drop Shadow..."),
                 },
               ],
             },
@@ -171,15 +192,18 @@ export const layer: ItemType = {
               items: [
                 {
                   name: "Copy Layer Style",
-                  action: () => console.log("meow"),
+                  action: () =>
+                    FeatureRequest("Menu/Layer/Layer Style/Copy Layer Style"),
                 },
                 {
                   name: "Paste Layer Style",
-                  action: () => console.log("meow"),
+                  action: () =>
+                    FeatureRequest("Menu/Layer/Layer Style/Paste Layer Style"),
                 },
                 {
                   name: "Clear Layer Style",
-                  action: () => console.log("meow"),
+                  action: () =>
+                    FeatureRequest("Menu/Layer/Layer Style/Clear Layer Style"),
                 },
               ],
             },
@@ -187,19 +211,23 @@ export const layer: ItemType = {
               items: [
                 {
                   name: "Global Light...",
-                  action: () => console.log("meow"),
+                  action: () =>
+                    FeatureRequest("Menu/Layer/Layer Style/Global Light..."),
                 },
                 {
                   name: "Create Layer",
-                  action: () => console.log("meow"),
+                  action: () =>
+                    FeatureRequest("Menu/Layer/Layer Style/Create Layer"),
                 },
                 {
                   name: "Hide All Effects",
-                  action: () => console.log("meow"),
+                  action: () =>
+                    FeatureRequest("Menu/Layer/Layer Style/Hide All Effects"),
                 },
                 {
                   name: "Scale Effects...",
-                  action: () => console.log("meow"),
+                  action: () =>
+                    FeatureRequest("Menu/Layer/Layer Style/Scale Effects..."),
                 },
               ],
             },
@@ -208,7 +236,7 @@ export const layer: ItemType = {
         {
           name: "Smart Filter",
           itemSets: [],
-          action: () => console.log("meow"),
+          action: () => FeatureRequest("Menu/Layer/Smart Filter"),
         },
       ],
     },
@@ -221,15 +249,18 @@ export const layer: ItemType = {
               items: [
                 {
                   name: "Solid Color...",
-                  action: () => console.log("meow"),
+                  action: () =>
+                    FeatureRequest("Menu/Layer/New Fill Layer/Solid Color..."),
                 },
                 {
                   name: "Gradient...",
-                  action: () => console.log("meow"),
+                  action: () =>
+                    FeatureRequest("Menu/Layer/New Fill Layer/Gradient..."),
                 },
                 {
                   name: "Pattern..",
-                  action: () => console.log("meow"),
+                  action: () =>
+                    FeatureRequest("Menu/Layer/New Fill Layer/Pattern..."),
                 },
               ],
             },
@@ -242,19 +273,25 @@ export const layer: ItemType = {
               items: [
                 {
                   name: "Brightness/Contrast...",
-                  action: () => console.log("meow"),
+                  action: () =>
+                    FeatureRequest(
+                      "Menu/Layer/Adjustments/Brightness/Contrast..."
+                    ),
                 },
                 {
                   name: "Levels...",
-                  action: () => console.log("meow"),
+                  action: () =>
+                    FeatureRequest("Menu/Layer/Adjustments/Levels..."),
                 },
                 {
                   name: "Curves...",
-                  action: () => console.log("meow"),
+                  action: () =>
+                    FeatureRequest("Menu/Layer/Adjustments/Curves..."),
                 },
                 {
                   name: "Exposure...",
-                  action: () => console.log("meow"),
+                  action: () =>
+                    FeatureRequest("Menu/Layer/Adjustments/Exposure..."),
                 },
               ],
             },
@@ -262,31 +299,38 @@ export const layer: ItemType = {
               items: [
                 {
                   name: "Vibrance...",
-                  action: () => console.log("meow"),
+                  action: () =>
+                    FeatureRequest("Menu/Layer/Adjustments/Vibrance..."),
                 },
                 {
                   name: "Hue/Saturation...",
-                  action: () => console.log("meow"),
+                  action: () =>
+                    FeatureRequest("Menu/Layer/Adjustments/Hue/Saturation..."),
                 },
                 {
                   name: "Color Balance...",
-                  action: () => console.log("meow"),
+                  action: () =>
+                    FeatureRequest("Menu/Layer/Adjustments/Color Balance..."),
                 },
                 {
                   name: "Black & White...",
-                  action: () => console.log("meow"),
+                  action: () =>
+                    FeatureRequest("Menu/Layer/Adjustments/Black & White..."),
                 },
                 {
                   name: "Photo Filter...",
-                  action: () => console.log("meow"),
+                  action: () =>
+                    FeatureRequest("Menu/Layer/Adjustments/Photo Filter..."),
                 },
                 {
                   name: "Channel Mixer...",
-                  action: () => console.log("meow"),
+                  action: () =>
+                    FeatureRequest("Menu/Layer/Adjustments/Channel Mixer..."),
                 },
                 {
                   name: "Color Lookup...",
-                  action: () => console.log("meow"),
+                  action: () =>
+                    FeatureRequest("Menu/Layer/Adjustments/Color Lookup..."),
                 },
               ],
             },
@@ -294,23 +338,27 @@ export const layer: ItemType = {
               items: [
                 {
                   name: "Invert",
-                  action: () => console.log("meow"),
+                  action: () => FeatureRequest("Menu/Layer/Adjustments/Invert"),
                 },
                 {
                   name: "Posterize...",
-                  action: () => console.log("meow"),
+                  action: () =>
+                    FeatureRequest("Menu/Layer/Adjustments/Posterize..."),
                 },
                 {
                   name: "Threshold...",
-                  action: () => console.log("meow"),
+                  action: () =>
+                    FeatureRequest("Menu/Layer/Adjustments/Threshold..."),
                 },
                 {
                   name: "Gradient Map...",
-                  action: () => console.log("meow"),
+                  action: () =>
+                    FeatureRequest("Menu/Layer/Adjustments/Gradient Map..."),
                 },
                 {
                   name: "Selective Color...",
-                  action: () => console.log("meow"),
+                  action: () =>
+                    FeatureRequest("Menu/Layer/Adjustments/Selective Color..."),
                 },
               ],
             },
@@ -318,7 +366,7 @@ export const layer: ItemType = {
         },
         {
           name: "Layer Content Options...",
-          action: () => console.log("meow"),
+          action: () => FeatureRequest("Menu/Layer/Layer Content Options..."),
         },
       ],
     },
@@ -331,23 +379,28 @@ export const layer: ItemType = {
               items: [
                 {
                   name: "Reveal All",
-                  action: () => console.log("meow"),
+                  action: () =>
+                    FeatureRequest("Menu/Layer/Layer Mask/Reveal All"),
                 },
                 {
                   name: "Hide All",
-                  action: () => console.log("meow"),
+                  action: () =>
+                    FeatureRequest("Menu/Layer/Layer Mask/Hide All"),
                 },
                 {
                   name: "Reveal Selection",
-                  action: () => console.log("meow"),
+                  action: () =>
+                    FeatureRequest("Menu/Layer/Layer Mask/Reveal Selection"),
                 },
                 {
                   name: "Hide Selection",
-                  action: () => console.log("meow"),
+                  action: () =>
+                    FeatureRequest("Menu/Layer/Layer Mask/Hide Selection"),
                 },
                 {
                   name: "From Transparency",
-                  action: () => console.log("meow"),
+                  action: () =>
+                    FeatureRequest("Menu/Layer/Layer Mask/From Transparency"),
                 },
               ],
             },
@@ -355,11 +408,11 @@ export const layer: ItemType = {
               items: [
                 {
                   name: "Delete",
-                  action: () => console.log("meow"),
+                  action: () => FeatureRequest("Menu/Layer/Layer Mask/Delete"),
                 },
                 {
                   name: "Apply",
-                  action: () => console.log("meow"),
+                  action: () => FeatureRequest("Menu/Layer/Layer Mask/Apply"),
                 },
               ],
             },
@@ -367,11 +420,11 @@ export const layer: ItemType = {
               items: [
                 {
                   name: "Disable",
-                  action: () => console.log("meow"),
+                  action: () => FeatureRequest("Menu/Layer/Layer Mask/Disable"),
                 },
                 {
                   name: "Unlink",
-                  action: () => console.log("meow"),
+                  action: () => FeatureRequest("Menu/Layer/Layer Mask/Unlink"),
                 },
               ],
             },
@@ -384,15 +437,18 @@ export const layer: ItemType = {
               items: [
                 {
                   name: "Reveal All",
-                  action: () => console.log("meow"),
+                  action: () =>
+                    FeatureRequest("Menu/Layer/Vector Mask/Reveal All"),
                 },
                 {
                   name: "Hide All",
-                  action: () => console.log("meow"),
+                  action: () =>
+                    FeatureRequest("Menu/Layer/Vector Mask/Hide All"),
                 },
                 {
                   name: "Current Path",
-                  action: () => console.log("meow"),
+                  action: () =>
+                    FeatureRequest("Menu/Layer/Vector Mask/Current Path"),
                 },
               ],
             },
@@ -400,7 +456,7 @@ export const layer: ItemType = {
               items: [
                 {
                   name: "Delete",
-                  action: () => console.log("meow"),
+                  action: () => FeatureRequest("Menu/Layer/Vector Mask/Delete"),
                 },
               ],
             },
@@ -408,11 +464,11 @@ export const layer: ItemType = {
               items: [
                 {
                   name: "Enable",
-                  action: () => console.log("meow"),
+                  action: () => FeatureRequest("Menu/Layer/Vector Mask/Enable"),
                 },
                 {
                   name: "Link",
-                  action: () => console.log("meow"),
+                  action: () => FeatureRequest("Menu/Layer/Vector Mask/Link"),
                 },
               ],
             },
@@ -420,7 +476,7 @@ export const layer: ItemType = {
         },
         {
           name: "Create Clipping Mask",
-          action: () => console.log("meow"),
+          action: () => FeatureRequest("Menu/Layer/Create Clipping Mask"),
         },
       ],
     },
@@ -433,11 +489,17 @@ export const layer: ItemType = {
               items: [
                 {
                   name: "Convert to Smart Object",
-                  action: () => console.log("meow"),
+                  action: () =>
+                    FeatureRequest(
+                      "Menu/Layer/Smart Objects/Conver to Smart Object"
+                    ),
                 },
                 {
                   name: "New Smart Object via Copy",
-                  action: () => console.log("meow"),
+                  action: () =>
+                    FeatureRequest(
+                      "Menu/Layer/Smart Objects/New Smart Object via Copy"
+                    ),
                 },
               ],
             },
@@ -445,7 +507,8 @@ export const layer: ItemType = {
               items: [
                 {
                   name: "Reveal in Finder",
-                  action: () => console.log("meow"),
+                  action: () =>
+                    FeatureRequest("Menu/Layer/Smart Objects/Reveal in Finder"),
                 },
               ],
             },
@@ -453,11 +516,17 @@ export const layer: ItemType = {
               items: [
                 {
                   name: "Update Modified Content",
-                  action: () => console.log("meow"),
+                  action: () =>
+                    FeatureRequest(
+                      "Menu/Layer/Smart Objects/Update Modified Content"
+                    ),
                 },
                 {
                   name: "Update All Modified Content",
-                  action: () => console.log("meow"),
+                  action: () =>
+                    FeatureRequest(
+                      "Menu/Layer/Smart Objects/Update All Modified Content"
+                    ),
                 },
               ],
             },
@@ -465,23 +534,36 @@ export const layer: ItemType = {
               items: [
                 {
                   name: "Edit Contents",
-                  action: () => console.log("meow"),
+                  action: () =>
+                    FeatureRequest("Menu/Layer/Smart Objects/Edit Contents"),
                 },
                 {
                   name: "Relink to File...",
-                  action: () => console.log("meow"),
+                  action: () =>
+                    FeatureRequest(
+                      "Menu/Layer/Smart Objects/Relink to File..."
+                    ),
                 },
                 {
                   name: "Relink to Library Graphic...",
-                  action: () => console.log("meow"),
+                  action: () =>
+                    FeatureRequest(
+                      "Menu/Layer/Smart Objects/Relink to Library Graphic..."
+                    ),
                 },
                 {
                   name: "Replace Contents...",
-                  action: () => console.log("meow"),
+                  action: () =>
+                    FeatureRequest(
+                      "Menu/Layer/Smart Objects/Replace Contents..."
+                    ),
                 },
                 {
                   name: "Export Contents...",
-                  action: () => console.log("meow"),
+                  action: () =>
+                    FeatureRequest(
+                      "Menu/Layer/Smart Objects/Export Contents..."
+                    ),
                 },
               ],
             },
@@ -489,19 +571,25 @@ export const layer: ItemType = {
               items: [
                 {
                   name: "Embed Linked",
-                  action: () => console.log("meow"),
+                  action: () =>
+                    FeatureRequest("Menu/Layer/Smart Objects/Embed Linked"),
                 },
                 {
                   name: "Embed All Linked",
-                  action: () => console.log("meow"),
+                  action: () =>
+                    FeatureRequest("Menu/Layer/Smart Objects/Embed All Linked"),
                 },
                 {
                   name: "Convert to Linked...",
-                  action: () => console.log("meow"),
+                  action: () =>
+                    FeatureRequest(
+                      "Menu/Layer/Smart Objects/Convert to Linked..."
+                    ),
                 },
                 {
                   name: "Convert to Layers",
-                  action: () => console.log("meow"),
+                  action: () =>
+                    FeatureRequest("Menu/Layer/Smart Objects/Conver to Layers"),
                 },
               ],
             },
@@ -510,10 +598,13 @@ export const layer: ItemType = {
                 {
                   name: "Stack Mode",
                   itemSets: [],
+                  action: () =>
+                    FeatureRequest("Menu/Layer/Smart Objects/Stack Mode"),
                 },
                 {
                   name: "Rasterize",
-                  action: () => console.log("meow"),
+                  action: () =>
+                    FeatureRequest("Menu/Layer/Smart Objects/Rasterize"),
                 },
               ],
             },
@@ -526,7 +617,10 @@ export const layer: ItemType = {
               items: [
                 {
                   name: "New Video Layer from File...",
-                  action: () => console.log("meow"),
+                  action: () =>
+                    FeatureRequest(
+                      "Menu/Layer/Video Layers/New Video Layer from File..."
+                    ),
                 },
               ],
             },
@@ -534,19 +628,25 @@ export const layer: ItemType = {
               items: [
                 {
                   name: "New Blank Video Layer",
-                  action: () => console.log("meow"),
+                  action: () =>
+                    FeatureRequest(
+                      "Menu/Layer/Video Layers/New Blank Video Layer"
+                    ),
                 },
                 {
                   name: "Insert Blank Frame",
-                  action: () => console.log("meow"),
+                  action: () =>
+                    FeatureRequest("Menu/Layer/Video Layers/Inset Blank Frame"),
                 },
                 {
                   name: "Duplicate Frame",
-                  action: () => console.log("meow"),
+                  action: () =>
+                    FeatureRequest("Menu/Layer/Video Layers/Duplicate Frame"),
                 },
                 {
                   name: "Delete Frame",
-                  action: () => console.log("meow"),
+                  action: () =>
+                    FeatureRequest("Menu/Layer/Video Layers/Delete Frame"),
                 },
               ],
             },
@@ -554,11 +654,17 @@ export const layer: ItemType = {
               items: [
                 {
                   name: "Replace Footage...",
-                  action: () => console.log("meow"),
+                  action: () =>
+                    FeatureRequest(
+                      "Menu/Layer/Video Layers/Replace Footage..."
+                    ),
                 },
                 {
                   name: "Interpret Footage...",
-                  action: () => console.log("meow"),
+                  action: () =>
+                    FeatureRequest(
+                      "Menu/Layer/Video Layers/Interpret Footage..."
+                    ),
                 },
               ],
             },
@@ -566,7 +672,10 @@ export const layer: ItemType = {
               items: [
                 {
                   name: "Show Altered Video",
-                  action: () => console.log("meow"),
+                  action: () =>
+                    FeatureRequest(
+                      "Menu/Layer/Video Layers/Show Altered Video"
+                    ),
                 },
               ],
             },
@@ -574,11 +683,15 @@ export const layer: ItemType = {
               items: [
                 {
                   name: "Restore Frame",
-                  action: () => console.log("meow"),
+                  action: () =>
+                    FeatureRequest("Menu/Layer/Video Layers/Restore Frame"),
                 },
                 {
                   name: "Restore All Frames",
-                  action: () => console.log("meow"),
+                  action: () =>
+                    FeatureRequest(
+                      "Menu/Layer/Video Layers/Restore All Frames"
+                    ),
                 },
               ],
             },
@@ -586,7 +699,8 @@ export const layer: ItemType = {
               items: [
                 {
                   name: "Reload Frame",
-                  action: () => console.log("meow"),
+                  action: () =>
+                    FeatureRequest("Menu/Layer/Video Layers/Reload Frame"),
                 },
               ],
             },
@@ -594,7 +708,8 @@ export const layer: ItemType = {
               items: [
                 {
                   name: "Rasterize",
-                  action: () => console.log("meow"),
+                  action: () =>
+                    FeatureRequest("Menu/Layer/Video Layers/Rasterize"),
                 },
               ],
             },
@@ -602,8 +717,61 @@ export const layer: ItemType = {
         },
         {
           name: "Rasterize",
-          itemSets: [],
-          action: () => console.log("meow"),
+          itemSets: [
+            {
+              items: [
+                {
+                  name: "Type",
+                  action: () => FeatureRequest("Menu/Layer/Rasterize/Type"),
+                },
+                {
+                  name: "Shape",
+                  action: () => FeatureRequest("Menu/Layer/Rasterize/Shape"),
+                },
+                {
+                  name: "Fill Content",
+                  action: () =>
+                    FeatureRequest("Menu/Layer/Rasterize/Fill Content"),
+                },
+                {
+                  name: "Vector Mask",
+                  action: () =>
+                    FeatureRequest("Menu/Layer/Rasterize/Vector Mask"),
+                },
+                {
+                  name: "Smart Object",
+                  action: () =>
+                    FeatureRequest("Menu/Layer/Rasterize/Smart Object"),
+                },
+                {
+                  name: "Video",
+                  action: () => FeatureRequest("Menu/Layer/Rasterize/Video"),
+                },
+                {
+                  name: "3D",
+                  action: () => FeatureRequest("Menu/Layer/Rasterize/3D"),
+                },
+                {
+                  name: "Layer Style",
+                  action: () =>
+                    FeatureRequest("Menu/Layer/Rasterize/Layer Style"),
+                },
+              ],
+            },
+            {
+              items: [
+                {
+                  name: "Layer",
+                  action: () => FeatureRequest("Menu/Layer/Rasterize/Layer"),
+                },
+                {
+                  name: "All Layers",
+                  action: () =>
+                    FeatureRequest("Menu/Layer/Rasterize/All Layers"),
+                },
+              ],
+            },
+          ],
         },
       ],
     },
@@ -611,7 +779,7 @@ export const layer: ItemType = {
       items: [
         {
           name: "New Layer Based Slice",
-          action: () => console.log("meow"),
+          action: () => FeatureRequest("Menu/Layer/New Layer Based Slice"),
         },
       ],
     },
@@ -619,15 +787,15 @@ export const layer: ItemType = {
       items: [
         {
           name: "Group Layers",
-          action: () => console.log("meow"),
+          action: () => FeatureRequest("Menu/Layer/Group Layers"),
         },
         {
           name: "Ungroup Layers",
-          action: () => console.log("meow"),
+          action: () => FeatureRequest("Menu/Layer/Ungroup Layers"),
         },
         {
           name: "Hide Layers",
-          action: () => console.log("meow"),
+          action: () => FeatureRequest("Menu/Layer/Hide Layers"),
         },
       ],
     },
@@ -640,23 +808,27 @@ export const layer: ItemType = {
               items: [
                 {
                   name: "Bring to Front",
-                  action: () => console.log("meow"),
+                  action: () =>
+                    FeatureRequest("Menu/Layer/Arrange/Bring to Front"),
                 },
                 {
                   name: "Bring Forward",
-                  action: () => console.log("meow"),
+                  action: () =>
+                    FeatureRequest("Menu/Layer/Arrange/Bring Forward"),
                 },
                 {
                   name: "Send Backward",
-                  action: () => console.log("meow"),
+                  action: () =>
+                    FeatureRequest("Menu/Layer/Arrange/Send Backward"),
                 },
                 {
                   name: "Send to Back",
-                  action: () => console.log("meow"),
+                  action: () =>
+                    FeatureRequest("Menu/Layer/Arrange/Send to Back"),
                 },
                 {
                   name: "Reverse",
-                  action: () => console.log("meow"),
+                  action: () => FeatureRequest("Menu/Layer/Arrange/Reverse"),
                 },
               ],
             },
@@ -665,7 +837,7 @@ export const layer: ItemType = {
         {
           name: "Combine Shapes",
           itemSets: [],
-          action: () => console.log("meow"),
+          action: () => FeatureRequest("Menu/Layer/Combine Shapes"),
         },
       ],
     },
@@ -674,12 +846,12 @@ export const layer: ItemType = {
         {
           name: "Align",
           itemSets: [],
-          action: () => console.log("meow"),
+          action: () => FeatureRequest("Menu/Layer/Align"),
         },
         {
           name: "Distribute",
           itemSets: [],
-          action: () => console.log("meow"),
+          action: () => FeatureRequest("Menu/Layer/Distribute"),
         },
       ],
     },
@@ -687,7 +859,7 @@ export const layer: ItemType = {
       items: [
         {
           name: "Lock Layers...",
-          action: () => console.log("meow"),
+          action: () => FeatureRequest("Menu/Layer/Lock Layers..."),
         },
       ],
     },
@@ -695,11 +867,11 @@ export const layer: ItemType = {
       items: [
         {
           name: "Link Layers",
-          action: () => console.log("meow"),
+          action: () => FeatureRequest("Menu/Layer/Link Layers"),
         },
         {
           name: "Select Linked Layers",
-          action: () => console.log("meow"),
+          action: () => FeatureRequest("Menu/Layer/Select Linked Layers"),
         },
       ],
     },
@@ -707,15 +879,15 @@ export const layer: ItemType = {
       items: [
         {
           name: "Merge Down",
-          action: () => console.log("meow"),
+          action: () => FeatureRequest("Menu/Layer/Merge Down"),
         },
         {
           name: "Merge Visible",
-          action: () => console.log("meow"),
+          action: () => FeatureRequest("Menu/Layer/Merge Visible"),
         },
         {
           name: "Flatten Image",
-          action: () => console.log("meow"),
+          action: () => FeatureRequest("Menu/Layer/Flatten Image"),
         },
       ],
     },
@@ -728,19 +900,23 @@ export const layer: ItemType = {
               items: [
                 {
                   name: "Color Decontaminate...",
-                  action: () => console.log("meow"),
+                  action: () =>
+                    FeatureRequest("Menu/Layer/Matting/Color Decontaminate..."),
                 },
                 {
                   name: "Defringe...",
-                  action: () => console.log("meow"),
+                  action: () =>
+                    FeatureRequest("Menu/Layer/Matting/Defringe..."),
                 },
                 {
                   name: "Remove Black Matte",
-                  action: () => console.log("meow"),
+                  action: () =>
+                    FeatureRequest("Menu/Layer/Matting/Remove Black Matte"),
                 },
                 {
                   name: "Remove White Matte",
-                  action: () => console.log("meow"),
+                  action: () =>
+                    FeatureRequest("Menu/Layer/Matting/Remove White Matte"),
                 },
               ],
             },
