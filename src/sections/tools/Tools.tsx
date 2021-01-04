@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
+import { FeatureRequest } from "../../services/AnalyticsService";
 import Expandable from "../../shared/Expandable";
 
 const StyledTools = styled.div`
@@ -20,7 +21,7 @@ const Tools = () => {
 
   return (
     <StyledTools>
-      <Expandable open={open} toggle={() => setOpen(!open)} />
+      <Expandable open={open} toggle={() => FeatureRequest("Tools/Expand")} />
     </StyledTools>
   );
 };
