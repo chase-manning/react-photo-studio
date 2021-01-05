@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { FeatureRequest } from "../../services/AnalyticsService";
 import Expandable from "../../shared/Expandable";
 import Handle from "../../shared/Handle";
+import Tool from "./Tool";
 
 const StyledTools = styled.div`
   height: 100%;
@@ -26,6 +27,7 @@ const Tools = () => {
       <Expandable open={false} toggle={() => FeatureRequest("Tools/Expand")} />
       <Container>
         <Handle />
+        <Tool />
       </Container>
     </StyledTools>
   );
