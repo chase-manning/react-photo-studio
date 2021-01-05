@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { tools, ToolCollection } from "../sections/tools/Tools";
+import { tools, ToolCollection } from "../sections/tools/toolSchema";
 import { RootState } from "./store";
 
 export enum ToolOption {
