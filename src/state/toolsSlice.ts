@@ -1,8 +1,10 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { stat } from "fs";
 import {
   tools,
   ToolCollection,
   ToolOption,
+  ToolType,
 } from "../sections/tools/toolSchema";
 import { RootState } from "./store";
 
@@ -19,7 +21,16 @@ export const toolsSlice = createSlice({
   initialState,
   reducers: {
     setActiveTool: (state, action: PayloadAction<ToolOption>) => {
-      state.schema = state.schema;
+      for (let i = 0; i < state.schema.length; i++) {
+        const options = state.schema[i].tools;
+        const optionTypes = options.map((tool: ToolType) => tool.option);
+        const containsToolOption = optionTypes.indexOf(action.payload) > -1;
+        state.schema[i].active = containsToolOption;
+
+        for (let j = 0; j < options.length; j++) {
+          options[j].selected = options[j].option === action.payload;
+        }
+      }
     },
   },
 });
