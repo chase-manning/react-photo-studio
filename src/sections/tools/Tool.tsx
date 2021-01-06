@@ -1,37 +1,49 @@
 import React from "react";
 import styled from "styled-components";
+import { ToolCollection, ToolType } from "./toolSchema";
 
 const StyledTool = styled.div`
-  width: 2.4rem;
+  width: 100%;
   height: 2rem;
+  padding: 0 0.2rem;
 `;
 
-type MenuItemProps = {
+type ToolButtonProps = {
   open: boolean;
 };
 
-const MenuItemButton = styled.button`
+const ToolButton = styled.button`
   height: 100%;
-  padding: 0 1rem;
+  width: 100%;
   color: var(--text);
   font-size: 1.3rem;
   display: flex;
   align-items: center;
+  justify-content: center;
+  border-radius: 0.2rem;
 
-  background-color: ${(props: MenuItemProps) =>
+  background-color: ${(props: ToolButtonProps) =>
     props.open ? "var(--selected)" : "var(--panel)"};
   border: solid 1px
-    ${(props: MenuItemProps) =>
+    ${(props: ToolButtonProps) =>
       props.open ? "var(--hover-border)" : "var(--panel)"};
   :hover {
-    background-color: ${(props: MenuItemProps) =>
+    background-color: ${(props: ToolButtonProps) =>
       props.open ? "var(--selected)" : "var(--hover-bg)"};
     border: solid 1px var(--hover-border);
   }
 `;
 
-const Tool = () => {
-  return <StyledTool></StyledTool>;
+type Props = {
+  collection: ToolCollection;
+};
+
+const Tool = (props: Props) => {
+  return (
+    <StyledTool>
+      <ToolButton open={props.collection.active}>Hi</ToolButton>
+    </StyledTool>
+  );
 };
 
 export default Tool;
