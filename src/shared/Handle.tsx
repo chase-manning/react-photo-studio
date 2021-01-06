@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { FeatureRequest } from "../services/AnalyticsService";
 
 const StyledHandle = styled.button`
   width: 100%;
@@ -23,7 +24,7 @@ const Line = styled.div`
 
 const Handle = () => {
   return (
-    <StyledHandle>
+    <StyledHandle onClick={() => FeatureRequest("Tools/Handle")}>
       <Lines>
         <Line />
         <Line />
