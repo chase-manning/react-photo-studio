@@ -1,9 +1,12 @@
 import React from "react";
+import { useSelector } from "react-redux";
 import styled from "styled-components";
 import { FeatureRequest } from "../../services/AnalyticsService";
 import Expandable from "../../shared/Expandable";
 import Handle from "../../shared/Handle";
+import { selectTools } from "../../state/toolsSlice";
 import Tool from "./Tool";
+import { ToolCollection } from "./toolSchema";
 
 const StyledTools = styled.div`
   height: 100%;
@@ -22,12 +25,16 @@ const Container = styled.div`
 `;
 
 const Tools = () => {
+  const tools = useSelector(selectTools);
+
   return (
     <StyledTools>
       <Expandable open={false} toggle={() => FeatureRequest("Tools/Expand")} />
       <Container>
         <Handle />
-        <Tool />
+        {tools.map((tool: ToolCollection) => (
+          <Tool collection={tool} />
+        ))}
       </Container>
     </StyledTools>
   );
