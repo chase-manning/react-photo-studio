@@ -24,6 +24,13 @@ const Container = styled.div`
   flex-direction: column;
 `;
 
+const ToolsContainer = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-top: 0.7rem;
+`;
+
 const Tools = () => {
   const tools = useSelector(selectTools);
 
@@ -32,9 +39,11 @@ const Tools = () => {
       <Expandable open={false} toggle={() => FeatureRequest("Tools/Expand")} />
       <Container>
         <Handle />
-        {tools.map((tool: ToolCollection) => (
-          <Tool collection={tool} />
-        ))}
+        <ToolsContainer>
+          {tools.map((tool: ToolCollection) => (
+            <Tool collection={tool} />
+          ))}
+        </ToolsContainer>
       </Container>
     </StyledTools>
   );
