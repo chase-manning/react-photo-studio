@@ -1,6 +1,8 @@
 import React from "react";
+import { useDispatch } from "react-redux";
 import styled from "styled-components";
-import { ToolCollection, ToolType } from "./toolSchema";
+import { selectTools, setActiveTool } from "../../state/toolsSlice";
+import { ToolCollection, ToolOption, ToolType } from "./toolSchema";
 
 const StyledTool = styled.div`
   width: 100%;
@@ -39,9 +41,19 @@ type Props = {
 };
 
 const Tool = (props: Props) => {
+  const dispatch = useDispatch();
+  const tool = props.collection.tools.filter(
+    (tool: ToolType) => tool.selected
+  )[0];
+
   return (
     <StyledTool>
-      <ToolButton open={props.collection.active}>Hi</ToolButton>
+      <ToolButton
+        onClick={() => dispatch(setActiveTool(tool.option))}
+        open={props.collection.active}
+      >
+        Hi
+      </ToolButton>
     </StyledTool>
   );
 };
