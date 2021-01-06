@@ -68,7 +68,7 @@ export enum ToolOption {
 
 export type ToolType = {
   option: ToolOption;
-  active: boolean;
+  selected: boolean;
 };
 
 export type ToolCollection = {
@@ -82,7 +82,7 @@ export const tools: ToolCollection[] = [
     tools: [
       {
         option: ToolOption.MOVE,
-        active: false,
+        selected: false,
       },
     ],
   },
