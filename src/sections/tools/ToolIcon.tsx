@@ -8,6 +8,7 @@ import magicWand from "../../assets/svgs/tools/magic-wand.svg";
 import crop from "../../assets/svgs/tools/crop.svg";
 import frame from "../../assets/svgs/tools/frame.svg";
 import eyedropper from "../../assets/svgs/tools/eyedropper.svg";
+import spotHealingBrush from "../../assets/svgs/tools/spot-healing-brush.svg";
 
 const StyledToolIcon = styled.img`
   height: 100%;
@@ -29,6 +30,8 @@ const GetIcon = (option: ToolOption): string => {
       return frame;
     case ToolOption.EYEDROPPER:
       return eyedropper;
+    case ToolOption.SPOT_HEALING_BRUSH:
+      return spotHealingBrush;
     default:
       return "";
   }
