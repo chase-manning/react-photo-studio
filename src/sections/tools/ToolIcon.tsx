@@ -5,6 +5,7 @@ import move from "../../assets/svgs/tools/move.svg";
 import rectangularMarquee from "../../assets/svgs/tools/rectangular-marquee.svg";
 import lasso from "../../assets/svgs/tools/lasso.svg";
 import magicWand from "../../assets/svgs/tools/magic-wand.svg";
+import crop from "../../assets/svgs/tools/crop.svg";
 
 const StyledToolIcon = styled.img`
   height: 100%;
@@ -20,6 +21,8 @@ const GetIcon = (option: ToolOption): string => {
       return lasso;
     case ToolOption.MAGIC_WAND:
       return magicWand;
+    case ToolOption.CROP:
+      return crop;
     default:
       return "";
   }
