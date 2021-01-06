@@ -24,6 +24,7 @@ const ToolButton = styled.button`
   align-items: center;
   justify-content: center;
   border-radius: 0.2rem;
+  padding: 0.2rem;
 
   background-color: ${(props: ToolButtonProps) =>
     props.open ? "var(--selected)" : "var(--panel)"};
