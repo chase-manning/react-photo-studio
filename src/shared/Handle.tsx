@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-const StyledHandle = styled.div`
+const StyledHandle = styled.button`
   width: 100%;
   height: 1rem;
   display: flex;
