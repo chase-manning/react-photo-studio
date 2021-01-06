@@ -7,6 +7,7 @@ import lasso from "../../assets/svgs/tools/lasso.svg";
 import magicWand from "../../assets/svgs/tools/magic-wand.svg";
 import crop from "../../assets/svgs/tools/crop.svg";
 import frame from "../../assets/svgs/tools/frame.svg";
+import eyedropper from "../../assets/svgs/tools/eyedropper.svg";
 
 const StyledToolIcon = styled.img`
   height: 100%;
@@ -26,6 +27,8 @@ const GetIcon = (option: ToolOption): string => {
       return crop;
     case ToolOption.FRAME:
       return frame;
+    case ToolOption.EYEDROPPER:
+      return eyedropper;
     default:
       return "";
   }
