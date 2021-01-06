@@ -1,8 +1,9 @@
 import React from "react";
 import { useDispatch } from "react-redux";
 import styled from "styled-components";
-import { selectTools, setActiveTool } from "../../state/toolsSlice";
-import { ToolCollection, ToolOption, ToolType } from "./toolSchema";
+import { setActiveTool } from "../../state/toolsSlice";
+import ToolIcon from "./ToolIcon";
+import { ToolCollection, ToolType } from "./toolSchema";
 
 const StyledTool = styled.div`
   width: 100%;
@@ -52,7 +53,7 @@ const Tool = (props: Props) => {
         onClick={() => dispatch(setActiveTool(tool.option))}
         open={props.collection.active}
       >
-        Hi
+        <ToolIcon option={tool.option} />
       </ToolButton>
     </StyledTool>
   );
