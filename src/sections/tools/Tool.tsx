@@ -4,7 +4,7 @@ import { ToolCollection, ToolType } from "./toolSchema";
 
 const StyledTool = styled.div`
   width: 100%;
-  height: 2rem;
+  height: 2.7rem;
   padding: 0 0.2rem;
 `;
 
