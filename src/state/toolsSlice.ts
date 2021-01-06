@@ -27,9 +27,9 @@ export const toolsSlice = createSlice({
         const containsToolOption = optionTypes.indexOf(action.payload) > -1;
         state.schema[i].active = containsToolOption;
 
-        for (let j = 0; j < options.length; j++) {
-          options[j].selected = options[j].option === action.payload;
-        }
+        if (containsToolOption)
+          for (let j = 0; j < options.length; j++)
+            options[j].selected = options[j].option === action.payload;
       }
     },
   },
