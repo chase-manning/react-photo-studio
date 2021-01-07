@@ -47,8 +47,8 @@ export const toolsSlice = createSlice({
       state.secondaryColor = pc;
     },
     setDefaultColors: (state) => {
-      state.primaryColor = "red";
-      state.secondaryColor = "blue";
+      state.primaryColor = "black";
+      state.secondaryColor = "white";
     },
   },
 });
