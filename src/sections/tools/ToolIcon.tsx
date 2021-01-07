@@ -19,6 +19,7 @@ import dodge from "../../assets/svgs/tools/dodge.svg";
 import pen from "../../assets/svgs/tools/pen.svg";
 import type from "../../assets/svgs/tools/type.svg";
 import pathSelection from "../../assets/svgs/tools/path-selection.svg";
+import rectangle from "../../assets/svgs/tools/rectangle.svg";
 
 const StyledToolIcon = styled.img`
   height: 100%;
@@ -62,6 +63,8 @@ const GetIcon = (option: ToolOption): string => {
       return type;
     case ToolOption.PATH_SELECTION:
       return pathSelection;
+    case ToolOption.RECTANGLE:
+      return rectangle;
     default:
       return "";
   }
