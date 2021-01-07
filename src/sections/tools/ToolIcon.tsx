@@ -14,6 +14,7 @@ import cloneStamp from "../../assets/svgs/tools/clone-stamp.svg";
 import historyBrush from "../../assets/svgs/tools/history-brush.svg";
 import eraser from "../../assets/svgs/tools/eraser.svg";
 import gradient from "../../assets/svgs/tools/gradient.svg";
+import blur from "../../assets/svgs/tools/blur.svg";
 
 const StyledToolIcon = styled.img`
   height: 100%;
@@ -47,6 +48,8 @@ const GetIcon = (option: ToolOption): string => {
       return eraser;
     case ToolOption.GRADIENT:
       return gradient;
+    case ToolOption.BLUR:
+      return blur;
     default:
       return "";
   }
