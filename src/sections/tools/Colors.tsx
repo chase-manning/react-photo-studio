@@ -1,6 +1,7 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import styled from "styled-components";
+import { FeatureRequest } from "../../services/AnalyticsService";
 import {
   selectPrimaryColor,
   selectSecondaryColor,
@@ -39,7 +40,7 @@ type SquareProps = {
   color: string;
 };
 
-const Square = styled.div`
+const Square = styled.button`
   position: absolute;
   width: 1.9rem;
   height: 1.9rem;
@@ -72,8 +73,14 @@ const Colors = () => {
       </Buttons>
 
       <Squares>
-        <SecondarySquare color={secondaryColor} />
-        <PrimarySqaure color={primaryColor} />
+        <SecondarySquare
+          onClick={() => FeatureRequest("Tools/Set Primary Color")}
+          color={secondaryColor}
+        />
+        <PrimarySqaure
+          onClick={() => FeatureRequest("Tools/Set Secondary Color")}
+          color={primaryColor}
+        />
       </Squares>
     </StyledColors>
   );
