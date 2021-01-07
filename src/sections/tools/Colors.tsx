@@ -10,7 +10,7 @@ const StyledColors = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
-  margin: 0.3rem;
+  margin: 0.4rem;
 `;
 
 const Buttons = styled.div`
@@ -31,8 +31,8 @@ const Button = styled.div`
 
 const Squares = styled.div`
   position: relative;
-  width: 3.2rem;
-  height: 3.1rem;
+  width: 3rem;
+  height: 3rem;
 `;
 
 type SquareProps = {
@@ -41,21 +41,21 @@ type SquareProps = {
 
 const Square = styled.div`
   position: absolute;
-  width: 2.1rem;
-  height: 2.1rem;
+  width: 1.9rem;
+  height: 1.9rem;
   border: solid 0.1rem white;
   box-shadow: 0 0 0 0.1rem var(--color-border);
   background-color: ${(props: SquareProps) => props.color};
 `;
 
 const PrimarySqaure = styled(Square)`
-  margin-bottom: 1rem;
+  margin-bottom: 1.1rem;
   left: 0;
   top: 0;
 `;
 
 const SecondarySquare = styled(Square)`
-  margin-top: 1rem;
+  margin-top: 1.1rem;
   right: 0;
   bottom: 0;
 `;
