@@ -9,10 +9,14 @@ import { RootState } from "./store";
 
 export interface SettingsState {
   schema: ToolCollection[];
+  primaryColor: string;
+  secondaryColor: string;
 }
 
 const initialState: SettingsState = {
   schema: tools,
+  primaryColor: "red",
+  secondaryColor: "blue",
 };
 
 export const toolsSlice = createSlice({
@@ -31,11 +35,35 @@ export const toolsSlice = createSlice({
             options[j].selected = options[j].option === action.payload;
       }
     },
+    setPrimaryColor: (state, action: PayloadAction<string>) => {
+      state.primaryColor = action.payload;
+    },
+    setSecondaryColor: (state, action: PayloadAction<string>) => {
+      state.secondaryColor = action.payload;
+    },
+    swapColors: (state) => {
+      state.secondaryColor = state.primaryColor;
+      state.primaryColor = state.secondaryColor;
+    },
+    setDefaultColors: (state) => {
+      state.secondaryColor = "red";
+      state.secondaryColor = "blue";
+    },
   },
 });
 
-export const { setActiveTool } = toolsSlice.actions;
+export const {
+  setActiveTool,
+  setPrimaryColor,
+  setSecondaryColor,
+  swapColors,
+  setDefaultColors,
+} = toolsSlice.actions;
 
 export const selectTools = (state: RootState) => state.tools.schema;
+export const selectPrimaryColor = (state: RootState) =>
+  state.tools.primaryColor;
+export const selectSecondaryColor = (state: RootState) =>
+  state.tools.secondaryColor;
 
 export default toolsSlice.reducer;
