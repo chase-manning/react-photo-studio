@@ -72,8 +72,8 @@ const Colors = () => {
       </Buttons>
 
       <Squares>
-        <PrimarySqaure color={primaryColor} />
         <SecondarySquare color={secondaryColor} />
+        <PrimarySqaure color={primaryColor} />
       </Squares>
     </StyledColors>
   );
