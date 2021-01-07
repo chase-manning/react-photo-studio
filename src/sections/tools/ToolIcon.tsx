@@ -17,6 +17,7 @@ import gradient from "../../assets/svgs/tools/gradient.svg";
 import blur from "../../assets/svgs/tools/blur.svg";
 import dodge from "../../assets/svgs/tools/dodge.svg";
 import pen from "../../assets/svgs/tools/pen.svg";
+import type from "../../assets/svgs/tools/type.svg";
 
 const StyledToolIcon = styled.img`
   height: 100%;
@@ -56,6 +57,8 @@ const GetIcon = (option: ToolOption): string => {
       return dodge;
     case ToolOption.PEN:
       return pen;
+    case ToolOption.HORIZONTAL_TYPE:
+      return type;
     default:
       return "";
   }
