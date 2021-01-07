@@ -8,7 +8,7 @@ import {
 
 const StyledColors = styled.div`
   width: 100%;
-  margin-top: 1rem;
+  margin-top: 0.3rem;
   display: flex;
   flex-direction: column;
 `;
