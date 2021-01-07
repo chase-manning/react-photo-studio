@@ -21,7 +21,7 @@ const Buttons = styled.div`
   width: 100%;
   display: flex;
   justify-content: space-between;
-  margin-bottom: 0.2rem;
+  margin-bottom: 0.3rem;
 `;
 
 const Button = styled.button`
