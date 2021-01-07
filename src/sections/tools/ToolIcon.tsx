@@ -15,6 +15,7 @@ import historyBrush from "../../assets/svgs/tools/history-brush.svg";
 import eraser from "../../assets/svgs/tools/eraser.svg";
 import gradient from "../../assets/svgs/tools/gradient.svg";
 import blur from "../../assets/svgs/tools/blur.svg";
+import dodge from "../../assets/svgs/tools/dodge.svg";
 
 const StyledToolIcon = styled.img`
   height: 100%;
@@ -50,6 +51,8 @@ const GetIcon = (option: ToolOption): string => {
       return gradient;
     case ToolOption.BLUR:
       return blur;
+    case ToolOption.DODGE:
+      return dodge;
     default:
       return "";
   }
