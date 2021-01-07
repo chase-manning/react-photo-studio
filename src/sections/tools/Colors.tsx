@@ -8,26 +8,31 @@ import {
 
 const StyledColors = styled.div`
   width: 100%;
-  margin-top: 0.3rem;
   display: flex;
   flex-direction: column;
+  margin: 0.3rem;
 `;
 
 const Buttons = styled.div`
   width: 100%;
   display: flex;
   justify-content: space-between;
+  margin-bottom: 0.2rem;
 `;
 
 const Button = styled.div`
   width: 50%;
   padding: 0.2rem;
   color: var(--icon);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
 
 const Squares = styled.div`
-  width: 100%;
   position: relative;
+  width: 3.2rem;
+  height: 3.1rem;
 `;
 
 type SquareProps = {
@@ -35,21 +40,22 @@ type SquareProps = {
 };
 
 const Square = styled.div`
-  width: 3rem;
-  height: 3rem;
-  border: solid 2px white;
+  position: absolute;
+  width: 2.1rem;
+  height: 2.1rem;
+  border: solid 0.1rem white;
   box-shadow: 0 0 0 0.1rem black;
   background-color: ${(props: SquareProps) => props.color};
 `;
 
 const PrimarySqaure = styled(Square)`
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
   left: 0;
   top: 0;
 `;
 
 const SecondarySquare = styled(Square)`
-  margin-top: 1.5rem;
+  margin-top: 1rem;
   right: 0;
   bottom: 0;
 `;
