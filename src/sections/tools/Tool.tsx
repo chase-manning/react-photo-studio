@@ -5,6 +5,7 @@ import { setActiveTool } from "../../state/toolsSlice";
 import ToolIcon from "./ToolIcon";
 import { ToolCollection, ToolType } from "./toolSchema";
 import { ReactComponent as ArrowIcon } from "../../assets/svgs/navigation/triangle-right.svg";
+import { FeatureRequest } from "../../services/AnalyticsService";
 
 const StyledTool = styled.div`
   width: 100%;
@@ -62,7 +63,10 @@ const Tool = (props: Props) => {
   return (
     <StyledTool>
       <ToolButton
-        onClick={() => dispatch(setActiveTool(tool.option))}
+        onClick={() => {
+          if (tool.implemented) dispatch(setActiveTool(tool.option));
+          else FeatureRequest("Tools/" + tool.name);
+        }}
         open={props.collection.active}
       >
         <ToolIcon option={tool.option} />
