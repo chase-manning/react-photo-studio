@@ -68,7 +68,6 @@ export enum ToolOption {
   HAND,
   ROTATE_VIEW,
   ZOOM,
-  EDIT_TOOLBAR,
 }
 
 export type ToolType = {
@@ -459,15 +458,6 @@ export const tools: ToolCollection[] = [
     tools: [
       {
         option: ToolOption.ZOOM,
-        selected: true,
-      },
-    ],
-  },
-  {
-    active: false,
-    tools: [
-      {
-        option: ToolOption.EDIT_TOOLBAR,
         selected: true,
       },
     ],
