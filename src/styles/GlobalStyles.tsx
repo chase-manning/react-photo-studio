@@ -14,6 +14,7 @@ const GlobalStyle = createGlobalStyle`
         --context-hover: #6b6b6b;
         --disabled: #878787;
         --expandable: #424242;
+        --color-border: #363636;
     }
   
     * {
