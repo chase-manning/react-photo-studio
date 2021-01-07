@@ -21,6 +21,7 @@ import type from "../../assets/svgs/tools/type.svg";
 import pathSelection from "../../assets/svgs/tools/path-selection.svg";
 import rectangle from "../../assets/svgs/tools/rectangle.svg";
 import hand from "../../assets/svgs/tools/hand.svg";
+import zoom from "../../assets/svgs/tools/zoom.svg";
 
 const StyledToolIcon = styled.img`
   height: 100%;
@@ -68,6 +69,8 @@ const GetIcon = (option: ToolOption): string => {
       return rectangle;
     case ToolOption.HAND:
       return hand;
+    case ToolOption.ZOOM:
+      return zoom;
     default:
       return "";
   }
