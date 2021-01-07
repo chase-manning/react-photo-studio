@@ -26,8 +26,8 @@ const Buttons = styled.div`
 `;
 
 const Button = styled.button`
-  width: 50%;
-  padding: 0.2rem;
+  width: 38%;
+  padding: 0.2rem 0;
   color: var(--icon);
   display: flex;
   justify-content: center;
