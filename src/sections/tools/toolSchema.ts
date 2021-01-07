@@ -71,6 +71,7 @@ export enum ToolOption {
 }
 
 export type ToolType = {
+  name: string;
   option: ToolOption;
   selected: boolean;
   implemented: boolean;
@@ -86,11 +87,13 @@ export const tools: ToolCollection[] = [
     active: false,
     tools: [
       {
+        name: "Move Tool",
         option: ToolOption.MOVE,
         selected: true,
         implemented: false,
       },
       {
+        name: "Artboard Tool",
         option: ToolOption.ARTBOARD,
         selected: false,
         implemented: false,
@@ -101,21 +104,25 @@ export const tools: ToolCollection[] = [
     active: false,
     tools: [
       {
+        name: "Rectangular Marquee Tool",
         option: ToolOption.RECTANGULAR_MARQUEE,
         selected: true,
         implemented: false,
       },
       {
+        name: "Elliptical Marquee Tool",
         option: ToolOption.ELLIPTICAL_MARQUEE,
         selected: false,
         implemented: false,
       },
       {
+        name: "Single Row Marquee Tool",
         option: ToolOption.SINGLE_ROW_MARQUEE,
         selected: false,
         implemented: false,
       },
       {
+        name: "Single Column Marquee Tool",
         option: ToolOption.SINGLE_COLUMN_MARQUEE,
         selected: false,
         implemented: false,
@@ -126,16 +133,19 @@ export const tools: ToolCollection[] = [
     active: false,
     tools: [
       {
+        name: "Lasso Tool",
         option: ToolOption.LASSO,
         selected: true,
         implemented: false,
       },
       {
+        name: "Polygonal Lasso Tool",
         option: ToolOption.POYGONAL_LASSO,
         selected: false,
         implemented: false,
       },
       {
+        name: "Magnetic Lasso Tool",
         option: ToolOption.MAGNETIC_LASSO,
         selected: false,
         implemented: false,
@@ -146,16 +156,19 @@ export const tools: ToolCollection[] = [
     active: false,
     tools: [
       {
+        name: "Object Selection Tool",
         option: ToolOption.OBJECT_SELECTION,
         selected: false,
         implemented: false,
       },
       {
+        name: "Quick Selection Tool",
         option: ToolOption.QUICK_SELECTION,
         selected: false,
         implemented: false,
       },
       {
+        name: "Magic Wand Tool",
         option: ToolOption.MAGIC_WAND,
         selected: true,
         implemented: false,
@@ -166,21 +179,25 @@ export const tools: ToolCollection[] = [
     active: false,
     tools: [
       {
+        name: "Crop Tool",
         option: ToolOption.CROP,
         selected: true,
         implemented: false,
       },
       {
+        name: "Perspective Crop Tool",
         option: ToolOption.PERSPECTIVE_CROP,
         selected: false,
         implemented: false,
       },
       {
+        name: "Slice Tool",
         option: ToolOption.SLICE,
         selected: false,
         implemented: false,
       },
       {
+        name: "Slice Select Tool",
         option: ToolOption.SLICE_SELECT,
         selected: false,
         implemented: false,
@@ -191,6 +208,7 @@ export const tools: ToolCollection[] = [
     active: false,
     tools: [
       {
+        name: "Frame Tool",
         option: ToolOption.FRAME,
         selected: true,
         implemented: false,
@@ -201,31 +219,37 @@ export const tools: ToolCollection[] = [
     active: false,
     tools: [
       {
+        name: "Eyedropper Tool",
         option: ToolOption.EYEDROPPER,
         selected: true,
         implemented: false,
       },
       {
+        name: "3D Material Eyedropper Tool",
         option: ToolOption.THREE_D_MATERIAL_EYEDROPPER,
         selected: false,
         implemented: false,
       },
       {
+        name: "Color Sampler Tool",
         option: ToolOption.COLOR_SAMPLER,
         selected: false,
         implemented: false,
       },
       {
+        name: "Ruler Tool",
         option: ToolOption.RULER,
         selected: false,
         implemented: false,
       },
       {
+        name: "Note Tool",
         option: ToolOption.NOTE,
         selected: false,
         implemented: false,
       },
       {
+        name: "Count Tool",
         option: ToolOption.COUNT,
         selected: false,
         implemented: false,
@@ -236,26 +260,31 @@ export const tools: ToolCollection[] = [
     active: false,
     tools: [
       {
+        name: "Spot Healing Brush Tool",
         option: ToolOption.SPOT_HEALING_BRUSH,
         selected: true,
         implemented: false,
       },
       {
+        name: "Healing Brush Tool",
         option: ToolOption.HEALING_BRUSH,
         selected: false,
         implemented: false,
       },
       {
+        name: "Patch Tool",
         option: ToolOption.PATCH,
         selected: false,
         implemented: false,
       },
       {
+        name: "Content Aware Move Tool",
         option: ToolOption.CONTENT_AWARE_MOVE,
         selected: false,
         implemented: false,
       },
       {
+        name: "Red Eye Tool",
         option: ToolOption.RED_EYE,
         selected: false,
         implemented: false,
@@ -266,21 +295,25 @@ export const tools: ToolCollection[] = [
     active: true,
     tools: [
       {
+        name: "Brush Tool",
         option: ToolOption.BRUSH,
         selected: true,
         implemented: false,
       },
       {
+        name: "Pencil Tool",
         option: ToolOption.PENCIL,
         selected: false,
         implemented: false,
       },
       {
+        name: "Color Replacement Tool",
         option: ToolOption.COLOR_REPLACEMENT,
         selected: false,
         implemented: false,
       },
       {
+        name: "Mixer Brush Tool",
         option: ToolOption.MIXER_BRUSH,
         selected: false,
         implemented: false,
@@ -291,11 +324,13 @@ export const tools: ToolCollection[] = [
     active: false,
     tools: [
       {
+        name: "Clone Stamp Tool",
         option: ToolOption.CLONE_STAMP,
         selected: true,
         implemented: false,
       },
       {
+        name: "Pattern Stamp Tool",
         option: ToolOption.PATTERN_STAMP,
         selected: false,
         implemented: false,
@@ -306,11 +341,13 @@ export const tools: ToolCollection[] = [
     active: false,
     tools: [
       {
+        name: "History Brush Tool",
         option: ToolOption.HISTORY_BRUSH,
         selected: true,
         implemented: false,
       },
       {
+        name: "Art History Brush Tool",
         option: ToolOption.ART_HISTORY_BRUSH,
         selected: false,
         implemented: false,
@@ -321,16 +358,19 @@ export const tools: ToolCollection[] = [
     active: false,
     tools: [
       {
+        name: "Eraser Tool",
         option: ToolOption.ERASER,
         selected: true,
         implemented: false,
       },
       {
+        name: "Background Eraser Tool",
         option: ToolOption.BACKGROUND_ERASER,
         selected: false,
         implemented: false,
       },
       {
+        name: "Magic Eraser Tool",
         option: ToolOption.MAGIC_ERASER,
         selected: false,
         implemented: false,
@@ -341,16 +381,19 @@ export const tools: ToolCollection[] = [
     active: false,
     tools: [
       {
+        name: "Gradient Tool",
         option: ToolOption.GRADIENT,
         selected: true,
         implemented: false,
       },
       {
+        name: "Paint Bucket Tool",
         option: ToolOption.PAINT_BUCKET,
         selected: false,
         implemented: false,
       },
       {
+        name: "3D Material Drop Tool",
         option: ToolOption.THREE_D_MATERIAL_DROP,
         selected: false,
         implemented: false,
@@ -361,16 +404,19 @@ export const tools: ToolCollection[] = [
     active: false,
     tools: [
       {
+        name: "Blur Tool",
         option: ToolOption.BLUR,
         selected: true,
         implemented: false,
       },
       {
+        name: "Sharpen Tool",
         option: ToolOption.SHARPEN,
         selected: false,
         implemented: false,
       },
       {
+        name: "Smudge Tool",
         option: ToolOption.SMUDGE,
         selected: false,
         implemented: false,
@@ -381,16 +427,19 @@ export const tools: ToolCollection[] = [
     active: false,
     tools: [
       {
+        name: "Dodge Tool",
         option: ToolOption.DODGE,
         selected: true,
         implemented: false,
       },
       {
+        name: "Burn Tool",
         option: ToolOption.BURN,
         selected: false,
         implemented: false,
       },
       {
+        name: "Smudge Tool",
         option: ToolOption.SMUDGE,
         selected: false,
         implemented: false,
@@ -401,31 +450,37 @@ export const tools: ToolCollection[] = [
     active: false,
     tools: [
       {
+        name: "Pen Tool",
         option: ToolOption.PEN,
         selected: true,
         implemented: false,
       },
       {
+        name: "Freeform Pen Tool",
         option: ToolOption.FREEFORM_PEN,
         selected: false,
         implemented: false,
       },
       {
+        name: "Curvature Pen Tool",
         option: ToolOption.CURVATURE_PEN,
         selected: false,
         implemented: false,
       },
       {
+        name: "Add Anchor Point Tool",
         option: ToolOption.ADD_ANCHOR_POINT,
         selected: false,
         implemented: false,
       },
       {
+        name: "Delete Anchor Point Tool",
         option: ToolOption.DELETE_ANCHOR_POINT,
         selected: false,
         implemented: false,
       },
       {
+        name: "Convert Point Tool",
         option: ToolOption.CONVERT_POINT,
         selected: false,
         implemented: false,
@@ -436,21 +491,25 @@ export const tools: ToolCollection[] = [
     active: false,
     tools: [
       {
+        name: "Horizontal Type Tool",
         option: ToolOption.HORIZONTAL_TYPE,
         selected: true,
         implemented: false,
       },
       {
+        name: "Vertical Type Tool",
         option: ToolOption.VERTICAL_TYPE,
         selected: false,
         implemented: false,
       },
       {
+        name: "Vertical Type Mask Tool",
         option: ToolOption.VERTICAL_TYPE_MASK,
         selected: false,
         implemented: false,
       },
       {
+        name: "Horizontal Type Mask Tool",
         option: ToolOption.HORIZONTAL_TYPE_MASK,
         selected: false,
         implemented: false,
@@ -461,11 +520,13 @@ export const tools: ToolCollection[] = [
     active: false,
     tools: [
       {
+        name: "Path Selection Tool",
         option: ToolOption.PATH_SELECTION,
         selected: true,
         implemented: false,
       },
       {
+        name: "Direct Selection Tool",
         option: ToolOption.DIRECT_SELECTION,
         selected: false,
         implemented: false,
@@ -476,31 +537,37 @@ export const tools: ToolCollection[] = [
     active: false,
     tools: [
       {
+        name: "Rectangle Tool",
         option: ToolOption.RECTANGLE,
         selected: true,
         implemented: false,
       },
       {
+        name: "Rounded Rectangle Tool",
         option: ToolOption.ROUNDED_RECTANGLE,
         selected: false,
         implemented: false,
       },
       {
+        name: "Ellipse Tool",
         option: ToolOption.ELLIPSE,
         selected: false,
         implemented: false,
       },
       {
+        name: "Polygon Tool",
         option: ToolOption.POLYGON,
         selected: false,
         implemented: false,
       },
       {
+        name: "Line Tool",
         option: ToolOption.LINE,
         selected: false,
         implemented: false,
       },
       {
+        name: "Custom Shape Tool",
         option: ToolOption.CUSTOM_SHAPE,
         selected: false,
         implemented: false,
@@ -511,11 +578,13 @@ export const tools: ToolCollection[] = [
     active: false,
     tools: [
       {
+        name: "Hand Tool",
         option: ToolOption.HAND,
         selected: true,
         implemented: false,
       },
       {
+        name: "Rotate View Tool",
         option: ToolOption.ROTATE_VIEW,
         selected: false,
         implemented: false,
@@ -526,6 +595,7 @@ export const tools: ToolCollection[] = [
     active: false,
     tools: [
       {
+        name: "Zoom Tool",
         option: ToolOption.ZOOM,
         selected: true,
         implemented: false,
