@@ -5,6 +5,7 @@ import { FeatureRequest } from "../../services/AnalyticsService";
 import Expandable from "../../shared/Expandable";
 import Handle from "../../shared/Handle";
 import { selectTools } from "../../state/toolsSlice";
+import Colors from "./Colors";
 import Tool from "./Tool";
 import { ToolCollection } from "./toolSchema";
 
@@ -44,6 +45,7 @@ const Tools = () => {
             <Tool collection={tool} />
           ))}
         </ToolsContainer>
+        <Colors />
       </Container>
     </StyledTools>
   );
