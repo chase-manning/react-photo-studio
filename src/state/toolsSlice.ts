@@ -15,8 +15,8 @@ export interface SettingsState {
 
 const initialState: SettingsState = {
   schema: tools,
-  primaryColor: "red",
-  secondaryColor: "blue",
+  primaryColor: "black",
+  secondaryColor: "white",
 };
 
 export const toolsSlice = createSlice({
