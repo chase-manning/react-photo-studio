@@ -22,6 +22,7 @@ const Buttons = styled.div`
 const Button = styled.div`
   width: 50%;
   padding: 0.2rem;
+  color: var(--icon);
 `;
 
 const Squares = styled.div`
