@@ -1,10 +1,12 @@
 import React from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import styled from "styled-components";
 import { FeatureRequest } from "../../services/AnalyticsService";
 import {
   selectPrimaryColor,
   selectSecondaryColor,
+  setDefaultColors,
+  swapColors,
 } from "../../state/toolsSlice";
 
 const StyledColors = styled.div`
@@ -21,7 +23,7 @@ const Buttons = styled.div`
   margin-bottom: 0.2rem;
 `;
 
-const Button = styled.div`
+const Button = styled.button`
   width: 50%;
   padding: 0.2rem;
   color: var(--icon);
@@ -62,14 +64,15 @@ const SecondarySquare = styled(Square)`
 `;
 
 const Colors = () => {
+  const dispatch = useDispatch();
   const primaryColor = useSelector(selectPrimaryColor);
   const secondaryColor = useSelector(selectSecondaryColor);
 
   return (
     <StyledColors>
       <Buttons>
-        <Button>H</Button>
-        <Button>H</Button>
+        <Button onClick={() => dispatch(setDefaultColors)}>H</Button>
+        <Button onClick={() => dispatch(swapColors)}>H</Button>
       </Buttons>
 
       <Squares>
