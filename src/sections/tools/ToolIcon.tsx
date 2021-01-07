@@ -12,6 +12,7 @@ import spotHealingBrush from "../../assets/svgs/tools/spot-healing-brush.svg";
 import brush from "../../assets/svgs/tools/brush.svg";
 import cloneStamp from "../../assets/svgs/tools/clone-stamp.svg";
 import historyBrush from "../../assets/svgs/tools/history-brush.svg";
+import eraser from "../../assets/svgs/tools/eraser.svg";
 
 const StyledToolIcon = styled.img`
   height: 100%;
@@ -41,6 +42,8 @@ const GetIcon = (option: ToolOption): string => {
       return cloneStamp;
     case ToolOption.HISTORY_BRUSH:
       return historyBrush;
+    case ToolOption.ERASER:
+      return eraser;
     default:
       return "";
   }
