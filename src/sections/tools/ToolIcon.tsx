@@ -10,6 +10,7 @@ import frame from "../../assets/svgs/tools/frame.svg";
 import eyedropper from "../../assets/svgs/tools/eyedropper.svg";
 import spotHealingBrush from "../../assets/svgs/tools/spot-healing-brush.svg";
 import brush from "../../assets/svgs/tools/brush.svg";
+import cloneStamp from "../../assets/svgs/tools/clone-stamp.svg";
 
 const StyledToolIcon = styled.img`
   height: 100%;
@@ -35,6 +36,8 @@ const GetIcon = (option: ToolOption): string => {
       return spotHealingBrush;
     case ToolOption.BRUSH:
       return brush;
+    case ToolOption.CLONE_STAMP:
+      return cloneStamp;
     default:
       return "";
   }
