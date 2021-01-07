@@ -42,11 +42,12 @@ export const toolsSlice = createSlice({
       state.secondaryColor = action.payload;
     },
     swapColors: (state) => {
-      state.secondaryColor = state.primaryColor;
+      const pc = state.primaryColor;
       state.primaryColor = state.secondaryColor;
+      state.secondaryColor = pc;
     },
     setDefaultColors: (state) => {
-      state.secondaryColor = "red";
+      state.primaryColor = "red";
       state.secondaryColor = "blue";
     },
   },
