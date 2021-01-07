@@ -9,6 +9,7 @@ import {
   swapColors,
 } from "../../state/toolsSlice";
 import defaultColors from "../../assets/svgs/tools/default-colors.svg";
+import swapColorsSvg from "../../assets/svgs/tools/swap-colors.svg";
 
 const StyledColors = styled.div`
   width: 100%;
@@ -35,6 +36,9 @@ const Button = styled.button`
 
 const ButtonIcon = styled.img`
   width: 100%;
+`;
+
+const RotatedButtonIcon = styled(ButtonIcon)`
   transform: rotate(180deg);
 `;
 
@@ -78,9 +82,11 @@ const Colors = () => {
     <StyledColors>
       <Buttons>
         <Button onClick={() => dispatch(setDefaultColors)}>
-          <ButtonIcon src={defaultColors} />
+          <RotatedButtonIcon src={defaultColors} />
         </Button>
-        <Button onClick={() => dispatch(swapColors)}>H</Button>
+        <Button onClick={() => dispatch(swapColors)}>
+          <ButtonIcon src={swapColorsSvg} />
+        </Button>
       </Buttons>
 
       <Squares>
