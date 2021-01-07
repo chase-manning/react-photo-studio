@@ -4,6 +4,7 @@ import styled from "styled-components";
 import { setActiveTool } from "../../state/toolsSlice";
 import ToolIcon from "./ToolIcon";
 import { ToolCollection, ToolType } from "./toolSchema";
+import { ReactComponent as ArrowIcon } from "../../assets/svgs/navigation/triangle-right.svg";
 
 const StyledTool = styled.div`
   width: 100%;
@@ -16,6 +17,7 @@ type ToolButtonProps = {
 };
 
 const ToolButton = styled.button`
+  position: relative;
   height: 100%;
   width: 100%;
   color: var(--text);
@@ -38,6 +40,15 @@ const ToolButton = styled.button`
   }
 `;
 
+const ContextIndicator = styled(ArrowIcon)`
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  height: 0.5rem;
+  fill: var(--icon);
+  transform: rotate(45deg);
+`;
+
 type Props = {
   collection: ToolCollection;
 };
@@ -55,6 +66,7 @@ const Tool = (props: Props) => {
         open={props.collection.active}
       >
         <ToolIcon option={tool.option} />
+        {props.collection.tools.length > 1 && <ContextIndicator />}
       </ToolButton>
     </StyledTool>
   );
