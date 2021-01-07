@@ -18,6 +18,7 @@ import blur from "../../assets/svgs/tools/blur.svg";
 import dodge from "../../assets/svgs/tools/dodge.svg";
 import pen from "../../assets/svgs/tools/pen.svg";
 import type from "../../assets/svgs/tools/type.svg";
+import pathSelection from "../../assets/svgs/tools/path-selection.svg";
 
 const StyledToolIcon = styled.img`
   height: 100%;
@@ -59,6 +60,8 @@ const GetIcon = (option: ToolOption): string => {
       return pen;
     case ToolOption.HORIZONTAL_TYPE:
       return type;
+    case ToolOption.PATH_SELECTION:
+      return pathSelection;
     default:
       return "";
   }
