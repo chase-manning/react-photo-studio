@@ -44,7 +44,7 @@ const Square = styled.div`
   width: 2.1rem;
   height: 2.1rem;
   border: solid 0.1rem white;
-  box-shadow: 0 0 0 0.1rem black;
+  box-shadow: 0 0 0 0.1rem var(--color-border);
   background-color: ${(props: SquareProps) => props.color};
 `;
 
