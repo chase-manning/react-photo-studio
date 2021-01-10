@@ -5,10 +5,12 @@ import reportWebVitals from "./reportWebVitals";
 import GlobalStyles from "./styles/GlobalStyles";
 import { store } from "./state/store";
 import { Provider } from "react-redux";
+import Shortcuts from "./orchestration/Shortcuts";
 
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
+      <Shortcuts />
       <GlobalStyles />
       <App />
     </Provider>
