@@ -1,10 +1,10 @@
 import React from "react";
 import { useDispatch } from "react-redux";
 
-const KeyboardShortcuts = () => {
+const Shortcuts = () => {
   const dispatch = useDispatch();
 
   return null;
 };
 
-export default KeyboardShortcuts;
+export default Shortcuts;
