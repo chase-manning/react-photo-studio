@@ -1,4 +1,4 @@
-import React from "react";
+import React, { SyntheticEvent } from "react";
 import { useDispatch } from "react-redux";
 import styled from "styled-components";
 import { setActiveTool } from "../../state/toolsSlice";
@@ -66,6 +66,11 @@ const Tool = (props: Props) => {
         onClick={() => {
           if (tool.implemented) dispatch(setActiveTool(tool.option));
           else FeatureRequest("Tools/" + tool.name);
+        }}
+        onContextMenu={(event: SyntheticEvent) => {
+          event.preventDefault();
+          if (props.collection.tools.length === 1) return;
+          FeatureRequest("Tools/" + tool.name + "/Context Menu");
         }}
         open={props.collection.active}
       >
