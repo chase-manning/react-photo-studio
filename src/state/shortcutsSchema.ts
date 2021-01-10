@@ -5,11 +5,11 @@ export type ShortcutType = {
 
 export const shortcutSchema: ShortcutType[] = [
   {
-    shortcut: "meow",
+    shortcut: "command+r",
     action: () => alert("meow"),
   },
   {
-    shortcut: "meow2",
+    shortcut: "command+t",
     action: () => alert("meow2"),
   },
 ];
