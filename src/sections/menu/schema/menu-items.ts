@@ -10,16 +10,16 @@ import { view } from "./view";
 import { window } from "./window";
 import { help } from "./help";
 
+export type ItemSetType = {
+  items: ItemType[];
+};
+
 export type ItemType = {
   name: string;
   itemSets?: ItemSetType[];
   action?: () => void;
   macShortcut?: string;
   windowsShortcut?: string;
-};
-
-export type ItemSetType = {
-  items: ItemType[];
 };
 
 export const menuItems: ItemType[] = [
