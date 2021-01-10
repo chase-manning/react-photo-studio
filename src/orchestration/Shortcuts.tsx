@@ -1,5 +1,5 @@
 import { useHotkeys } from "react-hotkeys-hook";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import { ShortcutType } from "../state/shortcutsSchema";
 import { selectShortcuts } from "../state/shortcutsSlice";
 
