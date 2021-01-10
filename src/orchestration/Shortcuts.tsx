@@ -1,12 +1,9 @@
-import hotkeys from "hotkeys-js";
-import React, { useEffect } from "react";
 import { useHotkeys } from "react-hotkeys-hook";
 import { useDispatch, useSelector } from "react-redux";
 import { ShortcutType } from "../state/shortcutsSchema";
 import { selectShortcuts } from "../state/shortcutsSlice";
 
 const Shortcuts = () => {
-  const dispatch = useDispatch();
   const shortcuts = useSelector(selectShortcuts);
 
   const shortcutKeys = shortcuts.reduce(
