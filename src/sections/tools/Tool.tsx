@@ -1,4 +1,4 @@
-import React, { SyntheticEvent } from "react";
+import React, { SyntheticEvent, useState } from "react";
 import { useDispatch } from "react-redux";
 import styled from "styled-components";
 import { setActiveTool } from "../../state/toolsSlice";
@@ -56,12 +56,23 @@ type Props = {
 
 const Tool = (props: Props) => {
   const dispatch = useDispatch();
+  const [timer, setTimer] = useState(0);
   const tool = props.collection.tools.filter(
     (tool: ToolType) => tool.selected
   )[0];
 
   return (
-    <StyledTool>
+    <StyledTool
+      onMouseEnter={() =>
+        setTimer(
+          window.setTimeout(
+            () => FeatureRequest("Tools/" + tool.name + "/Hover Menu"),
+            1000
+          )
+        )
+      }
+      onMouseLeave={() => window.clearTimeout(timer)}
+    >
       <ToolButton
         onClick={() => {
           if (tool.implemented) dispatch(setActiveTool(tool.option));
