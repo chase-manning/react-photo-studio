@@ -9,20 +9,19 @@ const Shortcuts = () => {
   const dispatch = useDispatch();
   const shortcuts = useSelector(selectShortcuts);
 
-  useHotkeys("command+r", () => {
-    console.log("meowmeow");
-    return false;
-  });
+  const shortcutKeys = shortcuts.reduce(
+    (a: string, b: ShortcutType) => a + b.shortcut + ",",
+    ""
+  );
 
-  // shortcuts.forEach((shortcut: ShortcutType) => {
-  //   hotkeys("command+r", (event) => {
-  //     if (!event.repeat) {
-  //       // console.log("key");
-  //       alert("meow");
-  //     }
-  //     return false;
-  //   });
-  // });
+  useHotkeys(shortcutKeys, (event: KeyboardEvent, handler) => {
+    event.preventDefault();
+    if (event.repeat) return false;
+    const shortcut = shortcuts.filter(
+      (shortcut: ShortcutType) => shortcut.shortcut === handler.key
+    );
+    if (shortcut.length > 0) shortcut[0].action();
+  });
 
   return null;
 };
