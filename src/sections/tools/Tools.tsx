@@ -41,8 +41,8 @@ const Tools = () => {
       <Container>
         <Handle />
         <ToolsContainer>
-          {tools.map((tool: ToolCollection) => (
-            <Tool collection={tool} />
+          {tools.map((tool: ToolCollection, index: number) => (
+            <Tool key={index} collection={tool} />
           ))}
         </ToolsContainer>
         <Colors />
