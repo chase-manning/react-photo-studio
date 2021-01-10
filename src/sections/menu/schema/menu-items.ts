@@ -14,6 +14,8 @@ export type ItemType = {
   name: string;
   itemSets?: ItemSetType[];
   action?: () => void;
+  macShortcut?: string;
+  windowsShortcut?: string;
 };
 
 export type ItemSetType = {
