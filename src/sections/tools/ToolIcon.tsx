@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { ToolOption } from "./toolSchema";
+import { ToolOption } from "../../state/toolSchema";
 import move from "../../assets/svgs/tools/move.svg";
 import rectangularMarquee from "../../assets/svgs/tools/rectangular-marquee.svg";
 import lasso from "../../assets/svgs/tools/lasso.svg";

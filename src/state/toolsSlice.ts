@@ -1,10 +1,5 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import {
-  tools,
-  ToolCollection,
-  ToolOption,
-  ToolType,
-} from "../sections/tools/toolSchema";
+import { tools, ToolCollection, ToolOption, ToolType } from "./toolSchema";
 import { RootState } from "./store";
 
 export interface SettingsState {

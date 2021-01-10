@@ -3,7 +3,7 @@ import { useDispatch } from "react-redux";
 import styled from "styled-components";
 import { setActiveTool } from "../../state/toolsSlice";
 import ToolIcon from "./ToolIcon";
-import { ToolCollection, ToolType } from "./toolSchema";
+import { ToolCollection, ToolType } from "../../state/toolSchema";
 import { ReactComponent as ArrowIcon } from "../../assets/svgs/navigation/triangle-right.svg";
 import { FeatureRequest } from "../../services/AnalyticsService";
 

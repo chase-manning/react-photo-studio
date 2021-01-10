@@ -7,7 +7,7 @@ import Handle from "../../shared/Handle";
 import { selectTools } from "../../state/toolsSlice";
 import Colors from "./Colors";
 import Tool from "./Tool";
-import { ToolCollection } from "./toolSchema";
+import { ToolCollection } from "../../state/toolSchema";
 
 const StyledTools = styled.div`
   height: 100%;
