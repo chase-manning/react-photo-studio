@@ -1,25 +1,26 @@
 import { useHotkeys } from "react-hotkeys-hook";
 import { useDispatch, useSelector } from "react-redux";
-import { ShortcutType } from "../state/shortcutsSchema";
-import { selectShortcuts } from "../state/shortcutsSlice";
+import { ActionType } from "../state/actionSchema";
+import { selectActions } from "../state/actionSlice";
 import { DeviceShortcut } from "../services/ShortcutService";
 
 const Shortcuts = () => {
   const dispatch = useDispatch();
-  const shortcuts = useSelector(selectShortcuts);
+  const actions = useSelector(selectActions);
 
-  const shortcutKeys = shortcuts.reduce(
-    (a: string, b: ShortcutType) => a + DeviceShortcut(b) + ",",
+  let shortcutKeys = actions.reduce(
+    (a: string, b: ActionType) => a + DeviceShortcut(b) + ",",
     ""
   );
+  shortcutKeys = shortcutKeys.substring(0, shortcutKeys.length - 1);
 
   useHotkeys(shortcutKeys, (event: KeyboardEvent, handler) => {
     event.preventDefault();
     if (event.repeat) return false;
-    const shortcut = shortcuts.filter(
-      (shortcut: ShortcutType) => DeviceShortcut(shortcut) === handler.key
-    );
-    if (shortcut.length > 0) dispatch(shortcut[0].action());
+    const action = actions.filter((shortcut: ActionType) => {
+      return DeviceShortcut(shortcut) === handler.key;
+    });
+    if (action.length > 0) dispatch(action[0].action());
   });
 
   return null;

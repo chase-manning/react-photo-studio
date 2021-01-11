@@ -8,11 +8,11 @@ import {
 import { composeWithDevTools } from "redux-devtools-extension";
 import thunk from "redux-thunk";
 import toolsReducer from "./toolsSlice";
-import shortcutsReducer from "./shortcutsSlice";
+import actionReducer from "./actionSlice";
 
 export const reducer = combineReducers({
   tools: toolsReducer,
-  shortcuts: shortcutsReducer,
+  actions: actionReducer,
 });
 
 export const store = createStore(
