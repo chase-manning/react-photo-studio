@@ -9,12 +9,14 @@ import { threeD } from "./three-d";
 import { view } from "./view";
 import { window } from "./window";
 import { help } from "./help";
+import { Action } from "../../../state/actionSchema";
 
 export type ItemSetType = {
   items: ItemType[];
 };
 
 export type ItemType = {
+  type?: Action;
   name: string;
   itemSets?: ItemSetType[];
   action?: () => void;
