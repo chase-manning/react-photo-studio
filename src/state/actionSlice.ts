@@ -13,10 +13,14 @@ const initialState: ActionSlice = {
 export const actionSlice = createSlice({
   name: "actions",
   initialState,
-  reducers: {},
+  reducers: {
+    clearSchema: (state) => {
+      state.schema = [];
+    },
+  },
 });
 
-export const {} = actionSlice.actions;
+export const { clearSchema } = actionSlice.actions;
 
 export const selectActions = (state: RootState) => state.actions.schema;
 
