@@ -1,4 +1,5 @@
 import { FeatureRequest } from "../../../services/AnalyticsService";
+import { Action } from "../../../state/actionSchema";
 import { ItemType } from "./menu-items";
 
 export const file: ItemType = {
@@ -7,10 +8,12 @@ export const file: ItemType = {
     {
       items: [
         {
+          type: Action.NEW_FILE,
           name: "New...",
           action: () => FeatureRequest("Menu/File/New..."),
         },
         {
+          type: Action.OPEN_FILE,
           name: "Open...",
           action: () => FeatureRequest("Menu/File/Open..."),
         },
