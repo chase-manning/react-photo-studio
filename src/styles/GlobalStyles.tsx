@@ -17,6 +17,7 @@ const GlobalStyle = createGlobalStyle`
         --disabled: #878787;
         --expandable: #424242;
         --color-border: #363636;
+        --section-line: #3e3e3e;
     }
   
     * {
