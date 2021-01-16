@@ -9,6 +9,7 @@ const StyledOptions = styled.div`
   width: 100%;
   height: 4rem;
   background-color: var(--panel);
+  padding: 0.5rem;
 `;
 
 const Options = () => {
