@@ -10,6 +10,7 @@ const StyledPercentSelector = styled.div`
 const Label = styled.div`
   color: var(--label);
   margin-right: 0.4rem;
+  cursor: col-resize;
   user-select: none;
 `;
 
