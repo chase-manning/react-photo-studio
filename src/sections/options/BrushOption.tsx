@@ -11,20 +11,27 @@ const StyledBrushOption = styled.button`
 const BrushContainer = styled.div`
   display: flex;
   flex-direction: column;
-  height: calc(100% + 0.6rem);
-  transform: translateY(-0.3rem);
+  height: calc(100% + 0.4rem);
+  transform: translateY(-0.2rem);
+  justify-content: space-between;
+  align-items: center;
+  margin-right: 0.4rem;
 `;
 
+type BrushProps = {
+  size: number;
+};
+
 const Brush = styled.div`
-  height: 1rem;
-  width: 1rem;
+  height: ${(props: BrushProps) => props.size + "rem"};
+  width: ${(props: BrushProps) => props.size + "rem"};
   border-radius: 50%;
   background-color: var(--white);
 `;
 
 const Label = styled.div`
   width: 100%;
-  font-size: 12px;
+  font-size: 1rem;
   color: var(--label);
   text-align: center;
   user-select: none;
@@ -48,10 +55,12 @@ type Props = {
 };
 
 const BrushOption = (props: Props) => {
+  const brushSize = Math.max(1.6 * (props.option.value! / 40), 1);
+
   return (
     <StyledBrushOption onClick={() => FeatureRequest("Options/Brush")}>
       <BrushContainer>
-        <Brush />
+        <Brush size={brushSize} />
         <Label>{props.option.value}</Label>
       </BrushContainer>
       <Button>
