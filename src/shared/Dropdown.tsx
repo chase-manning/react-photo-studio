@@ -51,7 +51,7 @@ type Props = {
 
 const Dropdown = (props: Props) => {
   const optionLenghts = props.options.map((option: string) => option.length);
-  const width = Math.max(...optionLenghts) * 0.6;
+  const width = Math.max(...optionLenghts) * 0.57;
 
   return (
     <StyledDropdown>
