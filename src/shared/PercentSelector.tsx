@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { FeatureRequest } from "../services/AnalyticsService";
 
 const StyledPercentSelector = styled.div`
   display: flex;
@@ -9,6 +10,7 @@ const StyledPercentSelector = styled.div`
 const Label = styled.div`
   color: var(--label);
   margin-right: 0.4rem;
+  user-select: none;
 `;
 
 const InputContainer = styled.div`
@@ -48,8 +50,10 @@ const PercentSelector = (props: Props) => {
     <StyledPercentSelector>
       <Label>{props.label + ":"}</Label>
       <InputContainer>
-        <Input>{props.value + "%"}</Input>
-        <Button>
+        <Input onClick={() => FeatureRequest("Percent Selector/Text Edit")}>
+          {props.value + "%"}
+        </Input>
+        <Button onClick={() => FeatureRequest("Percent Selector/Dropdown")}>
           <Icon>{">"}</Icon>
         </Button>
       </InputContainer>
