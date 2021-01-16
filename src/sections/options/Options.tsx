@@ -10,20 +10,18 @@ const StyledOptions = styled.div`
   width: 100%;
   height: 3.5rem;
   background-color: var(--panel);
-  padding: 0.5rem;
+  padding: 0.3rem 0.5rem;
   display: flex;
 `;
 
-type OptionSectionProps = {
-  showLine: boolean;
-};
-
 const OptionSection = styled.div`
   display: flex;
-  border-right: ${(props: OptionSectionProps) =>
-    props.showLine
-      ? "solid 1px var(--section-line)"
-      : "solid 1px var(--panel)"};
+  align-items: center;
+`;
+
+const SectionLine = styled.div`
+  height: 80%;
+  border-right: solid 1px var(--section-line);
 `;
 
 const Options = () => {
@@ -33,10 +31,11 @@ const Options = () => {
     <StyledOptions>
       <Handle component={"Options"} sideways={true} />
       {sections.map((section: OptionSectionType, index: number) => (
-        <OptionSection key={index} showLine={index !== sections.length}>
+        <OptionSection key={index}>
           {section.options.map((option: OptionType, index: number) => (
             <Option key={index} option={option} />
           ))}
+          {index !== sections.length && <SectionLine />}
         </OptionSection>
       ))}
     </StyledOptions>
