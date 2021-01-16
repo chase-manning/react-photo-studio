@@ -28,4 +28,13 @@ enum BlendingModeOption {
   LUNIMOSITY,
 }
 
+export const getBlendingModeText = (mode: BlendingModeOption) => {
+  switch (mode) {
+    case BlendingModeOption.NORMAL:
+      return "Normal";
+    default:
+      throw new Error("Blending Mode Text Not Found");
+  }
+};
+
 export default BlendingModeOption;
