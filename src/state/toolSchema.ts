@@ -70,6 +70,21 @@ export enum ToolOption {
   ZOOM,
 }
 
+export enum OptionOption {
+  PRESET,
+  BRUSH,
+  SETTINGS,
+  MODE,
+  PRESSURE_FOR_OPACITY,
+  FLOW,
+  AIRBRUSH,
+  SMOOTHING,
+  SMOOTHING_OPTIONS,
+  ANGLE,
+  PRESSURE_FOR_SIZE,
+  SYMMETRY,
+}
+
 export type ToolType = {
   name: string;
   option: ToolOption;
