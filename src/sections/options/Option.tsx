@@ -45,15 +45,6 @@ const Option = (props: Props) => {
           <Image src={brushSettings} />
         </Button>
       )}
-      {props.option.option === OptionOption.PRESSURE_FOR_OPACITY && (
-        <Button
-          onClick={() => FeatureRequest("Options/Brush/Pressure for Opacity")}
-          selected={props.option.enabled!!}
-          width={"auto"}
-        >
-          <Image src={pressureForOpacity} />
-        </Button>
-      )}
       {props.option.option === OptionOption.MODE && (
         <Dropdown
           label={"Mode"}
@@ -63,6 +54,18 @@ const Option = (props: Props) => {
       )}
       {props.option.option === OptionOption.OPACITY && (
         <PercentSelector label={"Opacity"} value={props.option.value!} />
+      )}
+      {props.option.option === OptionOption.PRESSURE_FOR_OPACITY && (
+        <Button
+          onClick={() => FeatureRequest("Options/Brush/Pressure for Opacity")}
+          selected={props.option.enabled!!}
+          width={"auto"}
+        >
+          <Image src={pressureForOpacity} />
+        </Button>
+      )}
+      {props.option.option === OptionOption.FLOW && (
+        <PercentSelector label={"Flow"} value={props.option.value!} />
       )}
     </StyledOption>
   );
