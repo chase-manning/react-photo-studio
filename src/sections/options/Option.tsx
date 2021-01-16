@@ -77,6 +77,9 @@ const Option = (props: Props) => {
           <Image src={airbrush} />
         </Button>
       )}
+      {props.option.option === OptionOption.SMOOTHING && (
+        <PercentSelector label={"Smoothing"} value={props.option.value!} />
+      )}
     </StyledOption>
   );
 };
