@@ -61,9 +61,12 @@ export const selectPrimaryColor = (state: RootState) =>
   state.tools.primaryColor;
 export const selectSecondaryColor = (state: RootState) =>
   state.tools.secondaryColor;
-export const selectOptionSections = (state: RootState) => {
+export const selectTool = (state: RootState) => {
   const col = state.tools.schema.filter((col: ToolCollection) => col.active)[0];
-  const tool = col.tools.filter((tool: ToolType) => tool.selected)[0];
+  return col.tools.filter((tool: ToolType) => tool.selected)[0];
+};
+export const selectOptionSections = (state: RootState) => {
+  const tool = selectTool(state);
   return tool.optionSections;
 };
 
