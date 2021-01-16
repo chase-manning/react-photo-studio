@@ -19,7 +19,8 @@ const StyledOption = styled.div`
 `;
 
 const Image = styled.img`
-  height: 100%;
+  height: 1.9rem;
+  width: 1.9rem;
 `;
 
 type Props = {
