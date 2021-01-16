@@ -19,6 +19,7 @@ const GlobalStyle = createGlobalStyle`
         --color-border: #363636;
         --section-line: #3e3e3e;
         --input-border: #666666;
+        --white: #ffffff;
     }
   
     * {
