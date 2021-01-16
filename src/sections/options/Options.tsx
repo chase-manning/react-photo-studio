@@ -8,7 +8,7 @@ import Option from "./Option";
 const StyledOptions = styled.div`
   width: 100%;
   height: 4rem;
-  background-color: green;
+  background-color: var(--panel);
 `;
 
 const Options = () => {
