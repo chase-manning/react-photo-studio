@@ -7,6 +7,7 @@ import BrushOption from "./BrushOption";
 import Presets from "./Presets";
 import brushSettings from "../../assets/options/brush-settings.svg";
 import { FeatureRequest } from "../../services/AnalyticsService";
+import Dropdown from "../../shared/Dropdown";
 
 const StyledOption = styled.div`
   display: flex;
@@ -39,6 +40,13 @@ const Option = (props: Props) => {
         >
           <Image src={brushSettings} />
         </Button>
+      )}
+      {props.option.option === OptionOption.MODE && (
+        <Dropdown
+          label={"Mode"}
+          selected={"Normal"}
+          options={["Linear Dodge (Add)"]}
+        />
       )}
       {props.option.option === OptionOption.OPACITY && (
         <PercentSelector label={"Opacity"} value={props.option.value!} />
