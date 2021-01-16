@@ -21,7 +21,9 @@ type OptionSectionProps = {
 const OptionSection = styled.div`
   display: flex;
   border-right: ${(props: OptionSectionProps) =>
-    props.showLine ? "solid 1px red" : "solid 1px var(--panel)"};
+    props.showLine
+      ? "solid 1px var(--section-line)"
+      : "solid 1px var(--panel)"};
 `;
 
 const Options = () => {
