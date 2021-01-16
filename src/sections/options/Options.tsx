@@ -8,7 +8,7 @@ import Option from "./Option";
 
 const StyledOptions = styled.div`
   width: 100%;
-  height: 4rem;
+  height: 3.5rem;
   background-color: var(--panel);
   padding: 0.5rem;
   display: flex;
