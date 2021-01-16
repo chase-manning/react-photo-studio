@@ -6,39 +6,12 @@ import ToolIcon from "./ToolIcon";
 import { ToolCollection, ToolType } from "../../state/toolSchema";
 import { ReactComponent as ArrowIcon } from "../../assets/svgs/navigation/triangle-right.svg";
 import { FeatureRequest } from "../../services/AnalyticsService";
+import Button from "../../styles/Button";
 
 const StyledTool = styled.div`
   width: 100%;
   height: 2.7rem;
   padding: 0 0.2rem;
-`;
-
-type ToolButtonProps = {
-  open: boolean;
-};
-
-const ToolButton = styled.button`
-  position: relative;
-  height: 100%;
-  width: 100%;
-  color: var(--text);
-  font-size: 1.3rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 0.2rem;
-  padding: 0.4rem;
-
-  background-color: ${(props: ToolButtonProps) =>
-    props.open ? "var(--selected)" : "var(--panel)"};
-  border: solid 1px
-    ${(props: ToolButtonProps) =>
-      props.open ? "var(--hover-border)" : "var(--panel)"};
-  :hover {
-    background-color: ${(props: ToolButtonProps) =>
-      props.open ? "var(--selected)" : "var(--hover-bg)"};
-    border: solid 1px var(--hover-border);
-  }
 `;
 
 const ContextIndicator = styled(ArrowIcon)`
@@ -73,7 +46,7 @@ const Tool = (props: Props) => {
       }
       onMouseLeave={() => window.clearTimeout(timer)}
     >
-      <ToolButton
+      <Button
         onClick={() => {
           if (tool.implemented) dispatch(setActiveTool(tool.option));
           else FeatureRequest("Tools/" + tool.name);
@@ -83,11 +56,11 @@ const Tool = (props: Props) => {
           if (props.collection.tools.length === 1) return;
           FeatureRequest("Tools/" + tool.name + "/Context Menu");
         }}
-        open={props.collection.active}
+        selected={props.collection.active}
       >
         <ToolIcon option={tool.option} />
         {props.collection.tools.length > 1 && <ContextIndicator />}
-      </ToolButton>
+      </Button>
     </StyledTool>
   );
 };
