@@ -1,8 +1,7 @@
 import React from "react";
-import { useSelector } from "react-redux";
 import styled from "styled-components";
 import { FeatureRequest } from "../../services/AnalyticsService";
-import { selectTool } from "../../state/toolsSlice";
+import { OptionType } from "../../state/toolSchema";
 
 const StyledBrushOption = styled.button`
   display: flex;
@@ -44,14 +43,16 @@ const Arrow = styled.div`
   color: var(--icon);
 `;
 
-const BrushOption = () => {
-  const tool = useSelector(selectTool);
+type Props = {
+  option: OptionType;
+};
 
+const BrushOption = (props: Props) => {
   return (
     <StyledBrushOption onClick={() => FeatureRequest("Options/Brush")}>
       <BrushContainer>
         <Brush />
-        <Label></Label>
+        <Label>{props.option.value}</Label>
       </BrushContainer>
       <Button>
         <Arrow>{">"}</Arrow>

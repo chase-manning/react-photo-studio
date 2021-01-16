@@ -21,7 +21,9 @@ const Option = (props: Props) => {
   return (
     <StyledOption>
       {props.option.option === OptionOption.PRESET && <Presets />}
-      {props.option.option === OptionOption.BRUSH && <BrushOption />}
+      {props.option.option === OptionOption.BRUSH && (
+        <BrushOption option={props.option} />
+      )}
       {props.option.option === OptionOption.OPACITY && (
         <PercentSelector label={"Opacity"} value={props.option.value!} />
       )}
