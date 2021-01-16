@@ -5,7 +5,7 @@ const StyledPercentSelector = styled.div`
   display: flex;
 `;
 
-const Label = styled.p`
+const Label = styled.div`
   color: var(--label);
 `;
 
