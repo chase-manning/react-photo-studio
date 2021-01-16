@@ -6,6 +6,7 @@ import Button from "../../styles/Button";
 import BrushOption from "./BrushOption";
 import Presets from "./Presets";
 import brushSettings from "../../assets/options/brush-settings.svg";
+import { FeatureRequest } from "../../services/AnalyticsService";
 
 const StyledOption = styled.div`
   display: flex;
@@ -31,7 +32,11 @@ const Option = (props: Props) => {
         <BrushOption option={props.option} />
       )}
       {props.option.option === OptionOption.SETTINGS && (
-        <Button selected={props.option.enabled!!} width={"auto"}>
+        <Button
+          onClick={() => FeatureRequest("Menu/Window/Brush Settings")}
+          selected={props.option.enabled!!}
+          width={"auto"}
+        >
           <Image src={brushSettings} />
         </Button>
       )}
