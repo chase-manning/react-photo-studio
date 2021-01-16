@@ -11,6 +11,7 @@ import { getBlendingModeText } from "../../types/blendingModes";
 
 import brushSettings from "../../assets/options/brush-settings.svg";
 import pressureForOpacity from "../../assets/options/pressure-for-opacity.png";
+import airbrush from "../../assets/options/airbrush.png";
 
 const StyledOption = styled.div`
   display: flex;
@@ -66,6 +67,15 @@ const Option = (props: Props) => {
       )}
       {props.option.option === OptionOption.FLOW && (
         <PercentSelector label={"Flow"} value={props.option.value!} />
+      )}
+      {props.option.option === OptionOption.AIRBRUSH && (
+        <Button
+          onClick={() => FeatureRequest("Options/Brush/Airbrush")}
+          selected={props.option.enabled!!}
+          width={"auto"}
+        >
+          <Image src={airbrush} />
+        </Button>
       )}
     </StyledOption>
   );
