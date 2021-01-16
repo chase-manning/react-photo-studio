@@ -15,7 +15,7 @@ const BrushContainer = styled.div`
   transform: translateY(-0.2rem);
   justify-content: space-between;
   align-items: center;
-  margin-right: 0.4rem;
+  margin: 0 0.6rem;
 `;
 
 type BrushProps = {
