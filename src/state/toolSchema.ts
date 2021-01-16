@@ -77,6 +77,7 @@ export enum OptionOption {
   BRUSH,
   SETTINGS,
   MODE,
+  OPACITY,
   PRESSURE_FOR_OPACITY,
   FLOW,
   AIRBRUSH,
@@ -352,7 +353,57 @@ export const tools: ToolCollection[] = [
         name: "Brush Tool",
         option: ToolOption.BRUSH,
         selected: true,
-        options: [],
+        options: [
+          {
+            option: OptionOption.PRESET,
+          },
+          {
+            option: OptionOption.BRUSH,
+            value: 40,
+            hardness: 100,
+          },
+          {
+            option: OptionOption.SETTINGS,
+          },
+          {
+            option: OptionOption.MODE,
+            blendingMode: BlendingModeOption.NORMAL,
+          },
+          {
+            option: OptionOption.OPACITY,
+            value: 100,
+          },
+          {
+            option: OptionOption.PRESSURE_FOR_OPACITY,
+            enabled: false,
+          },
+          {
+            option: OptionOption.FLOW,
+            enabled: false,
+          },
+          {
+            option: OptionOption.AIRBRUSH,
+            enabled: false,
+          },
+          {
+            option: OptionOption.SMOOTHING,
+            value: 10,
+          },
+          {
+            option: OptionOption.SMOOTHING_OPTIONS,
+          },
+          {
+            option: OptionOption.ANGLE,
+            value: 0,
+          },
+          {
+            option: OptionOption.PRESSURE_FOR_SIZE,
+            enabled: false,
+          },
+          {
+            option: OptionOption.SYMMETRY,
+          },
+        ],
         implemented: false,
       },
       {
