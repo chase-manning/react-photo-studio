@@ -39,7 +39,7 @@ const Tools = () => {
     <StyledTools>
       <Expandable open={false} toggle={() => FeatureRequest("Tools/Expand")} />
       <Container>
-        <Handle />
+        <Handle component={"Tools"} />
         <ToolsContainer>
           {tools.map((tool: ToolCollection, index: number) => (
             <Tool key={index} collection={tool} />

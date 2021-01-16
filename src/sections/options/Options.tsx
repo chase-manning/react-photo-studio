@@ -19,7 +19,7 @@ const Options = () => {
 
   return (
     <StyledOptions>
-      <Handle sideways={true} />
+      <Handle component={"Options"} sideways={true} />
       {options.map((option: OptionType) => (
         <Option option={option} />
       ))}
