@@ -1,3 +1,5 @@
+import BlendingModeOption from "../types/blendingModes";
+
 export enum ToolOption {
   MOVE,
   ARTBOARD,
@@ -84,6 +86,14 @@ export enum OptionOption {
   PRESSURE_FOR_SIZE,
   SYMMETRY,
 }
+
+export type OptionType = {
+  option: OptionOption;
+  enabled?: boolean;
+  value?: number;
+  hardness?: number;
+  blendingMode?: BlendingModeOption;
+};
 
 export type ToolType = {
   name: string;
