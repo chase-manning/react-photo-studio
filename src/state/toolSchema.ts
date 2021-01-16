@@ -409,7 +409,7 @@ export const tools: ToolCollection[] = [
             options: [
               {
                 option: OptionOption.SMOOTHING,
-                value: 10,
+                value: 16,
               },
               {
                 option: OptionOption.SMOOTHING_OPTIONS,
