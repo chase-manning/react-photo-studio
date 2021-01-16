@@ -5,10 +5,12 @@ import { OptionOption, OptionType } from "../../state/toolSchema";
 import Button from "../../styles/Button";
 import BrushOption from "./BrushOption";
 import Presets from "./Presets";
-import brushSettings from "../../assets/options/brush-settings.svg";
 import { FeatureRequest } from "../../services/AnalyticsService";
 import Dropdown from "../../shared/Dropdown";
 import { getBlendingModeText } from "../../types/blendingModes";
+
+import brushSettings from "../../assets/options/brush-settings.svg";
+import pressureForOpacity from "../../assets/options/pressure-for-opacity.png";
 
 const StyledOption = styled.div`
   display: flex;
@@ -41,6 +43,15 @@ const Option = (props: Props) => {
           width={"auto"}
         >
           <Image src={brushSettings} />
+        </Button>
+      )}
+      {props.option.option === OptionOption.PRESSURE_FOR_OPACITY && (
+        <Button
+          onClick={() => FeatureRequest("Options/Brush/Pressure for Opacity")}
+          selected={props.option.enabled!!}
+          width={"auto"}
+        >
+          <Image src={pressureForOpacity} />
         </Button>
       )}
       {props.option.option === OptionOption.MODE && (
