@@ -8,6 +8,7 @@ import Presets from "./Presets";
 import brushSettings from "../../assets/options/brush-settings.svg";
 import { FeatureRequest } from "../../services/AnalyticsService";
 import Dropdown from "../../shared/Dropdown";
+import { getBlendingModeText } from "../../types/blendingModes";
 
 const StyledOption = styled.div`
   display: flex;
@@ -44,7 +45,7 @@ const Option = (props: Props) => {
       {props.option.option === OptionOption.MODE && (
         <Dropdown
           label={"Mode"}
-          selected={"Normal"}
+          selected={getBlendingModeText(props.option.blendingMode!)}
           options={["Linear Dodge (Add)"]}
         />
       )}
