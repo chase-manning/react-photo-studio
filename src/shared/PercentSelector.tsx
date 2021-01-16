@@ -13,7 +13,7 @@ const InputContainer = styled.div`
   display: flex;
 `;
 
-const Input = styled.input`
+const Input = styled.div`
   flex: 1;
   color: var(--input-text);
 `;
