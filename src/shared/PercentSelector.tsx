@@ -39,7 +39,7 @@ type Props = {
 const PercentSelector = (props: Props) => {
   return (
     <StyledPercentSelector>
-      <Label>{props.label}</Label>
+      <Label>{props.label + ":"}</Label>
       <InputContainer>
         <Input>{props.value}</Input>
         <Button>
