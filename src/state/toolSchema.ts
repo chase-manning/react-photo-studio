@@ -397,7 +397,7 @@ export const tools: ToolCollection[] = [
             options: [
               {
                 option: OptionOption.FLOW,
-                enabled: false,
+                value: 100,
               },
               {
                 option: OptionOption.AIRBRUSH,
