@@ -11,6 +11,8 @@ const Label = styled.div`
 
 const InputContainer = styled.div`
   display: flex;
+  background-color: var(--hover-bg);
+  border: solid 1px var(--input-border);
 `;
 
 const Input = styled.div`
@@ -23,7 +25,6 @@ const Button = styled.button`
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: var(--hover-bg);
 `;
 
 const Icon = styled.div`
