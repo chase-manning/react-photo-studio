@@ -1,22 +1,26 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import styled from "styled-components";
+import { FeatureRequest } from "../../services/AnalyticsService";
 import { selectTool } from "../../state/toolsSlice";
 import ToolIcon from "../tools/ToolIcon";
 
-const StyledPresets = styled.div`
+const StyledPresets = styled.button`
   display: flex;
   height: 100%;
 `;
 
-const Icon = styled.img`
+const Icon = styled.div`
   height: 100%;
+  padding: 0.4rem;
 `;
 
 const Button = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 100%;
+  padding: 0.4rem;
 `;
 
 const Arrow = styled.div`
@@ -28,8 +32,10 @@ const Presets = () => {
   const tool = useSelector(selectTool);
 
   return (
-    <StyledPresets>
-      <ToolIcon option={tool.option} />
+    <StyledPresets onClick={() => FeatureRequest("Options/Presets")}>
+      <Icon>
+        <ToolIcon option={tool.option} />
+      </Icon>
       <Button>
         <Arrow>{">"}</Arrow>
       </Button>
