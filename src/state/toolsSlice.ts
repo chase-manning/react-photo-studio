@@ -61,10 +61,10 @@ export const selectPrimaryColor = (state: RootState) =>
   state.tools.primaryColor;
 export const selectSecondaryColor = (state: RootState) =>
   state.tools.secondaryColor;
-export const selectOptions = (state: RootState) => {
+export const selectOptionSections = (state: RootState) => {
   const col = state.tools.schema.filter((col: ToolCollection) => col.active)[0];
   const tool = col.tools.filter((tool: ToolType) => tool.selected)[0];
-  return tool.options;
+  return tool.optionSections;
 };
 
 export default toolsSlice.reducer;

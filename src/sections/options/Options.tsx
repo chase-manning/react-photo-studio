@@ -2,8 +2,8 @@ import React from "react";
 import { useSelector } from "react-redux";
 import styled from "styled-components";
 import Handle from "../../shared/Handle";
-import { OptionType } from "../../state/toolSchema";
-import { selectOptions } from "../../state/toolsSlice";
+import { OptionSectionType, OptionType } from "../../state/toolSchema";
+import { selectOptionSections } from "../../state/toolsSlice";
 import Option from "./Option";
 
 const StyledOptions = styled.div`
@@ -14,14 +14,28 @@ const StyledOptions = styled.div`
   display: flex;
 `;
 
+type OptionSectionProps = {
+  showLine: boolean;
+};
+
+const OptionSection = styled.div`
+  display: flex;
+  border-right: ${(props: OptionSectionProps) =>
+    props.showLine ? "solid 1px red" : "solid 1px var(--panel)"};
+`;
+
 const Options = () => {
-  const options = useSelector(selectOptions);
+  const sections = useSelector(selectOptionSections);
 
   return (
     <StyledOptions>
       <Handle component={"Options"} sideways={true} />
-      {options.map((option: OptionType) => (
-        <Option option={option} />
+      {sections.map((section: OptionSectionType, index: number) => (
+        <OptionSection key={index} showLine={index !== sections.length}>
+          {section.options.map((option: OptionType, index: number) => (
+            <Option key={index} option={option} />
+          ))}
+        </OptionSection>
       ))}
     </StyledOptions>
   );
