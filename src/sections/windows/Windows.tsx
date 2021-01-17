@@ -26,6 +26,7 @@ const Windows = () => {
         window.forEach((label: string) =>
           tabs.push({ label: label, content: <Window window={label} /> })
         );
+        return <Tabs tabs={tabs} />;
       })}
     </StyledWindows>
   );
