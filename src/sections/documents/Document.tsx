@@ -22,6 +22,14 @@ const StyledDocument = styled.div`
   cursor: ${(props: DocumentProps) => props.cursor};
 `;
 
+const EventHandler = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+`;
+
 const Document = () => {
   const dispatch = useDispatch();
   const toolOption = useSelector(selectToolOption);
@@ -38,17 +46,19 @@ const Document = () => {
   return (
     <StyledDocument
       ref={document}
-      onMouseEnter={() => setShowCursor(true)}
-      onMouseLeave={() => setShowCursor(false)}
-      onMouseMove={(e) =>
-        dispatch(setCursorPosition({ x: e.clientX, y: e.clientY }))
-      }
       cursor={toolOption === ToolOption.BRUSH ? "none" : "auto"}
     >
       <Canvas />
       {showCursor && toolOption === ToolOption.BRUSH && (
         <Cursor documentPosition={documentPosition} />
       )}
+      <EventHandler
+        onMouseEnter={() => setShowCursor(true)}
+        onMouseLeave={() => setShowCursor(false)}
+        onMouseMove={(e) =>
+          dispatch(setCursorPosition({ x: e.clientX, y: e.clientY }))
+        }
+      />
     </StyledDocument>
   );
 };
