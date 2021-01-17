@@ -9,10 +9,12 @@ import { composeWithDevTools } from "redux-devtools-extension";
 import thunk from "redux-thunk";
 import toolsReducer from "./toolsSlice";
 import actionReducer from "./actionsSlice";
+import cursorReducer from "./cursorSlice";
 
 export const reducer = combineReducers({
   tools: toolsReducer,
   actions: actionReducer,
+  cursor: cursorReducer,
 });
 
 export const store = createStore(
