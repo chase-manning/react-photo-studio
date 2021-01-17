@@ -19,7 +19,7 @@ const StyledApp = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  background-color: var(--panel);
+  background-color: var(--menu-hover-bg);
 `;
 
 const Horizontal = styled.div`

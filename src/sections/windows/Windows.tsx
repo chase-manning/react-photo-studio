@@ -9,8 +9,15 @@ import Window from "./Window";
 const StyledWindows = styled.div`
   width: 33rem;
   height: 100%;
-  background-color: var(--panel);
   margin-left: 1px;
+  display: flex;
+  flex-direction: column;
+`;
+
+const Filler = styled.div`
+  flex: 1;
+  width: 100%;
+  background-color: var(--panel);
 `;
 
 const Windows = () => {
@@ -28,6 +35,7 @@ const Windows = () => {
         );
         return <Tabs tabs={tabs} />;
       })}
+      <Filler />
     </StyledWindows>
   );
 };

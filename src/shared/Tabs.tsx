@@ -8,6 +8,7 @@ const StyledTabs = styled.div`
   flex-direction: column;
   border: solid 1px var(--border);
   margin-bottom: 0.1rem;
+  background-color: var(--panel);
 `;
 
 const Header = styled.div`
