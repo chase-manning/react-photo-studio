@@ -49,7 +49,9 @@ type Props = {
 const PercentSelector = (props: Props) => {
   return (
     <StyledPercentSelector>
-      <Label>{props.label + ":"}</Label>
+      <Label onClick={() => FeatureRequest("Percent Selector/Label Scrub")}>
+        {props.label + ":"}
+      </Label>
       <InputContainer>
         <Input onClick={() => FeatureRequest("Percent Selector/Text Edit")}>
           {props.value + "%"}
