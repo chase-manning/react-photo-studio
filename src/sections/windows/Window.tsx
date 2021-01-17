@@ -1,4 +1,10 @@
 import React from "react";
+import styled from "styled-components";
+
+const Unimplemented = styled.div`
+  width: 100%;
+  height: 1px;
+`;
 
 type Props = {
   window: string;
@@ -7,23 +13,23 @@ type Props = {
 const Window = (props: Props) => {
   switch (props.window) {
     case "Color":
-      return <p>meow</p>;
+      return <Unimplemented />;
     case "Swatches":
-      return <p>meow</p>;
+      return <Unimplemented />;
     case "Gradients":
-      return <p>meow</p>;
+      return <Unimplemented />;
     case "Patterns":
-      return <p>meow</p>;
+      return <Unimplemented />;
     case "Properties":
-      return <p>meow</p>;
+      return <Unimplemented />;
     case "Adjustments":
-      return <p>meow</p>;
+      return <Unimplemented />;
     case "Layers":
-      return <p>meow</p>;
+      return <Unimplemented />;
     case "Channels":
-      return <p>meow</p>;
+      return <Unimplemented />;
     case "Paths":
-      return <p>meow</p>;
+      return <Unimplemented />;
     default:
       throw new Error("Window Not Found");
   }
