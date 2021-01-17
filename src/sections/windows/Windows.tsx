@@ -7,6 +7,7 @@ const StyledWindows = styled.div`
   width: 33rem;
   height: 100%;
   background-color: var(--panel);
+  margin-left: 1px;
 `;
 
 const Windows = () => {
