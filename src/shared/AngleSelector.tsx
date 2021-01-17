@@ -21,6 +21,7 @@ const Input = styled.div`
   color: var(--input-text);
   padding: 0.2rem 0.3rem;
   width: 3.3rem;
+  cursor: text;
 `;
 
 const Icon = styled.img`
