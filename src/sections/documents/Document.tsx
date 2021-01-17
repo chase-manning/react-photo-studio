@@ -1,9 +1,17 @@
 import React, { useLayoutEffect, useRef, useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import styled from "styled-components";
 import { setCursorPosition } from "../../state/cursorSlice";
+import { ToolOption } from "../../state/toolSchema";
+import { selectTool } from "../../state/toolsSlice";
+import { OptionSectionType } from "../../types/options";
+import Tool from "../tools/Tool";
 import Canvas from "./Canvas";
 import Cursor from "./Cursor";
+
+type DocumentProps = {
+  cursor: string;
+};
 
 const StyledDocument = styled.div`
   position: relative;
@@ -13,11 +21,13 @@ const StyledDocument = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  cursor: none;
+  cursor: ${(props: DocumentProps) => props.cursor};
 `;
 
 const Document = () => {
   const dispatch = useDispatch();
+  const tool = useSelector(selectTool);
+
   const document = useRef<HTMLDivElement>(null);
   const [showCursor, setShowCursor] = useState(false);
 
@@ -35,9 +45,12 @@ const Document = () => {
       onMouseMove={(e) =>
         dispatch(setCursorPosition({ x: e.clientX, y: e.clientY }))
       }
+      cursor={tool.option === ToolOption.BRUSH ? "none" : "auto"}
     >
       <Canvas />
-      {showCursor && <Cursor documentPosition={documentPosition} />}
+      {showCursor && tool.option === ToolOption.BRUSH && (
+        <Cursor documentPosition={documentPosition} />
+      )}
     </StyledDocument>
   );
 };
