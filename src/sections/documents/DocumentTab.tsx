@@ -18,8 +18,6 @@ const CloseButton = styled.button`
   display: flex;
   justify-content: center;
   align-items: center;
-  color: var(--close);
-  font-size: 1.2rem;
 
   :hover {
     background-color: var(--close-hover);
@@ -27,7 +25,7 @@ const CloseButton = styled.button`
 `;
 
 const Cross = styled.img`
-  height: 0.5rem;
+  height: 0.6rem;
 `;
 
 const Label = styled.div`
