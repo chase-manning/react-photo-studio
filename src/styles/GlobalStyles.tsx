@@ -24,6 +24,7 @@ const GlobalStyle = createGlobalStyle`
         --sidebar: #4a4a4a;
         --close-hover: #636363;
         --tab-text: #f3f3f3;
+        --footer-button-border: #595959;
     }
   
     * {
