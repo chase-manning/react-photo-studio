@@ -20,6 +20,8 @@ const GlobalStyle = createGlobalStyle`
         --section-line: #3e3e3e;
         --input-border: #666666;
         --white: #ffffff;
+        --bg: #272727;
+        --sidebar: #4a4a4a;
     }
   
     * {
