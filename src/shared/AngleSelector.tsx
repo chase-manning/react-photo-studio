@@ -20,7 +20,7 @@ const Input = styled.div`
   border: solid 1px var(--input-border);
   color: var(--input-text);
   padding: 0.2rem 0.3rem;
-  width: 3.3rem;
+  width: 4rem;
   cursor: text;
 `;
 
