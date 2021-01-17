@@ -12,6 +12,7 @@ import { getBlendingModeText } from "../../types/blendingModes";
 import brushSettings from "../../assets/options/brush-settings.svg";
 import pressureForOpacity from "../../assets/options/pressure-for-opacity.png";
 import airbrush from "../../assets/options/airbrush.png";
+import settings from "../../assets/options/settings.svg";
 
 const StyledOption = styled.div`
   display: flex;
@@ -21,9 +22,13 @@ const StyledOption = styled.div`
   padding: 0 0.4rem;
 `;
 
+type ImageProps = {
+  small?: boolean;
+};
+
 const Image = styled.img`
-  height: 1.9rem;
-  width: 1.9rem;
+  height: ${(props: ImageProps) => (props.small ? "1.5rem" : "1.9rem")};
+  width: ${(props: ImageProps) => (props.small ? "1.5rem" : "1.9rem")};
 `;
 
 type Props = {
@@ -79,6 +84,15 @@ const Option = (props: Props) => {
       )}
       {props.option.option === OptionOption.SMOOTHING && (
         <PercentSelector label={"Smoothing"} value={props.option.value!} />
+      )}
+      {props.option.option === OptionOption.SMOOTHING_OPTIONS && (
+        <Button
+          onClick={() => FeatureRequest("Options/Brush/Smoothing Options")}
+          selected={props.option.enabled!!}
+          width={"auto"}
+        >
+          <Image src={settings} small />
+        </Button>
       )}
     </StyledOption>
   );
