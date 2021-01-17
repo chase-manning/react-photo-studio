@@ -6,6 +6,9 @@ const StyledDocument = styled.div`
   flex: 1;
   height: 100%;
   background-color: var(--bg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
 
 const Document = () => {
