@@ -15,6 +15,7 @@ const Header = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  background-color: var(--expandable);
 `;
 
 type ItemProps = {
@@ -47,7 +48,15 @@ const Menu = styled.div`
   display: flex;
   flex-direction: column;
   padding: 0.2rem;
-  width: 2rem;
+  width: 1.6rem;
+  margin-right: 0.3rem;
+  border-radius: 0.1rem;
+
+  border: solid 1px var(--expandable);
+  :hover {
+    background-color: var(--menu-hover-bg);
+    border: solid 1px var(--close-hover);
+  }
 `;
 
 const Line = styled.div`
