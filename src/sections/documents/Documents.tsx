@@ -22,7 +22,7 @@ const Center = styled.div`
 
 const Sidebar = styled.div`
   height: 100%;
-  width: 2rem;
+  width: 1.6rem;
   background-color: var(--sidebar);
 `;
 
