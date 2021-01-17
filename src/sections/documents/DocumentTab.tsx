@@ -6,6 +6,7 @@ const StyledTab = styled.div`
   display: flex;
   align-items: center;
   border-right: solid 1px var(--border);
+  background-color: var(--panel);
 `;
 
 const CloseButton = styled.button`
