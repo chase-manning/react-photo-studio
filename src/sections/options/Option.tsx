@@ -14,6 +14,7 @@ import brushSettings from "../../assets/options/brush-settings.svg";
 import pressureForOpacity from "../../assets/options/pressure-for-opacity.png";
 import airbrush from "../../assets/options/airbrush.png";
 import settings from "../../assets/options/settings.svg";
+import AngleSelector from "../../shared/AngleSelector";
 
 const StyledOption = styled.div`
   display: flex;
@@ -104,6 +105,9 @@ const Option = (props: Props) => {
           <Image src={settings} small />
           <ContextIndicator />
         </Button>
+      )}
+      {props.option.option === OptionOption.ANGLE && (
+        <AngleSelector value={props.option.value!} />
       )}
     </StyledOption>
   );
