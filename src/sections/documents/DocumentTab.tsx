@@ -7,6 +7,7 @@ const StyledTab = styled.div`
   align-items: center;
   border-right: solid 1px var(--border);
   background-color: var(--panel);
+  padding: 0 1rem 0 0.5rem;
 `;
 
 const CloseButton = styled.button`
