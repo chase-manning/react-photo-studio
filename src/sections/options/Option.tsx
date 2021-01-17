@@ -16,6 +16,7 @@ import airbrush from "../../assets/options/airbrush.png";
 import settings from "../../assets/options/settings.svg";
 import AngleSelector from "../../shared/AngleSelector";
 import pressureForSize from "../../assets/options/pressure-for-size.png";
+import symmetry from "../../assets/options/symmetry.png";
 
 const StyledOption = styled.div`
   display: flex;
@@ -117,6 +118,16 @@ const Option = (props: Props) => {
           width={"auto"}
         >
           <Image src={pressureForSize} />
+        </Button>
+      )}
+      {props.option.option === OptionOption.SYMMETRY && (
+        <Button
+          onClick={() => FeatureRequest("Options/Brush/Symmetry")}
+          selected={props.option.enabled!!}
+          width={"auto"}
+        >
+          <Image src={symmetry} />
+          <ContextIndicator />
         </Button>
       )}
     </StyledOption>
