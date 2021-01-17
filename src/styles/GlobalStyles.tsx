@@ -24,7 +24,9 @@ const GlobalStyle = createGlobalStyle`
         --sidebar: #4a4a4a;
         --close-hover: #636363;
         --tab-text: #f3f3f3;
+        --tab-text-inactive: #b0b0b0;
         --footer-button-border: #595959;
+        --menu-lines: #a8a8a8;
     }
   
     * {
