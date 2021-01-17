@@ -37,7 +37,8 @@ const HeaderItem = styled.div`
 const MenuContainer = styled.div`
   flex: 1;
   height: 100%;
-  justify-content: end;
+  display: flex;
+  justify-content: space-between;
   align-items: center;
   border-bottom: solid 1px var(--border);
 `;
@@ -80,6 +81,7 @@ const Tabs = (props: Props) => {
           </HeaderItem>
         ))}
         <MenuContainer>
+          <div />
           <Menu>
             <Line />
             <Line />
