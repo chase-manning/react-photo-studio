@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import Canvas from "./Canvas";
 
 const StyledDocument = styled.div`
   flex: 1;
@@ -8,7 +9,11 @@ const StyledDocument = styled.div`
 `;
 
 const Document = () => {
-  return <StyledDocument></StyledDocument>;
+  return (
+    <StyledDocument>
+      <Canvas />
+    </StyledDocument>
+  );
 };
 
 export default Document;
