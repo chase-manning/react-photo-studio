@@ -16,6 +16,7 @@ const CloseButton = styled.button`
   display: flex;
   justify-content: center;
   align-items: center;
+  color: var(--close);
 
   :hover {
     background-color: var(--close-hover);
