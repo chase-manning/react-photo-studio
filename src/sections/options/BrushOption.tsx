@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { FeatureRequest } from "../../services/AnalyticsService";
-import { OptionType } from "../../state/toolSchema";
+import { OptionType } from "../../types/options";
 
 const StyledBrushOption = styled.button`
   display: flex;

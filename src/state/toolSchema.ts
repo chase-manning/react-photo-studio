@@ -1,4 +1,5 @@
 import BlendingModeOption from "../types/blendingModes";
+import { OptionOption, OptionSectionType } from "../types/options";
 
 export enum ToolOption {
   MOVE,
@@ -71,34 +72,6 @@ export enum ToolOption {
   ROTATE_VIEW,
   ZOOM,
 }
-
-export enum OptionOption {
-  PRESET,
-  BRUSH,
-  SETTINGS,
-  MODE,
-  OPACITY,
-  PRESSURE_FOR_OPACITY,
-  FLOW,
-  AIRBRUSH,
-  SMOOTHING,
-  SMOOTHING_OPTIONS,
-  ANGLE,
-  PRESSURE_FOR_SIZE,
-  SYMMETRY,
-}
-
-export type OptionType = {
-  option: OptionOption;
-  enabled?: boolean;
-  value?: number;
-  hardness?: number;
-  blendingMode?: BlendingModeOption;
-};
-
-export type OptionSectionType = {
-  options: OptionType[];
-};
 
 export type ToolType = {
   name: string;

@@ -2,8 +2,8 @@ import React from "react";
 import { useSelector } from "react-redux";
 import styled from "styled-components";
 import Handle from "../../shared/Handle";
-import { OptionSectionType, OptionType } from "../../state/toolSchema";
 import { selectOptionSections } from "../../state/toolsSlice";
+import { OptionSectionType, OptionType } from "../../types/options";
 import Option from "./Option";
 
 const StyledOptions = styled.div`

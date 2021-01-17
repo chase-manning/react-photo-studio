@@ -1,7 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import PercentSelector from "../../shared/PercentSelector";
-import { OptionOption, OptionType } from "../../state/toolSchema";
 import Button from "../../styles/Button";
 import BrushOption from "./BrushOption";
 import Presets from "./Presets";
@@ -17,6 +16,7 @@ import settings from "../../assets/options/settings.svg";
 import AngleSelector from "../../shared/AngleSelector";
 import pressureForSize from "../../assets/options/pressure-for-size.png";
 import symmetry from "../../assets/options/symmetry.png";
+import { getOptionName, OptionOption, OptionType } from "../../types/options";
 
 const StyledOption = styled.div`
   display: flex;
@@ -49,8 +49,22 @@ type Props = {
 };
 
 const Option = (props: Props) => {
+  const [timer, setTimer] = useState(0);
   return (
-    <StyledOption>
+    <StyledOption
+      onMouseEnter={() =>
+        setTimer(
+          window.setTimeout(
+            () =>
+              FeatureRequest(
+                "Options/" + getOptionName(props.option.option) + "/Hover Menu"
+              ),
+            1000
+          )
+        )
+      }
+      onMouseLeave={() => window.clearTimeout(timer)}
+    >
       {props.option.option === OptionOption.PRESET && <Presets />}
       {props.option.option === OptionOption.BRUSH && (
         <BrushOption option={props.option} />
