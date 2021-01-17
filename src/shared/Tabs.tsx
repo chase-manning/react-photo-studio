@@ -46,6 +46,7 @@ const Menu = styled.div`
   display: flex;
   flex-direction: column;
   padding: 0.2rem;
+  width: 2rem;
 `;
 
 const Line = styled.div`
