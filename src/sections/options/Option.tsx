@@ -15,6 +15,7 @@ import pressureForOpacity from "../../assets/options/pressure-for-opacity.png";
 import airbrush from "../../assets/options/airbrush.png";
 import settings from "../../assets/options/settings.svg";
 import AngleSelector from "../../shared/AngleSelector";
+import pressureForSize from "../../assets/options/pressure-for-size.png";
 
 const StyledOption = styled.div`
   display: flex;
@@ -108,6 +109,15 @@ const Option = (props: Props) => {
       )}
       {props.option.option === OptionOption.ANGLE && (
         <AngleSelector value={props.option.value!} />
+      )}
+      {props.option.option === OptionOption.PRESSURE_FOR_SIZE && (
+        <Button
+          onClick={() => FeatureRequest("Options/Brush/Pressure for Size")}
+          selected={props.option.enabled!!}
+          width={"auto"}
+        >
+          <Image src={pressureForSize} />
+        </Button>
       )}
     </StyledOption>
   );
