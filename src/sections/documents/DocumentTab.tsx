@@ -32,6 +32,7 @@ const Label = styled.div`
   color: var(--tab-text);
   font-size: 1.2rem;
   padding: 0 0.5rem;
+  font-weight: 500;
 `;
 
 const DocumentTab = () => {
