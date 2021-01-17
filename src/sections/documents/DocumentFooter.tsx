@@ -10,7 +10,7 @@ const StyledDocumentFooter = styled.div`
 
 const Zoom = styled.div`
   height: 100%;
-  width: 7rem;
+  width: 6.6rem;
   display: flex;
   justify-content: center;
   align-items: center;
