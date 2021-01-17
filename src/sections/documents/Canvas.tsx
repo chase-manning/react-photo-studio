@@ -2,8 +2,8 @@ import React from "react";
 import styled from "styled-components";
 
 const StyledCanvas = styled.div`
-  height: 40rem;
-  width: 60rem;
+  height: 50rem;
+  width: 70rem;
   background-color: white;
 `;
 
