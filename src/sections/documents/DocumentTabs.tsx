@@ -7,6 +7,7 @@ const StyledDocumentTabs = styled.div`
   height: 3rem;
   background-color: var(--expandable);
   border-bottom: solid 1px var(--border);
+  display: flex;
 `;
 
 const DocumentTabs = () => {
