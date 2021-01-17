@@ -21,7 +21,7 @@ const StyledOption = styled.div`
   height: 100%;
   align-items: center;
   justify-content: center;
-  padding: 0 0.4rem;
+  padding: 0 0.5rem;
 `;
 
 type ImageProps = {
