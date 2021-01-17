@@ -1,7 +1,7 @@
 import { useHotkeys } from "react-hotkeys-hook";
 import { useDispatch, useSelector } from "react-redux";
 import { ActionType } from "../state/actionSchema";
-import { selectActions } from "../state/actionSlice";
+import { selectActions } from "../state/actionsSlice";
 import { DeviceShortcut } from "../services/ShortcutService";
 
 const Shortcuts = () => {
