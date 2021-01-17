@@ -22,6 +22,8 @@ const GlobalStyle = createGlobalStyle`
         --white: #ffffff;
         --bg: #272727;
         --sidebar: #4a4a4a;
+        --close-hover: #636363;
+        --tab-text: #f3f3f3;
     }
   
     * {
