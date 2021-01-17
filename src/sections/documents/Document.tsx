@@ -1,9 +1,10 @@
 import React, { useRef, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import styled from "styled-components";
+import { FeatureRequest } from "../../services/AnalyticsService";
 import { setCursorPosition } from "../../state/cursorSlice";
 import { ToolOption } from "../../state/toolSchema";
-import { selectToolOption } from "../../state/toolsSlice";
+import { selectTool } from "../../state/toolsSlice";
 import Canvas from "./Canvas";
 import Cursor from "./Cursor";
 
@@ -32,7 +33,7 @@ const EventHandler = styled.div`
 
 const Document = () => {
   const dispatch = useDispatch();
-  const toolOption = useSelector(selectToolOption);
+  const tool = useSelector(selectTool);
 
   const document = useRef<HTMLDivElement>(null);
   const [showCursor, setShowCursor] = useState(false);
@@ -46,10 +47,10 @@ const Document = () => {
   return (
     <StyledDocument
       ref={document}
-      cursor={toolOption === ToolOption.BRUSH ? "none" : "auto"}
+      cursor={tool.option === ToolOption.BRUSH ? "none" : "auto"}
     >
       <Canvas />
-      {showCursor && toolOption === ToolOption.BRUSH && (
+      {showCursor && tool.option === ToolOption.BRUSH && (
         <Cursor documentPosition={documentPosition} />
       )}
       <EventHandler
@@ -58,6 +59,7 @@ const Document = () => {
         onMouseMove={(e) =>
           dispatch(setCursorPosition({ x: e.clientX, y: e.clientY }))
         }
+        onClick={() => FeatureRequest("Document/" + tool.name)}
       />
     </StyledDocument>
   );
