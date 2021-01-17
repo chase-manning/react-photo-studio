@@ -8,6 +8,7 @@ import Presets from "./Presets";
 import { FeatureRequest } from "../../services/AnalyticsService";
 import Dropdown from "../../shared/Dropdown";
 import { getBlendingModeText } from "../../types/blendingModes";
+import { ReactComponent as ArrowIcon } from "../../assets/svgs/navigation/triangle-right.svg";
 
 import brushSettings from "../../assets/options/brush-settings.svg";
 import pressureForOpacity from "../../assets/options/pressure-for-opacity.png";
@@ -29,6 +30,15 @@ type ImageProps = {
 const Image = styled.img`
   height: ${(props: ImageProps) => (props.small ? "1.5rem" : "1.9rem")};
   width: ${(props: ImageProps) => (props.small ? "1.5rem" : "1.9rem")};
+`;
+
+const ContextIndicator = styled(ArrowIcon)`
+  position: absolute;
+  right: 0.1rem;
+  bottom: 0.3rem;
+  height: 0.4rem;
+  fill: var(--white);
+  transform: rotate(90deg);
 `;
 
 type Props = {
@@ -92,6 +102,7 @@ const Option = (props: Props) => {
           width={"auto"}
         >
           <Image src={settings} small />
+          <ContextIndicator />
         </Button>
       )}
     </StyledOption>
