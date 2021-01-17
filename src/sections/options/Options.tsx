@@ -22,6 +22,7 @@ const OptionSection = styled.div`
 const SectionLine = styled.div`
   height: 80%;
   border-right: solid 1px var(--section-line);
+  margin: 0 0.2rem;
 `;
 
 const Options = () => {
