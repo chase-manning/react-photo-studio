@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import DocumentTab from "./DocumentTab";
 
 const StyledDocumentTabs = styled.div`
   width: 100%;
@@ -9,7 +10,11 @@ const StyledDocumentTabs = styled.div`
 `;
 
 const DocumentTabs = () => {
-  return <StyledDocumentTabs></StyledDocumentTabs>;
+  return (
+    <StyledDocumentTabs>
+      <DocumentTab />
+    </StyledDocumentTabs>
+  );
 };
 
 export default DocumentTabs;
