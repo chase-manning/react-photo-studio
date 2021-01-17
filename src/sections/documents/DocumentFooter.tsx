@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import arrow from "../../assets/svgs/navigation/arrow.svg";
+import { FeatureRequest } from "../../services/AnalyticsService";
 
 const StyledDocumentFooter = styled.div`
   width: 100%;
@@ -59,16 +60,35 @@ const Arrow = styled.img`
   transform: rotate(-90deg) translate(0.1rem, -0.1rem);
 `;
 
+const ScrollBar = styled.div`
+  flex: 1;
+  height: 100%;
+`;
+
+const End = styled.div`
+  height: 100%;
+  width: 1.6rem;
+  background-color: var(--panel);
+`;
+
 const DocumentFooter = () => {
   return (
     <StyledDocumentFooter>
-      <Zoom>100%</Zoom>
+      <Zoom onClick={() => FeatureRequest("Document/Footer/Zoom Edit")}>
+        100%
+      </Zoom>
       <DetailsContainer>
-        <Details>7009 px x 5009 px (300 ppi)</Details>
-        <Button>
+        <Details
+          onClick={() => FeatureRequest("Document/Footer/Details Details")}
+        >
+          700 px x 500 px (300 ppi)
+        </Details>
+        <Button onClick={() => FeatureRequest("Document/Footer/Details Menu")}>
           <Arrow src={arrow} />
         </Button>
       </DetailsContainer>
+      <ScrollBar />
+      <End />
     </StyledDocumentFooter>
   );
 };
