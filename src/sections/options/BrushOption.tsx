@@ -11,8 +11,7 @@ const StyledBrushOption = styled.button`
 const BrushContainer = styled.div`
   display: flex;
   flex-direction: column;
-  height: calc(100% + 0.2rem);
-  transform: translateY(-0.1rem);
+  height: 100%;
   justify-content: space-between;
   align-items: center;
   margin: 0 0.6rem;
