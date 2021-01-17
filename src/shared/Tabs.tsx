@@ -7,11 +7,12 @@ const StyledTabs = styled.div`
   display: flex;
   flex-direction: column;
   border: solid 1px var(--border);
+  margin-bottom: 0.1rem;
 `;
 
 const Header = styled.div`
   width: 100%;
-  height: 2.8rem;
+  height: 2.9rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -24,7 +25,11 @@ type ItemProps = {
 
 const HeaderItem = styled.div`
   height: 100%;
-  padding: 0.5rem;
+  padding: 0 1.1rem;
+  display: flex;
+  align-items: center;
+  font-weight: 500;
+  font-size: 1.2rem;
   color: ${(props: ItemProps) =>
     props.active ? "var(--tab-text)" : "var(--tab-text-inactive)"};
   background-color: ${(props: ItemProps) =>
@@ -33,6 +38,7 @@ const HeaderItem = styled.div`
   border-bottom: solid 1px var(--border);
   border-bottom: ${(props: ItemProps) =>
     props.active ? "solid 1px var(--panel)" : "solid 1px var(--border)"};
+  user-select: none;
 `;
 
 const MenuContainer = styled.div`
@@ -48,7 +54,7 @@ const Menu = styled.div`
   display: flex;
   flex-direction: column;
   padding: 0.2rem;
-  width: 1.6rem;
+  width: 1.76rem;
   margin-right: 0.3rem;
   border-radius: 0.1rem;
 
