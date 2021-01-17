@@ -1,6 +1,7 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { tools, ToolCollection, ToolOption, ToolType } from "./toolSchema";
 import { RootState } from "./store";
+import { OptionOption, OptionSectionType, OptionType } from "../types/options";
 
 export interface SettingsState {
   schema: ToolCollection[];
@@ -65,9 +66,24 @@ export const selectTool = (state: RootState) => {
   const col = state.tools.schema.filter((col: ToolCollection) => col.active)[0];
   return col.tools.filter((tool: ToolType) => tool.selected)[0];
 };
-export const selectOptionSections = (state: RootState) => {
-  const tool = selectTool(state);
-  return tool.optionSections;
+export const selectToolOption = (state: RootState) => selectTool(state).option;
+export const selectOptionSections = (state: RootState) =>
+  selectTool(state).optionSections;
+export const selectOptions = (state: RootState) => {
+  const options: OptionType[] = [];
+  selectOptionSections(state).forEach((sec: OptionSectionType) =>
+    options.push(...sec.options)
+  );
+  return options;
+};
+
+export const selectBrushSize = (state: RootState) => {
+  const options = selectOptions(state);
+  const brushOptions = options.filter(
+    (option: OptionType) => option.option === OptionOption.BRUSH
+  );
+  if (brushOptions.length > 0) return brushOptions[0].value;
+  return 0;
 };
 
 export default toolsSlice.reducer;
