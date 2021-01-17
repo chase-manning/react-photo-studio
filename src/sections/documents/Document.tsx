@@ -1,11 +1,9 @@
-import React, { useLayoutEffect, useRef, useState } from "react";
+import React, { useRef, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import styled from "styled-components";
 import { setCursorPosition } from "../../state/cursorSlice";
 import { ToolOption } from "../../state/toolSchema";
-import { selectTool } from "../../state/toolsSlice";
-import { OptionSectionType } from "../../types/options";
-import Tool from "../tools/Tool";
+import { selectToolOption } from "../../state/toolsSlice";
 import Canvas from "./Canvas";
 import Cursor from "./Cursor";
 
@@ -26,7 +24,7 @@ const StyledDocument = styled.div`
 
 const Document = () => {
   const dispatch = useDispatch();
-  const tool = useSelector(selectTool);
+  const toolOption = useSelector(selectToolOption);
 
   const document = useRef<HTMLDivElement>(null);
   const [showCursor, setShowCursor] = useState(false);
@@ -45,10 +43,10 @@ const Document = () => {
       onMouseMove={(e) =>
         dispatch(setCursorPosition({ x: e.clientX, y: e.clientY }))
       }
-      cursor={tool.option === ToolOption.BRUSH ? "none" : "auto"}
+      cursor={toolOption === ToolOption.BRUSH ? "none" : "auto"}
     >
       <Canvas />
-      {showCursor && tool.option === ToolOption.BRUSH && (
+      {showCursor && toolOption === ToolOption.BRUSH && (
         <Cursor documentPosition={documentPosition} />
       )}
     </StyledDocument>
