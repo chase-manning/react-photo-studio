@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import cross from "../../assets/svgs/navigation/cross.svg";
+import { FeatureRequest } from "../../services/AnalyticsService";
 
 const StyledTab = styled.div`
   height: 100%;
@@ -33,12 +34,25 @@ const Label = styled.div`
   font-size: 1.2rem;
   padding: 0 0.5rem;
   font-weight: 500;
+  user-select: none;
 `;
 
 const DocumentTab = () => {
+  const [timer, setTimer] = useState(0);
+
   return (
-    <StyledTab>
-      <CloseButton>
+    <StyledTab
+      onMouseEnter={() =>
+        setTimer(
+          window.setTimeout(
+            () => FeatureRequest("Documents/Tabs/Tab/Hover Menu"),
+            1000
+          )
+        )
+      }
+      onMouseLeave={() => window.clearTimeout(timer)}
+    >
+      <CloseButton onClick={() => FeatureRequest("Documents/Tabs/Tab/Close")}>
         <Cross src={cross} />
       </CloseButton>
       <Label>Untitled-1 @ 100% (RGB/8)</Label>
