@@ -36,7 +36,7 @@ const Options = () => {
           {section.options.map((option: OptionType, index: number) => (
             <Option key={index} option={option} />
           ))}
-          {index !== sections.length && <SectionLine />}
+          {index !== sections.length - 1 && <SectionLine />}
         </OptionSection>
       ))}
     </StyledOptions>
