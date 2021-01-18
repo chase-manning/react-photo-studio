@@ -30,7 +30,7 @@ type ItemProps = {
   active?: boolean;
 };
 
-const HeaderItem = styled.div`
+const HeaderItem = styled.button`
   height: 100%;
   padding: 0 1.1rem;
   display: flex;
@@ -45,7 +45,6 @@ const HeaderItem = styled.div`
   border-bottom: solid 1px var(--border);
   border-bottom: ${(props: ItemProps) =>
     props.active ? "solid 1px var(--panel)" : "solid 1px var(--border)"};
-  user-select: none;
 `;
 
 const MenuContainer = styled.div`
@@ -57,7 +56,7 @@ const MenuContainer = styled.div`
   border-bottom: solid 1px var(--border);
 `;
 
-const Menu = styled.div`
+const Menu = styled.button`
   display: flex;
   flex-direction: column;
   padding: 0.2rem;
