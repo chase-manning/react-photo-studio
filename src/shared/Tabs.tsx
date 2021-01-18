@@ -45,6 +45,11 @@ const HeaderItem = styled.button`
   border-bottom: solid 1px var(--border);
   border-bottom: ${(props: ItemProps) =>
     props.active ? "solid 1px var(--panel)" : "solid 1px var(--border)"};
+
+  :hover {
+    background-color: ${(props: ItemProps) =>
+      props.active ? "var(--panel)" : "var(--tab-hover)"};
+  }
 `;
 
 const MenuContainer = styled.div`
@@ -108,7 +113,7 @@ const Tabs = (props: Props) => {
         ))}
         <MenuContainer>
           <div />
-          <Menu>
+          <Menu onClick={() => FeatureRequest("Windows/Menu")}>
             <Line />
             <Line />
             <Line />
