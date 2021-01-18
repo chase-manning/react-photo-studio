@@ -31,6 +31,7 @@ const GlobalStyle = createGlobalStyle`
         --tab-hover: #4f4f4f;
         --layer-border: #2e2e2e;
         --layer-text: #f0f0f0;
+        --layer-bg: #4d4d4d;
     }
   
     * {
