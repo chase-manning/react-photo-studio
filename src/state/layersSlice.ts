@@ -1,7 +1,7 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { RootState } from "./store";
 
-export type Layer = {
+export type LayerType = {
   name: string;
   active: boolean;
   visible: boolean;
@@ -9,7 +9,7 @@ export type Layer = {
 };
 
 export interface LayersSlice {
-  schema: Layer[];
+  schema: LayerType[];
 }
 
 const initialState: LayersSlice = {
