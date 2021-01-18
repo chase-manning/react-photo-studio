@@ -71,7 +71,7 @@ const Lock = styled.img`
 const Footer = styled.div`
   width: 100%;
   background-color: var(--panel);
-  height: 2rem;
+  height: 2.4rem;
   border-top: solid 1px var(--section-line);
 `;
 
