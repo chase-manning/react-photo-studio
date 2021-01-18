@@ -12,7 +12,7 @@ const StyledLayersWindow = styled.div`
 
 const Layer = styled.div`
   width: 100%;
-  height: 4rem;
+  height: 3.8rem;
   display: flex;
   border-bottom: solid 1px var(--hover-bg);
   background-color: var(--panel);
@@ -32,8 +32,8 @@ const Eye = styled.img`
 `;
 
 const Canvas = styled.div`
+  height: 100%;
   width: 3.8rem;
-  height: 3rem;
   background-color: white;
   border: solid 1px var(--layer-border);
 `;
