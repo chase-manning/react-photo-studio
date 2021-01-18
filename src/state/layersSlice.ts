@@ -46,8 +46,8 @@ export const layersSlice = createSlice({
   initialState,
   reducers: {
     toggleLayerVisibility: (state, action: PayloadAction<number>) => {
-      state.schema[action.payload].visible =
-        state.schema[action.payload].visible;
+      state.schema[action.payload].visible = !state.schema[action.payload]
+        .visible;
     },
   },
 });
