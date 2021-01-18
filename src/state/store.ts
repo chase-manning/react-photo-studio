@@ -10,11 +10,13 @@ import thunk from "redux-thunk";
 import toolsReducer from "./toolsSlice";
 import actionReducer from "./actionsSlice";
 import cursorReducer from "./cursorSlice";
+import layersReducer from "./layersSlice";
 
 export const reducer = combineReducers({
   tools: toolsReducer,
   actions: actionReducer,
   cursor: cursorReducer,
+  layers: layersReducer,
 });
 
 export const store = createStore(
