@@ -14,12 +14,6 @@ const StyledWindows = styled.div`
   flex-direction: column;
 `;
 
-const Filler = styled.div`
-  flex: 1;
-  width: 100%;
-  background-color: var(--panel);
-`;
-
 const Windows = () => {
   return (
     <StyledWindows>
@@ -35,7 +29,6 @@ const Windows = () => {
         );
         return <Tabs tabs={tabs} />;
       })}
-      <Filler />
     </StyledWindows>
   );
 };
