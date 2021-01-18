@@ -29,6 +29,8 @@ const GlobalStyle = createGlobalStyle`
         --menu-lines: #a8a8a8;
         --menu-hover-bg: #474747;
         --tab-hover: #4f4f4f;
+        --layer-border: #2e2e2e;
+        --layer-text: #f0f0f0;
     }
   
     * {
