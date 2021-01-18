@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import { FeatureRequest } from "../../services/AnalyticsService";
 import Expandable from "../../shared/Expandable";
@@ -15,6 +15,8 @@ const StyledWindows = styled.div`
 `;
 
 const Windows = () => {
+  const [heights, setHeights] = useState([0, 0, 100]);
+
   return (
     <StyledWindows>
       <Expandable
@@ -22,12 +24,12 @@ const Windows = () => {
         right={true}
         toggle={() => FeatureRequest("Windows/Expandable")}
       />
-      {windows.map((window: string[]) => {
+      {windows.map((window: string[], index: number) => {
         const tabs: TabType[] = [];
         window.forEach((label: string) =>
           tabs.push({ label: label, content: <Window window={label} /> })
         );
-        return <Tabs tabs={tabs} />;
+        return <Tabs tabs={tabs} height={heights[index] + "%"} />;
       })}
     </StyledWindows>
   );

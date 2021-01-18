@@ -1,14 +1,19 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 
+type TabsProps = {
+  height: string;
+};
+
 const StyledTabs = styled.div`
-  flex: 1;
   width: 100%;
+  height: ${(props: TabsProps) => props.height};
   display: flex;
   flex-direction: column;
   border: solid 1px var(--border);
   margin-bottom: 0.1rem;
   background-color: var(--panel);
+  min-height: 3.2rem;
 `;
 
 const Header = styled.div`
@@ -80,13 +85,14 @@ export type TabType = {
 
 type Props = {
   tabs: TabType[];
+  height: string;
 };
 
 const Tabs = (props: Props) => {
   const [activeIndex, setActiveIndex] = useState(0);
 
   return (
-    <StyledTabs>
+    <StyledTabs height={props.height}>
       <Header>
         {props.tabs.map((tab: TabType, index: number) => (
           <HeaderItem
