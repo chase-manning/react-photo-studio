@@ -12,10 +12,11 @@
    y="0px"
    viewBox="0 0 10.7 7"
    xml:space="preserve"
-   sodipodi:docname="eye2.svg"
+   sodipodi:docname="eye.svg"
    width="10.7"
    height="7"
-   inkscape:version="1.0.1 (c497b03c, 2020-09-10)"><metadata
+   inkscape:version="1.0.1 (c497b03c, 2020-09-10)"
+   id="svg842"><metadata
    id="metadata852"><rdf:RDF><cc:Work
        rdf:about=""><dc:format>image/svg+xml</dc:format><dc:type
          rdf:resource="http://purl.org/dc/dcmitype/StillImage" /><dc:title></dc:title></cc:Work></rdf:RDF></metadata><defs
@@ -29,36 +30,29 @@
    inkscape:pageopacity="0"
    inkscape:pageshadow="2"
    inkscape:window-width="1792"
-   inkscape:window-height="1120"
+   inkscape:window-height="1067"
    id="namedview848"
    showgrid="false"
-   inkscape:zoom="39.555556"
-   inkscape:cx="9"
-   inkscape:cy="9"
+   inkscape:zoom="15.07094"
+   inkscape:cx="8.4249791"
+   inkscape:cy="8.9749801"
    inkscape:window-x="0"
-   inkscape:window-y="0"
+   inkscape:window-y="25"
    inkscape:window-maximized="0"
-    />
-<g
-   id="content">
+   inkscape:document-rotation="0"
+   inkscape:current-layer="g840" />
 	<g
-   id="SP_RedEyeRemove_Lg_N.png">
-		<g
-   id="g843"
-   transform="translate(-6.3707865,-7.8623595)">
-			<g
-   id="g835">
-			</g>
-			<g
-   id="g841">
-				<path
+   transform="translate(-6.3707865,-7.8623595)"
+   id="g840">
+      <path
+   fill="#dddddd"
    d="m 9.5,11.4 c 0,-1.3 1,-2.3 2.3,-2.3 1.3,0 2.3,1 2.3,2.3 0,1.3 -1,2.3 -2.3,2.3 -1.3,0 -2.3,-1.1 -2.3,-2.3 z m -2.9,0.2 c 0,0 2,3 5.2,3 3.2,0 5.1,-3 5.1,-3 0,0 -2,-3.4 -5.1,-3.4 -3.2,0 -5.2,3.4 -5.2,3.4 z"
-   id="path837" />
-				<path
-   d="m 10.6,11.4 c 0,0.7 0.6,1.3 1.3,1.3 0.7,0 1.3,-0.6 1.3,-1.3 0,-0.1 0,-0.2 0,-0.2 -0.1,0.1 -0.2,0.1 -0.3,0.1 -0.4,0 -0.7,-0.3 -0.7,-0.7 0,-0.2 0,-0.2 0.1,-0.3 -0.1,0 -0.2,0 -0.2,0 -1,-0.1 -1.5,0.4 -1.5,1.1 z"
-   id="path839" />
-			</g>
-		</g>
-	</g>
-</g>
+   id="path836" />
+		
+	<circle
+   style="fill:#dddddd;stroke:#dddddd;stroke-width:40"
+   id="path846"
+   cx="12.574779"
+   cy="10.682356"
+   r="0.49764645" /></g>
 </svg>
