@@ -1,11 +1,5 @@
 import React from "react";
-import styled from "styled-components";
 import LayersWindow from "./LayersWindow";
-
-const Unimplemented = styled.div`
-  width: 100%;
-  height: 1px;
-`;
 
 type Props = {
   window: string;
@@ -14,23 +8,23 @@ type Props = {
 const Window = (props: Props) => {
   switch (props.window) {
     case "Color":
-      return <Unimplemented />;
+      return null;
     case "Swatches":
-      return <Unimplemented />;
+      return null;
     case "Gradients":
-      return <Unimplemented />;
+      return null;
     case "Patterns":
-      return <Unimplemented />;
+      return null;
     case "Properties":
-      return <Unimplemented />;
+      return null;
     case "Adjustments":
-      return <Unimplemented />;
+      return null;
     case "Layers":
       return <LayersWindow />;
     case "Channels":
-      return <Unimplemented />;
+      return null;
     case "Paths":
-      return <Unimplemented />;
+      return null;
     default:
       throw new Error("Window Not Found");
   }
