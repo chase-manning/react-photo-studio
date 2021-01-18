@@ -4,6 +4,7 @@ import { FeatureRequest } from "../services/AnalyticsService";
 
 type TabsProps = {
   height: string;
+  bottom: boolean;
 };
 
 const StyledTabs = styled.div`
@@ -12,7 +13,7 @@ const StyledTabs = styled.div`
   display: flex;
   flex-direction: column;
   border: solid 1px var(--border);
-  margin-bottom: 0.1rem;
+  margin-bottom: ${(props: TabsProps) => (props.bottom ? "0" : "0.1rem")};
   background-color: var(--panel);
   min-height: 3.2rem;
 `;
@@ -92,13 +93,14 @@ export type TabType = {
 type Props = {
   tabs: TabType[];
   height: string;
+  bottom: boolean;
 };
 
 const Tabs = (props: Props) => {
   const [activeIndex, setActiveIndex] = useState(0);
 
   return (
-    <StyledTabs height={props.height}>
+    <StyledTabs height={props.height} bottom={props.bottom}>
       <Header>
         {props.tabs.map((tab: TabType, index: number) => (
           <HeaderItem

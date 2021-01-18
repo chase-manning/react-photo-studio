@@ -38,7 +38,13 @@ const Windows = () => {
             implemented: isImplemented(label),
           })
         );
-        return <Tabs tabs={tabs} height={heights[index] + "%"} />;
+        return (
+          <Tabs
+            tabs={tabs}
+            height={heights[index] + "%"}
+            bottom={index === windows.length - 1}
+          />
+        );
       })}
     </StyledWindows>
   );
