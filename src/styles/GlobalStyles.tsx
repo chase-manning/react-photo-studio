@@ -28,6 +28,7 @@ const GlobalStyle = createGlobalStyle`
         --footer-button-border: #595959;
         --menu-lines: #a8a8a8;
         --menu-hover-bg: #474747;
+        --tab-hover: #4f4f4f;
     }
   
     * {
