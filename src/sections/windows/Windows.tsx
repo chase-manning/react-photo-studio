@@ -20,7 +20,7 @@ const isImplemented = (label: string) => {
 };
 
 const Windows = () => {
-  const [heights, setHeights] = useState([0, 0, 100]);
+  const [heights] = useState([0, 0, 100]);
 
   return (
     <StyledWindows>
