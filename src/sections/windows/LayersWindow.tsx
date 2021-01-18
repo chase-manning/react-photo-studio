@@ -3,6 +3,7 @@ import { useSelector } from "react-redux";
 import styled from "styled-components";
 import { LayerType, selectLayers } from "../../state/layersSlice";
 import eye from "../../assets/svgs/layers/eye.svg";
+import lock from "../../assets/svgs/layers/lock.svg";
 
 const StyledLayersWindow = styled.div`
   width: 100%;
@@ -16,6 +17,7 @@ const Layer = styled.div`
   display: flex;
   border-bottom: solid 1px var(--hover-bg);
   background-color: var(--panel);
+  align-items: center;
 `;
 
 const Visibility = styled.div`
@@ -51,6 +53,11 @@ const LayerName = styled.div`
   margin-left: 0.7rem;
 `;
 
+const Lock = styled.img`
+  height: 1.4rem;
+  margin-right: 1rem;
+`;
+
 const LayersWindow = () => {
   const layers = useSelector(selectLayers);
 
@@ -65,6 +72,7 @@ const LayersWindow = () => {
             <Canvas />
             <LayerName>{layer.name}</LayerName>
           </Content>
+          <Lock src={lock} />
         </Layer>
       ))}
     </StyledLayersWindow>
