@@ -54,8 +54,9 @@ const LayerName = styled.div`
 `;
 
 const Lock = styled.img`
-  height: 1.4rem;
-  margin-right: 1rem;
+  height: 1.2rem;
+  margin-right: 1.5rem;
+  transform: translateY(-0.1rem);
 `;
 
 const LayersWindow = () => {
@@ -72,7 +73,7 @@ const LayersWindow = () => {
             <Canvas />
             <LayerName>{layer.name}</LayerName>
           </Content>
-          <Lock src={lock} />
+          {layer.locked && <Lock src={lock} />}
         </Layer>
       ))}
     </StyledLayersWindow>
