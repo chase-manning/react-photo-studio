@@ -9,6 +9,15 @@ const StyledLayersWindow = styled.div`
   width: 100%;
   height: 100%;
   background-color: var(--layer-bg);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+`;
+
+const Layers = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
 `;
 
 const Layer = styled.div`
@@ -59,23 +68,33 @@ const Lock = styled.img`
   transform: translateY(-0.1rem);
 `;
 
+const Footer = styled.div`
+  width: 100%;
+  background-color: var(--panel);
+  height: 2rem;
+  border-top: solid 1px var(--section-line);
+`;
+
 const LayersWindow = () => {
   const layers = useSelector(selectLayers);
 
   return (
     <StyledLayersWindow>
-      {layers.map((layer: LayerType) => (
-        <Layer>
-          <Visibility>
-            <Eye src={eye} />
-          </Visibility>
-          <Content>
-            <Canvas />
-            <LayerName>{layer.name}</LayerName>
-          </Content>
-          {layer.locked && <Lock src={lock} />}
-        </Layer>
-      ))}
+      <Layers>
+        {layers.map((layer: LayerType) => (
+          <Layer>
+            <Visibility>
+              <Eye src={eye} />
+            </Visibility>
+            <Content>
+              <Canvas />
+              <LayerName>{layer.name}</LayerName>
+            </Content>
+            {layer.locked && <Lock src={lock} />}
+          </Layer>
+        ))}
+      </Layers>
+      <Footer></Footer>
     </StyledLayersWindow>
   );
 };
