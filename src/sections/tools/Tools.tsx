@@ -14,7 +14,6 @@ const StyledTools = styled.div`
   width: 4rem;
   margin-right: 0.1rem;
   background-color: var(--panel);
-  border: solid 0.1rem var(--border);
 `;
 
 const Container = styled.div`
@@ -23,6 +22,7 @@ const Container = styled.div`
   border-top: solid 0.1rem var(--border);
   display: flex;
   flex-direction: column;
+  border: solid 0.1rem var(--border);
 `;
 
 const ToolsContainer = styled.div`

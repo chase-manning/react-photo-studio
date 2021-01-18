@@ -7,6 +7,9 @@ const StyledExpandable = styled.div`
   background-color: var(--expandable);
   display: flex;
   justify-content: space-between;
+  border-top: solid 0.1rem var(--border);
+  border-left: solid 0.1rem var(--border);
+  border-right: solid 0.1rem var(--border);
 `;
 
 const ToggleButton = styled.button`
