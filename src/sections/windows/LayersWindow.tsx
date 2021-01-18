@@ -20,7 +20,7 @@ const Layer = styled.div`
 
 const Visibility = styled.div`
   height: 100%;
-  width: 4rem;
+  width: 3.5rem;
   border-right: solid 1px var(--hover-bg);
   display: flex;
   justify-content: center;
@@ -28,12 +28,12 @@ const Visibility = styled.div`
 `;
 
 const Eye = styled.img`
-  height: 1rem;
+  height: 0.9rem;
 `;
 
 const Canvas = styled.div`
-  width: 3rem;
-  height: 2.5rem;
+  width: 3.8rem;
+  height: 3rem;
   background-color: white;
   border: solid 1px var(--layer-border);
 `;
@@ -41,7 +41,7 @@ const Canvas = styled.div`
 const Content = styled.div`
   flex: 1;
   height: 100%;
-  padding: 0.5rem;
+  padding: 0.4rem;
   display: flex;
   align-items: center;
 `;
