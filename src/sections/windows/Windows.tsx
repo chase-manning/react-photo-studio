@@ -14,6 +14,11 @@ const StyledWindows = styled.div`
   flex-direction: column;
 `;
 
+const isImplemented = (label: string) => {
+  const implemented = ["Layers"];
+  return implemented.indexOf(label) >= 0;
+};
+
 const Windows = () => {
   const [heights, setHeights] = useState([0, 0, 100]);
 
@@ -27,7 +32,11 @@ const Windows = () => {
       {windows.map((window: string[], index: number) => {
         const tabs: TabType[] = [];
         window.forEach((label: string) =>
-          tabs.push({ label: label, content: <Window window={label} /> })
+          tabs.push({
+            label: label,
+            content: <Window window={label} />,
+            implemented: isImplemented(label),
+          })
         );
         return <Tabs tabs={tabs} height={heights[index] + "%"} />;
       })}

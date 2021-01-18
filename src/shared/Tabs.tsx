@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
+import { FeatureRequest } from "../services/AnalyticsService";
 
 type TabsProps = {
   height: string;
@@ -81,6 +82,7 @@ const Line = styled.div`
 export type TabType = {
   label: string;
   content: JSX.Element;
+  implemented: boolean;
 };
 
 type Props = {
@@ -96,7 +98,10 @@ const Tabs = (props: Props) => {
       <Header>
         {props.tabs.map((tab: TabType, index: number) => (
           <HeaderItem
-            onClick={() => setActiveIndex(index)}
+            onClick={() => {
+              if (tab.implemented) setActiveIndex(index);
+              else FeatureRequest("Windows/" + props.tabs[index].label);
+            }}
             active={index === activeIndex}
           >
             {tab.label}
