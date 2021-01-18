@@ -1,17 +1,12 @@
 import React from "react";
 import styled from "styled-components";
 
-type ExpandableProps = {
-  right: boolean;
-};
-
 const StyledExpandable = styled.div`
   width: 100%;
   height: 1.2rem;
   background-color: var(--expandable);
   display: flex;
-  justify-content: ${(props: ExpandableProps) =>
-    props.right ? "right" : "left"};
+  justify-content: space-between;
 `;
 
 const ToggleButton = styled.button`
@@ -43,7 +38,8 @@ const Expandable = (props: Props) => {
   };
 
   return (
-    <StyledExpandable right={!!props.right}>
+    <StyledExpandable>
+      {props.right && <div />}
       <ToggleButton onClick={() => props.toggle()}>{arrows()}</ToggleButton>
     </StyledExpandable>
   );
