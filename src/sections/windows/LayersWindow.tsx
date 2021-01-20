@@ -14,8 +14,14 @@ const StyledLayersWindow = styled.div`
   justify-content: space-between;
 `;
 
+const Setting = styled.div`
+  width: 100%;
+  display: flex;
+`;
+
 const Layers = styled.div`
   width: 100%;
+  height: 100%;
   display: flex;
   flex-direction: column;
 `;
@@ -80,6 +86,9 @@ const LayersWindow = () => {
 
   return (
     <StyledLayersWindow>
+      <Setting>A</Setting>
+      <Setting>B</Setting>
+      <Setting>C</Setting>
       <Layers>
         {layers.map((layer: LayerType) => (
           <Layer>
