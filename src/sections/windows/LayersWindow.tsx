@@ -9,18 +9,20 @@ import Dropdown from "../../shared/Dropdown";
 const StyledLayersWindow = styled.div`
   width: 100%;
   height: 100%;
-  background-color: var(--layer-bg);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  padding-top: 0.5rem;
 `;
 
 const Setting = styled.div`
   width: 100%;
-  height: 2.6rem;
+  height: 2.8rem;
   display: flex;
   border-bottom: solid 1px var(--section-line);
   background-color: var(--panel);
+  align-items: center;
+  padding: 0 0.3rem;
 `;
 
 const Layers = styled.div`
@@ -28,6 +30,7 @@ const Layers = styled.div`
   height: 100%;
   display: flex;
   flex-direction: column;
+  background-color: var(--layer-bg);
 `;
 
 const Layer = styled.div`
@@ -91,9 +94,11 @@ const LayersWindow = () => {
   return (
     <StyledLayersWindow>
       <Setting>
-        <Dropdown selected={"Kind"} options={["meow meow meow"]} />
+        <Dropdown selected={"Kind"} options={["meow meow "]} />
       </Setting>
-      <Setting>B</Setting>
+      <Setting>
+        <Dropdown selected={"Normal"} options={["Meow meow meow meow"]} />
+      </Setting>
       <Setting>C</Setting>
       <Layers>
         {layers.map((layer: LayerType) => (
