@@ -44,7 +44,7 @@ const Icon = styled.div`
 `;
 
 type Props = {
-  label: string;
+  label?: string;
   selected: string;
   options: string[];
 };
@@ -55,7 +55,7 @@ const Dropdown = (props: Props) => {
 
   return (
     <StyledDropdown>
-      <Label>{props.label + ":"}</Label>
+      {props.label && <Label>{props.label + ":"}</Label>}
       <SelectedContainer>
         <Selected width={width}>{props.selected}</Selected>
         <Button onClick={() => FeatureRequest("Dropdown")}>
