@@ -16,7 +16,10 @@ const StyledLayersWindow = styled.div`
 
 const Setting = styled.div`
   width: 100%;
+  height: 2.6rem;
   display: flex;
+  border-bottom: solid 1px var(--section-line);
+  background-color: var(--panel);
 `;
 
 const Layers = styled.div`
