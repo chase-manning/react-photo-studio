@@ -4,6 +4,7 @@ import styled from "styled-components";
 import { LayerType, selectLayers } from "../../state/layersSlice";
 import eye from "../../assets/svgs/layers/eye.svg";
 import lock from "../../assets/svgs/layers/lock.svg";
+import Dropdown from "../../shared/Dropdown";
 
 const StyledLayersWindow = styled.div`
   width: 100%;
@@ -89,7 +90,9 @@ const LayersWindow = () => {
 
   return (
     <StyledLayersWindow>
-      <Setting>A</Setting>
+      <Setting>
+        <Dropdown selected={"Kind"} options={["meow meow meow"]} />
+      </Setting>
       <Setting>B</Setting>
       <Setting>C</Setting>
       <Layers>
