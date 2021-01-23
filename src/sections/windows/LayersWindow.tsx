@@ -230,7 +230,10 @@ const LayersWindow = () => {
           <Button square>
             <ButtonAsset src={mask} />
           </Button>
-          <Button square>h</Button>
+          <Button square>
+            <ButtonAsset src={contrast} />
+            <ContextIndicator />
+          </Button>
           <Button square>h</Button>
           <Button square>h</Button>
           <Button square>h</Button>
