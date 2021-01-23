@@ -64,8 +64,7 @@ const Spacing = styled.div`
 const LockButtons = styled.div`
   height: 95%;
   display: flex;
-  width: 12.6rem;
-  margin-right: 1rem;
+  margin-right: 0.9rem;
 `;
 
 const SpacingSmall = styled.div`
