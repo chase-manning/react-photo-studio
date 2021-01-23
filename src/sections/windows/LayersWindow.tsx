@@ -26,6 +26,7 @@ import style from "../../assets/pngs/style.png";
 import mask from "../../assets/pngs/mask.png";
 import folder from "../../assets/svgs/layers/folder.svg";
 import newLayer from "../../assets/pngs/new.png";
+import trash from "../../assets/svgs/layers/trash.svg";
 
 const StyledLayersWindow = styled.div`
   width: 100%;
@@ -242,7 +243,9 @@ const LayersWindow = () => {
           <Button square>
             <ButtonAsset src={newLayer} />
           </Button>
-          <Button square>h</Button>
+          <Button square>
+            <ButtonAsset src={trash} />
+          </Button>
         </FooterButtons>
       </Footer>
     </StyledLayersWindow>
