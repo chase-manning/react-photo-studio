@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useSelector } from "react-redux";
 import styled from "styled-components";
 import { LayerType, selectLayers } from "../../state/layersSlice";
@@ -12,6 +12,8 @@ import contrast from "../../assets/pngs/contrast.png";
 import type from "../../assets/svgs/tools/type.svg";
 import shape from "../../assets/pngs/shape.png";
 import smartObject from "../../assets/pngs/smart-object.png";
+import layerFiltersOn from "../../assets/pngs/layer-filters-on.png";
+import layerFiltersOff from "../../assets/pngs/layer-filters-off.png";
 
 const StyledLayersWindow = styled.div`
   width: 100%;
@@ -40,6 +42,11 @@ const Buttons = styled.div`
 
 const ButtonAsset = styled.img`
   height: 80%;
+`;
+
+const FiltersToggle = styled.img`
+  height: 80%;
+  margin-left: 0.5rem;
 `;
 
 const Spacing = styled.div`
@@ -112,6 +119,7 @@ const Footer = styled.div`
 
 const LayersWindow = () => {
   const layers = useSelector(selectLayers);
+  const [filtersEnabled, setFiltersEnabled] = useState(true);
 
   return (
     <StyledLayersWindow>
@@ -133,8 +141,10 @@ const LayersWindow = () => {
           <Button selected={false}>
             <ButtonAsset src={smartObject} />
           </Button>
-          <Button selected={false}>M</Button>
         </Buttons>
+        <FiltersToggle
+          src={filtersEnabled ? layerFiltersOn : layerFiltersOff}
+        />
       </Setting>
       <Setting>
         <Dropdown selected={"Normal"} options={["Meow meow meow meow"]} />
