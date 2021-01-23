@@ -17,6 +17,7 @@ import smartObject from "../../assets/pngs/smart-object.png";
 import layerFiltersOn from "../../assets/pngs/layer-filters-on.png";
 import layerFiltersOff from "../../assets/pngs/layer-filters-off.png";
 import transparent from "../../assets/pngs/transparent.png";
+import brush from "../../assets/svgs/tools/brush.svg";
 
 const StyledLayersWindow = styled.div`
   width: 100%;
@@ -174,7 +175,9 @@ const LayersWindow = () => {
           <Button selected={false}>
             <ButtonAsset src={transparent} />
           </Button>
-          <Button selected={false}>M</Button>
+          <Button selected={false}>
+            <ButtonAsset src={brush} />
+          </Button>
           <Button selected={false}>M</Button>
           <Button selected={false}>M</Button>
           <Button selected={false}>M</Button>
