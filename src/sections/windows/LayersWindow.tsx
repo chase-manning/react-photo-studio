@@ -30,13 +30,13 @@ const Setting = styled.div`
 `;
 
 const Buttons = styled.div`
-  height: 80%;
+  height: 90%;
   display: flex;
   margin-left: 0.7rem;
 `;
 
 const ButtonAsset = styled.img`
-  height: 100%;
+  height: 85%;
 `;
 
 const Spacing = styled.div`
