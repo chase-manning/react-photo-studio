@@ -8,6 +8,7 @@ import Dropdown from "../../shared/Dropdown";
 import PercentSelector from "../../shared/PercentSelector";
 import Button from "../../styles/Button";
 import picture from "../../assets/pngs/picture.png";
+import contrast from "../../assets/pngs/contrast.png";
 
 const StyledLayersWindow = styled.div`
   width: 100%;
@@ -117,7 +118,9 @@ const LayersWindow = () => {
           <Button selected={false}>
             <ButtonAsset src={picture} />
           </Button>
-          <Button selected={false}>M</Button>
+          <Button selected={false}>
+            <ButtonAsset src={contrast} />
+          </Button>
           <Button selected={false}>M</Button>
           <Button selected={false}>M</Button>
           <Button selected={false}>M</Button>
