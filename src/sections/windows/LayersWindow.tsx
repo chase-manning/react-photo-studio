@@ -24,6 +24,7 @@ import artboardNesting from "../../assets/pngs/artboard-nesting.png";
 import link from "../../assets/pngs/link.png";
 import style from "../../assets/pngs/style.png";
 import mask from "../../assets/pngs/mask.png";
+import folder from "../../assets/svgs/layers/folder.svg";
 
 const StyledLayersWindow = styled.div`
   width: 100%;
@@ -234,7 +235,9 @@ const LayersWindow = () => {
             <ButtonAsset src={contrast} />
             <ContextIndicator />
           </Button>
-          <Button square>h</Button>
+          <Button square>
+            <ButtonAsset src={folder} />
+          </Button>
           <Button square>h</Button>
           <Button square>h</Button>
         </FooterButtons>
