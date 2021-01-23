@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="108mm"
+   height="135mm"
+   viewBox="0 0 108 135"
+   version="1.1"
+   id="svg3281"
+   inkscape:version="1.0.1 (c497b03c, 2020-09-10)"
+   sodipodi:docname="trash.svg">
+  <defs
+     id="defs3275" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.35"
+     inkscape:cx="315.49208"
+     inkscape:cy="534.28571"
+     inkscape:document-units="mm"
+     inkscape:current-layer="layer1"
+     inkscape:document-rotation="0"
+     showgrid="false"
+     inkscape:window-width="776"
+     inkscape:window-height="1039"
+     inkscape:window-x="896"
+     inkscape:window-y="25"
+     inkscape:window-maximized="0" />
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <g
+       transform="matrix(6.2800342,0,0,6.2800342,-93.908179,-1702.8177)">
+      <rect
+         y="258"
+         fill="none"
+         width="47"
+         height="47"
+         x="0" />
+      <g
+         >
+        <path
+           fill="#dddddd"
+           d="m 17.865478,290.19019 h -6.1e-5 l 0.180481,1.25195 c 0.02039,0.24676 0.22638,0.43671 0.473755,0.43671 l 10.067505,0.0279 c 0.291565,0 0.540039,-0.21161 0.586975,-0.49963 l 0.198243,-1.2168 6.1e-5,-1.8e-4 1.390258,-11.45606 H 16.47522 Z"
+           id="path839" />
+        <path
+           fill="#dddddd"
+           d="m 29.707214,274.10431 h -2.703247 v -0.58771 c 0,-0.888 -0.721313,-1.6098 -1.60791,-1.6098 h -3.555481 c -0.885925,0 -1.606628,0.7218 -1.606628,1.60852 v 0.58899 h -2.705994 c -1.054321,0 -1.908997,0.85571 -1.908997,1.91132 v 1.0578 h 16 v -1.05506 c 0,-1.05707 -0.855957,-1.91406 -1.911743,-1.91406 z m -8.140625,-0.78864 c 0,-0.15112 0.122986,-0.27423 0.273987,-0.27423 h 3.555481 c 0.151611,0 0.275269,0.12378 0.275269,0.27558 v 0.7622 H 21.56659 v -0.76355 z"
+           id="path841" />
+      </g>
+    </g>
+  </g>
+</svg>
