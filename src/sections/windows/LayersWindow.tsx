@@ -18,6 +18,7 @@ import layerFiltersOn from "../../assets/pngs/layer-filters-on.png";
 import layerFiltersOff from "../../assets/pngs/layer-filters-off.png";
 import transparent from "../../assets/pngs/transparent.png";
 import brush from "../../assets/svgs/tools/brush.svg";
+import move from "../../assets/svgs/tools/move.svg";
 
 const StyledLayersWindow = styled.div`
   width: 100%;
@@ -178,7 +179,9 @@ const LayersWindow = () => {
           <Button selected={false}>
             <ButtonAsset src={brush} />
           </Button>
-          <Button selected={false}>M</Button>
+          <Button selected={false}>
+            <ButtonAsset src={move} />
+          </Button>
           <Button selected={false}>M</Button>
           <Button selected={false}>M</Button>
         </LockButtons>
