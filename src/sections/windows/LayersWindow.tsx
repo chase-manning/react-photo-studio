@@ -19,6 +19,7 @@ import layerFiltersOff from "../../assets/pngs/layer-filters-off.png";
 import transparent from "../../assets/pngs/transparent.png";
 import brush from "../../assets/svgs/tools/brush.svg";
 import move from "../../assets/svgs/tools/move.svg";
+import artboardNesting from "../../assets/pngs/artboard-nesting.png";
 
 const StyledLayersWindow = styled.div`
   width: 100%;
@@ -182,8 +183,12 @@ const LayersWindow = () => {
           <Button selected={false}>
             <ButtonAsset src={move} />
           </Button>
-          <Button selected={false}>M</Button>
-          <Button selected={false}>M</Button>
+          <Button selected={false}>
+            <ButtonAsset src={artboardNesting} />
+          </Button>
+          <Button selected={false}>
+            <ButtonAsset src={lock} />
+          </Button>
         </LockButtons>
         <PercentSelector label={"Fill"} value={100}></PercentSelector>
       </Setting>
