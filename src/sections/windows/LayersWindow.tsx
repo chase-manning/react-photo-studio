@@ -7,6 +7,8 @@ import lock from "../../assets/svgs/layers/lock.svg";
 import Dropdown from "../../shared/Dropdown";
 import PercentSelector from "../../shared/PercentSelector";
 import Button from "../../styles/Button";
+import Label from "../../styles/Label";
+
 import picture from "../../assets/pngs/picture.png";
 import contrast from "../../assets/pngs/contrast.png";
 import type from "../../assets/svgs/tools/type.svg";
@@ -14,7 +16,7 @@ import shape from "../../assets/pngs/shape.png";
 import smartObject from "../../assets/pngs/smart-object.png";
 import layerFiltersOn from "../../assets/pngs/layer-filters-on.png";
 import layerFiltersOff from "../../assets/pngs/layer-filters-off.png";
-import Label from "../../styles/Label";
+import transparent from "../../assets/pngs/transparent.png";
 
 const StyledLayersWindow = styled.div`
   width: 100%;
@@ -169,7 +171,9 @@ const LayersWindow = () => {
         <SpacingSmall />
         <Label>Lock:</Label>
         <LockButtons>
-          <Button selected={false}>M</Button>
+          <Button selected={false}>
+            <ButtonAsset src={transparent} />
+          </Button>
           <Button selected={false}>M</Button>
           <Button selected={false}>M</Button>
           <Button selected={false}>M</Button>
