@@ -14,6 +14,7 @@ import shape from "../../assets/pngs/shape.png";
 import smartObject from "../../assets/pngs/smart-object.png";
 import layerFiltersOn from "../../assets/pngs/layer-filters-on.png";
 import layerFiltersOff from "../../assets/pngs/layer-filters-off.png";
+import Label from "../../styles/Label";
 
 const StyledLayersWindow = styled.div`
   width: 100%;
@@ -53,6 +54,18 @@ const FiltersToggle = styled.img`
 const Spacing = styled.div`
   height: 100%;
   width: 0.4rem;
+`;
+
+const LockButtons = styled.div`
+  height: 95%;
+  display: flex;
+  width: 12.6rem;
+  margin-right: 1rem;
+`;
+
+const SpacingSmall = styled.div`
+  height: 100%;
+  width: 0.2rem;
 `;
 
 const Layers = styled.div`
@@ -152,7 +165,18 @@ const LayersWindow = () => {
         <Spacing />
         <PercentSelector label={"Opacity"} value={100} />
       </Setting>
-      <Setting>C</Setting>
+      <Setting>
+        <SpacingSmall />
+        <Label>Lock:</Label>
+        <LockButtons>
+          <Button selected={false}>M</Button>
+          <Button selected={false}>M</Button>
+          <Button selected={false}>M</Button>
+          <Button selected={false}>M</Button>
+          <Button selected={false}>M</Button>
+        </LockButtons>
+        <PercentSelector label={"Fill"} value={100}></PercentSelector>
+      </Setting>
       <Layers>
         {layers.map((layer: LayerType) => (
           <Layer>
