@@ -1,17 +1,11 @@
 import React from "react";
 import styled from "styled-components";
 import { FeatureRequest } from "../services/AnalyticsService";
+import Label from "../styles/Label";
 
 const StyledPercentSelector = styled.div`
   display: flex;
   align-items: center;
-`;
-
-const Label = styled.div`
-  color: var(--label);
-  margin-right: 0.4rem;
-  cursor: url("cursors/scrub.png"), auto;
-  user-select: none;
 `;
 
 const InputContainer = styled.div`
@@ -49,7 +43,10 @@ type Props = {
 const PercentSelector = (props: Props) => {
   return (
     <StyledPercentSelector>
-      <Label onClick={() => FeatureRequest("Percent Selector/Label Scrub")}>
+      <Label
+        scrubCursor
+        onClick={() => FeatureRequest("Percent Selector/Label Scrub")}
+      >
         {props.label + ":"}
       </Label>
       <InputContainer>
