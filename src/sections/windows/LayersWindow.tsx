@@ -20,6 +20,7 @@ import transparent from "../../assets/pngs/transparent.png";
 import brush from "../../assets/svgs/tools/brush.svg";
 import move from "../../assets/svgs/tools/move.svg";
 import artboardNesting from "../../assets/pngs/artboard-nesting.png";
+import link from "../../assets/pngs/link.png";
 
 const StyledLayersWindow = styled.div`
   width: 100%;
@@ -133,6 +134,14 @@ const Footer = styled.div`
   background-color: var(--panel);
   height: 2.4rem;
   border-top: solid 1px var(--section-line);
+  display: flex;
+  justify-content: space-between;
+`;
+
+const FooterButtons = styled.div`
+  height: 100%;
+  display: flex;
+  margin-right: 3rem;
 `;
 
 const LayersWindow = () => {
@@ -205,7 +214,20 @@ const LayersWindow = () => {
           </Layer>
         ))}
       </Layers>
-      <Footer></Footer>
+      <Footer>
+        <div />
+        <FooterButtons>
+          <Button square>
+            <ButtonAsset src={link} />
+          </Button>
+          <Button square>h</Button>
+          <Button square>h</Button>
+          <Button square>h</Button>
+          <Button square>h</Button>
+          <Button square>h</Button>
+          <Button square>h</Button>
+        </FooterButtons>
+      </Footer>
     </StyledLayersWindow>
   );
 };
