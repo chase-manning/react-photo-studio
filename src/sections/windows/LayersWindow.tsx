@@ -5,6 +5,7 @@ import { LayerType, selectLayers } from "../../state/layersSlice";
 import eye from "../../assets/svgs/layers/eye.svg";
 import lock from "../../assets/svgs/layers/lock.svg";
 import Dropdown from "../../shared/Dropdown";
+import PercentSelector from "../../shared/PercentSelector";
 
 const StyledLayersWindow = styled.div`
   width: 100%;
@@ -88,6 +89,11 @@ const Footer = styled.div`
   border-top: solid 1px var(--section-line);
 `;
 
+const Spacing = styled.div`
+  height: 100%;
+  width: 0.4rem;
+`;
+
 const LayersWindow = () => {
   const layers = useSelector(selectLayers);
 
@@ -98,6 +104,8 @@ const LayersWindow = () => {
       </Setting>
       <Setting>
         <Dropdown selected={"Normal"} options={["Meow meow meow meow"]} />
+        <Spacing />
+        <PercentSelector label={"Opacity"} value={100} />
       </Setting>
       <Setting>C</Setting>
       <Layers>
