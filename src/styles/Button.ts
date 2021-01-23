@@ -1,9 +1,10 @@
 import styled from "styled-components";
 
 type Props = {
-  selected: boolean;
+  selected?: boolean;
   height?: string;
   width?: string;
+  square?: boolean;
 };
 
 const Button = styled.button`
@@ -14,7 +15,7 @@ const Button = styled.button`
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 0.2rem;
+  border-radius: ${(props: Props) => (props.square ? "0" : "0.2rem")};
   padding: 0.4rem;
 
   background-color: ${(props: Props) =>
