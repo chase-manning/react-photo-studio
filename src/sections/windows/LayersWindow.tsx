@@ -6,6 +6,7 @@ import eye from "../../assets/svgs/layers/eye.svg";
 import lock from "../../assets/svgs/layers/lock.svg";
 import Dropdown from "../../shared/Dropdown";
 import PercentSelector from "../../shared/PercentSelector";
+import Button from "../../styles/Button";
 
 const StyledLayersWindow = styled.div`
   width: 100%;
@@ -24,6 +25,17 @@ const Setting = styled.div`
   background-color: var(--panel);
   align-items: center;
   padding: 0 0.3rem;
+`;
+
+const Buttons = styled.div`
+  height: 80%;
+  display: flex;
+  margin-left: 0.7rem;
+`;
+
+const Spacing = styled.div`
+  height: 100%;
+  width: 0.4rem;
 `;
 
 const Layers = styled.div`
@@ -89,11 +101,6 @@ const Footer = styled.div`
   border-top: solid 1px var(--section-line);
 `;
 
-const Spacing = styled.div`
-  height: 100%;
-  width: 0.4rem;
-`;
-
 const LayersWindow = () => {
   const layers = useSelector(selectLayers);
 
@@ -101,6 +108,14 @@ const LayersWindow = () => {
     <StyledLayersWindow>
       <Setting>
         <Dropdown selected={"Kind"} options={["meow meow "]} />
+        <Buttons>
+          <Button selected={false}>M</Button>
+          <Button selected={false}>M</Button>
+          <Button selected={false}>M</Button>
+          <Button selected={false}>M</Button>
+          <Button selected={false}>M</Button>
+          <Button selected={false}>M</Button>
+        </Buttons>
       </Setting>
       <Setting>
         <Dropdown selected={"Normal"} options={["Meow meow meow meow"]} />
