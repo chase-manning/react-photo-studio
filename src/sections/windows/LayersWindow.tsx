@@ -131,7 +131,7 @@ const LayersWindow = () => {
             <ButtonAsset src={shape} />
           </Button>
           <Button selected={false}>
-            <ButtonAsset src={shape} />
+            <ButtonAsset src={smartObject} />
           </Button>
           <Button selected={false}>M</Button>
         </Buttons>
