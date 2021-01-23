@@ -147,13 +147,13 @@ const Footer = styled.div`
 const FooterButtons = styled.div`
   height: 100%;
   display: flex;
-  width: 17rem;
+  width: 18rem;
   margin-right: 2rem;
 `;
 
 const FooterAsset = styled.img`
-  max-width: 100%;
-  max-height: 100%;
+  max-width: 90%;
+  max-height: 90%;
 `;
 
 const LayersWindow = () => {
