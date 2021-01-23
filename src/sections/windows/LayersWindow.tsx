@@ -22,6 +22,7 @@ import move from "../../assets/svgs/tools/move.svg";
 import artboardNesting from "../../assets/pngs/artboard-nesting.png";
 import link from "../../assets/pngs/link.png";
 import style from "../../assets/pngs/style.png";
+import ContextIndicator from "../../styles/ContextIndicator";
 
 const StyledLayersWindow = styled.div`
   width: 100%;
@@ -223,8 +224,9 @@ const LayersWindow = () => {
           </Button>
           <Button square>
             <ButtonAsset src={style} />
+            <ContextIndicator />
           </Button>
-          <Button square>h</Button>
+          <Button square></Button>
           <Button square>h</Button>
           <Button square>h</Button>
           <Button square>h</Button>
