@@ -7,6 +7,7 @@ import lock from "../../assets/svgs/layers/lock.svg";
 import Dropdown from "../../shared/Dropdown";
 import PercentSelector from "../../shared/PercentSelector";
 import Button from "../../styles/Button";
+import picture from "../../assets/pngs/picture.png";
 
 const StyledLayersWindow = styled.div`
   width: 100%;
@@ -31,6 +32,10 @@ const Buttons = styled.div`
   height: 80%;
   display: flex;
   margin-left: 0.7rem;
+`;
+
+const ButtonAsset = styled.img`
+  height: 100%;
 `;
 
 const Spacing = styled.div`
@@ -109,7 +114,9 @@ const LayersWindow = () => {
       <Setting>
         <Dropdown selected={"Kind"} options={["meow meow "]} />
         <Buttons>
-          <Button selected={false}>M</Button>
+          <Button selected={false}>
+            <ButtonAsset src={picture} />
+          </Button>
           <Button selected={false}>M</Button>
           <Button selected={false}>M</Button>
           <Button selected={false}>M</Button>
