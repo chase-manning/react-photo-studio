@@ -8,6 +8,7 @@ import Dropdown from "../../shared/Dropdown";
 import PercentSelector from "../../shared/PercentSelector";
 import Button from "../../styles/Button";
 import Label from "../../styles/Label";
+import ContextIndicator from "../../styles/ContextIndicator";
 
 import picture from "../../assets/pngs/picture.png";
 import contrast from "../../assets/pngs/contrast.png";
@@ -22,7 +23,7 @@ import move from "../../assets/svgs/tools/move.svg";
 import artboardNesting from "../../assets/pngs/artboard-nesting.png";
 import link from "../../assets/pngs/link.png";
 import style from "../../assets/pngs/style.png";
-import ContextIndicator from "../../styles/ContextIndicator";
+import mask from "../../assets/pngs/mask.png";
 
 const StyledLayersWindow = styled.div`
   width: 100%;
@@ -226,7 +227,9 @@ const LayersWindow = () => {
             <ButtonAsset src={style} />
             <ContextIndicator />
           </Button>
-          <Button square></Button>
+          <Button square>
+            <ButtonAsset src={mask} />
+          </Button>
           <Button square>h</Button>
           <Button square>h</Button>
           <Button square>h</Button>
