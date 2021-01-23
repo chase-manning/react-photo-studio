@@ -38,6 +38,7 @@ const Buttons = styled.div`
   height: 95%;
   display: flex;
   margin-left: 0.7rem;
+  width: 12.6rem;
 `;
 
 const ButtonAsset = styled.img`
@@ -119,7 +120,7 @@ const Footer = styled.div`
 
 const LayersWindow = () => {
   const layers = useSelector(selectLayers);
-  const [filtersEnabled, setFiltersEnabled] = useState(true);
+  const [filtersEnabled] = useState(true);
 
   return (
     <StyledLayersWindow>
