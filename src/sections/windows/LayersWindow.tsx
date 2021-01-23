@@ -147,7 +147,13 @@ const Footer = styled.div`
 const FooterButtons = styled.div`
   height: 100%;
   display: flex;
-  margin-right: 3rem;
+  width: 17rem;
+  margin-right: 2rem;
+`;
+
+const FooterAsset = styled.img`
+  max-width: 100%;
+  max-height: 100%;
 `;
 
 const LayersWindow = () => {
@@ -224,27 +230,27 @@ const LayersWindow = () => {
         <div />
         <FooterButtons>
           <Button square>
-            <ButtonAsset src={link} />
+            <FooterAsset src={link} />
           </Button>
           <Button square>
-            <ButtonAsset src={style} />
+            <FooterAsset src={style} />
             <ContextIndicator />
           </Button>
           <Button square>
-            <ButtonAsset src={mask} />
+            <FooterAsset src={mask} />
           </Button>
           <Button square>
-            <ButtonAsset src={contrast} />
+            <FooterAsset src={contrast} />
             <ContextIndicator />
           </Button>
           <Button square>
-            <ButtonAsset src={folder} />
+            <FooterAsset src={folder} />
           </Button>
           <Button square>
-            <ButtonAsset src={newLayer} />
+            <FooterAsset src={newLayer} />
           </Button>
           <Button square>
-            <ButtonAsset src={trash} />
+            <FooterAsset src={trash} />
           </Button>
         </FooterButtons>
       </Footer>
