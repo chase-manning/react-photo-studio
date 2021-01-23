@@ -1,16 +1,11 @@
 import React from "react";
 import styled from "styled-components";
 import { FeatureRequest } from "../services/AnalyticsService";
+import Label from "../styles/Label";
 
 const StyledDropdown = styled.div`
   display: flex;
   align-items: center;
-`;
-
-const Label = styled.div`
-  color: var(--label);
-  margin-right: 0.4rem;
-  user-select: none;
 `;
 
 const SelectedContainer = styled.div`
