@@ -21,6 +21,7 @@ import brush from "../../assets/svgs/tools/brush.svg";
 import move from "../../assets/svgs/tools/move.svg";
 import artboardNesting from "../../assets/pngs/artboard-nesting.png";
 import link from "../../assets/pngs/link.png";
+import style from "../../assets/pngs/style.png";
 
 const StyledLayersWindow = styled.div`
   width: 100%;
@@ -220,7 +221,9 @@ const LayersWindow = () => {
           <Button square>
             <ButtonAsset src={link} />
           </Button>
-          <Button square>h</Button>
+          <Button square>
+            <ButtonAsset src={style} />
+          </Button>
           <Button square>h</Button>
           <Button square>h</Button>
           <Button square>h</Button>
