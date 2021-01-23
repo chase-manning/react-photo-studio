@@ -10,6 +10,7 @@ import Button from "../../styles/Button";
 import picture from "../../assets/pngs/picture.png";
 import contrast from "../../assets/pngs/contrast.png";
 import type from "../../assets/svgs/tools/type.svg";
+import shape from "../../assets/pngs/shape.png";
 
 const StyledLayersWindow = styled.div`
   width: 100%;
@@ -125,7 +126,9 @@ const LayersWindow = () => {
           <Button selected={false}>
             <ButtonAsset src={type} />
           </Button>
-          <Button selected={false}>M</Button>
+          <Button selected={false}>
+            <ButtonAsset src={shape} />
+          </Button>
           <Button selected={false}>M</Button>
           <Button selected={false}>M</Button>
         </Buttons>
