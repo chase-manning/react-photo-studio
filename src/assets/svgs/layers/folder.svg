@@ -35,33 +35,15 @@
      inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="0" />
-  <metadata
-     id="metadata2662">
-    <rdf:RDF>
-      <cc:Work
-         rdf:about="">
-        <dc:format>image/svg+xml</dc:format>
-        <dc:type
-           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
-      </cc:Work>
-    </rdf:RDF>
-  </metadata>
-  <g
-     inkscape:label="Layer 1"
-     inkscape:groupmode="layer"
-     id="layer1">
     <g
-       id="AddFolder"
        transform="matrix(13.619742,0,0,13.619742,-4219.1908,-2448.6054)">
       <path
-         fill="#999999"
+         fill="#dddddd"
          d="M 315.65002,180.19995 C 315.5556,180.07422 315.40735,180 315.25,180 h -4.75 c -0.27612,0 -0.5,0.22388 -0.5,0.5 v 1.5 h 7 z"
          id="path2224" />
       <path
-         fill="#999999"
+         fill="#dddddd"
          d="M 324.5,183 H 310 v 8.5 c 0,0.27612 0.22388,0.5 0.5,0.5 h 14 c 0.27612,0 0.5,-0.22388 0.5,-0.5 v -8 c 0,-0.27618 -0.22388,-0.5 -0.5,-0.5 z"
          id="path2226" />
     </g>
-  </g>
 </svg>
