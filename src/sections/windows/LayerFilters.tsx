@@ -32,7 +32,7 @@ const ButtonAsset = styled.img`
   height: 80%;
 `;
 
-const FiltersToggle = styled.img`
+const Toggle = styled.img`
   height: 80%;
   margin-left: 0.5rem;
 `;
@@ -60,7 +60,7 @@ const LayerFilters = () => {
           <ButtonAsset src={smartObject} />
         </Button>
       </Buttons>
-      <FiltersToggle src={filtersEnabled ? layerFiltersOn : layerFiltersOff} />
+      <Toggle src={filtersEnabled ? layerFiltersOn : layerFiltersOff} />
     </Filters>
   );
 };
