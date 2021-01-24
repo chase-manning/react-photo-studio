@@ -7,11 +7,21 @@ import windows from "./windowSchema";
 import Window from "./Window";
 
 const StyledWindows = styled.div`
+  position: relative;
   width: 33rem;
   height: 100%;
   margin-left: 1px;
   display: flex;
   flex-direction: column;
+`;
+
+const WindowResize = styled.div`
+  position: absolute;
+  width: 0.4rem;
+  height: 100%;
+  top: 0;
+  left: -0.2rem;
+  cursor: ew-resize;
 `;
 
 const isImplemented = (label: string) => {
@@ -46,6 +56,7 @@ const Windows = () => {
           />
         );
       })}
+      <WindowResize onClick={() => FeatureRequest("Windows/Resize")} />
     </StyledWindows>
   );
 };
