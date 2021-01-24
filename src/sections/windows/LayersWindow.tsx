@@ -4,7 +4,6 @@ import styled from "styled-components";
 import { LayerType, selectLayers } from "../../state/layersSlice";
 import eye from "../../assets/svgs/layers/eye.svg";
 import lock from "../../assets/svgs/layers/lock.svg";
-import Dropdown from "../../shared/Dropdown";
 import PercentSelector from "../../shared/PercentSelector";
 import Button from "../../styles/Button";
 import Label from "../../styles/Label";
@@ -15,6 +14,7 @@ import move from "../../assets/svgs/tools/move.svg";
 import artboardNesting from "../../assets/pngs/artboard-nesting.png";
 import LayersFooter from "./LayersFooter";
 import LayerFilters from "./LayerFilters";
+import LayerBlending from "./LayerBlending";
 
 const StyledLayersWindow = styled.div`
   width: 100%;
@@ -37,11 +37,6 @@ const Setting = styled.div`
 
 const ButtonAsset = styled.img`
   height: 80%;
-`;
-
-const Spacing = styled.div`
-  height: 100%;
-  width: 0.4rem;
 `;
 
 const LockButtons = styled.div`
@@ -117,11 +112,7 @@ const LayersWindow = () => {
   return (
     <StyledLayersWindow>
       <LayerFilters />
-      <Setting>
-        <Dropdown selected={"Normal"} options={["Meow meow meow meow"]} />
-        <Spacing />
-        <PercentSelector label={"Opacity"} value={100} />
-      </Setting>
+      <LayerBlending />
       <Setting>
         <SpacingSmall />
         <Label>Lock:</Label>
