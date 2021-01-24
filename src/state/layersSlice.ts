@@ -4,6 +4,7 @@ import { RootState } from "./store";
 export type LayerType = {
   name: string;
   active: boolean;
+  selected: boolean;
   visible: boolean;
   locked: boolean;
 };
@@ -17,24 +18,28 @@ const initialState: LayersSlice = {
     {
       name: "Layer 4",
       active: true,
+      selected: true,
       visible: false,
       locked: false,
     },
     {
       name: "Layer 3",
       active: false,
+      selected: false,
       visible: true,
       locked: false,
     },
     {
       name: "Layer 2",
       active: false,
+      selected: false,
       visible: false,
       locked: true,
     },
     {
       name: "Layer 1",
       active: false,
+      selected: false,
       visible: false,
       locked: false,
     },
