@@ -41,7 +41,7 @@ type ContentProps = {
 const Content = styled.button`
   flex: 1;
   height: 100%;
-  padding: 0.1rem;
+  padding: 0.2rem;
   display: flex;
   align-items: center;
   cursor: ${(props: ContentProps) => (props.grabbing ? "grabbing" : "pointer")};
