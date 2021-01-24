@@ -59,13 +59,19 @@ type LockProps = {
   selected: boolean;
 };
 
+const LockButton = styled.button`
+  height: 100%;
+  display: flex;
+  align-items: center;
+  cursor: ${(props: LockProps) => (props.grabbing ? "grabbing" : "pointer")};
+  background-color: ${(props: ContentProps) =>
+    props.selected ? "var(--context-hover)" : "none"};
+`;
+
 const Lock = styled.img`
   height: 1.2rem;
   margin-right: 1.5rem;
   transform: translateY(-0.1rem);
-  cursor: ${(props: LockProps) => (props.grabbing ? "grabbing" : "pointer")};
-  background-color: ${(props: ContentProps) =>
-    props.selected ? "var(--context-hover)" : "none"};
 `;
 
 type Props = {
@@ -110,14 +116,14 @@ const Layer = (props: Props) => {
           {props.layer.name}
         </LayerName>
       </Content>
-      {props.layer.locked && (
-        <Lock
-          onClick={() => FeatureRequest("Windows/Layers/Layer/Lock")}
-          src={lock}
-          grabbing={grabbing && moving}
-          selected={props.layer.selected}
-        />
-      )}
+      <LockButton grabbing={grabbing && moving} selected={props.layer.selected}>
+        {props.layer.locked && (
+          <Lock
+            onClick={() => FeatureRequest("Windows/Layers/Layer/Lock")}
+            src={lock}
+          />
+        )}
+      </LockButton>
     </StyledLayer>
   );
 };
