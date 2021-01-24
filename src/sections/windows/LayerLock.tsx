@@ -9,6 +9,7 @@ import transparent from "../../assets/pngs/transparent.png";
 import brush from "../../assets/svgs/tools/brush.svg";
 import move from "../../assets/svgs/tools/move.svg";
 import artboardNesting from "../../assets/pngs/artboard-nesting.png";
+import { FeatureRequest } from "../../services/AnalyticsService";
 
 const Lock = styled.div`
   width: 100%;
@@ -41,19 +42,34 @@ const LayerLock = () => {
       <SpacingSmall />
       <Label>Lock:</Label>
       <Buttons>
-        <Button selected={false}>
+        <Button
+          onClick={() => FeatureRequest("Windows/Layers/Lock/Transparent")}
+          selected={false}
+        >
           <ButtonAsset src={transparent} />
         </Button>
-        <Button selected={false}>
+        <Button
+          onClick={() => FeatureRequest("Windows/Layers/Lock/Image")}
+          selected={false}
+        >
           <ButtonAsset src={brush} />
         </Button>
-        <Button selected={false}>
+        <Button
+          onClick={() => FeatureRequest("Windows/Layers/Lock/Position")}
+          selected={false}
+        >
           <ButtonAsset src={move} />
         </Button>
-        <Button selected={false}>
+        <Button
+          onClick={() => FeatureRequest("Windows/Layers/Lock/ArtboardNesting")}
+          selected={false}
+        >
           <ButtonAsset src={artboardNesting} />
         </Button>
-        <Button selected={false}>
+        <Button
+          onClick={() => FeatureRequest("Windows/Layers/Lock/All")}
+          selected={false}
+        >
           <ButtonAsset src={lock} />
         </Button>
       </Buttons>
