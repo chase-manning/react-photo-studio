@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import { LayerType } from "../../state/layersSlice";
 import eye from "../../assets/svgs/layers/eye.svg";
 import lock from "../../assets/svgs/layers/lock.svg";
 import { FeatureRequest } from "../../services/AnalyticsService";
+import { useSelector } from "react-redux";
 
 const StyledLayer = styled.div`
   width: 100%;
@@ -14,6 +15,10 @@ const StyledLayer = styled.div`
   align-items: center;
 `;
 
+type CursorProps = {
+  grabbing: boolean;
+};
+
 const Visibility = styled.button`
   height: 100%;
   width: 3.3rem;
@@ -21,7 +26,7 @@ const Visibility = styled.button`
   display: flex;
   justify-content: center;
   align-items: center;
-  cursor: pointer;
+  cursor: ${(props: CursorProps) => (props.grabbing ? "grabbing" : "pointer")};
 `;
 
 const Eye = styled.img`
@@ -34,7 +39,7 @@ const Content = styled.button`
   padding: 0.4rem;
   display: flex;
   align-items: center;
-  cursor: pointer;
+  cursor: ${(props: CursorProps) => (props.grabbing ? "grabbing" : "pointer")};
 `;
 
 const Canvas = styled.div`
@@ -53,7 +58,7 @@ const Lock = styled.img`
   height: 1.2rem;
   margin-right: 1.5rem;
   transform: translateY(-0.1rem);
-  cursor: pointer;
+  cursor: ${(props: CursorProps) => (props.grabbing ? "grabbing" : "pointer")};
 `;
 
 type Props = {
@@ -61,14 +66,30 @@ type Props = {
 };
 
 const Layer = (props: Props) => {
+  const [grabbing, setGrabbing] = useState(false);
+  const [moving, setMoving] = useState(false);
+
   return (
-    <StyledLayer>
+    <StyledLayer
+      onMouseDown={() => setGrabbing(true)}
+      onMouseUp={() => {
+        setGrabbing(false);
+        setMoving(false);
+      }}
+      onMouseMove={() => {
+        if (grabbing) setMoving(true);
+      }}
+    >
       <Visibility
         onClick={() => FeatureRequest("Windows/Layers/Layer/Visibility")}
+        grabbing={grabbing && moving}
       >
         <Eye src={eye} />
       </Visibility>
-      <Content onClick={() => FeatureRequest("Windows/Layers/Layer/Select")}>
+      <Content
+        onClick={() => FeatureRequest("Windows/Layers/Layer/Select")}
+        grabbing={grabbing && moving}
+      >
         <Canvas />
         <LayerName
           onDoubleClick={() =>
@@ -82,6 +103,7 @@ const Layer = (props: Props) => {
         <Lock
           onClick={() => FeatureRequest("Windows/Layers/Layer/Lock")}
           src={lock}
+          grabbing={grabbing && moving}
         />
       )}
     </StyledLayer>
