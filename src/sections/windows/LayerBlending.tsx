@@ -1,9 +1,13 @@
 import React from "react";
+import { useSelector } from "react-redux";
 import styled from "styled-components";
 import Dropdown from "../../shared/Dropdown";
 import PercentSelector from "../../shared/PercentSelector";
+import { selectActiveLayer } from "../../state/layersSlice";
+import Disable from "../../styles/Disabled";
 
 const Blending = styled.div`
+  position: relative;
   width: 100%;
   height: 2.8rem;
   display: flex;
@@ -18,10 +22,14 @@ const Blending = styled.div`
 `;
 
 const LayerBlending = () => {
+  const activeLayer = useSelector(selectActiveLayer);
+  const enabled = activeLayer && activeLayer.visible && !activeLayer.locked;
+
   return (
     <Blending>
       <Dropdown selected={"Normal"} options={["Meow meow meow meow"]} />
       <PercentSelector label={"Opacity"} value={100} />
+      {!enabled && <Disable />}
     </Blending>
   );
 };
