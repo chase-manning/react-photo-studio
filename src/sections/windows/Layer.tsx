@@ -4,10 +4,10 @@ import { LayerType } from "../../state/layersSlice";
 import eye from "../../assets/svgs/layers/eye.svg";
 import lock from "../../assets/svgs/layers/lock.svg";
 import { FeatureRequest } from "../../services/AnalyticsService";
+import LayerCanvas from "./LayerCanvas";
 
 const StyledLayer = styled.div`
   width: 100%;
-  /* height: 3.8rem; */
   display: flex;
   border-bottom: solid 1px var(--hover-bg);
   background-color: var(--panel);
@@ -41,19 +41,12 @@ type ContentProps = {
 const Content = styled.button`
   flex: 1;
   height: 100%;
-  padding: 0.4rem;
+  padding: 0.1rem;
   display: flex;
   align-items: center;
   cursor: ${(props: ContentProps) => (props.grabbing ? "grabbing" : "pointer")};
   background-color: ${(props: ContentProps) =>
     props.selected ? "var(--context-hover)" : "none"};
-`;
-
-const Canvas = styled.div`
-  height: 3rem;
-  width: 3.8rem;
-  background-color: white;
-  border: solid 1px var(--layer-border);
 `;
 
 const LayerName = styled.div`
@@ -108,7 +101,7 @@ const Layer = (props: Props) => {
         grabbing={grabbing && moving}
         selected={props.layer.selected}
       >
-        <Canvas />
+        <LayerCanvas layer={props.layer} />
         <LayerName
           onDoubleClick={() =>
             FeatureRequest("Windows/Layers/Layer/ChangeName")
