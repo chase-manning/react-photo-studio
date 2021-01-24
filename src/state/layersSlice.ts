@@ -20,7 +20,7 @@ const initialState: LayersSlice = {
       active: true,
       selected: true,
       visible: false,
-      locked: false,
+      locked: true,
     },
     {
       name: "Layer 3",
@@ -60,5 +60,12 @@ export const layersSlice = createSlice({
 export const { toggleLayerVisibility } = layersSlice.actions;
 
 export const selectLayers = (state: RootState) => state.layers.schema;
+export const selectActiveLayer = (state: RootState) => {
+  const active = state.layers.schema.filter((layer: LayerType) => layer.active);
+  if (active.length > 0) return active[0];
+  return null;
+};
+export const selectSelectedLayers = (state: RootState) =>
+  state.layers.schema.filter((layer: LayerType) => layer.selected);
 
 export default layersSlice.reducer;
