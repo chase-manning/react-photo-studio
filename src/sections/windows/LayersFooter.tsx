@@ -14,7 +14,6 @@ import { FeatureRequest } from "../../services/AnalyticsService";
 import { useSelector } from "react-redux";
 import {
   selectActiveLayer,
-  selectLayers,
   selectSelectedLayers,
 } from "../../state/layersSlice";
 
