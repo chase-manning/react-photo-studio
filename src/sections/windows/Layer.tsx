@@ -15,7 +15,7 @@ const StyledLayer = styled.div`
 
 const Visibility = styled.div`
   height: 100%;
-  width: 3.5rem;
+  width: 3.3rem;
   border-right: solid 1px var(--hover-bg);
   display: flex;
   justify-content: center;
