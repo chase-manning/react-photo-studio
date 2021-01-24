@@ -16,32 +16,11 @@ export interface LayersSlice {
 const initialState: LayersSlice = {
   schema: [
     {
-      name: "Layer 4",
+      name: "Layer 1",
       active: true,
       selected: true,
-      visible: false,
-      locked: true,
-    },
-    {
-      name: "Layer 3",
-      active: false,
-      selected: false,
       visible: true,
-      locked: false,
-    },
-    {
-      name: "Layer 2",
-      active: false,
-      selected: false,
-      visible: false,
       locked: true,
-    },
-    {
-      name: "Layer 1",
-      active: false,
-      selected: false,
-      visible: false,
-      locked: false,
     },
   ],
 };
