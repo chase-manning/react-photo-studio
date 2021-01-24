@@ -66,6 +66,7 @@ const LayersFooter = () => {
         <Button
           onClick={() => FeatureRequest("Windows/Layers/Footer/Mask")}
           square
+          disabled={!activeLayer}
         >
           <Asset src={mask} />
         </Button>
@@ -91,6 +92,7 @@ const LayersFooter = () => {
         <Button
           onClick={() => FeatureRequest("Windows/Layers/Footer/Delete")}
           square
+          disabled={!activeLayer}
         >
           <Asset src={trash} />
         </Button>
