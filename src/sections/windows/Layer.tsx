@@ -4,7 +4,6 @@ import { LayerType } from "../../state/layersSlice";
 import eye from "../../assets/svgs/layers/eye.svg";
 import lock from "../../assets/svgs/layers/lock.svg";
 import { FeatureRequest } from "../../services/AnalyticsService";
-import { useSelector } from "react-redux";
 
 const StyledLayer = styled.div`
   width: 100%;
@@ -15,7 +14,7 @@ const StyledLayer = styled.div`
   align-items: center;
 `;
 
-type CursorProps = {
+type VisibilityProps = {
   grabbing: boolean;
 };
 
@@ -26,12 +25,18 @@ const Visibility = styled.button`
   display: flex;
   justify-content: center;
   align-items: center;
-  cursor: ${(props: CursorProps) => (props.grabbing ? "grabbing" : "pointer")};
+  cursor: ${(props: VisibilityProps) =>
+    props.grabbing ? "grabbing" : "pointer"};
 `;
 
 const Eye = styled.img`
   height: 0.9rem;
 `;
+
+type ContentProps = {
+  grabbing: boolean;
+  selected: boolean;
+};
 
 const Content = styled.button`
   flex: 1;
@@ -39,7 +44,9 @@ const Content = styled.button`
   padding: 0.4rem;
   display: flex;
   align-items: center;
-  cursor: ${(props: CursorProps) => (props.grabbing ? "grabbing" : "pointer")};
+  cursor: ${(props: ContentProps) => (props.grabbing ? "grabbing" : "pointer")};
+  background-color: ${(props: ContentProps) =>
+    props.selected ? "var(--context-hover)" : "none"};
 `;
 
 const Canvas = styled.div`
@@ -54,11 +61,18 @@ const LayerName = styled.div`
   margin-left: 0.7rem;
 `;
 
+type LockProps = {
+  grabbing: boolean;
+  selected: boolean;
+};
+
 const Lock = styled.img`
   height: 1.2rem;
   margin-right: 1.5rem;
   transform: translateY(-0.1rem);
-  cursor: ${(props: CursorProps) => (props.grabbing ? "grabbing" : "pointer")};
+  cursor: ${(props: LockProps) => (props.grabbing ? "grabbing" : "pointer")};
+  background-color: ${(props: ContentProps) =>
+    props.selected ? "var(--context-hover)" : "none"};
 `;
 
 type Props = {
@@ -92,6 +106,7 @@ const Layer = (props: Props) => {
       <Content
         onClick={() => FeatureRequest("Windows/Layers/Layer/Select")}
         grabbing={grabbing && moving}
+        selected={props.layer.selected}
       >
         <Canvas />
         <LayerName
@@ -107,6 +122,7 @@ const Layer = (props: Props) => {
           onClick={() => FeatureRequest("Windows/Layers/Layer/Lock")}
           src={lock}
           grabbing={grabbing && moving}
+          selected={props.layer.selected}
         />
       )}
     </StyledLayer>
