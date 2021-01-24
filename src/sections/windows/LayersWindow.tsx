@@ -33,7 +33,7 @@ const Layers = styled.div`
 
 const ScrollBar = styled.div`
   height: 100%;
-  width: 3rem;
+  width: 1.6rem;
   background-color: var(--sidebar);
 `;
 
