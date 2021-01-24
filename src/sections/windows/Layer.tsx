@@ -77,7 +77,10 @@ const Layer = (props: Props) => {
         setMoving(false);
       }}
       onMouseMove={() => {
-        if (grabbing) setMoving(true);
+        if (grabbing) {
+          setMoving(true);
+          FeatureRequest("Windows/Layers/Layer/Move");
+        }
       }}
     >
       <Visibility
