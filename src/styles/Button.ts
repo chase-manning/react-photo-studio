@@ -19,6 +19,7 @@ const Button = styled.button`
   border-radius: ${(props: Props) => (props.square ? "0" : "0.2rem")};
   padding: 0.4rem;
   opacity: ${(props: Props) => (props.disabled ? "0.4" : "1")};
+  cursor: ${(props: Props) => (props.disabled ? "not-allowed" : "auto")};
 
   background-color: ${(props: Props) =>
     props.selected ? "var(--selected)" : "var(--panel)"};
