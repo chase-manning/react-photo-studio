@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { useSelector } from "react-redux";
 import styled from "styled-components";
 import { LayerType, selectLayers } from "../../state/layersSlice";
@@ -9,18 +9,12 @@ import PercentSelector from "../../shared/PercentSelector";
 import Button from "../../styles/Button";
 import Label from "../../styles/Label";
 
-import picture from "../../assets/pngs/picture.png";
-import contrast from "../../assets/pngs/contrast.png";
-import type from "../../assets/svgs/tools/type.svg";
-import shape from "../../assets/pngs/shape.png";
-import smartObject from "../../assets/pngs/smart-object.png";
-import layerFiltersOn from "../../assets/pngs/layer-filters-on.png";
-import layerFiltersOff from "../../assets/pngs/layer-filters-off.png";
 import transparent from "../../assets/pngs/transparent.png";
 import brush from "../../assets/svgs/tools/brush.svg";
 import move from "../../assets/svgs/tools/move.svg";
 import artboardNesting from "../../assets/pngs/artboard-nesting.png";
 import LayersFooter from "./LayersFooter";
+import LayerFilters from "./LayerFilters";
 
 const StyledLayersWindow = styled.div`
   width: 100%;
@@ -41,20 +35,8 @@ const Setting = styled.div`
   padding: 0 0.3rem;
 `;
 
-const Buttons = styled.div`
-  height: 95%;
-  display: flex;
-  margin-left: 0.7rem;
-  width: 12.6rem;
-`;
-
 const ButtonAsset = styled.img`
   height: 80%;
-`;
-
-const FiltersToggle = styled.img`
-  height: 80%;
-  margin-left: 0.5rem;
 `;
 
 const Spacing = styled.div`
@@ -131,33 +113,10 @@ const Lock = styled.img`
 
 const LayersWindow = () => {
   const layers = useSelector(selectLayers);
-  const [filtersEnabled] = useState(true);
 
   return (
     <StyledLayersWindow>
-      <Setting>
-        <Dropdown selected={"Kind"} options={["meow meow "]} />
-        <Buttons>
-          <Button selected={false}>
-            <ButtonAsset src={picture} />
-          </Button>
-          <Button selected={false}>
-            <ButtonAsset src={contrast} />
-          </Button>
-          <Button selected={false}>
-            <ButtonAsset src={type} />
-          </Button>
-          <Button selected={false}>
-            <ButtonAsset src={shape} />
-          </Button>
-          <Button selected={false}>
-            <ButtonAsset src={smartObject} />
-          </Button>
-        </Buttons>
-        <FiltersToggle
-          src={filtersEnabled ? layerFiltersOn : layerFiltersOff}
-        />
-      </Setting>
+      <LayerFilters />
       <Setting>
         <Dropdown selected={"Normal"} options={["Meow meow meow meow"]} />
         <Spacing />
