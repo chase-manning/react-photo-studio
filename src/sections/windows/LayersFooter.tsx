@@ -58,6 +58,7 @@ const LayersFooter = () => {
         <Button
           onClick={() => FeatureRequest("Windows/Layers/Footer/Style")}
           square
+          disabled={!activeLayer || !activeLayer.locked}
         >
           <Asset src={style} />
           <ContextIndicator />
