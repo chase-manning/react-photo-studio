@@ -21,17 +21,11 @@ const Visibility = styled.button`
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
 `;
 
 const Eye = styled.img`
   height: 0.9rem;
-`;
-
-const Canvas = styled.div`
-  height: 100%;
-  width: 3.8rem;
-  background-color: white;
-  border: solid 1px var(--layer-border);
 `;
 
 const Content = styled.button`
@@ -40,6 +34,14 @@ const Content = styled.button`
   padding: 0.4rem;
   display: flex;
   align-items: center;
+  cursor: pointer;
+`;
+
+const Canvas = styled.div`
+  height: 100%;
+  width: 3.8rem;
+  background-color: white;
+  border: solid 1px var(--layer-border);
 `;
 
 const LayerName = styled.div`
@@ -51,6 +53,7 @@ const Lock = styled.img`
   height: 1.2rem;
   margin-right: 1.5rem;
   transform: translateY(-0.1rem);
+  cursor: pointer;
 `;
 
 type Props = {
