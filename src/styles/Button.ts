@@ -5,6 +5,7 @@ type Props = {
   height?: string;
   width?: string;
   square?: boolean;
+  disabled?: boolean;
 };
 
 const Button = styled.button`
@@ -17,6 +18,7 @@ const Button = styled.button`
   justify-content: center;
   border-radius: ${(props: Props) => (props.square ? "0" : "0.2rem")};
   padding: 0.4rem;
+  opacity: ${(props: Props) => (props.disabled ? "0.4" : "1")};
 
   background-color: ${(props: Props) =>
     props.selected ? "var(--selected)" : "var(--panel)"};
@@ -24,9 +26,13 @@ const Button = styled.button`
     ${(props: Props) =>
       props.selected ? "var(--hover-border)" : "var(--panel)"};
   :hover {
-    background-color: ${(props: Props) =>
-      props.selected ? "var(--selected)" : "var(--hover-bg)"};
-    border: solid 1px var(--hover-border);
+    background-color: ${(props: Props) => {
+      if (props.disabled) return "var(--panel)";
+      else if (props.selected) return "var(--selected)";
+      else return "var(--hover-bg)";
+    }};
+    border: ${(props: Props) =>
+      props.disabled ? "solid 1px none" : "solid 1px var(--hover-border)"};
   }
 `;
 
