@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { LayerType } from "../../state/layersSlice";
 import eye from "../../assets/svgs/layers/eye.svg";
 import lock from "../../assets/svgs/layers/lock.svg";
+import { FeatureRequest } from "../../services/AnalyticsService";
 
 const StyledLayer = styled.div`
   width: 100%;
@@ -13,7 +14,7 @@ const StyledLayer = styled.div`
   align-items: center;
 `;
 
-const Visibility = styled.div`
+const Visibility = styled.button`
   height: 100%;
   width: 3.3rem;
   border-right: solid 1px var(--hover-bg);
@@ -33,7 +34,7 @@ const Canvas = styled.div`
   border: solid 1px var(--layer-border);
 `;
 
-const Content = styled.div`
+const Content = styled.button`
   flex: 1;
   height: 100%;
   padding: 0.4rem;
@@ -59,14 +60,27 @@ type Props = {
 const Layer = (props: Props) => {
   return (
     <StyledLayer>
-      <Visibility>
+      <Visibility
+        onClick={() => FeatureRequest("Windows/Layers/Layer/Visibility")}
+      >
         <Eye src={eye} />
       </Visibility>
-      <Content>
+      <Content onClick={() => FeatureRequest("Windows/Layers/Layer/Select")}>
         <Canvas />
-        <LayerName>{props.layer.name}</LayerName>
+        <LayerName
+          onDoubleClick={() =>
+            FeatureRequest("Windows/Layers/Layer/ChangeName")
+          }
+        >
+          {props.layer.name}
+        </LayerName>
       </Content>
-      {props.layer.locked && <Lock src={lock} />}
+      {props.layer.locked && (
+        <Lock
+          onClick={() => FeatureRequest("Windows/Layers/Layer/Lock")}
+          src={lock}
+        />
+      )}
     </StyledLayer>
   );
 };
