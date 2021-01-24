@@ -109,6 +109,7 @@ const Tabs = (props: Props) => {
               else FeatureRequest("Windows/" + props.tabs[index].label);
             }}
             active={index === activeIndex}
+            onDoubleClick={() => FeatureRequest("Windows/Tabs/Header/Hide")}
           >
             {tab.label}
           </HeaderItem>
