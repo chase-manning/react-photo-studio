@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { FeatureRequest } from "../../services/AnalyticsService";
 import styled from "styled-components";
 import Dropdown from "../../shared/Dropdown";
 import Button from "../../styles/Button";
@@ -10,7 +11,7 @@ import shape from "../../assets/pngs/shape.png";
 import smartObject from "../../assets/pngs/smart-object.png";
 import layerFiltersOn from "../../assets/pngs/layer-filters-on.png";
 import layerFiltersOff from "../../assets/pngs/layer-filters-off.png";
-import { FeatureRequest } from "../../services/AnalyticsService";
+import search from "../../assets/svgs/navigation/search.svg";
 
 const Filters = styled.div`
   width: 100%;
@@ -43,7 +44,7 @@ const LayerFilters = () => {
 
   return (
     <Filters>
-      <Dropdown selected={"Kind"} options={["meow meow "]} />
+      <Dropdown selected={"Kind"} options={["meow meow "]} icon={search} />
       <Buttons>
         <Button
           onClick={() => FeatureRequest("Windows/Layer/Filters/Pixels")}
