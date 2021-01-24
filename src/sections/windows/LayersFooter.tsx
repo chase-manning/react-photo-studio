@@ -11,6 +11,12 @@ import folder from "../../assets/svgs/layers/folder.svg";
 import newLayer from "../../assets/pngs/new.png";
 import trash from "../../assets/svgs/layers/trash.svg";
 import { FeatureRequest } from "../../services/AnalyticsService";
+import { useSelector } from "react-redux";
+import {
+  selectActiveLayer,
+  selectLayers,
+  selectSelectedLayers,
+} from "../../state/layersSlice";
 
 const Footer = styled.div`
   width: 100%;
@@ -34,6 +40,10 @@ const Asset = styled.img`
 `;
 
 const LayersFooter = () => {
+  const activeLayer = useSelector(selectActiveLayer);
+  const selectedLayers = useSelector(selectSelectedLayers);
+  const linkEnabled = selectedLayers.length >= 2;
+
   return (
     <Footer>
       <div />
@@ -41,6 +51,7 @@ const LayersFooter = () => {
         <Button
           onClick={() => FeatureRequest("Windows/Layers/Footer/Link")}
           square
+          disabled={!linkEnabled}
         >
           <Asset src={link} />
         </Button>
