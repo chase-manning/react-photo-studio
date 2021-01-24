@@ -12,8 +12,11 @@ import smartObject from "../../assets/pngs/smart-object.png";
 import layerFiltersOn from "../../assets/pngs/layer-filters-on.png";
 import layerFiltersOff from "../../assets/pngs/layer-filters-off.png";
 import search from "../../assets/svgs/navigation/search.svg";
+import { useSelector } from "react-redux";
+import { selectActiveLayer } from "../../state/layersSlice";
 
 const Filters = styled.div`
+  position: relative;
   width: 100%;
   height: 2.8rem;
   display: flex;
@@ -39,8 +42,18 @@ const Toggle = styled.img`
   margin-left: 0.5rem;
 `;
 
+const Disable = styled.div`
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: var(--panel);
+  opacity: 0.6;
+`;
+
 const LayerFilters = () => {
   const [filtersEnabled] = useState(true);
+  const activeLayer = useSelector(selectActiveLayer);
+  const enabled = activeLayer && activeLayer.visible && !activeLayer.locked;
 
   return (
     <Filters>
@@ -81,6 +94,7 @@ const LayerFilters = () => {
         onClick={() => FeatureRequest("Windows/Layer/Filters/EnabledToggle")}
         src={filtersEnabled ? layerFiltersOn : layerFiltersOff}
       />
+      {!enabled && <Disable />}
     </Filters>
   );
 };
