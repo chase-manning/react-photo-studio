@@ -10,6 +10,7 @@ import shape from "../../assets/pngs/shape.png";
 import smartObject from "../../assets/pngs/smart-object.png";
 import layerFiltersOn from "../../assets/pngs/layer-filters-on.png";
 import layerFiltersOff from "../../assets/pngs/layer-filters-off.png";
+import { FeatureRequest } from "../../services/AnalyticsService";
 
 const Filters = styled.div`
   width: 100%;
@@ -44,23 +45,41 @@ const LayerFilters = () => {
     <Filters>
       <Dropdown selected={"Kind"} options={["meow meow "]} />
       <Buttons>
-        <Button selected={false}>
+        <Button
+          onClick={() => FeatureRequest("Windows/Layer/Filters/Pixels")}
+          selected={false}
+        >
           <ButtonAsset src={picture} />
         </Button>
-        <Button selected={false}>
+        <Button
+          onClick={() => FeatureRequest("Windows/Layer/Filters/Adjustments")}
+          selected={false}
+        >
           <ButtonAsset src={contrast} />
         </Button>
-        <Button selected={false}>
+        <Button
+          onClick={() => FeatureRequest("Windows/Layer/Filters/Type")}
+          selected={false}
+        >
           <ButtonAsset src={type} />
         </Button>
-        <Button selected={false}>
+        <Button
+          onClick={() => FeatureRequest("Windows/Layer/Filters/Shape")}
+          selected={false}
+        >
           <ButtonAsset src={shape} />
         </Button>
-        <Button selected={false}>
+        <Button
+          onClick={() => FeatureRequest("Windows/Layer/Filters/SmartObjects")}
+          selected={false}
+        >
           <ButtonAsset src={smartObject} />
         </Button>
       </Buttons>
-      <Toggle src={filtersEnabled ? layerFiltersOn : layerFiltersOff} />
+      <Toggle
+        onClick={() => FeatureRequest("Windows/Layer/Filters/EnabledToggle")}
+        src={filtersEnabled ? layerFiltersOn : layerFiltersOff}
+      />
     </Filters>
   );
 };
