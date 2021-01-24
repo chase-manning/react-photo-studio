@@ -20,14 +20,14 @@ const Footer = styled.div`
   justify-content: space-between;
 `;
 
-const FooterButtons = styled.div`
+const Buttons = styled.div`
   height: 100%;
   display: flex;
   width: 18rem;
   margin-right: 2rem;
 `;
 
-const FooterAsset = styled.img`
+const Asset = styled.img`
   max-width: 90%;
   max-height: 90%;
 `;
@@ -36,31 +36,31 @@ const LayersFooter = () => {
   return (
     <Footer>
       <div />
-      <FooterButtons>
+      <Buttons>
         <Button square>
-          <FooterAsset src={link} />
+          <Asset src={link} />
         </Button>
         <Button square>
-          <FooterAsset src={style} />
+          <Asset src={style} />
           <ContextIndicator />
         </Button>
         <Button square>
-          <FooterAsset src={mask} />
+          <Asset src={mask} />
         </Button>
         <Button square>
-          <FooterAsset src={contrast} />
+          <Asset src={contrast} />
           <ContextIndicator />
         </Button>
         <Button square>
-          <FooterAsset src={folder} />
+          <Asset src={folder} />
         </Button>
         <Button square>
-          <FooterAsset src={newLayer} />
+          <Asset src={newLayer} />
         </Button>
         <Button square>
-          <FooterAsset src={trash} />
+          <Asset src={trash} />
         </Button>
-      </FooterButtons>
+      </Buttons>
     </Footer>
   );
 };
