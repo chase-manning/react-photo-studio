@@ -7,7 +7,7 @@ import { FeatureRequest } from "../../services/AnalyticsService";
 
 const StyledLayer = styled.div`
   width: 100%;
-  height: 3.8rem;
+  /* height: 3.8rem; */
   display: flex;
   border-bottom: solid 1px var(--hover-bg);
   background-color: var(--panel);
@@ -50,7 +50,7 @@ const Content = styled.button`
 `;
 
 const Canvas = styled.div`
-  height: 100%;
+  height: 3rem;
   width: 3.8rem;
   background-color: white;
   border: solid 1px var(--layer-border);
