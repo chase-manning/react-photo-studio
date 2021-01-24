@@ -8,7 +8,6 @@ import Dropdown from "../../shared/Dropdown";
 import PercentSelector from "../../shared/PercentSelector";
 import Button from "../../styles/Button";
 import Label from "../../styles/Label";
-import ContextIndicator from "../../styles/ContextIndicator";
 
 import picture from "../../assets/pngs/picture.png";
 import contrast from "../../assets/pngs/contrast.png";
@@ -21,12 +20,7 @@ import transparent from "../../assets/pngs/transparent.png";
 import brush from "../../assets/svgs/tools/brush.svg";
 import move from "../../assets/svgs/tools/move.svg";
 import artboardNesting from "../../assets/pngs/artboard-nesting.png";
-import link from "../../assets/pngs/link.png";
-import style from "../../assets/pngs/style.png";
-import mask from "../../assets/pngs/mask.png";
-import folder from "../../assets/svgs/layers/folder.svg";
-import newLayer from "../../assets/pngs/new.png";
-import trash from "../../assets/svgs/layers/trash.svg";
+import LayersFooter from "./LayersFooter";
 
 const StyledLayersWindow = styled.div`
   width: 100%;
@@ -135,27 +129,6 @@ const Lock = styled.img`
   transform: translateY(-0.1rem);
 `;
 
-const Footer = styled.div`
-  width: 100%;
-  background-color: var(--panel);
-  height: 2.4rem;
-  border-top: solid 1px var(--section-line);
-  display: flex;
-  justify-content: space-between;
-`;
-
-const FooterButtons = styled.div`
-  height: 100%;
-  display: flex;
-  width: 18rem;
-  margin-right: 2rem;
-`;
-
-const FooterAsset = styled.img`
-  max-width: 90%;
-  max-height: 90%;
-`;
-
 const LayersWindow = () => {
   const layers = useSelector(selectLayers);
   const [filtersEnabled] = useState(true);
@@ -226,34 +199,7 @@ const LayersWindow = () => {
           </Layer>
         ))}
       </Layers>
-      <Footer>
-        <div />
-        <FooterButtons>
-          <Button square>
-            <FooterAsset src={link} />
-          </Button>
-          <Button square>
-            <FooterAsset src={style} />
-            <ContextIndicator />
-          </Button>
-          <Button square>
-            <FooterAsset src={mask} />
-          </Button>
-          <Button square>
-            <FooterAsset src={contrast} />
-            <ContextIndicator />
-          </Button>
-          <Button square>
-            <FooterAsset src={folder} />
-          </Button>
-          <Button square>
-            <FooterAsset src={newLayer} />
-          </Button>
-          <Button square>
-            <FooterAsset src={trash} />
-          </Button>
-        </FooterButtons>
-      </Footer>
+      <LayersFooter />
     </StyledLayersWindow>
   );
 };
