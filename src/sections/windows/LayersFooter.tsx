@@ -10,6 +10,7 @@ import mask from "../../assets/pngs/mask.png";
 import folder from "../../assets/svgs/layers/folder.svg";
 import newLayer from "../../assets/pngs/new.png";
 import trash from "../../assets/svgs/layers/trash.svg";
+import { FeatureRequest } from "../../services/AnalyticsService";
 
 const Footer = styled.div`
   width: 100%;
@@ -37,27 +38,48 @@ const LayersFooter = () => {
     <Footer>
       <div />
       <Buttons>
-        <Button square>
+        <Button
+          onClick={() => FeatureRequest("Windows/Layers/Footer/Link")}
+          square
+        >
           <Asset src={link} />
         </Button>
-        <Button square>
+        <Button
+          onClick={() => FeatureRequest("Windows/Layers/Footer/Style")}
+          square
+        >
           <Asset src={style} />
           <ContextIndicator />
         </Button>
-        <Button square>
+        <Button
+          onClick={() => FeatureRequest("Windows/Layers/Footer/Mask")}
+          square
+        >
           <Asset src={mask} />
         </Button>
-        <Button square>
+        <Button
+          onClick={() => FeatureRequest("Windows/Layers/Footer/Adjustment")}
+          square
+        >
           <Asset src={contrast} />
           <ContextIndicator />
         </Button>
-        <Button square>
+        <Button
+          onClick={() => FeatureRequest("Windows/Layers/Footer/Group")}
+          square
+        >
           <Asset src={folder} />
         </Button>
-        <Button square>
+        <Button
+          onClick={() => FeatureRequest("Windows/Layers/Footer/New")}
+          square
+        >
           <Asset src={newLayer} />
         </Button>
-        <Button square>
+        <Button
+          onClick={() => FeatureRequest("Windows/Layers/Footer/Delete")}
+          square
+        >
           <Asset src={trash} />
         </Button>
       </Buttons>
