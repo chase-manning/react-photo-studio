@@ -10,8 +10,12 @@ import brush from "../../assets/svgs/tools/brush.svg";
 import move from "../../assets/svgs/tools/move.svg";
 import artboardNesting from "../../assets/pngs/artboard-nesting.png";
 import { FeatureRequest } from "../../services/AnalyticsService";
+import { useSelector } from "react-redux";
+import { selectActiveLayer } from "../../state/layersSlice";
+import Disable from "../../styles/Disabled";
 
 const Lock = styled.div`
+  position: relative;
   width: 100%;
   height: 2.8rem;
   display: flex;
@@ -37,6 +41,9 @@ const SpacingSmall = styled.div`
 `;
 
 const LayerLock = () => {
+  const activeLayer = useSelector(selectActiveLayer);
+  const enabled = activeLayer && activeLayer.visible && !activeLayer.locked;
+
   return (
     <Lock>
       <SpacingSmall />
@@ -74,6 +81,7 @@ const LayerLock = () => {
         </Button>
       </Buttons>
       <PercentSelector label={"Fill"} value={100}></PercentSelector>
+      {!enabled && <Disable />}
     </Lock>
   );
 };
