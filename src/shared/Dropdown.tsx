@@ -18,7 +18,7 @@ const SelectedContainer = styled.div`
 `;
 
 const Icon = styled.img`
-  height: 1.2rem;
+  height: 1.1rem;
   margin-right: 0.2rem;
 `;
 
@@ -54,7 +54,7 @@ type Props = {
 
 const Dropdown = (props: Props) => {
   const optionLenghts = props.options.map((option: string) => option.length);
-  const width = Math.max(...optionLenghts) * 0.57;
+  const width = Math.max(...optionLenghts) * 0.57 + (props.icon ? 1.3 : 0);
 
   return (
     <StyledDropdown>

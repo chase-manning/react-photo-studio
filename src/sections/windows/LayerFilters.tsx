@@ -44,7 +44,7 @@ const LayerFilters = () => {
 
   return (
     <Filters>
-      <Dropdown selected={"Kind"} options={["meow meow "]} icon={search} />
+      <Dropdown selected={"Kind"} options={["meow meo"]} icon={search} />
       <Buttons>
         <Button
           onClick={() => FeatureRequest("Windows/Layer/Filters/Pixels")}
