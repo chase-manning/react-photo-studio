@@ -29,15 +29,19 @@ const Header = styled.div`
   color: var(--white);
   text-transform: uppercase;
   font-size: 1.6rem;
+  margin-bottom: 1.5rem;
 `;
 
 const Text = styled.div`
-  color: var(--tab-text);
-  font-size: 1rem;
+  color: var(--label);
+  font-size: 1.1rem;
+  line-height: 1.6rem;
 `;
 
 const Link = styled.a`
-  color: var(--tab-text);
+  color: var(--label);
+  font-size: 1.1rem;
+  line-height: 1.6rem;
 `;
 
 const InDevelopment = () => {
@@ -45,10 +49,10 @@ const InDevelopment = () => {
 
   return (
     <StyledInDevelopment show={true}>
-      <Header>Feature Under Development</Header>
+      <Header>Feature In Development</Header>
       <Text>
-        Photoshop Online is still in Beta and some features are still under
-        development. Check back soon, or view{" "}
+        Photoshop Online is in Beta and some features are still in development.
+        Check back soon, or view{" "}
         <Link
           href="https://github.com/chase-manning/photoshop-online"
           target="_blank"
