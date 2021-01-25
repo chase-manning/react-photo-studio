@@ -4,7 +4,6 @@ import PercentSelector from "../../shared/PercentSelector";
 import Button from "../../styles/Button";
 import BrushOption from "./BrushOption";
 import Presets from "./Presets";
-import { FeatureRequest } from "../../services/AnalyticsService";
 import Dropdown from "../../shared/Dropdown";
 import { getBlendingModeText } from "../../types/blendingModes";
 
@@ -17,6 +16,8 @@ import pressureForSize from "../../assets/options/pressure-for-size.png";
 import symmetry from "../../assets/options/symmetry.png";
 import { getOptionName, OptionOption, OptionType } from "../../types/options";
 import ContextIndicator from "../../styles/ContextIndicator";
+import { useDispatch } from "react-redux";
+import { requestFeature } from "../../state/featureSlice";
 
 const StyledOption = styled.div`
   display: flex;
@@ -40,15 +41,21 @@ type Props = {
 };
 
 const Option = (props: Props) => {
+  const dispatch = useDispatch();
   const [timer, setTimer] = useState(0);
+
   return (
     <StyledOption
       onMouseEnter={() =>
         setTimer(
           window.setTimeout(
             () =>
-              FeatureRequest(
-                "Options/" + getOptionName(props.option.option) + "/Hover Menu"
+              dispatch(
+                requestFeature(
+                  "Options/" +
+                    getOptionName(props.option.option) +
+                    "/Hover Menu"
+                )
               ),
             1000
           )
@@ -62,7 +69,7 @@ const Option = (props: Props) => {
       )}
       {props.option.option === OptionOption.SETTINGS && (
         <Button
-          onClick={() => FeatureRequest("Menu/Window/Brush Settings")}
+          onClick={() => dispatch(requestFeature("Menu/Window/Brush Settings"))}
           selected={props.option.enabled!!}
           width={"auto"}
         >
@@ -81,7 +88,9 @@ const Option = (props: Props) => {
       )}
       {props.option.option === OptionOption.PRESSURE_FOR_OPACITY && (
         <Button
-          onClick={() => FeatureRequest("Options/Brush/Pressure for Opacity")}
+          onClick={() =>
+            dispatch(requestFeature("Options/Brush/Pressure for Opacity"))
+          }
           selected={props.option.enabled!!}
           width={"auto"}
         >
@@ -93,7 +102,7 @@ const Option = (props: Props) => {
       )}
       {props.option.option === OptionOption.AIRBRUSH && (
         <Button
-          onClick={() => FeatureRequest("Options/Brush/Airbrush")}
+          onClick={() => dispatch(requestFeature("Options/Brush/Airbrush"))}
           selected={props.option.enabled!!}
           width={"auto"}
         >
@@ -105,7 +114,9 @@ const Option = (props: Props) => {
       )}
       {props.option.option === OptionOption.SMOOTHING_OPTIONS && (
         <Button
-          onClick={() => FeatureRequest("Options/Brush/Smoothing Options")}
+          onClick={() =>
+            dispatch(requestFeature("Options/Brush/Smoothing Options"))
+          }
           selected={props.option.enabled!!}
           width={"auto"}
         >
@@ -118,7 +129,9 @@ const Option = (props: Props) => {
       )}
       {props.option.option === OptionOption.PRESSURE_FOR_SIZE && (
         <Button
-          onClick={() => FeatureRequest("Options/Brush/Pressure for Size")}
+          onClick={() =>
+            dispatch(requestFeature("Options/Brush/Pressure for Size"))
+          }
           selected={props.option.enabled!!}
           width={"auto"}
         >
@@ -127,7 +140,7 @@ const Option = (props: Props) => {
       )}
       {props.option.option === OptionOption.SYMMETRY && (
         <Button
-          onClick={() => FeatureRequest("Options/Brush/Symmetry")}
+          onClick={() => dispatch(requestFeature("Options/Brush/Symmetry"))}
           selected={props.option.enabled!!}
           width={"auto"}
         >
