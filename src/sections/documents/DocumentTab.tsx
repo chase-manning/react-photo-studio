@@ -1,7 +1,8 @@
 import React, { useState } from "react";
+import { useDispatch } from "react-redux";
 import styled from "styled-components";
 import cross from "../../assets/svgs/navigation/cross.svg";
-import { FeatureRequest } from "../../services/AnalyticsService";
+import { requestFeature } from "../../state/featureSlice";
 
 const StyledTab = styled.div`
   height: 100%;
@@ -38,6 +39,7 @@ const Label = styled.div`
 `;
 
 const DocumentTab = () => {
+  const dispatch = useDispatch();
   const [timer, setTimer] = useState(0);
 
   return (
@@ -45,14 +47,16 @@ const DocumentTab = () => {
       onMouseEnter={() =>
         setTimer(
           window.setTimeout(
-            () => FeatureRequest("Documents/Tabs/Tab/Hover Menu"),
+            () => dispatch(requestFeature("Documents/Tabs/Tab/Hover Menu")),
             1000
           )
         )
       }
       onMouseLeave={() => window.clearTimeout(timer)}
     >
-      <CloseButton onClick={() => FeatureRequest("Documents/Tabs/Tab/Close")}>
+      <CloseButton
+        onClick={() => dispatch(requestFeature("Documents/Tabs/Tab/Close"))}
+      >
         <Cross src={cross} />
       </CloseButton>
       <Label>Untitled-1 @ 100% (RGB/8)</Label>
