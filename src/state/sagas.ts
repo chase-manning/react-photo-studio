@@ -1,4 +1,5 @@
-import { put, takeEvery, all, select } from "redux-saga/effects";
+import { put, takeEvery, all, select, call } from "redux-saga/effects";
+import { callbackify } from "util";
 import { FeatureRequest } from "../services/AnalyticsService";
 import {
   requestFeature,
@@ -14,13 +15,19 @@ function* watchRequestFeature() {
 }
 
 /* ACTIONS */
+const delay = (time: number) =>
+  new Promise((resolve) => setTimeout(resolve, time));
+
 function* trackFeatureRequest() {
   const requestedFeature: string = yield select(selectedFeatureRequesting);
   const featureRequests: string[] = yield select(selectFeatureRequests);
   if (featureRequests.indexOf(requestedFeature) === -1) {
     FeatureRequest(requestedFeature);
     yield put(featureRequested(requestedFeature));
-  } else yield put(clearFeatureRequest());
+  }
+
+  yield call(delay, 5000);
+  yield put(clearFeatureRequest());
 }
 
 export default function* rootSaga() {

@@ -20,7 +20,6 @@ export const featureSlice = createSlice({
     },
     featureRequested: (state, action: PayloadAction<string>) => {
       state.requested.push(action.payload);
-      state.requesting = undefined;
     },
     clearFeatureRequest: (state) => {
       state.requesting = undefined;
