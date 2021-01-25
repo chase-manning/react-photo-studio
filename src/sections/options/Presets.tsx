@@ -1,7 +1,7 @@
 import React from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import styled from "styled-components";
-import { FeatureRequest } from "../../services/AnalyticsService";
+import { requestFeature } from "../../state/featureSlice";
 import { selectTool } from "../../state/toolsSlice";
 import ToolIcon from "../tools/ToolIcon";
 
@@ -29,10 +29,11 @@ const Arrow = styled.div`
 `;
 
 const Presets = () => {
+  const dispatch = useDispatch();
   const tool = useSelector(selectTool);
 
   return (
-    <StyledPresets onClick={() => FeatureRequest("Options/Presets")}>
+    <StyledPresets onClick={() => dispatch(requestFeature("Options/Presets"))}>
       <Icon>
         <ToolIcon option={tool.option} />
       </Icon>
