@@ -4,9 +4,9 @@ import styled from "styled-components";
 import { setActiveTool } from "../../state/toolsSlice";
 import ToolIcon from "./ToolIcon";
 import { ToolCollection, ToolType } from "../../state/toolSchema";
-import { FeatureRequest } from "../../services/AnalyticsService";
 import Button from "../../styles/Button";
 import ContextIndicator from "../../styles/ContextIndicator";
+import { requestFeature } from "../../state/featureSlice";
 
 const StyledTool = styled.div`
   width: 100%;
@@ -30,7 +30,8 @@ const Tool = (props: Props) => {
       onMouseEnter={() =>
         setTimer(
           window.setTimeout(
-            () => FeatureRequest("Tools/" + tool.name + "/Hover Menu"),
+            () =>
+              dispatch(requestFeature("Tools/" + tool.name + "/Hover Menu")),
             1000
           )
         )
@@ -40,12 +41,12 @@ const Tool = (props: Props) => {
       <Button
         onClick={() => {
           if (tool.implemented) dispatch(setActiveTool(tool.option));
-          else FeatureRequest("Tools/" + tool.name);
+          else dispatch(requestFeature("Tools/" + tool.name));
         }}
         onContextMenu={(event: SyntheticEvent) => {
           event.preventDefault();
           if (props.collection.tools.length === 1) return;
-          FeatureRequest("Tools/" + tool.name + "/Context Menu");
+          dispatch(requestFeature("Tools/" + tool.name + "/Context Menu"));
         }}
         selected={props.collection.active}
       >
