@@ -17,6 +17,7 @@ const StyledInDevelopment = styled.div`
   height: 20rem;
   background-color: var(--layer-bg);
   border: solid 1px var(--toast-border);
+  border-radius: 0.5rem;
   /* transition: all 3s; */
 `;
 
