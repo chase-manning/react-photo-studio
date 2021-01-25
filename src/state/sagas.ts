@@ -1,5 +1,4 @@
 import { put, takeEvery, all, select, call } from "redux-saga/effects";
-import { callbackify } from "util";
 import { FeatureRequest } from "../services/AnalyticsService";
 import {
   requestFeature,
