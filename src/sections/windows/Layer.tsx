@@ -6,7 +6,6 @@ import lock from "../../assets/svgs/layers/lock.svg";
 import LayerCanvas from "./LayerCanvas";
 import { useDispatch } from "react-redux";
 import { requestFeature } from "../../state/featureSlice";
-import Disable from "../../styles/Disabled";
 
 const StyledLayer = styled.div`
   width: 100%;
