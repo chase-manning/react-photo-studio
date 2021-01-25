@@ -19,13 +19,26 @@ const StyledInDevelopment = styled.div`
   border: solid 1px var(--toast-border);
   border-radius: 0.5rem;
   box-shadow: 1rem 1rem 2rem rgba(0, 0, 0, 0.5);
-  /* transition: all 3s; */
+  transition: transform 3s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
+
+const Header = styled.div`
+  color: var(--white);
+  text-transform: uppercase;
+  font-size: 1.6rem;
 `;
 
 const InDevelopment = () => {
   const requesting = useSelector(selectedFeatureRequesting);
 
-  return <StyledInDevelopment show={true}>meow</StyledInDevelopment>;
+  return (
+    <StyledInDevelopment show={true}>
+      <Header>Feature Under Development</Header>
+    </StyledInDevelopment>
+  );
 };
 
 export default InDevelopment;
