@@ -14,7 +14,7 @@ const StyledInDevelopment = styled.div`
   transform: ${(props: Props) =>
     props.show ? "translate(-50%, 0)" : "translate(-50%, 130%)"};
   width: 40%;
-  padding: 3rem;
+  padding: 2.6rem;
   background-color: var(--layer-bg);
   border: solid 1px var(--toast-border);
   border-radius: 0.5rem;
