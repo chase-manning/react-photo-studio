@@ -1,6 +1,7 @@
 import React from "react";
+import { useDispatch } from "react-redux";
 import styled from "styled-components";
-import { FeatureRequest } from "../services/AnalyticsService";
+import { requestFeature } from "../state/featureSlice";
 import Label from "../styles/Label";
 
 const StyledPercentSelector = styled.div`
@@ -41,19 +42,25 @@ type Props = {
 };
 
 const PercentSelector = (props: Props) => {
+  const dispatch = useDispatch();
+
   return (
     <StyledPercentSelector>
       <Label
         scrubCursor
-        onClick={() => FeatureRequest("Percent Selector/Label Scrub")}
+        onClick={() => dispatch(requestFeature("Percent Selector/Label Scrub"))}
       >
         {props.label + ":"}
       </Label>
       <InputContainer>
-        <Input onClick={() => FeatureRequest("Percent Selector/Text Edit")}>
+        <Input
+          onClick={() => dispatch(requestFeature("Percent Selector/Text Edit"))}
+        >
           {props.value + "%"}
         </Input>
-        <Button onClick={() => FeatureRequest("Percent Selector/Dropdown")}>
+        <Button
+          onClick={() => dispatch(requestFeature("Percent Selector/Dropdown"))}
+        >
           <Icon>{">"}</Icon>
         </Button>
       </InputContainer>
