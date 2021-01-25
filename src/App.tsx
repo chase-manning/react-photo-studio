@@ -6,6 +6,7 @@ import Options from "./sections/options/Options";
 import Tools from "./sections/tools/Tools";
 import Windows from "./sections/windows/Windows";
 import ReactGA from "react-ga";
+import InDevelopment from "./shared/InDevelopment";
 
 ReactGA.initialize("UA-186400691-2");
 ReactGA.pageview("/");
@@ -39,6 +40,7 @@ const App = () => {
         <Documents />
         <Windows />
       </Horizontal>
+      <InDevelopment />
     </StyledApp>
   );
 };
