@@ -1,8 +1,8 @@
 import React, { useRef, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import styled from "styled-components";
-import { FeatureRequest } from "../../services/AnalyticsService";
 import { setCursorPosition } from "../../state/cursorSlice";
+import { requestFeature } from "../../state/featureSlice";
 import { ToolOption } from "../../state/toolSchema";
 import { selectTool } from "../../state/toolsSlice";
 import Canvas from "./Canvas";
@@ -59,7 +59,7 @@ const Document = () => {
         onMouseMove={(e) =>
           dispatch(setCursorPosition({ x: e.clientX, y: e.clientY }))
         }
-        onClick={() => FeatureRequest("Document/" + tool.name)}
+        onClick={() => dispatch(requestFeature("Document/" + tool.name))}
       />
     </StyledDocument>
   );
