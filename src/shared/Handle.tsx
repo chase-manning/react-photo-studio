@@ -1,6 +1,7 @@
 import React from "react";
+import { useDispatch } from "react-redux";
 import styled from "styled-components";
-import { FeatureRequest } from "../services/AnalyticsService";
+import { requestFeature } from "../state/featureSlice";
 
 type StyleProps = {
   sideways?: boolean;
@@ -35,9 +36,11 @@ type Props = {
 };
 
 const Handle = (props: Props) => {
+  const dispatch = useDispatch();
+
   return (
     <StyledHandle
-      onClick={() => FeatureRequest(props.component + "/Handle")}
+      onClick={() => dispatch(requestFeature(props.component + "/Handle"))}
       sideways={props.sideways}
     >
       <Lines sideways={props.sideways}>
