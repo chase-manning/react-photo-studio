@@ -1,7 +1,8 @@
 import React from "react";
+import { useDispatch } from "react-redux";
 import styled from "styled-components";
 import arrow from "../../assets/svgs/navigation/arrow.svg";
-import { FeatureRequest } from "../../services/AnalyticsService";
+import { requestFeature } from "../../state/featureSlice";
 
 const StyledDocumentFooter = styled.div`
   width: 100%;
@@ -72,18 +73,28 @@ const End = styled.div`
 `;
 
 const DocumentFooter = () => {
+  const dispatch = useDispatch();
+
   return (
     <StyledDocumentFooter>
-      <Zoom onClick={() => FeatureRequest("Document/Footer/Zoom Edit")}>
+      <Zoom
+        onClick={() => dispatch(requestFeature("Document/Footer/Zoom Edit"))}
+      >
         100%
       </Zoom>
       <DetailsContainer>
         <Details
-          onClick={() => FeatureRequest("Document/Footer/Details Details")}
+          onClick={() =>
+            dispatch(requestFeature("Document/Footer/Details Details"))
+          }
         >
           700 px x 500 px (300 ppi)
         </Details>
-        <Button onClick={() => FeatureRequest("Document/Footer/Details Menu")}>
+        <Button
+          onClick={() =>
+            dispatch(requestFeature("Document/Footer/Details Menu"))
+          }
+        >
           <Arrow src={arrow} />
         </Button>
       </DetailsContainer>
