@@ -1,13 +1,13 @@
 import React from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import styled from "styled-components";
-import { FeatureRequest } from "../../services/AnalyticsService";
 import Expandable from "../../shared/Expandable";
 import Handle from "../../shared/Handle";
 import { selectTools } from "../../state/toolsSlice";
 import Colors from "./Colors";
 import Tool from "./Tool";
 import { ToolCollection } from "../../state/toolSchema";
+import { requestFeature } from "../../state/featureSlice";
 
 const StyledTools = styled.div`
   height: 100%;
@@ -33,11 +33,15 @@ const ToolsContainer = styled.div`
 `;
 
 const Tools = () => {
+  const dispatch = useDispatch();
   const tools = useSelector(selectTools);
 
   return (
     <StyledTools>
-      <Expandable open={false} toggle={() => FeatureRequest("Tools/Expand")} />
+      <Expandable
+        open={false}
+        toggle={() => dispatch(requestFeature("Tools/Expand"))}
+      />
       <Container>
         <Handle component={"Tools"} />
         <ToolsContainer>
