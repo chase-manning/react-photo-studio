@@ -3,8 +3,10 @@ import styled from "styled-components";
 import { LayerType } from "../../state/layersSlice";
 import eye from "../../assets/svgs/layers/eye.svg";
 import lock from "../../assets/svgs/layers/lock.svg";
-import { FeatureRequest } from "../../services/AnalyticsService";
 import LayerCanvas from "./LayerCanvas";
+import { useDispatch } from "react-redux";
+import { requestFeature } from "../../state/featureSlice";
+import Disable from "../../styles/Disabled";
 
 const StyledLayer = styled.div`
   width: 100%;
@@ -79,6 +81,7 @@ type Props = {
 };
 
 const Layer = (props: Props) => {
+  const dispatch = useDispatch();
   const [grabbing, setGrabbing] = useState(false);
   const [moving, setMoving] = useState(false);
 
@@ -92,25 +95,27 @@ const Layer = (props: Props) => {
       onMouseMove={() => {
         if (grabbing) {
           setMoving(true);
-          FeatureRequest("Windows/Layers/Layer/Move");
+          dispatch(requestFeature("Windows/Layers/Layer/Move"));
         }
       }}
     >
       <Visibility
-        onClick={() => FeatureRequest("Windows/Layers/Layer/Visibility")}
+        onClick={() =>
+          dispatch(requestFeature("Windows/Layers/Layer/Visibility"))
+        }
         grabbing={grabbing && moving}
       >
         <Eye src={eye} />
       </Visibility>
       <Content
-        onClick={() => FeatureRequest("Windows/Layers/Layer/Select")}
+        onClick={() => dispatch(requestFeature("Windows/Layers/Layer/Select"))}
         grabbing={grabbing && moving}
         selected={props.layer.selected}
       >
         <LayerCanvas layer={props.layer} />
         <LayerName
           onDoubleClick={() =>
-            FeatureRequest("Windows/Layers/Layer/ChangeName")
+            dispatch(requestFeature("Windows/Layers/Layer/ChangeName"))
           }
         >
           {props.layer.name}
@@ -119,7 +124,9 @@ const Layer = (props: Props) => {
       <LockButton grabbing={grabbing && moving} selected={props.layer.selected}>
         {props.layer.locked && (
           <Lock
-            onClick={() => FeatureRequest("Windows/Layers/Layer/Lock")}
+            onClick={() =>
+              dispatch(requestFeature("Windows/Layers/Layer/Lock"))
+            }
             src={lock}
           />
         )}
