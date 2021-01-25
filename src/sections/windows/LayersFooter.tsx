@@ -10,12 +10,12 @@ import mask from "../../assets/pngs/mask.png";
 import folder from "../../assets/svgs/layers/folder.svg";
 import newLayer from "../../assets/pngs/new.png";
 import trash from "../../assets/svgs/layers/trash.svg";
-import { FeatureRequest } from "../../services/AnalyticsService";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import {
   selectActiveLayer,
   selectSelectedLayers,
 } from "../../state/layersSlice";
+import { requestFeature } from "../../state/featureSlice";
 
 const Footer = styled.div`
   width: 100%;
@@ -39,6 +39,7 @@ const Asset = styled.img`
 `;
 
 const LayersFooter = () => {
+  const dispatch = useDispatch();
   const activeLayer = useSelector(selectActiveLayer);
   const selectedLayers = useSelector(selectSelectedLayers);
   const linkEnabled = selectedLayers.length >= 2;
@@ -48,14 +49,16 @@ const LayersFooter = () => {
       <div />
       <Buttons>
         <Button
-          onClick={() => FeatureRequest("Windows/Layers/Footer/Link")}
+          onClick={() => dispatch(requestFeature("Windows/Layers/Footer/Link"))}
           square
           disabled={!linkEnabled}
         >
           <Asset src={link} />
         </Button>
         <Button
-          onClick={() => FeatureRequest("Windows/Layers/Footer/Style")}
+          onClick={() =>
+            dispatch(requestFeature("Windows/Layers/Footer/Style"))
+          }
           square
           disabled={!activeLayer || !activeLayer.locked}
         >
@@ -63,33 +66,39 @@ const LayersFooter = () => {
           <ContextIndicator />
         </Button>
         <Button
-          onClick={() => FeatureRequest("Windows/Layers/Footer/Mask")}
+          onClick={() => dispatch(requestFeature("Windows/Layers/Footer/Mask"))}
           square
           disabled={!activeLayer}
         >
           <Asset src={mask} />
         </Button>
         <Button
-          onClick={() => FeatureRequest("Windows/Layers/Footer/Adjustment")}
+          onClick={() =>
+            dispatch(requestFeature("Windows/Layers/Footer/Adjustment"))
+          }
           square
         >
           <Asset src={contrast} />
           <ContextIndicator />
         </Button>
         <Button
-          onClick={() => FeatureRequest("Windows/Layers/Footer/Group")}
+          onClick={() =>
+            dispatch(requestFeature("Windows/Layers/Footer/Group"))
+          }
           square
         >
           <Asset src={folder} />
         </Button>
         <Button
-          onClick={() => FeatureRequest("Windows/Layers/Footer/New")}
+          onClick={() => dispatch(requestFeature("Windows/Layers/Footer/New"))}
           square
         >
           <Asset src={newLayer} />
         </Button>
         <Button
-          onClick={() => FeatureRequest("Windows/Layers/Footer/Delete")}
+          onClick={() =>
+            dispatch(requestFeature("Windows/Layers/Footer/Delete"))
+          }
           square
           disabled={!activeLayer}
         >
