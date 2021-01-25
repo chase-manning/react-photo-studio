@@ -9,10 +9,10 @@ import transparent from "../../assets/pngs/transparent.png";
 import brush from "../../assets/svgs/tools/brush.svg";
 import move from "../../assets/svgs/tools/move.svg";
 import artboardNesting from "../../assets/pngs/artboard-nesting.png";
-import { FeatureRequest } from "../../services/AnalyticsService";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { selectActiveLayer } from "../../state/layersSlice";
 import Disable from "../../styles/Disabled";
+import { requestFeature } from "../../state/featureSlice";
 
 const Lock = styled.div`
   position: relative;
@@ -41,6 +41,7 @@ const SpacingSmall = styled.div`
 `;
 
 const LayerLock = () => {
+  const dispatch = useDispatch();
   const activeLayer = useSelector(selectActiveLayer);
   const enabled = activeLayer && activeLayer.visible && !activeLayer.locked;
 
@@ -50,31 +51,37 @@ const LayerLock = () => {
       <Label>Lock:</Label>
       <Buttons>
         <Button
-          onClick={() => FeatureRequest("Windows/Layers/Lock/Transparent")}
+          onClick={() =>
+            dispatch(requestFeature("Windows/Layers/Lock/Transparent"))
+          }
           selected={false}
         >
           <ButtonAsset src={transparent} />
         </Button>
         <Button
-          onClick={() => FeatureRequest("Windows/Layers/Lock/Image")}
+          onClick={() => dispatch(requestFeature("Windows/Layers/Lock/Image"))}
           selected={false}
         >
           <ButtonAsset src={brush} />
         </Button>
         <Button
-          onClick={() => FeatureRequest("Windows/Layers/Lock/Position")}
+          onClick={() =>
+            dispatch(requestFeature("Windows/Layers/Lock/Position"))
+          }
           selected={false}
         >
           <ButtonAsset src={move} />
         </Button>
         <Button
-          onClick={() => FeatureRequest("Windows/Layers/Lock/ArtboardNesting")}
+          onClick={() =>
+            dispatch(requestFeature("Windows/Layers/Lock/ArtboardNesting"))
+          }
           selected={false}
         >
           <ButtonAsset src={artboardNesting} />
         </Button>
         <Button
-          onClick={() => FeatureRequest("Windows/Layers/Lock/All")}
+          onClick={() => dispatch(requestFeature("Windows/Layers/Lock/All"))}
           selected={false}
         >
           <ButtonAsset src={lock} />
