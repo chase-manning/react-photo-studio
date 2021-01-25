@@ -1,6 +1,7 @@
 import React from "react";
+import { useDispatch } from "react-redux";
 import styled from "styled-components";
-import { FeatureRequest } from "../../services/AnalyticsService";
+import { requestFeature } from "../../state/featureSlice";
 import { OptionType } from "../../types/options";
 
 const StyledBrushOption = styled.button`
@@ -54,10 +55,13 @@ type Props = {
 };
 
 const BrushOption = (props: Props) => {
+  const dispatch = useDispatch();
   const brushSize = Math.max(1.6 * (props.option.value! / 40), 1);
 
   return (
-    <StyledBrushOption onClick={() => FeatureRequest("Options/Brush")}>
+    <StyledBrushOption
+      onClick={() => dispatch(requestFeature("Options/Brush"))}
+    >
       <BrushContainer>
         <Brush size={brushSize} />
         <Label>{props.option.value}</Label>
