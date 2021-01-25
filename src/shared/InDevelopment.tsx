@@ -12,9 +12,11 @@ const StyledInDevelopment = styled.div`
   left: 50%;
   bottom: 0;
   transform: ${(props: Props) =>
-    props.show ? "translate(-50%, 0)" : "translate(-50%, -110%)"};
+    props.show ? "translate(-50%, 0)" : "translate(-50%, 110%)"};
   width: 30%;
   height: 20rem;
+  background-color: red;
+  transition: all 3s;
 `;
 
 const InDevelopment = () => {
