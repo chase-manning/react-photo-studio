@@ -1,6 +1,7 @@
 import React from "react";
+import { useDispatch } from "react-redux";
 import styled from "styled-components";
-import { FeatureRequest } from "../services/AnalyticsService";
+import { requestFeature } from "../state/featureSlice";
 import Label from "../styles/Label";
 
 const StyledDropdown = styled.div`
@@ -53,6 +54,7 @@ type Props = {
 };
 
 const Dropdown = (props: Props) => {
+  const dispatch = useDispatch();
   const optionLenghts = props.options.map((option: string) => option.length);
   const width = Math.max(...optionLenghts) * 0.57 + (props.icon ? 1.3 : 0);
 
@@ -62,7 +64,7 @@ const Dropdown = (props: Props) => {
       <SelectedContainer>
         {props.icon && <Icon src={props.icon} />}
         <Selected width={width}>{props.selected}</Selected>
-        <Button onClick={() => FeatureRequest("Dropdown")}>
+        <Button onClick={() => dispatch(requestFeature("Dropdown"))}>
           <Arrow>{">"}</Arrow>
         </Button>
       </SelectedContainer>
