@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import { FeatureRequest } from "../../services/AnalyticsService";
 import Expandable from "../../shared/Expandable";
 import Tabs, { TabType } from "../../shared/Tabs";
 import windows from "./windowSchema";
 import Window from "./Window";
+import { useDispatch } from "react-redux";
+import Disable from "../../styles/Disabled";
+import { requestFeature } from "../../state/featureSlice";
 
 const StyledWindows = styled.div`
   position: relative;
@@ -30,6 +32,7 @@ const isImplemented = (label: string) => {
 };
 
 const Windows = () => {
+  const dispatch = useDispatch();
   const [heights] = useState([0, 0, 100]);
 
   return (
@@ -37,7 +40,7 @@ const Windows = () => {
       <Expandable
         open={true}
         right={true}
-        toggle={() => FeatureRequest("Windows/Expandable")}
+        toggle={() => dispatch(requestFeature("Windows/Expandable"))}
       />
       {windows.map((window: string[], index: number) => {
         const tabs: TabType[] = [];
@@ -56,7 +59,9 @@ const Windows = () => {
           />
         );
       })}
-      <WindowResize onClick={() => FeatureRequest("Windows/Resize")} />
+      <WindowResize
+        onClick={() => dispatch(requestFeature("Windows/Resize"))}
+      />
     </StyledWindows>
   );
 };
