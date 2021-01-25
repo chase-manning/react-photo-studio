@@ -13,7 +13,6 @@ import layerFiltersOff from "../../assets/pngs/layer-filters-off.png";
 import search from "../../assets/svgs/navigation/search.svg";
 import { useDispatch } from "react-redux";
 import { requestFeature } from "../../state/featureSlice";
-import reportWebVitals from "../../reportWebVitals";
 
 const Filters = styled.div`
   position: relative;
