@@ -31,12 +31,32 @@ const Header = styled.div`
   font-size: 1.6rem;
 `;
 
+const Text = styled.div`
+  color: var(--tab-text);
+  font-size: 1rem;
+`;
+
+const Link = styled.a`
+  color: var(--tab-text);
+`;
+
 const InDevelopment = () => {
   const requesting = useSelector(selectedFeatureRequesting);
 
   return (
     <StyledInDevelopment show={true}>
       <Header>Feature Under Development</Header>
+      <Text>
+        Photoshop Online is still in Beta and some features are still under
+        development. Check back soon, or view{" "}
+        <Link
+          href="https://github.com/chase-manning/photoshop-online"
+          target="_blank"
+        >
+          our GitHub
+        </Link>{" "}
+        to follow along or contribute.
+      </Text>
     </StyledInDevelopment>
   );
 };
