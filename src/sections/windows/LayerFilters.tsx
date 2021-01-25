@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { FeatureRequest } from "../../services/AnalyticsService";
 import styled from "styled-components";
 import Dropdown from "../../shared/Dropdown";
 import Button from "../../styles/Button";
@@ -12,6 +11,9 @@ import smartObject from "../../assets/pngs/smart-object.png";
 import layerFiltersOn from "../../assets/pngs/layer-filters-on.png";
 import layerFiltersOff from "../../assets/pngs/layer-filters-off.png";
 import search from "../../assets/svgs/navigation/search.svg";
+import { useDispatch } from "react-redux";
+import { requestFeature } from "../../state/featureSlice";
+import reportWebVitals from "../../reportWebVitals";
 
 const Filters = styled.div`
   position: relative;
@@ -41,6 +43,7 @@ const Toggle = styled.img`
 `;
 
 const LayerFilters = () => {
+  const dispatch = useDispatch();
   const [filtersEnabled] = useState(true);
 
   return (
@@ -48,38 +51,48 @@ const LayerFilters = () => {
       <Dropdown selected={"Kind"} options={["meow meo"]} icon={search} />
       <Buttons>
         <Button
-          onClick={() => FeatureRequest("Windows/Layer/Filters/Pixels")}
+          onClick={() =>
+            dispatch(requestFeature("Windows/Layer/Filters/Pixels"))
+          }
           selected={false}
         >
           <ButtonAsset src={picture} />
         </Button>
         <Button
-          onClick={() => FeatureRequest("Windows/Layer/Filters/Adjustments")}
+          onClick={() =>
+            dispatch(requestFeature("Windows/Layer/Filters/Adjustments"))
+          }
           selected={false}
         >
           <ButtonAsset src={contrast} />
         </Button>
         <Button
-          onClick={() => FeatureRequest("Windows/Layer/Filters/Type")}
+          onClick={() => dispatch(requestFeature("Windows/Layer/Filters/Type"))}
           selected={false}
         >
           <ButtonAsset src={type} />
         </Button>
         <Button
-          onClick={() => FeatureRequest("Windows/Layer/Filters/Shape")}
+          onClick={() =>
+            dispatch(requestFeature("Windows/Layer/Filters/Shape"))
+          }
           selected={false}
         >
           <ButtonAsset src={shape} />
         </Button>
         <Button
-          onClick={() => FeatureRequest("Windows/Layer/Filters/SmartObjects")}
+          onClick={() =>
+            dispatch(requestFeature("Windows/Layer/Filters/SmartObjects"))
+          }
           selected={false}
         >
           <ButtonAsset src={smartObject} />
         </Button>
       </Buttons>
       <Toggle
-        onClick={() => FeatureRequest("Windows/Layer/Filters/EnabledToggle")}
+        onClick={() =>
+          dispatch(requestFeature("Windows/Layer/Filters/EnabledToggle"))
+        }
         src={filtersEnabled ? layerFiltersOn : layerFiltersOff}
       />
     </Filters>
