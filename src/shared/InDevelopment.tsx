@@ -10,7 +10,7 @@ type Props = {
 const StyledInDevelopment = styled.div`
   position: fixed;
   left: 50%;
-  bottom: 0;
+  bottom: 3rem;
   transform: ${(props: Props) =>
     props.show ? "translate(-50%, 0)" : "translate(-50%, 110%)"};
   width: 30%;
@@ -18,6 +18,7 @@ const StyledInDevelopment = styled.div`
   background-color: var(--layer-bg);
   border: solid 1px var(--toast-border);
   border-radius: 0.5rem;
+  box-shadow: 1rem 1rem 2rem rgba(0, 0, 0, 0.5);
   /* transition: all 3s; */
 `;
 
