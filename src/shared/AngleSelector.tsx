@@ -1,7 +1,8 @@
 import React from "react";
+import { useDispatch } from "react-redux";
 import styled from "styled-components";
-import { FeatureRequest } from "../services/AnalyticsService";
 import angle from "../assets/options/angle.svg";
+import { requestFeature } from "../state/featureSlice";
 
 const StyledAngleSelector = styled.div`
   display: flex;
@@ -33,12 +34,16 @@ type Props = {
 };
 
 const AngleSelector = (props: Props) => {
+  const dispatch = useDispatch();
+
   return (
     <StyledAngleSelector>
-      <Label onClick={() => FeatureRequest("Angle Selector/Label Scrub")}>
+      <Label onClick={() => "Angle Selector/Label Scrub"}>
         <Icon src={angle} />
       </Label>
-      <Input onClick={() => FeatureRequest("Angle Selector/Text Edit")}>
+      <Input
+        onClick={() => dispatch(requestFeature("Angle Selector/Text Edit"))}
+      >
         {props.value + "°"}
       </Input>
     </StyledAngleSelector>
