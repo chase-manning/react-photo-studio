@@ -1,6 +1,7 @@
 import React, { useState } from "react";
+import { useDispatch } from "react-redux";
 import styled from "styled-components";
-import { FeatureRequest } from "../services/AnalyticsService";
+import { requestFeature } from "../state/featureSlice";
 
 type TabsProps = {
   height: string;
@@ -97,6 +98,7 @@ type Props = {
 };
 
 const Tabs = (props: Props) => {
+  const dispatch = useDispatch();
   const [activeIndex, setActiveIndex] = useState(0);
 
   return (
@@ -106,17 +108,20 @@ const Tabs = (props: Props) => {
           <HeaderItem
             onClick={() => {
               if (tab.implemented) setActiveIndex(index);
-              else FeatureRequest("Windows/" + props.tabs[index].label);
+              else
+                dispatch(requestFeature("Windows/" + props.tabs[index].label));
             }}
             active={index === activeIndex}
-            onDoubleClick={() => FeatureRequest("Windows/Tabs/Header/Hide")}
+            onDoubleClick={() =>
+              dispatch(requestFeature("Windows/Tabs/Header/Hide"))
+            }
           >
             {tab.label}
           </HeaderItem>
         ))}
         <MenuContainer>
           <div />
-          <Menu onClick={() => FeatureRequest("Windows/Menu")}>
+          <Menu onClick={() => dispatch(requestFeature("Windows/Menu"))}>
             <Line />
             <Line />
             <Line />
