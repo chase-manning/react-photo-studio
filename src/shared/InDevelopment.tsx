@@ -12,14 +12,14 @@ const StyledInDevelopment = styled.div`
   left: 50%;
   bottom: 3rem;
   transform: ${(props: Props) =>
-    props.show ? "translate(-50%, 0)" : "translate(-50%, 110%)"};
+    props.show ? "translate(-50%, 0)" : "translate(-50%, 130%)"};
   width: 40%;
   padding: 3rem;
   background-color: var(--layer-bg);
   border: solid 1px var(--toast-border);
   border-radius: 0.5rem;
   box-shadow: 1rem 1rem 2rem rgba(0, 0, 0, 0.5);
-  transition: transform 3s;
+  transition: transform 1s;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -48,7 +48,7 @@ const InDevelopment = () => {
   const requesting = useSelector(selectedFeatureRequesting);
 
   return (
-    <StyledInDevelopment show={true}>
+    <StyledInDevelopment show={!!requesting}>
       <Header>Feature In Development</Header>
       <Text>
         Photoshop Online is in Beta and some features are still in development.
