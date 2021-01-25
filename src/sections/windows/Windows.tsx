@@ -5,7 +5,6 @@ import Tabs, { TabType } from "../../shared/Tabs";
 import windows from "./windowSchema";
 import Window from "./Window";
 import { useDispatch } from "react-redux";
-import Disable from "../../styles/Disabled";
 import { requestFeature } from "../../state/featureSlice";
 
 const StyledWindows = styled.div`
