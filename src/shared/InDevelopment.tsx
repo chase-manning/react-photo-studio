@@ -15,14 +15,15 @@ const StyledInDevelopment = styled.div`
     props.show ? "translate(-50%, 0)" : "translate(-50%, 110%)"};
   width: 30%;
   height: 20rem;
-  background-color: red;
-  transition: all 3s;
+  background-color: var(--layer-bg);
+  border: solid 1px var(--toast-border);
+  /* transition: all 3s; */
 `;
 
 const InDevelopment = () => {
   const requesting = useSelector(selectedFeatureRequesting);
 
-  return <StyledInDevelopment show={!!requesting}>meow</StyledInDevelopment>;
+  return <StyledInDevelopment show={true}>meow</StyledInDevelopment>;
 };
 
 export default InDevelopment;
