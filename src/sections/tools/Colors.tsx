@@ -1,7 +1,6 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import styled from "styled-components";
-import { FeatureRequest } from "../../services/AnalyticsService";
 import {
   selectPrimaryColor,
   selectSecondaryColor,
@@ -10,6 +9,7 @@ import {
 } from "../../state/toolsSlice";
 import defaultColors from "../../assets/svgs/tools/default-colors.svg";
 import swapColorsSvg from "../../assets/svgs/tools/swap-colors.svg";
+import { requestFeature } from "../../state/featureSlice";
 
 const StyledColors = styled.div`
   width: 100%;
@@ -91,11 +91,11 @@ const Colors = () => {
 
       <Squares>
         <SecondarySquare
-          onClick={() => FeatureRequest("Tools/Set Primary Color")}
+          onClick={() => dispatch(requestFeature("Tools/Set Primary Color"))}
           color={secondaryColor}
         />
         <PrimarySqaure
-          onClick={() => FeatureRequest("Tools/Set Secondary Color")}
+          onClick={() => dispatch(requestFeature("Tools/Set Secondary Color"))}
           color={primaryColor}
         />
       </Squares>
