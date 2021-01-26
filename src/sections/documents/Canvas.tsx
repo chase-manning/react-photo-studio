@@ -7,7 +7,7 @@ const StyledCanvas = styled.div``;
 const app = new Application({
   width: 800,
   height: 600,
-  backgroundColor: 0x5bba6f,
+  backgroundColor: 0xffffff,
 });
 
 const Canvas = () => {
