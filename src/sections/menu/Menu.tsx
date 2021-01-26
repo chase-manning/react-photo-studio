@@ -6,6 +6,8 @@ import MenuItem from "./MenuItem";
 
 import facebook from "../../assets/socials/facebook.svg";
 import instagram from "../../assets/socials/instagram.svg";
+import twitter from "../../assets/socials/twitter.svg";
+import gitHub from "../../assets/socials/github.svg";
 
 const StyledMenu = styled.div`
   width: 100%;
@@ -50,6 +52,9 @@ const Menu = () => {
         ))}
       </Left>
       <Socials>
+        <Link href="https://twitter.com/PhotoshopOnlin7" target="_blank">
+          <Social src={twitter} alt="twitter" />
+        </Link>
         <Link
           href="https://www.facebook.com/photoshoponline.app.fb"
           target="_blank"
@@ -61,6 +66,12 @@ const Menu = () => {
           target="_blank"
         >
           <Social src={instagram} alt="instagram" />
+        </Link>
+        <Link
+          href="https://github.com/chase-manning/photoshop-online"
+          target="_blank"
+        >
+          <Social src={gitHub} alt="github" />
         </Link>
       </Socials>
     </StyledMenu>
