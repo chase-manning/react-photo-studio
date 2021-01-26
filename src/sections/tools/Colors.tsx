@@ -82,10 +82,10 @@ const Colors = () => {
     <StyledColors>
       <Buttons>
         <Button onClick={() => dispatch(setDefaultColors())}>
-          <RotatedButtonIcon src={defaultColors} />
+          <RotatedButtonIcon src={defaultColors} alt="default colors" />
         </Button>
         <Button onClick={() => dispatch(swapColors())}>
-          <ButtonIcon src={swapColorsSvg} />
+          <ButtonIcon src={swapColorsSvg} alt="swap colors" />
         </Button>
       </Buttons>
 
