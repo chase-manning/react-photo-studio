@@ -56,13 +56,13 @@ const LayerLock = () => {
           }
           selected={false}
         >
-          <ButtonAsset src={transparent} />
+          <ButtonAsset src={transparent} alt="transparent" />
         </Button>
         <Button
           onClick={() => dispatch(requestFeature("Windows/Layers/Lock/Image"))}
           selected={false}
         >
-          <ButtonAsset src={brush} />
+          <ButtonAsset src={brush} alt="brush" />
         </Button>
         <Button
           onClick={() =>
@@ -70,7 +70,7 @@ const LayerLock = () => {
           }
           selected={false}
         >
-          <ButtonAsset src={move} />
+          <ButtonAsset src={move} alt="move" />
         </Button>
         <Button
           onClick={() =>
@@ -78,13 +78,13 @@ const LayerLock = () => {
           }
           selected={false}
         >
-          <ButtonAsset src={artboardNesting} />
+          <ButtonAsset src={artboardNesting} alt="artboard nesting" />
         </Button>
         <Button
           onClick={() => dispatch(requestFeature("Windows/Layers/Lock/All"))}
           selected={false}
         >
-          <ButtonAsset src={lock} />
+          <ButtonAsset src={lock} alt="lock" />
         </Button>
       </Buttons>
       <PercentSelector label={"Fill"} value={100}></PercentSelector>
