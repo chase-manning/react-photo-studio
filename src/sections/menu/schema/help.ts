@@ -1,8 +1,8 @@
-import { FeatureRequest } from "../../../services/AnalyticsService";
+import { requestFeature } from "../../../state/featureSlice";
 import { ItemType } from "./menu-items";
 
 export const help: ItemType = {
   name: "Help",
   itemSets: [],
-  action: () => FeatureRequest("Menu/Help"),
+  action: () => requestFeature("Menu/Help"),
 };

@@ -1,4 +1,4 @@
-import { FeatureRequest } from "../../../services/AnalyticsService";
+import { requestFeature } from "../../../state/featureSlice";
 import { ItemType } from "./menu-items";
 
 export const layer: ItemType = {
@@ -13,45 +13,45 @@ export const layer: ItemType = {
               items: [
                 {
                   name: "Layer...",
-                  action: () => FeatureRequest("Menu/Layer/New/Layer..."),
+                  action: () => requestFeature("Menu/Layer/New/Layer..."),
                 },
                 {
                   name: "Layer from Background...",
                   action: () =>
-                    FeatureRequest("Menu/Layer/New/Layer from Background..."),
+                    requestFeature("Menu/Layer/New/Layer from Background..."),
                 },
                 {
                   name: "Group...",
-                  action: () => FeatureRequest("Menu/Layer/New/Group..."),
+                  action: () => requestFeature("Menu/Layer/New/Group..."),
                 },
                 {
                   name: "Group from Layers...",
                   action: () =>
-                    FeatureRequest("Menu/Layer/New/Group from Layers..."),
+                    requestFeature("Menu/Layer/New/Group from Layers..."),
                 },
                 {
                   name: "Artboard...",
-                  action: () => FeatureRequest("Menu/Layer/New/Artboard..."),
+                  action: () => requestFeature("Menu/Layer/New/Artboard..."),
                 },
                 {
                   name: "Artboard from Group...",
                   action: () =>
-                    FeatureRequest("Menu/Layer/New/Artboard from Group..."),
+                    requestFeature("Menu/Layer/New/Artboard from Group..."),
                 },
                 {
                   name: "Artboard from Layers...",
                   action: () =>
-                    FeatureRequest("Menu/Layer/New/Artboard from Layers..."),
+                    requestFeature("Menu/Layer/New/Artboard from Layers..."),
                 },
                 {
                   name: "Frame from Layers...",
                   action: () =>
-                    FeatureRequest("Menu/Layer/New/Frame from Layers..."),
+                    requestFeature("Menu/Layer/New/Frame from Layers..."),
                 },
                 {
                   name: "Convert to Frame",
                   action: () =>
-                    FeatureRequest("Menu/Layer/New/Convert to Frame"),
+                    requestFeature("Menu/Layer/New/Convert to Frame"),
                 },
               ],
             },
@@ -60,11 +60,11 @@ export const layer: ItemType = {
               items: [
                 {
                   name: "Layer Via Copy",
-                  action: () => FeatureRequest("Menu/Layer/New/Layer Via Copy"),
+                  action: () => requestFeature("Menu/Layer/New/Layer Via Copy"),
                 },
                 {
                   name: "Layer Via Cut",
-                  action: () => FeatureRequest("Menu/Layer/New/Layer Via Cut"),
+                  action: () => requestFeature("Menu/Layer/New/Layer Via Cut"),
                 },
               ],
             },
@@ -72,15 +72,15 @@ export const layer: ItemType = {
         },
         {
           name: "Copy CSS",
-          action: () => FeatureRequest("Menu/Layer/Copy CSS"),
+          action: () => requestFeature("Menu/Layer/Copy CSS"),
         },
         {
           name: "Copy SVG",
-          action: () => FeatureRequest("Menu/Layer/Copy SVG"),
+          action: () => requestFeature("Menu/Layer/Copy SVG"),
         },
         {
           name: "Duplicate Layer...",
-          action: () => FeatureRequest("Menu/Layer/Duplicate Layer..."),
+          action: () => requestFeature("Menu/Layer/Duplicate Layer..."),
         },
         {
           name: "Delete",
@@ -89,12 +89,12 @@ export const layer: ItemType = {
               items: [
                 {
                   name: "Layer",
-                  action: () => FeatureRequest("Menu/Layer/Delete/Layer"),
+                  action: () => requestFeature("Menu/Layer/Delete/Layer"),
                 },
                 {
                   name: "Hidden Layers",
                   action: () =>
-                    FeatureRequest("Menu/Layer/Delete/Hidden Layers"),
+                    requestFeature("Menu/Layer/Delete/Hidden Layers"),
                 },
               ],
             },
@@ -106,11 +106,11 @@ export const layer: ItemType = {
       items: [
         {
           name: "Quick Export as PNG",
-          action: () => FeatureRequest("Menu/Layer/Quick Export as PNG"),
+          action: () => requestFeature("Menu/Layer/Quick Export as PNG"),
         },
         {
           name: "Export As...",
-          action: () => FeatureRequest("Menu/Layer/Export As..."),
+          action: () => requestFeature("Menu/Layer/Export As..."),
         },
       ],
     },
@@ -118,7 +118,7 @@ export const layer: ItemType = {
       items: [
         {
           name: "Rename Layer...",
-          action: () => FeatureRequest("Menu/Layer/Rename Layer..."),
+          action: () => requestFeature("Menu/Layer/Rename Layer..."),
         },
         {
           name: "Layer Style",
@@ -128,7 +128,7 @@ export const layer: ItemType = {
                 {
                   name: "Blending Options...",
                   action: () =>
-                    FeatureRequest("Menu/Layer/Layer Style/Blending Options"),
+                    requestFeature("Menu/Layer/Layer Style/Blending Options"),
                 },
               ],
             },
@@ -137,54 +137,54 @@ export const layer: ItemType = {
                 {
                   name: "Bevel & Emboss...",
                   action: () =>
-                    FeatureRequest("Menu/Layer/Layer Style/Bevel & Emboss..."),
+                    requestFeature("Menu/Layer/Layer Style/Bevel & Emboss..."),
                 },
                 {
                   name: "Stroke...",
                   action: () =>
-                    FeatureRequest("Menu/Layer/Layer Style/Stroke..."),
+                    requestFeature("Menu/Layer/Layer Style/Stroke..."),
                 },
                 {
                   name: "Inner Shadow...",
                   action: () =>
-                    FeatureRequest("Menu/Layer/Layer Style/Inner Shadow..."),
+                    requestFeature("Menu/Layer/Layer Style/Inner Shadow..."),
                 },
                 {
                   name: "Inner Glow...",
                   action: () =>
-                    FeatureRequest("Menu/Layer/Layer Style/Inner Glow..."),
+                    requestFeature("Menu/Layer/Layer Style/Inner Glow..."),
                 },
                 {
                   name: "Satin...",
                   action: () =>
-                    FeatureRequest("Menu/Layer/Layer Style/Satin..."),
+                    requestFeature("Menu/Layer/Layer Style/Satin..."),
                 },
                 {
                   name: "Color Overlay..",
                   action: () =>
-                    FeatureRequest("Menu/Layer/Layer Style/Color Overlay..."),
+                    requestFeature("Menu/Layer/Layer Style/Color Overlay..."),
                 },
                 {
                   name: "Gradient Overlay...",
                   action: () =>
-                    FeatureRequest(
+                    requestFeature(
                       "Menu/Layer/Layer Style/Gradient Overlay..."
                     ),
                 },
                 {
                   name: "Pattern Overlay...",
                   action: () =>
-                    FeatureRequest("Menu/Layer/Layer Style/Pattern Overlay..."),
+                    requestFeature("Menu/Layer/Layer Style/Pattern Overlay..."),
                 },
                 {
                   name: "Outer Glow...",
                   action: () =>
-                    FeatureRequest("Menu/Layer/Layer Style/Outer Glow..."),
+                    requestFeature("Menu/Layer/Layer Style/Outer Glow..."),
                 },
                 {
                   name: "Drop Shadow...",
                   action: () =>
-                    FeatureRequest("Menu/Layer/Layer Style/Drop Shadow..."),
+                    requestFeature("Menu/Layer/Layer Style/Drop Shadow..."),
                 },
               ],
             },
@@ -193,17 +193,17 @@ export const layer: ItemType = {
                 {
                   name: "Copy Layer Style",
                   action: () =>
-                    FeatureRequest("Menu/Layer/Layer Style/Copy Layer Style"),
+                    requestFeature("Menu/Layer/Layer Style/Copy Layer Style"),
                 },
                 {
                   name: "Paste Layer Style",
                   action: () =>
-                    FeatureRequest("Menu/Layer/Layer Style/Paste Layer Style"),
+                    requestFeature("Menu/Layer/Layer Style/Paste Layer Style"),
                 },
                 {
                   name: "Clear Layer Style",
                   action: () =>
-                    FeatureRequest("Menu/Layer/Layer Style/Clear Layer Style"),
+                    requestFeature("Menu/Layer/Layer Style/Clear Layer Style"),
                 },
               ],
             },
@@ -212,22 +212,22 @@ export const layer: ItemType = {
                 {
                   name: "Global Light...",
                   action: () =>
-                    FeatureRequest("Menu/Layer/Layer Style/Global Light..."),
+                    requestFeature("Menu/Layer/Layer Style/Global Light..."),
                 },
                 {
                   name: "Create Layer",
                   action: () =>
-                    FeatureRequest("Menu/Layer/Layer Style/Create Layer"),
+                    requestFeature("Menu/Layer/Layer Style/Create Layer"),
                 },
                 {
                   name: "Hide All Effects",
                   action: () =>
-                    FeatureRequest("Menu/Layer/Layer Style/Hide All Effects"),
+                    requestFeature("Menu/Layer/Layer Style/Hide All Effects"),
                 },
                 {
                   name: "Scale Effects...",
                   action: () =>
-                    FeatureRequest("Menu/Layer/Layer Style/Scale Effects..."),
+                    requestFeature("Menu/Layer/Layer Style/Scale Effects..."),
                 },
               ],
             },
@@ -236,7 +236,7 @@ export const layer: ItemType = {
         {
           name: "Smart Filter",
           itemSets: [],
-          action: () => FeatureRequest("Menu/Layer/Smart Filter"),
+          action: () => requestFeature("Menu/Layer/Smart Filter"),
         },
       ],
     },
@@ -250,17 +250,17 @@ export const layer: ItemType = {
                 {
                   name: "Solid Color...",
                   action: () =>
-                    FeatureRequest("Menu/Layer/New Fill Layer/Solid Color..."),
+                    requestFeature("Menu/Layer/New Fill Layer/Solid Color..."),
                 },
                 {
                   name: "Gradient...",
                   action: () =>
-                    FeatureRequest("Menu/Layer/New Fill Layer/Gradient..."),
+                    requestFeature("Menu/Layer/New Fill Layer/Gradient..."),
                 },
                 {
                   name: "Pattern..",
                   action: () =>
-                    FeatureRequest("Menu/Layer/New Fill Layer/Pattern..."),
+                    requestFeature("Menu/Layer/New Fill Layer/Pattern..."),
                 },
               ],
             },
@@ -274,24 +274,24 @@ export const layer: ItemType = {
                 {
                   name: "Brightness/Contrast...",
                   action: () =>
-                    FeatureRequest(
+                    requestFeature(
                       "Menu/Layer/Adjustments/Brightness/Contrast..."
                     ),
                 },
                 {
                   name: "Levels...",
                   action: () =>
-                    FeatureRequest("Menu/Layer/Adjustments/Levels..."),
+                    requestFeature("Menu/Layer/Adjustments/Levels..."),
                 },
                 {
                   name: "Curves...",
                   action: () =>
-                    FeatureRequest("Menu/Layer/Adjustments/Curves..."),
+                    requestFeature("Menu/Layer/Adjustments/Curves..."),
                 },
                 {
                   name: "Exposure...",
                   action: () =>
-                    FeatureRequest("Menu/Layer/Adjustments/Exposure..."),
+                    requestFeature("Menu/Layer/Adjustments/Exposure..."),
                 },
               ],
             },
@@ -300,37 +300,37 @@ export const layer: ItemType = {
                 {
                   name: "Vibrance...",
                   action: () =>
-                    FeatureRequest("Menu/Layer/Adjustments/Vibrance..."),
+                    requestFeature("Menu/Layer/Adjustments/Vibrance..."),
                 },
                 {
                   name: "Hue/Saturation...",
                   action: () =>
-                    FeatureRequest("Menu/Layer/Adjustments/Hue/Saturation..."),
+                    requestFeature("Menu/Layer/Adjustments/Hue/Saturation..."),
                 },
                 {
                   name: "Color Balance...",
                   action: () =>
-                    FeatureRequest("Menu/Layer/Adjustments/Color Balance..."),
+                    requestFeature("Menu/Layer/Adjustments/Color Balance..."),
                 },
                 {
                   name: "Black & White...",
                   action: () =>
-                    FeatureRequest("Menu/Layer/Adjustments/Black & White..."),
+                    requestFeature("Menu/Layer/Adjustments/Black & White..."),
                 },
                 {
                   name: "Photo Filter...",
                   action: () =>
-                    FeatureRequest("Menu/Layer/Adjustments/Photo Filter..."),
+                    requestFeature("Menu/Layer/Adjustments/Photo Filter..."),
                 },
                 {
                   name: "Channel Mixer...",
                   action: () =>
-                    FeatureRequest("Menu/Layer/Adjustments/Channel Mixer..."),
+                    requestFeature("Menu/Layer/Adjustments/Channel Mixer..."),
                 },
                 {
                   name: "Color Lookup...",
                   action: () =>
-                    FeatureRequest("Menu/Layer/Adjustments/Color Lookup..."),
+                    requestFeature("Menu/Layer/Adjustments/Color Lookup..."),
                 },
               ],
             },
@@ -338,27 +338,27 @@ export const layer: ItemType = {
               items: [
                 {
                   name: "Invert",
-                  action: () => FeatureRequest("Menu/Layer/Adjustments/Invert"),
+                  action: () => requestFeature("Menu/Layer/Adjustments/Invert"),
                 },
                 {
                   name: "Posterize...",
                   action: () =>
-                    FeatureRequest("Menu/Layer/Adjustments/Posterize..."),
+                    requestFeature("Menu/Layer/Adjustments/Posterize..."),
                 },
                 {
                   name: "Threshold...",
                   action: () =>
-                    FeatureRequest("Menu/Layer/Adjustments/Threshold..."),
+                    requestFeature("Menu/Layer/Adjustments/Threshold..."),
                 },
                 {
                   name: "Gradient Map...",
                   action: () =>
-                    FeatureRequest("Menu/Layer/Adjustments/Gradient Map..."),
+                    requestFeature("Menu/Layer/Adjustments/Gradient Map..."),
                 },
                 {
                   name: "Selective Color...",
                   action: () =>
-                    FeatureRequest("Menu/Layer/Adjustments/Selective Color..."),
+                    requestFeature("Menu/Layer/Adjustments/Selective Color..."),
                 },
               ],
             },
@@ -366,7 +366,7 @@ export const layer: ItemType = {
         },
         {
           name: "Layer Content Options...",
-          action: () => FeatureRequest("Menu/Layer/Layer Content Options..."),
+          action: () => requestFeature("Menu/Layer/Layer Content Options..."),
         },
       ],
     },
@@ -380,27 +380,27 @@ export const layer: ItemType = {
                 {
                   name: "Reveal All",
                   action: () =>
-                    FeatureRequest("Menu/Layer/Layer Mask/Reveal All"),
+                    requestFeature("Menu/Layer/Layer Mask/Reveal All"),
                 },
                 {
                   name: "Hide All",
                   action: () =>
-                    FeatureRequest("Menu/Layer/Layer Mask/Hide All"),
+                    requestFeature("Menu/Layer/Layer Mask/Hide All"),
                 },
                 {
                   name: "Reveal Selection",
                   action: () =>
-                    FeatureRequest("Menu/Layer/Layer Mask/Reveal Selection"),
+                    requestFeature("Menu/Layer/Layer Mask/Reveal Selection"),
                 },
                 {
                   name: "Hide Selection",
                   action: () =>
-                    FeatureRequest("Menu/Layer/Layer Mask/Hide Selection"),
+                    requestFeature("Menu/Layer/Layer Mask/Hide Selection"),
                 },
                 {
                   name: "From Transparency",
                   action: () =>
-                    FeatureRequest("Menu/Layer/Layer Mask/From Transparency"),
+                    requestFeature("Menu/Layer/Layer Mask/From Transparency"),
                 },
               ],
             },
@@ -408,11 +408,11 @@ export const layer: ItemType = {
               items: [
                 {
                   name: "Delete",
-                  action: () => FeatureRequest("Menu/Layer/Layer Mask/Delete"),
+                  action: () => requestFeature("Menu/Layer/Layer Mask/Delete"),
                 },
                 {
                   name: "Apply",
-                  action: () => FeatureRequest("Menu/Layer/Layer Mask/Apply"),
+                  action: () => requestFeature("Menu/Layer/Layer Mask/Apply"),
                 },
               ],
             },
@@ -420,11 +420,11 @@ export const layer: ItemType = {
               items: [
                 {
                   name: "Disable",
-                  action: () => FeatureRequest("Menu/Layer/Layer Mask/Disable"),
+                  action: () => requestFeature("Menu/Layer/Layer Mask/Disable"),
                 },
                 {
                   name: "Unlink",
-                  action: () => FeatureRequest("Menu/Layer/Layer Mask/Unlink"),
+                  action: () => requestFeature("Menu/Layer/Layer Mask/Unlink"),
                 },
               ],
             },
@@ -438,17 +438,17 @@ export const layer: ItemType = {
                 {
                   name: "Reveal All",
                   action: () =>
-                    FeatureRequest("Menu/Layer/Vector Mask/Reveal All"),
+                    requestFeature("Menu/Layer/Vector Mask/Reveal All"),
                 },
                 {
                   name: "Hide All",
                   action: () =>
-                    FeatureRequest("Menu/Layer/Vector Mask/Hide All"),
+                    requestFeature("Menu/Layer/Vector Mask/Hide All"),
                 },
                 {
                   name: "Current Path",
                   action: () =>
-                    FeatureRequest("Menu/Layer/Vector Mask/Current Path"),
+                    requestFeature("Menu/Layer/Vector Mask/Current Path"),
                 },
               ],
             },
@@ -456,7 +456,7 @@ export const layer: ItemType = {
               items: [
                 {
                   name: "Delete",
-                  action: () => FeatureRequest("Menu/Layer/Vector Mask/Delete"),
+                  action: () => requestFeature("Menu/Layer/Vector Mask/Delete"),
                 },
               ],
             },
@@ -464,11 +464,11 @@ export const layer: ItemType = {
               items: [
                 {
                   name: "Enable",
-                  action: () => FeatureRequest("Menu/Layer/Vector Mask/Enable"),
+                  action: () => requestFeature("Menu/Layer/Vector Mask/Enable"),
                 },
                 {
                   name: "Link",
-                  action: () => FeatureRequest("Menu/Layer/Vector Mask/Link"),
+                  action: () => requestFeature("Menu/Layer/Vector Mask/Link"),
                 },
               ],
             },
@@ -476,7 +476,7 @@ export const layer: ItemType = {
         },
         {
           name: "Create Clipping Mask",
-          action: () => FeatureRequest("Menu/Layer/Create Clipping Mask"),
+          action: () => requestFeature("Menu/Layer/Create Clipping Mask"),
         },
       ],
     },
@@ -490,14 +490,14 @@ export const layer: ItemType = {
                 {
                   name: "Convert to Smart Object",
                   action: () =>
-                    FeatureRequest(
+                    requestFeature(
                       "Menu/Layer/Smart Objects/Conver to Smart Object"
                     ),
                 },
                 {
                   name: "New Smart Object via Copy",
                   action: () =>
-                    FeatureRequest(
+                    requestFeature(
                       "Menu/Layer/Smart Objects/New Smart Object via Copy"
                     ),
                 },
@@ -508,7 +508,7 @@ export const layer: ItemType = {
                 {
                   name: "Reveal in Finder",
                   action: () =>
-                    FeatureRequest("Menu/Layer/Smart Objects/Reveal in Finder"),
+                    requestFeature("Menu/Layer/Smart Objects/Reveal in Finder"),
                 },
               ],
             },
@@ -517,14 +517,14 @@ export const layer: ItemType = {
                 {
                   name: "Update Modified Content",
                   action: () =>
-                    FeatureRequest(
+                    requestFeature(
                       "Menu/Layer/Smart Objects/Update Modified Content"
                     ),
                 },
                 {
                   name: "Update All Modified Content",
                   action: () =>
-                    FeatureRequest(
+                    requestFeature(
                       "Menu/Layer/Smart Objects/Update All Modified Content"
                     ),
                 },
@@ -535,33 +535,33 @@ export const layer: ItemType = {
                 {
                   name: "Edit Contents",
                   action: () =>
-                    FeatureRequest("Menu/Layer/Smart Objects/Edit Contents"),
+                    requestFeature("Menu/Layer/Smart Objects/Edit Contents"),
                 },
                 {
                   name: "Relink to File...",
                   action: () =>
-                    FeatureRequest(
+                    requestFeature(
                       "Menu/Layer/Smart Objects/Relink to File..."
                     ),
                 },
                 {
                   name: "Relink to Library Graphic...",
                   action: () =>
-                    FeatureRequest(
+                    requestFeature(
                       "Menu/Layer/Smart Objects/Relink to Library Graphic..."
                     ),
                 },
                 {
                   name: "Replace Contents...",
                   action: () =>
-                    FeatureRequest(
+                    requestFeature(
                       "Menu/Layer/Smart Objects/Replace Contents..."
                     ),
                 },
                 {
                   name: "Export Contents...",
                   action: () =>
-                    FeatureRequest(
+                    requestFeature(
                       "Menu/Layer/Smart Objects/Export Contents..."
                     ),
                 },
@@ -572,24 +572,24 @@ export const layer: ItemType = {
                 {
                   name: "Embed Linked",
                   action: () =>
-                    FeatureRequest("Menu/Layer/Smart Objects/Embed Linked"),
+                    requestFeature("Menu/Layer/Smart Objects/Embed Linked"),
                 },
                 {
                   name: "Embed All Linked",
                   action: () =>
-                    FeatureRequest("Menu/Layer/Smart Objects/Embed All Linked"),
+                    requestFeature("Menu/Layer/Smart Objects/Embed All Linked"),
                 },
                 {
                   name: "Convert to Linked...",
                   action: () =>
-                    FeatureRequest(
+                    requestFeature(
                       "Menu/Layer/Smart Objects/Convert to Linked..."
                     ),
                 },
                 {
                   name: "Convert to Layers",
                   action: () =>
-                    FeatureRequest("Menu/Layer/Smart Objects/Conver to Layers"),
+                    requestFeature("Menu/Layer/Smart Objects/Conver to Layers"),
                 },
               ],
             },
@@ -599,12 +599,12 @@ export const layer: ItemType = {
                   name: "Stack Mode",
                   itemSets: [],
                   action: () =>
-                    FeatureRequest("Menu/Layer/Smart Objects/Stack Mode"),
+                    requestFeature("Menu/Layer/Smart Objects/Stack Mode"),
                 },
                 {
                   name: "Rasterize",
                   action: () =>
-                    FeatureRequest("Menu/Layer/Smart Objects/Rasterize"),
+                    requestFeature("Menu/Layer/Smart Objects/Rasterize"),
                 },
               ],
             },
@@ -618,7 +618,7 @@ export const layer: ItemType = {
                 {
                   name: "New Video Layer from File...",
                   action: () =>
-                    FeatureRequest(
+                    requestFeature(
                       "Menu/Layer/Video Layers/New Video Layer from File..."
                     ),
                 },
@@ -629,24 +629,24 @@ export const layer: ItemType = {
                 {
                   name: "New Blank Video Layer",
                   action: () =>
-                    FeatureRequest(
+                    requestFeature(
                       "Menu/Layer/Video Layers/New Blank Video Layer"
                     ),
                 },
                 {
                   name: "Insert Blank Frame",
                   action: () =>
-                    FeatureRequest("Menu/Layer/Video Layers/Inset Blank Frame"),
+                    requestFeature("Menu/Layer/Video Layers/Inset Blank Frame"),
                 },
                 {
                   name: "Duplicate Frame",
                   action: () =>
-                    FeatureRequest("Menu/Layer/Video Layers/Duplicate Frame"),
+                    requestFeature("Menu/Layer/Video Layers/Duplicate Frame"),
                 },
                 {
                   name: "Delete Frame",
                   action: () =>
-                    FeatureRequest("Menu/Layer/Video Layers/Delete Frame"),
+                    requestFeature("Menu/Layer/Video Layers/Delete Frame"),
                 },
               ],
             },
@@ -655,14 +655,14 @@ export const layer: ItemType = {
                 {
                   name: "Replace Footage...",
                   action: () =>
-                    FeatureRequest(
+                    requestFeature(
                       "Menu/Layer/Video Layers/Replace Footage..."
                     ),
                 },
                 {
                   name: "Interpret Footage...",
                   action: () =>
-                    FeatureRequest(
+                    requestFeature(
                       "Menu/Layer/Video Layers/Interpret Footage..."
                     ),
                 },
@@ -673,7 +673,7 @@ export const layer: ItemType = {
                 {
                   name: "Show Altered Video",
                   action: () =>
-                    FeatureRequest(
+                    requestFeature(
                       "Menu/Layer/Video Layers/Show Altered Video"
                     ),
                 },
@@ -684,12 +684,12 @@ export const layer: ItemType = {
                 {
                   name: "Restore Frame",
                   action: () =>
-                    FeatureRequest("Menu/Layer/Video Layers/Restore Frame"),
+                    requestFeature("Menu/Layer/Video Layers/Restore Frame"),
                 },
                 {
                   name: "Restore All Frames",
                   action: () =>
-                    FeatureRequest(
+                    requestFeature(
                       "Menu/Layer/Video Layers/Restore All Frames"
                     ),
                 },
@@ -700,7 +700,7 @@ export const layer: ItemType = {
                 {
                   name: "Reload Frame",
                   action: () =>
-                    FeatureRequest("Menu/Layer/Video Layers/Reload Frame"),
+                    requestFeature("Menu/Layer/Video Layers/Reload Frame"),
                 },
               ],
             },
@@ -709,7 +709,7 @@ export const layer: ItemType = {
                 {
                   name: "Rasterize",
                   action: () =>
-                    FeatureRequest("Menu/Layer/Video Layers/Rasterize"),
+                    requestFeature("Menu/Layer/Video Layers/Rasterize"),
                 },
               ],
             },
@@ -722,39 +722,39 @@ export const layer: ItemType = {
               items: [
                 {
                   name: "Type",
-                  action: () => FeatureRequest("Menu/Layer/Rasterize/Type"),
+                  action: () => requestFeature("Menu/Layer/Rasterize/Type"),
                 },
                 {
                   name: "Shape",
-                  action: () => FeatureRequest("Menu/Layer/Rasterize/Shape"),
+                  action: () => requestFeature("Menu/Layer/Rasterize/Shape"),
                 },
                 {
                   name: "Fill Content",
                   action: () =>
-                    FeatureRequest("Menu/Layer/Rasterize/Fill Content"),
+                    requestFeature("Menu/Layer/Rasterize/Fill Content"),
                 },
                 {
                   name: "Vector Mask",
                   action: () =>
-                    FeatureRequest("Menu/Layer/Rasterize/Vector Mask"),
+                    requestFeature("Menu/Layer/Rasterize/Vector Mask"),
                 },
                 {
                   name: "Smart Object",
                   action: () =>
-                    FeatureRequest("Menu/Layer/Rasterize/Smart Object"),
+                    requestFeature("Menu/Layer/Rasterize/Smart Object"),
                 },
                 {
                   name: "Video",
-                  action: () => FeatureRequest("Menu/Layer/Rasterize/Video"),
+                  action: () => requestFeature("Menu/Layer/Rasterize/Video"),
                 },
                 {
                   name: "3D",
-                  action: () => FeatureRequest("Menu/Layer/Rasterize/3D"),
+                  action: () => requestFeature("Menu/Layer/Rasterize/3D"),
                 },
                 {
                   name: "Layer Style",
                   action: () =>
-                    FeatureRequest("Menu/Layer/Rasterize/Layer Style"),
+                    requestFeature("Menu/Layer/Rasterize/Layer Style"),
                 },
               ],
             },
@@ -762,12 +762,12 @@ export const layer: ItemType = {
               items: [
                 {
                   name: "Layer",
-                  action: () => FeatureRequest("Menu/Layer/Rasterize/Layer"),
+                  action: () => requestFeature("Menu/Layer/Rasterize/Layer"),
                 },
                 {
                   name: "All Layers",
                   action: () =>
-                    FeatureRequest("Menu/Layer/Rasterize/All Layers"),
+                    requestFeature("Menu/Layer/Rasterize/All Layers"),
                 },
               ],
             },
@@ -779,7 +779,7 @@ export const layer: ItemType = {
       items: [
         {
           name: "New Layer Based Slice",
-          action: () => FeatureRequest("Menu/Layer/New Layer Based Slice"),
+          action: () => requestFeature("Menu/Layer/New Layer Based Slice"),
         },
       ],
     },
@@ -787,15 +787,15 @@ export const layer: ItemType = {
       items: [
         {
           name: "Group Layers",
-          action: () => FeatureRequest("Menu/Layer/Group Layers"),
+          action: () => requestFeature("Menu/Layer/Group Layers"),
         },
         {
           name: "Ungroup Layers",
-          action: () => FeatureRequest("Menu/Layer/Ungroup Layers"),
+          action: () => requestFeature("Menu/Layer/Ungroup Layers"),
         },
         {
           name: "Hide Layers",
-          action: () => FeatureRequest("Menu/Layer/Hide Layers"),
+          action: () => requestFeature("Menu/Layer/Hide Layers"),
         },
       ],
     },
@@ -809,26 +809,26 @@ export const layer: ItemType = {
                 {
                   name: "Bring to Front",
                   action: () =>
-                    FeatureRequest("Menu/Layer/Arrange/Bring to Front"),
+                    requestFeature("Menu/Layer/Arrange/Bring to Front"),
                 },
                 {
                   name: "Bring Forward",
                   action: () =>
-                    FeatureRequest("Menu/Layer/Arrange/Bring Forward"),
+                    requestFeature("Menu/Layer/Arrange/Bring Forward"),
                 },
                 {
                   name: "Send Backward",
                   action: () =>
-                    FeatureRequest("Menu/Layer/Arrange/Send Backward"),
+                    requestFeature("Menu/Layer/Arrange/Send Backward"),
                 },
                 {
                   name: "Send to Back",
                   action: () =>
-                    FeatureRequest("Menu/Layer/Arrange/Send to Back"),
+                    requestFeature("Menu/Layer/Arrange/Send to Back"),
                 },
                 {
                   name: "Reverse",
-                  action: () => FeatureRequest("Menu/Layer/Arrange/Reverse"),
+                  action: () => requestFeature("Menu/Layer/Arrange/Reverse"),
                 },
               ],
             },
@@ -837,7 +837,7 @@ export const layer: ItemType = {
         {
           name: "Combine Shapes",
           itemSets: [],
-          action: () => FeatureRequest("Menu/Layer/Combine Shapes"),
+          action: () => requestFeature("Menu/Layer/Combine Shapes"),
         },
       ],
     },
@@ -846,12 +846,12 @@ export const layer: ItemType = {
         {
           name: "Align",
           itemSets: [],
-          action: () => FeatureRequest("Menu/Layer/Align"),
+          action: () => requestFeature("Menu/Layer/Align"),
         },
         {
           name: "Distribute",
           itemSets: [],
-          action: () => FeatureRequest("Menu/Layer/Distribute"),
+          action: () => requestFeature("Menu/Layer/Distribute"),
         },
       ],
     },
@@ -859,7 +859,7 @@ export const layer: ItemType = {
       items: [
         {
           name: "Lock Layers...",
-          action: () => FeatureRequest("Menu/Layer/Lock Layers..."),
+          action: () => requestFeature("Menu/Layer/Lock Layers..."),
         },
       ],
     },
@@ -867,11 +867,11 @@ export const layer: ItemType = {
       items: [
         {
           name: "Link Layers",
-          action: () => FeatureRequest("Menu/Layer/Link Layers"),
+          action: () => requestFeature("Menu/Layer/Link Layers"),
         },
         {
           name: "Select Linked Layers",
-          action: () => FeatureRequest("Menu/Layer/Select Linked Layers"),
+          action: () => requestFeature("Menu/Layer/Select Linked Layers"),
         },
       ],
     },
@@ -879,15 +879,15 @@ export const layer: ItemType = {
       items: [
         {
           name: "Merge Down",
-          action: () => FeatureRequest("Menu/Layer/Merge Down"),
+          action: () => requestFeature("Menu/Layer/Merge Down"),
         },
         {
           name: "Merge Visible",
-          action: () => FeatureRequest("Menu/Layer/Merge Visible"),
+          action: () => requestFeature("Menu/Layer/Merge Visible"),
         },
         {
           name: "Flatten Image",
-          action: () => FeatureRequest("Menu/Layer/Flatten Image"),
+          action: () => requestFeature("Menu/Layer/Flatten Image"),
         },
       ],
     },
@@ -901,22 +901,22 @@ export const layer: ItemType = {
                 {
                   name: "Color Decontaminate...",
                   action: () =>
-                    FeatureRequest("Menu/Layer/Matting/Color Decontaminate..."),
+                    requestFeature("Menu/Layer/Matting/Color Decontaminate..."),
                 },
                 {
                   name: "Defringe...",
                   action: () =>
-                    FeatureRequest("Menu/Layer/Matting/Defringe..."),
+                    requestFeature("Menu/Layer/Matting/Defringe..."),
                 },
                 {
                   name: "Remove Black Matte",
                   action: () =>
-                    FeatureRequest("Menu/Layer/Matting/Remove Black Matte"),
+                    requestFeature("Menu/Layer/Matting/Remove Black Matte"),
                 },
                 {
                   name: "Remove White Matte",
                   action: () =>
-                    FeatureRequest("Menu/Layer/Matting/Remove White Matte"),
+                    requestFeature("Menu/Layer/Matting/Remove White Matte"),
                 },
               ],
             },

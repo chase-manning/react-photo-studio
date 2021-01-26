@@ -1,4 +1,4 @@
-import { FeatureRequest } from "../services/AnalyticsService";
+import { requestFeature } from "./featureSlice";
 
 export enum Action {
   NEW_FILE,
@@ -17,12 +17,12 @@ export const actionSchema: ActionType[] = [
     type: Action.NEW_FILE,
     macShortcut: "command+n",
     windowsShortcut: "ctrl+n",
-    action: () => FeatureRequest("Menu/File/New..."),
+    action: () => requestFeature("Menu/File/New..."),
   },
   {
     type: Action.OPEN_FILE,
     macShortcut: "command+n",
     windowsShortcut: "ctrl+n",
-    action: () => FeatureRequest("Menu/File/Open..."),
+    action: () => requestFeature("Menu/File/Open..."),
   },
 ];

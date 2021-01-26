@@ -1,4 +1,4 @@
-import { FeatureRequest } from "../../../services/AnalyticsService";
+import { requestFeature } from "../../../state/featureSlice";
 import { ItemType } from "./menu-items";
 
 export const edit: ItemType = {
@@ -8,15 +8,15 @@ export const edit: ItemType = {
       items: [
         {
           name: "Undo Deselect",
-          action: () => FeatureRequest("Menu/Edit/Undo Deselect"),
+          action: () => requestFeature("Menu/Edit/Undo Deselect"),
         },
         {
           name: "Redo",
-          action: () => FeatureRequest("Menu/Edit/Redo"),
+          action: () => requestFeature("Menu/Edit/Redo"),
         },
         {
           name: "Toggle Last State",
-          action: () => FeatureRequest("Menu/Edit/Toggle Last State"),
+          action: () => requestFeature("Menu/Edit/Toggle Last State"),
         },
       ],
     },
@@ -24,7 +24,7 @@ export const edit: ItemType = {
       items: [
         {
           name: "Fade...",
-          action: () => FeatureRequest("Menu/Edit/Fade..."),
+          action: () => requestFeature("Menu/Edit/Fade..."),
         },
       ],
     },
@@ -32,19 +32,19 @@ export const edit: ItemType = {
       items: [
         {
           name: "Cut",
-          action: () => FeatureRequest("Menu/Edit/Cut"),
+          action: () => requestFeature("Menu/Edit/Cut"),
         },
         {
           name: "Copy",
-          action: () => FeatureRequest("Menu/Edit/Copy"),
+          action: () => requestFeature("Menu/Edit/Copy"),
         },
         {
           name: "Copy Merged",
-          action: () => FeatureRequest("Menu/Edit/Copy Merged"),
+          action: () => requestFeature("Menu/Edit/Copy Merged"),
         },
         {
           name: "Paste",
-          action: () => FeatureRequest("Menu/Edit/Paste"),
+          action: () => requestFeature("Menu/Edit/Paste"),
         },
         {
           name: "Paste Special",
@@ -54,24 +54,24 @@ export const edit: ItemType = {
                 {
                   name: "Paste without Formatting",
                   action: () =>
-                    FeatureRequest(
+                    requestFeature(
                       "Menu/Edit/Paste Special/Paste without Formatting"
                     ),
                 },
                 {
                   name: "Paste in Place",
                   action: () =>
-                    FeatureRequest("Menu/Edit/Paste Special/Paste in Place"),
+                    requestFeature("Menu/Edit/Paste Special/Paste in Place"),
                 },
                 {
                   name: "Paste Into",
                   action: () =>
-                    FeatureRequest("Menu/Edit/Paste Special/Paste Into"),
+                    requestFeature("Menu/Edit/Paste Special/Paste Into"),
                 },
                 {
                   name: "Paste Outside",
                   action: () =>
-                    FeatureRequest("Menu/Edit/Paste Special/Paste Outside"),
+                    requestFeature("Menu/Edit/Paste Special/Paste Outside"),
                 },
               ],
             },
@@ -79,7 +79,7 @@ export const edit: ItemType = {
         },
         {
           name: "Clear",
-          action: () => FeatureRequest("Menu/Edit/Clear"),
+          action: () => requestFeature("Menu/Edit/Clear"),
         },
       ],
     },
@@ -87,15 +87,15 @@ export const edit: ItemType = {
       items: [
         {
           name: "Search",
-          action: () => FeatureRequest("Menu/Edit/Search"),
+          action: () => requestFeature("Menu/Edit/Search"),
         },
         {
           name: "Check Spelling...",
-          action: () => FeatureRequest("Menu/Edit/Check Spelling..."),
+          action: () => requestFeature("Menu/Edit/Check Spelling..."),
         },
         {
           name: "Find and Replace Text...",
-          action: () => FeatureRequest("Menu/Edit/Find and Replace Text..."),
+          action: () => requestFeature("Menu/Edit/Find and Replace Text..."),
         },
       ],
     },
@@ -103,15 +103,15 @@ export const edit: ItemType = {
       items: [
         {
           name: "Fill...",
-          action: () => FeatureRequest("Menu/Edit/Fill..."),
+          action: () => requestFeature("Menu/Edit/Fill..."),
         },
         {
           name: "Stroke...",
-          action: () => FeatureRequest("Menu/Edit/Stroke..."),
+          action: () => requestFeature("Menu/Edit/Stroke..."),
         },
         {
           name: "Content-Aware Fill...",
-          action: () => FeatureRequest("Menu/Edit/Content-Aware Fill..."),
+          action: () => requestFeature("Menu/Edit/Content-Aware Fill..."),
         },
       ],
     },
@@ -119,19 +119,19 @@ export const edit: ItemType = {
       items: [
         {
           name: "Content-Aware Scale",
-          action: () => FeatureRequest("Menu/Edit/Content-Aware Scale"),
+          action: () => requestFeature("Menu/Edit/Content-Aware Scale"),
         },
         {
           name: "Puppet Warp",
-          action: () => FeatureRequest("Menu/Edit/Puppet Warp"),
+          action: () => requestFeature("Menu/Edit/Puppet Warp"),
         },
         {
           name: "Perspective Warp",
-          action: () => FeatureRequest("Menu/Edit/Perspective Warp"),
+          action: () => requestFeature("Menu/Edit/Perspective Warp"),
         },
         {
           name: "Free Transform",
-          action: () => FeatureRequest("Menu/Edit/Free Transform"),
+          action: () => requestFeature("Menu/Edit/Free Transform"),
         },
         {
           name: "Transform",
@@ -140,7 +140,7 @@ export const edit: ItemType = {
               items: [
                 {
                   name: "Again",
-                  action: () => FeatureRequest("Menu/Edit/Transform/Again"),
+                  action: () => requestFeature("Menu/Edit/Transform/Again"),
                 },
               ],
             },
@@ -148,24 +148,24 @@ export const edit: ItemType = {
               items: [
                 {
                   name: "Scale",
-                  action: () => FeatureRequest("Menu/Edit/Transform/Scale"),
+                  action: () => requestFeature("Menu/Edit/Transform/Scale"),
                 },
                 {
                   name: "Rotate",
-                  action: () => FeatureRequest("Menu/Edit/Transform/Rotate"),
+                  action: () => requestFeature("Menu/Edit/Transform/Rotate"),
                 },
                 {
                   name: "Skew",
-                  action: () => FeatureRequest("Menu/Edit/Transform/Skew"),
+                  action: () => requestFeature("Menu/Edit/Transform/Skew"),
                 },
                 {
                   name: "Distort",
-                  action: () => FeatureRequest("Menu/Edit/Transform/Distort"),
+                  action: () => requestFeature("Menu/Edit/Transform/Distort"),
                 },
                 {
                   name: "Perspective",
                   action: () =>
-                    FeatureRequest("Menu/Edit/Transform/Perspective"),
+                    requestFeature("Menu/Edit/Transform/Perspective"),
                 },
               ],
             },
@@ -173,29 +173,29 @@ export const edit: ItemType = {
               items: [
                 {
                   name: "Warp",
-                  action: () => FeatureRequest("Menu/Edit/Transform/Warp"),
+                  action: () => requestFeature("Menu/Edit/Transform/Warp"),
                 },
                 {
                   name: "Split Warp Horizontally",
                   action: () =>
-                    FeatureRequest(
+                    requestFeature(
                       "Menu/Edit/Transform/Split Warp Horizontally"
                     ),
                 },
                 {
                   name: "Split Warp Vertically",
                   action: () =>
-                    FeatureRequest("Menu/Edit/Transform/Split Warp Vertically"),
+                    requestFeature("Menu/Edit/Transform/Split Warp Vertically"),
                 },
                 {
                   name: "Split Warp Crosswise",
                   action: () =>
-                    FeatureRequest("Menu/Edit/Transform/Split Warp Crosswise"),
+                    requestFeature("Menu/Edit/Transform/Split Warp Crosswise"),
                 },
                 {
                   name: "Remote Warp Split",
                   action: () =>
-                    FeatureRequest("Menu/Edit/Transform/Remote Warp Split"),
+                    requestFeature("Menu/Edit/Transform/Remote Warp Split"),
                 },
               ],
             },
@@ -204,17 +204,17 @@ export const edit: ItemType = {
                 {
                   name: "Rotate 180°",
                   action: () =>
-                    FeatureRequest("Menu/Edit/Transform/Rotate 180"),
+                    requestFeature("Menu/Edit/Transform/Rotate 180"),
                 },
                 {
                   name: "Rotate 90° Clockwise",
                   action: () =>
-                    FeatureRequest("Menu/Edit/Transform/Rotate 90 Clockwise"),
+                    requestFeature("Menu/Edit/Transform/Rotate 90 Clockwise"),
                 },
                 {
                   name: "Rotate 90° Counter Clockwise",
                   action: () =>
-                    FeatureRequest(
+                    requestFeature(
                       "Menu/Edit/Transform/Rotate 90 Counter Clockwise"
                     ),
                 },
@@ -225,12 +225,12 @@ export const edit: ItemType = {
                 {
                   name: "Flip Horizontal",
                   action: () =>
-                    FeatureRequest("Menu/Edit/Transform/Flip Horizontal"),
+                    requestFeature("Menu/Edit/Transform/Flip Horizontal"),
                 },
                 {
                   name: "Flip Vertical",
                   action: () =>
-                    FeatureRequest("Menu/Edit/Transform/Flip Vertical"),
+                    requestFeature("Menu/Edit/Transform/Flip Vertical"),
                 },
               ],
             },
@@ -238,11 +238,11 @@ export const edit: ItemType = {
         },
         {
           name: "Auto-Align Layers...",
-          action: () => FeatureRequest("Menu/Edit/Auto-Align Layers..."),
+          action: () => requestFeature("Menu/Edit/Auto-Align Layers..."),
         },
         {
           name: "Auto-Blend Layers...",
-          action: () => FeatureRequest("Menu/Edit/Auto-Blend Layers..."),
+          action: () => requestFeature("Menu/Edit/Auto-Blend Layers..."),
         },
       ],
     },
@@ -250,15 +250,15 @@ export const edit: ItemType = {
       items: [
         {
           name: "Define Brush Preset...",
-          action: () => FeatureRequest("Menu/Edit/Define Brush Preset..."),
+          action: () => requestFeature("Menu/Edit/Define Brush Preset..."),
         },
         {
           name: "Define Pattern...",
-          action: () => FeatureRequest("Menu/Edit/Define Pattern..."),
+          action: () => requestFeature("Menu/Edit/Define Pattern..."),
         },
         {
           name: "Define Custom Shape...",
-          action: () => FeatureRequest("Menu/Edit/Define Custom Shape..."),
+          action: () => requestFeature("Menu/Edit/Define Custom Shape..."),
         },
       ],
     },
@@ -271,15 +271,15 @@ export const edit: ItemType = {
               items: [
                 {
                   name: "Clipboard",
-                  action: () => FeatureRequest("Menu/Edit/Purge/Clipboard"),
+                  action: () => requestFeature("Menu/Edit/Purge/Clipboard"),
                 },
                 {
                   name: "Histories",
-                  action: () => FeatureRequest("Menu/Edit/Purge/Histories"),
+                  action: () => requestFeature("Menu/Edit/Purge/Histories"),
                 },
                 {
                   name: "All",
-                  action: () => FeatureRequest("Menu/Edit/Purge/All"),
+                  action: () => requestFeature("Menu/Edit/Purge/All"),
                 },
               ],
             },
@@ -287,7 +287,7 @@ export const edit: ItemType = {
               items: [
                 {
                   name: "Video Cache",
-                  action: () => FeatureRequest("Menu/Edit/Purge/Video Cache"),
+                  action: () => requestFeature("Menu/Edit/Purge/Video Cache"),
                 },
               ],
             },
@@ -299,7 +299,7 @@ export const edit: ItemType = {
       items: [
         {
           name: "Adobe PDF Presets...",
-          action: () => FeatureRequest("Menu/Edit/Adobe PDF Presets..."),
+          action: () => requestFeature("Menu/Edit/Adobe PDF Presets..."),
         },
         {
           name: "Presets",
@@ -309,17 +309,17 @@ export const edit: ItemType = {
                 {
                   name: "Preset Manager...",
                   action: () =>
-                    FeatureRequest("Menu/Edit/Presets/Preset Manager..."),
+                    requestFeature("Menu/Edit/Presets/Preset Manager..."),
                 },
                 {
                   name: "Migrate Presets",
                   action: () =>
-                    FeatureRequest("Menu/Edit/Presets/Migrate Presets"),
+                    requestFeature("Menu/Edit/Presets/Migrate Presets"),
                 },
                 {
                   name: "Export/Import Presets...",
                   action: () =>
-                    FeatureRequest(
+                    requestFeature(
                       "Menu/Edit/Presets/Export/Import Presets..."
                     ),
                 },
@@ -329,7 +329,7 @@ export const edit: ItemType = {
         },
         {
           name: "Remote Connections...",
-          action: () => FeatureRequest("Menu/Edit/Remote Connections..."),
+          action: () => requestFeature("Menu/Edit/Remote Connections..."),
         },
       ],
     },
@@ -337,15 +337,15 @@ export const edit: ItemType = {
       items: [
         {
           name: "Color Settings...",
-          action: () => FeatureRequest("Menu/Edit/Color Settings..."),
+          action: () => requestFeature("Menu/Edit/Color Settings..."),
         },
         {
           name: "Assign Profile...",
-          action: () => FeatureRequest("Menu/Edit/Assign Profile..."),
+          action: () => requestFeature("Menu/Edit/Assign Profile..."),
         },
         {
           name: "Convert to Profile...",
-          action: () => FeatureRequest("Menu/Edit/Convert to Profile..."),
+          action: () => requestFeature("Menu/Edit/Convert to Profile..."),
         },
       ],
     },
@@ -353,15 +353,15 @@ export const edit: ItemType = {
       items: [
         {
           name: "Keyboard Shortcuts...",
-          action: () => FeatureRequest("Menu/Edit/Keyboard Shortcuts..."),
+          action: () => requestFeature("Menu/Edit/Keyboard Shortcuts..."),
         },
         {
           name: "Menus...",
-          action: () => FeatureRequest("Menu/Edit/Menus..."),
+          action: () => requestFeature("Menu/Edit/Menus..."),
         },
         {
           name: "Toolbar...",
-          action: () => FeatureRequest("Menu/Edit/Toolbar..."),
+          action: () => requestFeature("Menu/Edit/Toolbar..."),
         },
       ],
     },
@@ -374,7 +374,7 @@ export const edit: ItemType = {
               items: [
                 {
                   name: "General",
-                  action: () => FeatureRequest("Menu/Edit/Preferences/General"),
+                  action: () => requestFeature("Menu/Edit/Preferences/General"),
                 },
               ],
             },
@@ -383,91 +383,91 @@ export const edit: ItemType = {
                 {
                   name: "Interface...",
                   action: () =>
-                    FeatureRequest("Menu/Edit/Preferences/Interface..."),
+                    requestFeature("Menu/Edit/Preferences/Interface..."),
                 },
                 {
                   name: "Workspace...",
                   action: () =>
-                    FeatureRequest("Menu/Edit/Preferences/Workspace..."),
+                    requestFeature("Menu/Edit/Preferences/Workspace..."),
                 },
                 {
                   name: "Tools...",
                   action: () =>
-                    FeatureRequest("Menu/Edit/Preferences/Tools..."),
+                    requestFeature("Menu/Edit/Preferences/Tools..."),
                 },
                 {
                   name: "History Log...",
                   action: () =>
-                    FeatureRequest("Menu/Edit/Preferences/History Log..."),
+                    requestFeature("Menu/Edit/Preferences/History Log..."),
                 },
                 {
                   name: "File Handling...",
                   action: () =>
-                    FeatureRequest("Menu/Edit/Preferences/File Handling..."),
+                    requestFeature("Menu/Edit/Preferences/File Handling..."),
                 },
                 {
                   name: "Export...",
                   action: () =>
-                    FeatureRequest("Menu/Edit/Preferences/Export..."),
+                    requestFeature("Menu/Edit/Preferences/Export..."),
                 },
                 {
                   name: "Performance...",
                   action: () =>
-                    FeatureRequest("Menu/Edit/Preferences/Performance..."),
+                    requestFeature("Menu/Edit/Preferences/Performance..."),
                 },
                 {
                   name: "Scratch Disks...",
                   action: () =>
-                    FeatureRequest("Menu/Edit/Preferences/Scratch Disks..."),
+                    requestFeature("Menu/Edit/Preferences/Scratch Disks..."),
                 },
                 {
                   name: "Cursors...",
                   action: () =>
-                    FeatureRequest("Menu/Edit/Preferences/Cursors..."),
+                    requestFeature("Menu/Edit/Preferences/Cursors..."),
                 },
                 {
                   name: "Transparency & Gamut...",
                   action: () =>
-                    FeatureRequest(
+                    requestFeature(
                       "Menu/Edit/Preferences/Transparency & Gamut..."
                     ),
                 },
                 {
                   name: "Units & Rulers...",
                   action: () =>
-                    FeatureRequest("Menu/Edit/Preferences/Units & Rulers..."),
+                    requestFeature("Menu/Edit/Preferences/Units & Rulers..."),
                 },
                 {
                   name: "Guides, Grid & Slices...",
                   action: () =>
-                    FeatureRequest(
+                    requestFeature(
                       "Menu/Edit/Preferences/Guides, Grid & Slices..."
                     ),
                 },
                 {
                   name: "Plug-ins...",
                   action: () =>
-                    FeatureRequest("Menu/Edit/Preferences/Plug-ins..."),
+                    requestFeature("Menu/Edit/Preferences/Plug-ins..."),
                 },
                 {
                   name: "Type...",
-                  action: () => FeatureRequest("Menu/Edit/Preferences/Type..."),
+                  action: () => requestFeature("Menu/Edit/Preferences/Type..."),
                 },
                 {
                   name: "3D...",
-                  action: () => FeatureRequest("Menu/Edit/Preferences/3D..."),
+                  action: () => requestFeature("Menu/Edit/Preferences/3D..."),
                 },
                 {
                   name: "Enhanced Controls...",
                   action: () =>
-                    FeatureRequest(
+                    requestFeature(
                       "Menu/Edit/Preferences/Enhanced Controls..."
                     ),
                 },
                 {
                   name: "Technology Previews...",
                   action: () =>
-                    FeatureRequest(
+                    requestFeature(
                       "Menu/Edit/Preferences/Technology Previews..."
                     ),
                 },
@@ -478,7 +478,7 @@ export const edit: ItemType = {
                 {
                   name: "Camera Raw...",
                   action: () =>
-                    FeatureRequest("Menu/Edit/Preferences/Camera Raw..."),
+                    requestFeature("Menu/Edit/Preferences/Camera Raw..."),
                 },
               ],
             },

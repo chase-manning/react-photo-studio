@@ -1,8 +1,8 @@
-import { FeatureRequest } from "../../../services/AnalyticsService";
+import { requestFeature } from "../../../state/featureSlice";
 import { ItemType } from "./menu-items";
 
 export const filter: ItemType = {
   name: "Filter",
   itemSets: [],
-  action: () => FeatureRequest("Menu/Filter"),
+  action: () => requestFeature("Menu/Filter"),
 };

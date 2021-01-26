@@ -1,5 +1,5 @@
-import { FeatureRequest } from "../../../services/AnalyticsService";
 import { Action } from "../../../state/actionSchema";
+import { requestFeature } from "../../../state/featureSlice";
 import { ItemType } from "./menu-items";
 
 export const file: ItemType = {
@@ -10,25 +10,25 @@ export const file: ItemType = {
         {
           type: Action.NEW_FILE,
           name: "New...",
-          action: () => FeatureRequest("Menu/File/New..."),
+          action: () => requestFeature("Menu/File/New..."),
         },
         {
           type: Action.OPEN_FILE,
           name: "Open...",
-          action: () => FeatureRequest("Menu/File/Open..."),
+          action: () => requestFeature("Menu/File/Open..."),
         },
         {
           name: "Browse in Bridge...",
-          action: () => FeatureRequest("Menu/File/Browse in Bridge..."),
+          action: () => requestFeature("Menu/File/Browse in Bridge..."),
         },
         {
           name: "Open as Smart Object...",
-          action: () => FeatureRequest("Menu/File/Open as Smart Object..."),
+          action: () => requestFeature("Menu/File/Open as Smart Object..."),
         },
         {
           name: "Open Recent",
           itemSets: [],
-          action: () => FeatureRequest("Menu/File/Open Recent"),
+          action: () => requestFeature("Menu/File/Open Recent"),
         },
       ],
     },
@@ -36,27 +36,27 @@ export const file: ItemType = {
       items: [
         {
           name: "Close",
-          action: () => FeatureRequest("Menu/File/Close"),
+          action: () => requestFeature("Menu/File/Close"),
         },
         {
           name: "Close All",
-          action: () => FeatureRequest("Menu/File/Close All"),
+          action: () => requestFeature("Menu/File/Close All"),
         },
         {
           name: "Close Others",
-          action: () => FeatureRequest("Menu/File/Close Others"),
+          action: () => requestFeature("Menu/File/Close Others"),
         },
         {
           name: "Save",
-          action: () => FeatureRequest("Menu/File/Save"),
+          action: () => requestFeature("Menu/File/Save"),
         },
         {
           name: "Save As...",
-          action: () => FeatureRequest("Menu/File/Save As..."),
+          action: () => requestFeature("Menu/File/Save As..."),
         },
         {
           name: "Revert",
-          action: () => FeatureRequest("Menu/File/Revert"),
+          action: () => requestFeature("Menu/File/Revert"),
         },
       ],
     },
@@ -70,11 +70,11 @@ export const file: ItemType = {
                 {
                   name: "Quick Export as PNG",
                   action: () =>
-                    FeatureRequest("Menu/File/Export/Quick Export as PNG"),
+                    requestFeature("Menu/File/Export/Quick Export as PNG"),
                 },
                 {
                   name: "Export As...",
-                  action: () => FeatureRequest("Menu/File/Export/Export As..."),
+                  action: () => requestFeature("Menu/File/Export/Export As..."),
                 },
               ],
             },
@@ -83,7 +83,7 @@ export const file: ItemType = {
                 {
                   name: "Export Preferences...",
                   action: () =>
-                    FeatureRequest("Menu/File/Export/Export Preferences..."),
+                    requestFeature("Menu/File/Export/Export Preferences..."),
                 },
               ],
             },
@@ -92,7 +92,7 @@ export const file: ItemType = {
                 {
                   name: "Save for Web (Legacy)...",
                   action: () =>
-                    FeatureRequest("Menu/File/Export/Save for Web (Legacy)..."),
+                    requestFeature("Menu/File/Export/Save for Web (Legacy)..."),
                 },
               ],
             },
@@ -101,37 +101,37 @@ export const file: ItemType = {
                 {
                   name: "Artboards to Files...",
                   action: () =>
-                    FeatureRequest("Menu/File/Export/Artboards to Files..."),
+                    requestFeature("Menu/File/Export/Artboards to Files..."),
                 },
                 {
                   name: "Artboards to PDF...",
                   action: () =>
-                    FeatureRequest("Menu/File/Export/Artboards to PDF..."),
+                    requestFeature("Menu/File/Export/Artboards to PDF..."),
                 },
                 {
                   name: "Export For Aero...",
                   action: () =>
-                    FeatureRequest("Menu/File/Export/Export for Aero..."),
+                    requestFeature("Menu/File/Export/Export for Aero..."),
                 },
                 {
                   name: "Layer Comps to Files...",
                   action: () =>
-                    FeatureRequest("Menu/File/Export/Layer Comps to Files..."),
+                    requestFeature("Menu/File/Export/Layer Comps to Files..."),
                 },
                 {
                   name: "Layer Comps to PDF...",
                   action: () =>
-                    FeatureRequest("Menu/File/Export/Layer Comps to PDF..."),
+                    requestFeature("Menu/File/Export/Layer Comps to PDF..."),
                 },
                 {
                   name: "Layers to Files...",
                   action: () =>
-                    FeatureRequest("Menu/File/Export/Layers to Files..."),
+                    requestFeature("Menu/File/Export/Layers to Files..."),
                 },
                 {
                   name: "Color Lookup Tables...",
                   action: () =>
-                    FeatureRequest("Menu/File/Export/Color Lookup Tables..."),
+                    requestFeature("Menu/File/Export/Color Lookup Tables..."),
                 },
               ],
             },
@@ -140,21 +140,21 @@ export const file: ItemType = {
                 {
                   name: "Data Sets as Files...",
                   action: () =>
-                    FeatureRequest("Menu/File/Export/Data Sets as Files..."),
+                    requestFeature("Menu/File/Export/Data Sets as Files..."),
                 },
                 {
                   name: "Paths to Illustrator...",
                   action: () =>
-                    FeatureRequest("Menu/File/Export/Paths to Illustrator..."),
+                    requestFeature("Menu/File/Export/Paths to Illustrator..."),
                 },
                 {
                   name: "Render Video...",
                   action: () =>
-                    FeatureRequest("Menu/File/Export/Render Video..."),
+                    requestFeature("Menu/File/Export/Render Video..."),
                 },
                 {
                   name: "Zoomify...",
-                  action: () => FeatureRequest("Menu/File/Export/Zoomify..."),
+                  action: () => requestFeature("Menu/File/Export/Zoomify..."),
                 },
               ],
             },
@@ -168,7 +168,7 @@ export const file: ItemType = {
                 {
                   name: "Image Assets",
                   action: () =>
-                    FeatureRequest("Menu/File/Generate/Image Assets"),
+                    requestFeature("Menu/File/Generate/Image Assets"),
                 },
               ],
             },
@@ -176,11 +176,11 @@ export const file: ItemType = {
         },
         {
           name: "Share...",
-          action: () => FeatureRequest("Menu/File/Share..."),
+          action: () => requestFeature("Menu/File/Share..."),
         },
         {
           name: "Share on Behance...",
-          action: () => FeatureRequest("Menu/File/Share on Behance..."),
+          action: () => requestFeature("Menu/File/Share on Behance..."),
         },
       ],
     },
@@ -188,19 +188,19 @@ export const file: ItemType = {
       items: [
         {
           name: "Search Adobe Stock...",
-          action: () => FeatureRequest("Menu/File/Search Adobe Stock..."),
+          action: () => requestFeature("Menu/File/Search Adobe Stock..."),
         },
         {
           name: "Place Embedded...",
-          action: () => FeatureRequest("Menu/File/Place Embedded..."),
+          action: () => requestFeature("Menu/File/Place Embedded..."),
         },
         {
           name: "Place Linked...",
-          action: () => FeatureRequest("Menu/File/Place Linked..."),
+          action: () => requestFeature("Menu/File/Place Linked..."),
         },
         {
           name: "Package...",
-          action: () => FeatureRequest("Menu/File/Package..."),
+          action: () => requestFeature("Menu/File/Package..."),
         },
       ],
     },
@@ -213,17 +213,17 @@ export const file: ItemType = {
               items: [
                 {
                   name: "Batch...",
-                  action: () => FeatureRequest("Menu/File/Automate/Batch..."),
+                  action: () => requestFeature("Menu/File/Automate/Batch..."),
                 },
                 {
                   name: "PDF Presentation...",
                   action: () =>
-                    FeatureRequest("Menu/File/Automate/PDF Presentation..."),
+                    requestFeature("Menu/File/Automate/PDF Presentation..."),
                 },
                 {
                   name: "Create Droplet...",
                   action: () =>
-                    FeatureRequest("Menu/File/Automate/Create Droplet..."),
+                    requestFeature("Menu/File/Automate/Create Droplet..."),
                 },
               ],
             },
@@ -232,7 +232,7 @@ export const file: ItemType = {
                 {
                   name: "Crop and Straighten Photos",
                   action: () =>
-                    FeatureRequest(
+                    requestFeature(
                       "Menu/File/Automate/Croop and Straighten Photos"
                     ),
                 },
@@ -243,7 +243,7 @@ export const file: ItemType = {
                 {
                   name: "Contact Sheet II...",
                   action: () =>
-                    FeatureRequest("Menu/File/Automate/Contact Sheet II..."),
+                    requestFeature("Menu/File/Automate/Contact Sheet II..."),
                 },
               ],
             },
@@ -252,29 +252,29 @@ export const file: ItemType = {
                 {
                   name: "Conditional Mode Change...",
                   action: () =>
-                    FeatureRequest(
+                    requestFeature(
                       "Menu/File/Automate/Conditional Mode Change..."
                     ),
                 },
                 {
                   name: "Fit Image...",
                   action: () =>
-                    FeatureRequest("Menu/File/Automate/Fit Image..."),
+                    requestFeature("Menu/File/Automate/Fit Image..."),
                 },
                 {
                   name: "Lens Correction...",
                   action: () =>
-                    FeatureRequest("Menu/File/Automate/Lens Correction..."),
+                    requestFeature("Menu/File/Automate/Lens Correction..."),
                 },
                 {
                   name: "Merge to HDR Pro...",
                   action: () =>
-                    FeatureRequest("Menu/File/Automate/Merge to HDR Pro..."),
+                    requestFeature("Menu/File/Automate/Merge to HDR Pro..."),
                 },
                 {
                   name: "Photomerge...",
                   action: () =>
-                    FeatureRequest("Menu/File/Automate/Photomerge..."),
+                    requestFeature("Menu/File/Automate/Photomerge..."),
                 },
               ],
             },
@@ -288,7 +288,7 @@ export const file: ItemType = {
                 {
                   name: "Image Processor...",
                   action: () =>
-                    FeatureRequest("Menu/File/Scripts/Image Processor..."),
+                    requestFeature("Menu/File/Scripts/Image Processor..."),
                 },
               ],
             },
@@ -297,7 +297,7 @@ export const file: ItemType = {
                 {
                   name: "Delete All Empty Layers",
                   action: () =>
-                    FeatureRequest("Menu/File/Scripts/Delete All Empty Layers"),
+                    requestFeature("Menu/File/Scripts/Delete All Empty Layers"),
                 },
               ],
             },
@@ -306,14 +306,14 @@ export const file: ItemType = {
                 {
                   name: "Flatten All Layer Effects",
                   action: () =>
-                    FeatureRequest(
+                    requestFeature(
                       "Menu/File/Scripts/Flatten All Layers Effects"
                     ),
                 },
                 {
                   name: "Flatten All Masks",
                   action: () =>
-                    FeatureRequest("Menu/File/Scripts/Flatten All Masks"),
+                    requestFeature("Menu/File/Scripts/Flatten All Masks"),
                 },
               ],
             },
@@ -322,7 +322,7 @@ export const file: ItemType = {
                 {
                   name: "Script Events Manager...",
                   action: () =>
-                    FeatureRequest(
+                    requestFeature(
                       "Menu/File/Scripts/Script Events Manager..."
                     ),
                 },
@@ -333,21 +333,21 @@ export const file: ItemType = {
                 {
                   name: "Load Files into Stack...",
                   action: () =>
-                    FeatureRequest(
+                    requestFeature(
                       "Menu/File/Scripts/Load Files into Stack..."
                     ),
                 },
                 {
                   name: "Load Multiple DICOM Files...",
                   action: () =>
-                    FeatureRequest(
+                    requestFeature(
                       "Menu/File/Scripts/Load Multiple DICOM Files..."
                     ),
                 },
                 {
                   name: "Statistics...",
                   action: () =>
-                    FeatureRequest("Menu/File/Scripts/Statistics..."),
+                    requestFeature("Menu/File/Scripts/Statistics..."),
                 },
               ],
             },
@@ -355,7 +355,7 @@ export const file: ItemType = {
               items: [
                 {
                   name: "Browse...",
-                  action: () => FeatureRequest("Menu/File/Scripts/Browse..."),
+                  action: () => requestFeature("Menu/File/Scripts/Browse..."),
                 },
               ],
             },
@@ -369,23 +369,23 @@ export const file: ItemType = {
                 {
                   name: "Variable Data Sets...",
                   action: () =>
-                    FeatureRequest("Menu/File/Import/Variable Data Sets..."),
+                    requestFeature("Menu/File/Import/Variable Data Sets..."),
                 },
                 {
                   name: "Video Frames to Layers...",
                   action: () =>
-                    FeatureRequest(
+                    requestFeature(
                       "Menu/File/Import/Video Frames to Layers..."
                     ),
                 },
                 {
                   name: "Images from Device...",
                   action: () =>
-                    FeatureRequest("Menu/File/Import/Images from Device..."),
+                    requestFeature("Menu/File/Import/Images from Device..."),
                 },
                 {
                   name: "Notes...",
-                  action: () => FeatureRequest("Menu/File/Import/Notes..."),
+                  action: () => requestFeature("Menu/File/Import/Notes..."),
                 },
               ],
             },
@@ -399,21 +399,21 @@ export const file: ItemType = {
                 {
                   name: "Take Photo",
                   action: () =>
-                    FeatureRequest(
+                    requestFeature(
                       "Menu/File/Import from iPhone or iPad/Take Photo"
                     ),
                 },
                 {
                   name: "Scan Documents",
                   action: () =>
-                    FeatureRequest(
+                    requestFeature(
                       "Menu/File/Import from iPhone or iPad/Scan Documents"
                     ),
                 },
                 {
                   name: "Add Sketch",
                   action: () =>
-                    FeatureRequest(
+                    requestFeature(
                       "Menu/File/Import from iPhone or iPad/Add Sketch"
                     ),
                 },
@@ -427,7 +427,7 @@ export const file: ItemType = {
       items: [
         {
           name: "File Info...",
-          action: () => FeatureRequest("Menu/File/File Info..."),
+          action: () => requestFeature("Menu/File/File Info..."),
         },
       ],
     },
@@ -435,11 +435,11 @@ export const file: ItemType = {
       items: [
         {
           name: "Print...",
-          action: () => FeatureRequest("Menu/File/Print..."),
+          action: () => requestFeature("Menu/File/Print..."),
         },
         {
           name: "Print One Copy",
-          action: () => FeatureRequest("Menu/File/Print One Copy"),
+          action: () => requestFeature("Menu/File/Print One Copy"),
         },
       ],
     },

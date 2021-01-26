@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useDispatch } from "react-redux";
 import styled from "styled-components";
 import ContextMenu, { Position } from "../../shared/ContextMenu";
 import { ItemType } from "./schema/menu-items";
@@ -37,13 +38,14 @@ type Props = {
 };
 
 const MenuItem = (props: Props) => {
+  const dispatch = useDispatch();
   const [open, setOpen] = useState(false);
 
   return (
     <StyledMenuItem>
       <MenuItemButton
         onClick={() => {
-          if (props.menuItem.action) props.menuItem.action();
+          if (props.menuItem.action) dispatch(props.menuItem.action());
           else setOpen(true);
         }}
         open={open}

@@ -1,4 +1,4 @@
-import { FeatureRequest } from "../../../services/AnalyticsService";
+import { requestFeature } from "../../../state/featureSlice";
 import { ItemType } from "./menu-items";
 
 export const image: ItemType = {
@@ -9,7 +9,7 @@ export const image: ItemType = {
         {
           name: "Mode",
           itemSets: [],
-          action: () => FeatureRequest("Menu/Image/Mode"),
+          action: () => requestFeature("Menu/Image/Mode"),
         },
       ],
     },
@@ -23,24 +23,24 @@ export const image: ItemType = {
                 {
                   name: "Brightness/Contrast...",
                   action: () =>
-                    FeatureRequest(
+                    requestFeature(
                       "Menu/Image/Adjustments/Brightness/Contrast..."
                     ),
                 },
                 {
                   name: "Levels...",
                   action: () =>
-                    FeatureRequest("Menu/Image/Adjustments/Levels..."),
+                    requestFeature("Menu/Image/Adjustments/Levels..."),
                 },
                 {
                   name: "Curves...",
                   action: () =>
-                    FeatureRequest("Menu/Image/Adjustments/Curves..."),
+                    requestFeature("Menu/Image/Adjustments/Curves..."),
                 },
                 {
                   name: "Exposure...",
                   action: () =>
-                    FeatureRequest("Menu/Image/Adjustments/Exposure..."),
+                    requestFeature("Menu/Image/Adjustments/Exposure..."),
                 },
               ],
             },
@@ -49,37 +49,37 @@ export const image: ItemType = {
                 {
                   name: "Vibrance...",
                   action: () =>
-                    FeatureRequest("Menu/Image/Adjustments/Vibrance..."),
+                    requestFeature("Menu/Image/Adjustments/Vibrance..."),
                 },
                 {
                   name: "Hue/Saturation...",
                   action: () =>
-                    FeatureRequest("Menu/Image/Adjustments/Hue/Saturation..."),
+                    requestFeature("Menu/Image/Adjustments/Hue/Saturation..."),
                 },
                 {
                   name: "Color Balance...",
                   action: () =>
-                    FeatureRequest("Menu/Image/Adjustments/Color Balance..."),
+                    requestFeature("Menu/Image/Adjustments/Color Balance..."),
                 },
                 {
                   name: "Black & White...",
                   action: () =>
-                    FeatureRequest("Menu/Image/Adjustments/Black & White..."),
+                    requestFeature("Menu/Image/Adjustments/Black & White..."),
                 },
                 {
                   name: "Photo Filter...",
                   action: () =>
-                    FeatureRequest("Menu/Image/Adjustments/Photo Filter..."),
+                    requestFeature("Menu/Image/Adjustments/Photo Filter..."),
                 },
                 {
                   name: "Channel Mixer...",
                   action: () =>
-                    FeatureRequest("Menu/Image/Adjustments/Channel Mixer..."),
+                    requestFeature("Menu/Image/Adjustments/Channel Mixer..."),
                 },
                 {
                   name: "Color Lookup...",
                   action: () =>
-                    FeatureRequest("Menu/Image/Adjustments/Color Lookup..."),
+                    requestFeature("Menu/Image/Adjustments/Color Lookup..."),
                 },
               ],
             },
@@ -87,27 +87,27 @@ export const image: ItemType = {
               items: [
                 {
                   name: "Invert",
-                  action: () => FeatureRequest("Menu/Image/Adjustments/Invert"),
+                  action: () => requestFeature("Menu/Image/Adjustments/Invert"),
                 },
                 {
                   name: "Posterize...",
                   action: () =>
-                    FeatureRequest("Menu/Image/Adjustments/Posterize..."),
+                    requestFeature("Menu/Image/Adjustments/Posterize..."),
                 },
                 {
                   name: "Threshold...",
                   action: () =>
-                    FeatureRequest("Menu/Image/Adjustments/Threshold..."),
+                    requestFeature("Menu/Image/Adjustments/Threshold..."),
                 },
                 {
                   name: "Gradient Map...",
                   action: () =>
-                    FeatureRequest("Menu/Image/Adjustments/Gradient Map..."),
+                    requestFeature("Menu/Image/Adjustments/Gradient Map..."),
                 },
                 {
                   name: "Selective Color...",
                   action: () =>
-                    FeatureRequest("Menu/Image/Adjustments/Selective Color..."),
+                    requestFeature("Menu/Image/Adjustments/Selective Color..."),
                 },
               ],
             },
@@ -116,14 +116,14 @@ export const image: ItemType = {
                 {
                   name: "Shadows/Highlights...",
                   action: () =>
-                    FeatureRequest(
+                    requestFeature(
                       "Menu/Image/Adjustments/Shadows/Highlights..."
                     ),
                 },
                 {
                   name: "HDR Toning...",
                   action: () =>
-                    FeatureRequest("Menu/Image/Adjustments/HDR Toning..."),
+                    requestFeature("Menu/Image/Adjustments/HDR Toning..."),
                 },
               ],
             },
@@ -132,22 +132,22 @@ export const image: ItemType = {
                 {
                   name: "Desaturate",
                   action: () =>
-                    FeatureRequest("Menu/Image/Adjustments/Desaturate"),
+                    requestFeature("Menu/Image/Adjustments/Desaturate"),
                 },
                 {
                   name: "Match Color...",
                   action: () =>
-                    FeatureRequest("Menu/Image/Adjustments/Match Color..."),
+                    requestFeature("Menu/Image/Adjustments/Match Color..."),
                 },
                 {
                   name: "Replace Color...",
                   action: () =>
-                    FeatureRequest("Menu/Image/Adjustments/Replace Color..."),
+                    requestFeature("Menu/Image/Adjustments/Replace Color..."),
                 },
                 {
                   name: "Equalize",
                   action: () =>
-                    FeatureRequest("Menu/Image/Adjustments/Equalize"),
+                    requestFeature("Menu/Image/Adjustments/Equalize"),
                 },
               ],
             },
@@ -159,15 +159,15 @@ export const image: ItemType = {
       items: [
         {
           name: "Auto Tone",
-          action: () => FeatureRequest("Menu/Image/Auto Tone"),
+          action: () => requestFeature("Menu/Image/Auto Tone"),
         },
         {
           name: "Auto Contrast",
-          action: () => FeatureRequest("Menu/Image/Auto Contrast"),
+          action: () => requestFeature("Menu/Image/Auto Contrast"),
         },
         {
           name: "Auto Color",
-          action: () => FeatureRequest("Menu/Image/Auto Color"),
+          action: () => requestFeature("Menu/Image/Auto Color"),
         },
       ],
     },
@@ -175,11 +175,11 @@ export const image: ItemType = {
       items: [
         {
           name: "Image Size...",
-          action: () => FeatureRequest("Menu/Image/Image Size..."),
+          action: () => requestFeature("Menu/Image/Image Size..."),
         },
         {
           name: "Canvas Size...",
-          action: () => FeatureRequest("Menu/Image/Canvas Size..."),
+          action: () => requestFeature("Menu/Image/Canvas Size..."),
         },
         {
           name: "Image Rotation",
@@ -188,17 +188,17 @@ export const image: ItemType = {
               items: [
                 {
                   name: "180°",
-                  action: () => FeatureRequest("Menu/Image/Image Rotation/180"),
+                  action: () => requestFeature("Menu/Image/Image Rotation/180"),
                 },
                 {
                   name: "90° Clockwise",
                   action: () =>
-                    FeatureRequest("Menu/Image/Image Rotation/90 Clockwise"),
+                    requestFeature("Menu/Image/Image Rotation/90 Clockwise"),
                 },
                 {
                   name: "90° Counter Clockwise",
                   action: () =>
-                    FeatureRequest(
+                    requestFeature(
                       "Menu/Image/Image Rotation/90 Counter Clockwise"
                     ),
                 },
@@ -209,14 +209,14 @@ export const image: ItemType = {
                 {
                   name: "Flip Canvas Horizontal",
                   action: () =>
-                    FeatureRequest(
+                    requestFeature(
                       "Menu/Image/Image Rotation/Flip Canvas Horizontal"
                     ),
                 },
                 {
                   name: "Flip Canvas Vertical",
                   action: () =>
-                    FeatureRequest(
+                    requestFeature(
                       "Menu/Image/Image Rotation/Flip Canvas Vertical"
                     ),
                 },
@@ -226,15 +226,15 @@ export const image: ItemType = {
         },
         {
           name: "Crop",
-          action: () => FeatureRequest("Menu/Image/Crop"),
+          action: () => requestFeature("Menu/Image/Crop"),
         },
         {
           name: "Trim...",
-          action: () => FeatureRequest("Menu/Image/Trim..."),
+          action: () => requestFeature("Menu/Image/Trim..."),
         },
         {
           name: "Reveal All",
-          action: () => FeatureRequest("Menu/Image/Reveal All"),
+          action: () => requestFeature("Menu/Image/Reveal All"),
         },
       ],
     },
@@ -242,15 +242,15 @@ export const image: ItemType = {
       items: [
         {
           name: "Duplicate...",
-          action: () => FeatureRequest("Menu/Image/Duplicate..."),
+          action: () => requestFeature("Menu/Image/Duplicate..."),
         },
         {
           name: "Apply Image...",
-          action: () => FeatureRequest("Menu/Image/Apply Image..."),
+          action: () => requestFeature("Menu/Image/Apply Image..."),
         },
         {
           name: "Calculations...",
-          action: () => FeatureRequest("Menu/Image/Calculations..."),
+          action: () => requestFeature("Menu/Image/Calculations..."),
         },
       ],
     },
@@ -264,12 +264,12 @@ export const image: ItemType = {
                 {
                   name: "Define...",
                   action: () =>
-                    FeatureRequest("Menu/Image/Variables/Define..."),
+                    requestFeature("Menu/Image/Variables/Define..."),
                 },
                 {
                   name: "Data Sets...",
                   action: () =>
-                    FeatureRequest("Menu/Image/Variables/Data Sets..."),
+                    requestFeature("Menu/Image/Variables/Data Sets..."),
                 },
               ],
             },
@@ -277,7 +277,7 @@ export const image: ItemType = {
         },
         {
           name: "Apply Data Set...",
-          action: () => FeatureRequest("Menu/Image/Apply Data Set..."),
+          action: () => requestFeature("Menu/Image/Apply Data Set..."),
         },
       ],
     },
@@ -285,7 +285,7 @@ export const image: ItemType = {
       items: [
         {
           name: "Trap...",
-          action: () => FeatureRequest("Menu/Image/Trap..."),
+          action: () => requestFeature("Menu/Image/Trap..."),
         },
       ],
     },
@@ -299,17 +299,17 @@ export const image: ItemType = {
                 {
                   name: "Set Measurement Scale",
                   action: () =>
-                    FeatureRequest("Menu/Image/Analysis/Set Measurement Scale"),
+                    requestFeature("Menu/Image/Analysis/Set Measurement Scale"),
                 },
                 {
                   name: "Select Data Points",
                   action: () =>
-                    FeatureRequest("Menu/Image/Analysis/Select Data Points"),
+                    requestFeature("Menu/Image/Analysis/Select Data Points"),
                 },
                 {
                   name: "Record Measurements",
                   action: () =>
-                    FeatureRequest("Menu/Image/Analysis/Record Measurements"),
+                    requestFeature("Menu/Image/Analysis/Record Measurements"),
                 },
               ],
             },
@@ -318,12 +318,12 @@ export const image: ItemType = {
                 {
                   name: "Ruler Tool",
                   action: () =>
-                    FeatureRequest("Menu/Image/Analysis/Ruler Tool"),
+                    requestFeature("Menu/Image/Analysis/Ruler Tool"),
                 },
                 {
                   name: "Count Tool",
                   action: () =>
-                    FeatureRequest("Menu/Image/Analysis/Count Tool"),
+                    requestFeature("Menu/Image/Analysis/Count Tool"),
                 },
               ],
             },
@@ -332,7 +332,7 @@ export const image: ItemType = {
                 {
                   name: "Place Scale Marker...",
                   action: () =>
-                    FeatureRequest("Menu/Image/Analysis/Place Scale Marker..."),
+                    requestFeature("Menu/Image/Analysis/Place Scale Marker..."),
                 },
               ],
             },

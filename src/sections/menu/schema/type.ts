@@ -1,8 +1,8 @@
-import { FeatureRequest } from "../../../services/AnalyticsService";
+import { requestFeature } from "../../../state/featureSlice";
 import { ItemType } from "./menu-items";
 
 export const type: ItemType = {
   name: "Type",
   itemSets: [],
-  action: () => FeatureRequest("Menu/Type"),
+  action: () => requestFeature("Menu/Type"),
 };
