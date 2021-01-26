@@ -81,7 +81,7 @@ type Props = {
 };
 
 const ToolIcon = (props: Props) => {
-  return <StyledToolIcon src={GetIcon(props.option)} />;
+  return <StyledToolIcon src={GetIcon(props.option)} alt="tool" />;
 };
 
 export default ToolIcon;
