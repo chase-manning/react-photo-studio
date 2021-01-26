@@ -62,7 +62,7 @@ const Dropdown = (props: Props) => {
     <StyledDropdown>
       {props.label && <Label>{props.label + ":"}</Label>}
       <SelectedContainer>
-        {props.icon && <Icon src={props.icon} />}
+        {props.icon && <Icon src={props.icon} alt="icon" />}
         <Selected width={width}>{props.selected}</Selected>
         <Button onClick={() => dispatch(requestFeature("Dropdown"))}>
           <Arrow>{">"}</Arrow>
