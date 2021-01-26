@@ -21,7 +21,7 @@ const Logo = styled.img`
 const Menu = () => {
   return (
     <StyledMenu>
-      <Logo src={logo} />
+      <Logo src={logo} alt="logo" />
       {menuItems.map((menuItem: ItemType) => (
         <MenuItem key={menuItem.name} menuItem={menuItem} />
       ))}
