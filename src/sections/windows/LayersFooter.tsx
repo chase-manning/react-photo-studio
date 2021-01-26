@@ -53,7 +53,7 @@ const LayersFooter = () => {
           square
           disabled={!linkEnabled}
         >
-          <Asset src={link} />
+          <Asset src={link} alt="link" />
         </Button>
         <Button
           onClick={() =>
@@ -62,7 +62,7 @@ const LayersFooter = () => {
           square
           disabled={!activeLayer || !activeLayer.locked}
         >
-          <Asset src={style} />
+          <Asset src={style} alt="style" />
           <ContextIndicator />
         </Button>
         <Button
@@ -70,7 +70,7 @@ const LayersFooter = () => {
           square
           disabled={!activeLayer}
         >
-          <Asset src={mask} />
+          <Asset src={mask} alt="mask" />
         </Button>
         <Button
           onClick={() =>
@@ -78,7 +78,7 @@ const LayersFooter = () => {
           }
           square
         >
-          <Asset src={contrast} />
+          <Asset src={contrast} alt="contrast" />
           <ContextIndicator />
         </Button>
         <Button
@@ -87,13 +87,13 @@ const LayersFooter = () => {
           }
           square
         >
-          <Asset src={folder} />
+          <Asset src={folder} alt="folder" />
         </Button>
         <Button
           onClick={() => dispatch(requestFeature("Windows/Layers/Footer/New"))}
           square
         >
-          <Asset src={newLayer} />
+          <Asset src={newLayer} alt="new layer" />
         </Button>
         <Button
           onClick={() =>
@@ -102,7 +102,7 @@ const LayersFooter = () => {
           square
           disabled={!activeLayer}
         >
-          <Asset src={trash} />
+          <Asset src={trash} alt="trash" />
         </Button>
       </Buttons>
     </Footer>
