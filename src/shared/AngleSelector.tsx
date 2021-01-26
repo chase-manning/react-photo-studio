@@ -39,7 +39,7 @@ const AngleSelector = (props: Props) => {
   return (
     <StyledAngleSelector>
       <Label onClick={() => "Angle Selector/Label Scrub"}>
-        <Icon src={angle} />
+        <Icon src={angle} alt="angle" />
       </Label>
       <Input
         onClick={() => dispatch(requestFeature("Angle Selector/Text Edit"))}
