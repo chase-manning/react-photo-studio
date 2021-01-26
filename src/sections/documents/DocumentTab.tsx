@@ -57,7 +57,7 @@ const DocumentTab = () => {
       <CloseButton
         onClick={() => dispatch(requestFeature("Documents/Tabs/Tab/Close"))}
       >
-        <Cross src={cross} />
+        <Cross src={cross} alt="cross" />
       </CloseButton>
       <Label>Untitled-1 @ 100% (RGB/8)</Label>
     </StyledTab>
