@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { ItemType } from "../sections/menu/schema/menu-items";
 import { ReactComponent as ArrowIcon } from "../assets/svgs/navigation/triangle-right.svg";
 import ContextMenu from "./ContextMenu";
+import { useDispatch } from "react-redux";
 
 const StyledContextMenuItem = styled.div`
   position: relative;
@@ -41,6 +42,7 @@ type Props = {
 };
 
 const ContextMenuItem = (props: Props) => {
+  const dispatch = useDispatch();
   const [open, setOpen] = useState(false);
 
   return (
@@ -50,7 +52,7 @@ const ContextMenuItem = (props: Props) => {
     >
       <Button
         onClick={() => {
-          if (props.menuItem.action) props.menuItem.action();
+          if (props.menuItem.action) dispatch(props.menuItem.action());
           props.close();
         }}
       >
