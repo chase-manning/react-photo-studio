@@ -73,7 +73,7 @@ const Option = (props: Props) => {
           selected={props.option.enabled!!}
           width={"auto"}
         >
-          <Image src={brushSettings} />
+          <Image src={brushSettings} alt="brush settings" />
         </Button>
       )}
       {props.option.option === OptionOption.MODE && (
@@ -94,7 +94,7 @@ const Option = (props: Props) => {
           selected={props.option.enabled!!}
           width={"auto"}
         >
-          <Image src={pressureForOpacity} />
+          <Image src={pressureForOpacity} alt="pressure for opacity" />
         </Button>
       )}
       {props.option.option === OptionOption.FLOW && (
@@ -106,7 +106,7 @@ const Option = (props: Props) => {
           selected={props.option.enabled!!}
           width={"auto"}
         >
-          <Image src={airbrush} />
+          <Image src={airbrush} alt="airbrush" />
         </Button>
       )}
       {props.option.option === OptionOption.SMOOTHING && (
@@ -120,7 +120,7 @@ const Option = (props: Props) => {
           selected={props.option.enabled!!}
           width={"auto"}
         >
-          <Image src={settings} small />
+          <Image src={settings} small alt="settings" />
           <ContextIndicator />
         </Button>
       )}
@@ -135,7 +135,7 @@ const Option = (props: Props) => {
           selected={props.option.enabled!!}
           width={"auto"}
         >
-          <Image src={pressureForSize} />
+          <Image src={pressureForSize} alt="pressure for size" />
         </Button>
       )}
       {props.option.option === OptionOption.SYMMETRY && (
@@ -144,7 +144,7 @@ const Option = (props: Props) => {
           selected={props.option.enabled!!}
           width={"auto"}
         >
-          <Image src={symmetry} />
+          <Image src={symmetry} alt="symmetry" />
           <ContextIndicator />
         </Button>
       )}
