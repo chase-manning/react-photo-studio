@@ -95,7 +95,7 @@ const DocumentFooter = () => {
             dispatch(requestFeature("Document/Footer/Details Menu"))
           }
         >
-          <Arrow src={arrow} />
+          <Arrow src={arrow} alt="arrow" />
         </Button>
       </DetailsContainer>
       <ScrollBar />
