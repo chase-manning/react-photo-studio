@@ -37,9 +37,8 @@ const Link = styled.a`
 `;
 
 const Social = styled.img`
-  padding: 5px;
+  padding: 6px;
   height: 100%;
-  margin-left: 1rem;
 `;
 
 const Menu = () => {
