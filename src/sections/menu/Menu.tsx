@@ -5,6 +5,7 @@ import { ItemType, menuItems } from "./schema/menu-items";
 import MenuItem from "./MenuItem";
 
 import facebook from "../../assets/socials/facebook.svg";
+import instagram from "../../assets/socials/instagram.svg";
 
 const StyledMenu = styled.div`
   width: 100%;
@@ -54,6 +55,12 @@ const Menu = () => {
           target="_blank"
         >
           <Social src={facebook} alt="facebook" />
+        </Link>
+        <Link
+          href="https://www.instagram.com/photoshoponline.app/"
+          target="_blank"
+        >
+          <Social src={instagram} alt="instagram" />
         </Link>
       </Socials>
     </StyledMenu>
