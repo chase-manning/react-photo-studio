@@ -104,7 +104,7 @@ const Layer = (props: Props) => {
         }
         grabbing={grabbing && moving}
       >
-        <Eye src={eye} />
+        <Eye src={eye} alt="eye" />
       </Visibility>
       <Content
         onClick={() => dispatch(requestFeature("Windows/Layers/Layer/Select"))}
@@ -127,6 +127,7 @@ const Layer = (props: Props) => {
               dispatch(requestFeature("Windows/Layers/Layer/Lock"))
             }
             src={lock}
+            alt="lock"
           />
         )}
       </LockButton>
