@@ -55,7 +55,7 @@ const LayerFilters = () => {
           }
           selected={false}
         >
-          <ButtonAsset src={picture} />
+          <ButtonAsset src={picture} alt="picture" />
         </Button>
         <Button
           onClick={() =>
@@ -63,13 +63,13 @@ const LayerFilters = () => {
           }
           selected={false}
         >
-          <ButtonAsset src={contrast} />
+          <ButtonAsset src={contrast} alt="contrast" />
         </Button>
         <Button
           onClick={() => dispatch(requestFeature("Windows/Layer/Filters/Type"))}
           selected={false}
         >
-          <ButtonAsset src={type} />
+          <ButtonAsset src={type} alt="type" />
         </Button>
         <Button
           onClick={() =>
@@ -77,7 +77,7 @@ const LayerFilters = () => {
           }
           selected={false}
         >
-          <ButtonAsset src={shape} />
+          <ButtonAsset src={shape} alt="shape" />
         </Button>
         <Button
           onClick={() =>
@@ -85,7 +85,7 @@ const LayerFilters = () => {
           }
           selected={false}
         >
-          <ButtonAsset src={smartObject} />
+          <ButtonAsset src={smartObject} alt="smart object" />
         </Button>
       </Buttons>
       <Toggle
@@ -93,6 +93,7 @@ const LayerFilters = () => {
           dispatch(requestFeature("Windows/Layer/Filters/EnabledToggle"))
         }
         src={filtersEnabled ? layerFiltersOn : layerFiltersOff}
+        alt="toggle"
       />
     </Filters>
   );
