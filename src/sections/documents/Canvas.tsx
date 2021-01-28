@@ -5,7 +5,7 @@ import { Application } from "pixi.js";
 const StyledCanvas = styled.div``;
 
 const app = new Application({
-  width: 800,
+  width: 900,
   height: 600,
   backgroundColor: 0xffffff,
 });
