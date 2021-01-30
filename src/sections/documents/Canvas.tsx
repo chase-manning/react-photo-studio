@@ -15,20 +15,24 @@ const app = new PIXI.Application({
   resolution: 1,
 });
 
+const Circle = (layer: PIXI.Container, x: number, y: number, size: number) => {
+  var graphics = new PIXI.Graphics();
+  graphics.beginFill(0xe74c3c);
+  graphics.drawCircle(x, y, size);
+  graphics.endFill();
+  layer.addChild(graphics);
+};
+
 const Canvas = () => {
   const canvas = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     if (canvas.current) canvas.current.appendChild(app.view);
     app.start();
+    const layer = new PIXI.Container();
+    app.stage.addChild(layer);
 
-    const container = new PIXI.Container();
-    app.stage.addChild(container);
-    var graphics = new PIXI.Graphics();
-    graphics.beginFill(0xe74c3c);
-    graphics.drawCircle(60, 185, 40);
-    graphics.endFill();
-    container.addChild(graphics);
+    Circle(layer, 100, 100, 80);
 
     return () => app.destroy(true);
   }, []);
