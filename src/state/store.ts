@@ -12,6 +12,7 @@ import actionReducer from "./actionsSlice";
 import cursorReducer from "./cursorSlice";
 import layersReducer from "./layersSlice";
 import featuresReducer from "./featureSlice";
+import fileReducer from "./fileSlice";
 import createSagaMiddleware from "redux-saga";
 import rootSaga from "./sagas";
 
@@ -23,6 +24,7 @@ export const reducer = combineReducers({
   cursor: cursorReducer,
   layers: layersReducer,
   features: featuresReducer,
+  file: fileReducer,
 });
 
 export const store = createStore(
