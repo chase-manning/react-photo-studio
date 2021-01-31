@@ -1,4 +1,5 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { Position } from "./cursorSlice";
 import { RootState } from "./store";
 
 export type Event = {
@@ -8,6 +9,7 @@ export type Event = {
   y?: number;
   size?: number;
   color?: number;
+  points?: Position[];
 };
 
 export interface FileSlice {
@@ -30,10 +32,13 @@ export const fileSlice = createSlice({
     addEvent: (state, action: PayloadAction<Event>) => {
       state.events.push(action.payload);
     },
+    addPoint: (state, action: PayloadAction<Position>) => {
+      state.events[state.events.length - 1].points?.push(action.payload);
+    },
   },
 });
 
-export const { setName, addEvent } = fileSlice.actions;
+export const { setName, addEvent, addPoint } = fileSlice.actions;
 
 export const selectFileName = (state: RootState) => state.file.name;
 export const selectEvents = (state: RootState) => state.file.events;
