@@ -7,7 +7,7 @@ const StyledColorPicker = styled.div`
   position: relative;
   flex: 1;
   height: 100%;
-  background: linear-gradient(90deg, white, #00ff44);
+  background: linear-gradient(90deg, white, #ff0000);
   overflow: hidden;
   cursor: url("cursors/color-picker.png"), auto;
 `;
