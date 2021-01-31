@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import styled from "styled-components";
 import {
@@ -22,7 +22,6 @@ const BrushEventHandler = () => {
   const dispatch = useDispatch();
   const cursorPosition = useSelector(selectCursorPosition);
   const brushSize = useSelector(selectBrushSize);
-  const [showCursor, setShowCursor] = useState(false);
 
   return (
     <StyledBrush
