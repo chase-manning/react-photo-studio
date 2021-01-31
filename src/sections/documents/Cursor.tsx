@@ -9,9 +9,9 @@ import {
 import { selectBrushSize } from "../../state/toolsSlice";
 
 const StyledCursor = styled.div`
+  position: fixed;
   top: 0;
   left: 0;
-  position: absolute;
 `;
 
 type BrushCircleProps = {
@@ -29,22 +29,21 @@ const BrushCircle = styled.div`
   transform: translate(-50%, -50%);
 `;
 
-type Props = {
-  documentPosition: Position;
-};
-
-const Cursor = (props: Props) => {
+const Cursor = () => {
   const brushSize = useSelector(selectBrushSize);
   const cursorPosition = useSelector(selectCursorPosition);
   const cursorDocument = useSelector(selectCursorDocument);
 
-  const x = cursorPosition.x - props.documentPosition.x + "px";
-  const y = cursorPosition.y - props.documentPosition.y + "px";
-
   if (!cursorDocument) return null;
 
   return (
-    <StyledCursor style={{ transform: `translate(${x},${y})` }}>
+    <StyledCursor
+      style={{
+        transform: `translate(${cursorPosition.x + "px"},${
+          cursorPosition.y + "px"
+        })`,
+      }}
+    >
       <BrushCircle size={brushSize!} />
     </StyledCursor>
   );

@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useEffect, useLayoutEffect, useRef } from "react";
 import { useSelector } from "react-redux";
 import styled from "styled-components";
 import { ToolOption } from "../../state/toolSchema";
@@ -24,21 +24,11 @@ const StyledDocument = styled.div`
 
 const Document = () => {
   const tool = useSelector(selectTool);
-  const document = useRef<HTMLDivElement>(null);
-
-  const documentRect = document.current?.getBoundingClientRect();
-  const documentPosition = {
-    x: documentRect?.x || 0,
-    y: documentRect?.y || 0,
-  };
 
   return (
-    <StyledDocument
-      ref={document}
-      cursor={tool.option === ToolOption.BRUSH ? "none" : "auto"}
-    >
+    <StyledDocument cursor={tool.option === ToolOption.BRUSH ? "none" : "auto"}>
       <Canvas />
-      <Cursor documentPosition={documentPosition} />
+      <Cursor />
       <EventHanders />
     </StyledDocument>
   );
