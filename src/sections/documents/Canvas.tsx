@@ -3,7 +3,7 @@ import styled from "styled-components";
 import * as PIXI from "pixi.js";
 import { useDispatch, useSelector } from "react-redux";
 import { selectEvents, Event } from "../../state/fileSlice";
-import { setCanvasPosition } from "../../state/cursorSlice";
+import { Position, setCanvasPosition } from "../../state/cursorSlice";
 
 const StyledCanvas = styled.div`
   width: 900px;
@@ -55,12 +55,25 @@ const Canvas = () => {
   app.stage.removeChildren();
   const layer = new PIXI.Container();
   app.stage.addChild(layer);
+
+  // Drawing Circle
   var graphics = new PIXI.Graphics();
   events.forEach((event: Event) => {
     if (event.type === "circle")
       Circle(graphics, event.x!, event.y!, event.size!, event.color);
   });
   layer.addChild(graphics);
+
+  // Drawing Line
+  events.forEach((event: Event) => {
+    if (event.type === "line" && event.points && event.points.length >= 2) {
+      var line = new PIXI.Graphics();
+      line.lineStyle(10, 0xd5402b, 1);
+      line.moveTo(event.points[0].x, event.points[0].y);
+      event.points.forEach((point: Position) => line.lineTo(point.x, point.y));
+      layer.addChild(line);
+    }
+  });
 
   return <StyledCanvas ref={canvas} />;
 };
