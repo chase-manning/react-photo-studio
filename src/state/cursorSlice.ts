@@ -8,6 +8,8 @@ export type Position = {
 
 export interface CursorSlice {
   position: Position;
+  document: boolean;
+  down: boolean;
 }
 
 const initialState: CursorSlice = {
@@ -15,6 +17,8 @@ const initialState: CursorSlice = {
     x: 0,
     y: 0,
   },
+  document: false,
+  down: false,
 };
 
 export const cursorSlice = createSlice({
@@ -24,11 +28,31 @@ export const cursorSlice = createSlice({
     setCursorPosition: (state, action: PayloadAction<Position>) => {
       state.position = action.payload;
     },
+    enterDocument: (state) => {
+      state.document = true;
+    },
+    exitDocument: (state) => {
+      state.document = false;
+    },
+    mouseDown: (state) => {
+      state.down = true;
+    },
+    mouseUp: (state) => {
+      state.down = false;
+    },
   },
 });
 
-export const { setCursorPosition } = cursorSlice.actions;
+export const {
+  setCursorPosition,
+  enterDocument,
+  exitDocument,
+  mouseDown,
+  mouseUp,
+} = cursorSlice.actions;
 
 export const selectCursorPosition = (state: RootState) => state.cursor.position;
+export const selectCursorDocument = (state: RootState) => state.cursor.document;
+export const selectCursorDown = (state: RootState) => state.cursor.down;
 
 export default cursorSlice.reducer;
