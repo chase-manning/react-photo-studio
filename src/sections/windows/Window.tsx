@@ -1,4 +1,5 @@
 import React from "react";
+import ColorWindow from "./ColorWindow";
 import LayersWindow from "./LayersWindow";
 
 type Props = {
@@ -8,7 +9,7 @@ type Props = {
 const Window = (props: Props) => {
   switch (props.window) {
     case "Color":
-      return null;
+      return <ColorWindow />;
     case "Swatches":
       return null;
     case "Gradients":
