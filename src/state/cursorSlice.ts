@@ -69,5 +69,7 @@ export const selectCursorCanvasPosition = (state: RootState) => {
     y: state.cursor.position.y - state.cursor.canvasPosition.y,
   };
 };
+export const selectCanvasPosition = (state: RootState) =>
+  state.cursor.canvasPosition;
 
 export default cursorSlice.reducer;
