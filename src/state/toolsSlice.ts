@@ -11,8 +11,8 @@ export interface SettingsState {
 
 const initialState: SettingsState = {
   schema: tools,
-  primaryColor: "black",
-  secondaryColor: "white",
+  primaryColor: "#000000",
+  secondaryColor: "#ffffff",
 };
 
 export const toolsSlice = createSlice({
@@ -43,8 +43,8 @@ export const toolsSlice = createSlice({
       state.secondaryColor = pc;
     },
     setDefaultColors: (state) => {
-      state.primaryColor = "black";
-      state.secondaryColor = "white";
+      state.primaryColor = "#000000";
+      state.secondaryColor = "#ffffff";
     },
   },
 });
