@@ -73,21 +73,27 @@ const SecondarySquare = styled(Square)`
   bottom: 0;
 `;
 
-const Colors = () => {
+type Props = {
+  showButtons: boolean;
+};
+
+const Colors = (props: Props) => {
   const dispatch = useDispatch();
   const primaryColor = useSelector(selectPrimaryColor);
   const secondaryColor = useSelector(selectSecondaryColor);
 
   return (
     <StyledColors>
-      <Buttons>
-        <Button onClick={() => dispatch(setDefaultColors())}>
-          <RotatedButtonIcon src={defaultColors} alt="default colors" />
-        </Button>
-        <Button onClick={() => dispatch(swapColors())}>
-          <ButtonIcon src={swapColorsSvg} alt="swap colors" />
-        </Button>
-      </Buttons>
+      {props.showButtons && (
+        <Buttons>
+          <Button onClick={() => dispatch(setDefaultColors())}>
+            <RotatedButtonIcon src={defaultColors} alt="default colors" />
+          </Button>
+          <Button onClick={() => dispatch(swapColors())}>
+            <ButtonIcon src={swapColorsSvg} alt="swap colors" />
+          </Button>
+        </Buttons>
+      )}
 
       <Squares>
         <SecondarySquare
