@@ -49,7 +49,7 @@ const Canvas = () => {
         x: canvas.current?.getBoundingClientRect().x || 0,
         y: canvas.current?.getBoundingClientRect().y || 0,
       })
-    );
+    ); // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   app.stage.removeChildren();
