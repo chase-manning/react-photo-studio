@@ -4,7 +4,7 @@ import styled from "styled-components";
 import {
   enterDocument,
   exitDocument,
-  selectCursorPosition,
+  selectCursorCanvasPosition,
   setCursorPosition,
 } from "../../state/cursorSlice";
 import { addEvent, EventType } from "../../state/fileSlice";
@@ -20,7 +20,7 @@ const StyledBrush = styled.div`
 
 const BrushEventHandler = () => {
   const dispatch = useDispatch();
-  const cursorPosition = useSelector(selectCursorPosition);
+  const cursorPosition = useSelector(selectCursorCanvasPosition);
   const brushSize = useSelector(selectBrushSize);
   const color = useSelector(selectPrimaryColor);
   const circleColor = Number.parseInt("0x" + color.substring(1, color.length));
