@@ -1,13 +1,8 @@
-import React, { useRef, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import React, { useRef } from "react";
+import { useSelector } from "react-redux";
 import styled from "styled-components";
-import {
-  selectCursorPosition,
-  setCursorPosition,
-} from "../../state/cursorSlice";
 import { ToolOption } from "../../state/toolSchema";
-import { selectBrushSize, selectTool } from "../../state/toolsSlice";
-import { addEvent, EventType } from "../../state/fileSlice";
+import { selectTool } from "../../state/toolsSlice";
 import Canvas from "./Canvas";
 import Cursor from "./Cursor";
 import EventHanders from "./EventHandlers";
