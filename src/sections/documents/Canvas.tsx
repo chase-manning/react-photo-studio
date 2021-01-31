@@ -2,7 +2,7 @@ import React, { useEffect, useLayoutEffect, useRef } from "react";
 import styled from "styled-components";
 import * as PIXI from "pixi.js";
 import { useDispatch, useSelector } from "react-redux";
-import { selectEvents, Event, EventType } from "../../state/fileSlice";
+import { selectEvents, Event } from "../../state/fileSlice";
 import { setCanvasPosition } from "../../state/cursorSlice";
 
 const StyledCanvas = styled.div`
@@ -57,7 +57,7 @@ const Canvas = () => {
   app.stage.addChild(layer);
   var graphics = new PIXI.Graphics();
   events.forEach((event: Event) => {
-    if (event.type === EventType.CIRCLE)
+    if (event.type === "circle")
       Circle(graphics, event.x!, event.y!, event.size!, event.color);
   });
   layer.addChild(graphics);

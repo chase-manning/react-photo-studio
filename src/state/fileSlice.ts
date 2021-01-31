@@ -1,12 +1,8 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { RootState } from "./store";
 
-export enum EventType {
-  CIRCLE,
-}
-
 export type Event = {
-  type: EventType;
+  type: string;
   layer: number;
   x?: number;
   y?: number;

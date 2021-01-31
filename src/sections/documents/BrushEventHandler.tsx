@@ -7,7 +7,7 @@ import {
   selectCursorCanvasPosition,
   setCursorPosition,
 } from "../../state/cursorSlice";
-import { addEvent, EventType } from "../../state/fileSlice";
+import { addEvent } from "../../state/fileSlice";
 import { selectBrushSize, selectPrimaryColor } from "../../state/toolsSlice";
 
 const StyledBrush = styled.div`
@@ -35,7 +35,7 @@ const BrushEventHandler = () => {
       onClick={() => {
         dispatch(
           addEvent({
-            type: EventType.CIRCLE,
+            type: "circle",
             layer: 0,
             x: cursorPosition.x,
             y: cursorPosition.y,
