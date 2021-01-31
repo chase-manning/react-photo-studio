@@ -61,6 +61,21 @@ const Square = styled.button`
   background-color: ${(props: SquareProps) => props.color};
 `;
 
+type SelectionProps = {
+  primary: boolean;
+};
+
+const Selection = styled.div`
+  position: absolute;
+  width: 2.3rem;
+  height: 2.3rem;
+  background-color: var(--color-selection-border);
+  left: ${(props: SelectionProps) => (props.primary ? "-2px" : "auto")};
+  top: ${(props: SelectionProps) => (props.primary ? "-2px" : "auto")};
+  right: ${(props: SelectionProps) => (props.primary ? "auto" : "-2px")};
+  bottom: ${(props: SelectionProps) => (props.primary ? "auto" : "-2px")};
+`;
+
 const PrimarySqaure = styled(Square)`
   margin-bottom: 1.1rem;
   left: 0;
@@ -97,6 +112,7 @@ const Colors = (props: Props) => {
       )}
 
       <Squares>
+        {!props.showButtons && <Selection primary={true} />}
         <SecondarySquare
           onClick={() =>
             dispatch(requestFeature(props.parent + "/Set Secondary Color"))
