@@ -47,8 +47,8 @@ const LayersWindow = () => {
       <LayerLock />
       <LayersContainer>
         <Layers>
-          {layers.map((layer: LayerType) => (
-            <Layer layer={layer} />
+          {layers.map((layer: LayerType, index: number) => (
+            <Layer key={index} layer={layer} />
           ))}
         </Layers>
         <ScrollBar />
