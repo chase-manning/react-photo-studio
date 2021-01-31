@@ -59,10 +59,8 @@ const Canvas = () => {
   events.forEach((event: Event) => {
     // Drawing Line
     if (event.type === "line") {
-      console.log(event);
       if (!event.points || event.points.length === 0) return;
       if (event.points.length === 1) {
-        console.log("meow");
         var circle = new PIXI.Graphics();
         Circle(
           circle,
