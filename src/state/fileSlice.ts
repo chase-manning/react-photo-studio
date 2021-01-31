@@ -21,16 +21,7 @@ export interface FileSlice {
 
 const initialState: FileSlice = {
   name: "Untitled-1",
-  events: [
-    {
-      type: EventType.CIRCLE,
-      layer: 0,
-      x: 100,
-      y: 200,
-      size: 80,
-      color: 0xe74c3c,
-    },
-  ],
+  events: [],
 };
 
 export const fileSlice = createSlice({
