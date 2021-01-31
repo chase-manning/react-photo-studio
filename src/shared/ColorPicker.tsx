@@ -1,5 +1,7 @@
 import React from "react";
+import { useDispatch } from "react-redux";
 import styled from "styled-components";
+import { requestFeature } from "../state/featureSlice";
 
 const StyledColorPicker = styled.div`
   position: relative;
@@ -18,8 +20,11 @@ const DarkOverlay = styled.div`
 `;
 
 const ColorPicker = () => {
+  const dispatch = useDispatch();
   return (
-    <StyledColorPicker>
+    <StyledColorPicker
+      onClick={() => dispatch(requestFeature("Windows/Color/ColorPicker"))}
+    >
       <DarkOverlay />
     </StyledColorPicker>
   );
