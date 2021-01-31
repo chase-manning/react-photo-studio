@@ -1,12 +1,16 @@
 import React, { useRef, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import styled from "styled-components";
-import { setCursorPosition } from "../../state/cursorSlice";
-import { requestFeature } from "../../state/featureSlice";
+import {
+  selectCursorPosition,
+  setCursorPosition,
+} from "../../state/cursorSlice";
 import { ToolOption } from "../../state/toolSchema";
-import { selectTool } from "../../state/toolsSlice";
+import { selectBrushSize, selectTool } from "../../state/toolsSlice";
+import { addEvent, EventType } from "../../state/fileSlice";
 import Canvas from "./Canvas";
 import Cursor from "./Cursor";
+import EventHanders from "./EventHandlers";
 
 type DocumentProps = {
   cursor: string;
@@ -23,20 +27,9 @@ const StyledDocument = styled.div`
   cursor: ${(props: DocumentProps) => props.cursor};
 `;
 
-const EventHandler = styled.div`
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-`;
-
 const Document = () => {
-  const dispatch = useDispatch();
   const tool = useSelector(selectTool);
-
   const document = useRef<HTMLDivElement>(null);
-  const [showCursor, setShowCursor] = useState(false);
 
   const documentRect = document.current?.getBoundingClientRect();
   const documentPosition = {
@@ -50,17 +43,8 @@ const Document = () => {
       cursor={tool.option === ToolOption.BRUSH ? "none" : "auto"}
     >
       <Canvas />
-      {showCursor && tool.option === ToolOption.BRUSH && (
-        <Cursor documentPosition={documentPosition} />
-      )}
-      <EventHandler
-        onMouseEnter={() => setShowCursor(true)}
-        onMouseLeave={() => setShowCursor(false)}
-        onMouseMove={(e) =>
-          dispatch(setCursorPosition({ x: e.clientX, y: e.clientY }))
-        }
-        onClick={() => dispatch(requestFeature("Document/" + tool.name))}
-      />
+      <Cursor documentPosition={documentPosition} />
+      <EventHanders />
     </StyledDocument>
   );
 };
