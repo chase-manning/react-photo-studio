@@ -49,7 +49,7 @@ const Tools = () => {
             <Tool key={index} collection={tool} />
           ))}
         </ToolsContainer>
-        <Colors showButtons={true} />
+        <Colors parent={"Tools"} showButtons={true} />
       </Container>
     </StyledTools>
   );

@@ -74,6 +74,7 @@ const SecondarySquare = styled(Square)`
 `;
 
 type Props = {
+  parent: string;
   showButtons: boolean;
 };
 
@@ -97,11 +98,15 @@ const Colors = (props: Props) => {
 
       <Squares>
         <SecondarySquare
-          onClick={() => dispatch(requestFeature("Tools/Set Primary Color"))}
+          onClick={() =>
+            dispatch(requestFeature(props.parent + "/Set Primary Color"))
+          }
           color={secondaryColor}
         />
         <PrimarySqaure
-          onClick={() => dispatch(requestFeature("Tools/Set Secondary Color"))}
+          onClick={() =>
+            dispatch(requestFeature(props.parent + "/Set Secondary Color"))
+          }
           color={primaryColor}
         />
       </Squares>
