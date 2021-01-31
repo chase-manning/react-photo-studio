@@ -33,6 +33,7 @@ const GlobalStyle = createGlobalStyle`
         --layer-text: #f0f0f0;
         --layer-bg: #4d4d4d;
         --toast-border: #6f6f6f;
+        --color-selection-border: #8c8c8c;
     }
   
     * {
