@@ -106,6 +106,7 @@ const Tabs = (props: Props) => {
       <Header>
         {props.tabs.map((tab: TabType, index: number) => (
           <HeaderItem
+            key={tab.label}
             onClick={() => {
               if (tab.implemented) setActiveIndex(index);
               else
