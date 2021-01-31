@@ -39,7 +39,7 @@ const BrushEventHandler = () => {
             layer: 0,
             x: cursorPosition.x,
             y: cursorPosition.y,
-            size: brushSize,
+            size: brushSize! / 2,
             color: circleColor,
           })
         );
