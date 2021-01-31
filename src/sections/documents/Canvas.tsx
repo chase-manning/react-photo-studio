@@ -56,30 +56,40 @@ const Canvas = () => {
   const layer = new PIXI.Container();
   app.stage.addChild(layer);
 
-  // Drawing Circle
-  var graphics = new PIXI.Graphics();
   events.forEach((event: Event) => {
-    if (event.type === "circle")
-      Circle(graphics, event.x!, event.y!, event.size!, event.color);
-  });
-  layer.addChild(graphics);
-
-  // Drawing Line
-  events.forEach((event: Event) => {
-    if (event.type === "line" && event.points && event.points.length >= 2) {
-      var line = new PIXI.Graphics();
-      line.lineTextureStyle({
-        width: (event.size || 40) * 2,
-        color: event.color,
-        alignment: 0.5,
-        alpha: 1,
-        join: PIXI.LINE_JOIN.ROUND,
-        cap: PIXI.LINE_CAP.ROUND,
-        miterLimit: 198,
-      });
-      line.moveTo(event.points[0].x, event.points[0].y);
-      event.points.forEach((point: Position) => line.lineTo(point.x, point.y));
-      layer.addChild(line);
+    // Drawing Line
+    if (event.type === "line") {
+      console.log(event);
+      if (!event.points || event.points.length === 0) return;
+      if (event.points.length === 1) {
+        console.log("meow");
+        var circle = new PIXI.Graphics();
+        Circle(
+          circle,
+          event.points[0].x!,
+          event.points[0].y!,
+          (event.size || 40) / 2,
+          event.color
+        );
+        layer.addChild(circle);
+      } else {
+        var line = new PIXI.Graphics();
+        line.lineTextureStyle({
+          width: event.size,
+          color: event.color,
+          alignment: 0.5,
+          alpha: 1,
+          join: PIXI.LINE_JOIN.ROUND,
+          cap: PIXI.LINE_CAP.ROUND,
+          miterLimit: 198,
+        });
+        line.moveTo(event.points[0].x, event.points[0].y);
+        event.points.forEach((point: Position, index: number) => {
+          if (index === 0) return;
+          line.lineTo(point.x, point.y);
+        });
+        layer.addChild(line);
+      }
     }
   });
 
