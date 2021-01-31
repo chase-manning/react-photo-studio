@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import ColorPicker from "../../shared/ColorPicker";
 import Colors from "../../shared/Colors";
+import HuePicker from "../../shared/HuePicker";
 
 const StyledColorWindow = styled.div`
   width: 100%;
@@ -21,6 +22,7 @@ const ColorWindow = () => {
         <Colors showButtons={false} />
       </ColorContainer>
       <ColorPicker />
+      <HuePicker />
     </StyledColorWindow>
   );
 };
