@@ -9,6 +9,7 @@ type TabsProps = {
 };
 
 const StyledTabs = styled.div`
+  position: relative;
   width: 100%;
   height: ${(props: TabsProps) => props.height};
   display: flex;
@@ -85,6 +86,15 @@ const Line = styled.div`
   margin-bottom: 0.1rem;
 `;
 
+const WindowResize = styled.div`
+  position: absolute;
+  height: 0.4rem;
+  width: 100%;
+  bottom: -0.2rem;
+  left: 0;
+  cursor: ns-resize;
+`;
+
 export type TabType = {
   label: string;
   content: JSX.Element;
@@ -131,6 +141,11 @@ const Tabs = (props: Props) => {
         </MenuContainer>
       </Header>
       {props.tabs[activeIndex].content}
+      {!props.bottom && (
+        <WindowResize
+          onClick={() => dispatch(requestFeature("Windows/Tabs/Resize"))}
+        />
+      )}
     </StyledTabs>
   );
 };
