@@ -6,6 +6,7 @@ import {
   exitDocument,
   mouseDown,
   mouseUp,
+  selectCanvasPosition,
   selectCursorCanvasPosition,
   selectCursorDown,
   setCursorPosition,
@@ -27,6 +28,7 @@ const BrushEventHandler = () => {
   const brushSize = useSelector(selectBrushSize);
   const color = useSelector(selectPrimaryColor);
   const drawing = useSelector(selectCursorDown);
+  const canvasPosition = useSelector(selectCanvasPosition);
   const circleColor = Number.parseInt("0x" + color.substring(1, color.length));
 
   return (
@@ -36,7 +38,12 @@ const BrushEventHandler = () => {
       onMouseMove={(e) => {
         dispatch(setCursorPosition({ x: e.clientX, y: e.clientY }));
         if (drawing)
-          dispatch(addPoint({ x: cursorPosition.x, y: cursorPosition.y }));
+          dispatch(
+            addPoint({
+              x: e.clientX - canvasPosition.x,
+              y: e.clientY - canvasPosition.y,
+            })
+          );
       }}
       onMouseDown={() => {
         dispatch(mouseDown());
@@ -45,7 +52,7 @@ const BrushEventHandler = () => {
             type: "line",
             layer: 0,
             points: [{ x: cursorPosition.x, y: cursorPosition.y }],
-            size: brushSize! / 2,
+            size: brushSize,
             color: circleColor,
           })
         );
