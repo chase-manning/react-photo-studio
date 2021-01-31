@@ -52,6 +52,7 @@ const Windows = () => {
         );
         return (
           <Tabs
+            key={index}
             tabs={tabs}
             height={heights[index] + "%"}
             bottom={index === windows.length - 1}
