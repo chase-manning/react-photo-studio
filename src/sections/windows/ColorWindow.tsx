@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import ColorPicker from "../../shared/ColorPicker";
-import Colors from "../tools/Colors";
+import Colors from "../../shared/Colors";
 
 const StyledColorWindow = styled.div`
   width: 100%;

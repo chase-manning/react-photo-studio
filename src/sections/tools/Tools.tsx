@@ -4,7 +4,7 @@ import styled from "styled-components";
 import Expandable from "../../shared/Expandable";
 import Handle from "../../shared/Handle";
 import { selectTools } from "../../state/toolsSlice";
-import Colors from "./Colors";
+import Colors from "../../shared/Colors";
 import Tool from "./Tool";
 import { ToolCollection } from "../../state/toolSchema";
 import { requestFeature } from "../../state/featureSlice";

@@ -6,10 +6,10 @@ import {
   selectSecondaryColor,
   setDefaultColors,
   swapColors,
-} from "../../state/toolsSlice";
-import defaultColors from "../../assets/svgs/tools/default-colors.svg";
-import swapColorsSvg from "../../assets/svgs/tools/swap-colors.svg";
-import { requestFeature } from "../../state/featureSlice";
+} from "../state/toolsSlice";
+import defaultColors from "../assets/svgs/tools/default-colors.svg";
+import swapColorsSvg from "../assets/svgs/tools/swap-colors.svg";
+import { requestFeature } from "../state/featureSlice";
 
 const StyledColors = styled.div`
   width: 100%;
