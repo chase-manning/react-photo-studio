@@ -1,7 +1,11 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import styled from "styled-components";
-import { Position, selectCursorPosition } from "../../state/cursorSlice";
+import {
+  Position,
+  selectCursorDocument,
+  selectCursorPosition,
+} from "../../state/cursorSlice";
 import { selectBrushSize } from "../../state/toolsSlice";
 
 const StyledCursor = styled.div`
@@ -32,8 +36,12 @@ type Props = {
 const Cursor = (props: Props) => {
   const brushSize = useSelector(selectBrushSize);
   const cursorPosition = useSelector(selectCursorPosition);
+  const cursorDocument = useSelector(selectCursorDocument);
+
   const x = cursorPosition.x - props.documentPosition.x + "px";
   const y = cursorPosition.y - props.documentPosition.y + "px";
+
+  if (!cursorDocument) return null;
 
   return (
     <StyledCursor style={{ transform: `translate(${x},${y})` }}>
