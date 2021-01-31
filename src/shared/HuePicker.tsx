@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 const StyledHuePicker = styled.div`
   height: 100%;
-  width: 2.8rem;
+  width: 2.1rem;
   background: linear-gradient(
     #ff0000,
     #ff00ff,
@@ -13,7 +13,7 @@ const StyledHuePicker = styled.div`
     #ffff00,
     #ff0000
   );
-  margin-left: 2rem;
+  margin-left: 1.8rem;
 `;
 
 const HuePicker = () => {
