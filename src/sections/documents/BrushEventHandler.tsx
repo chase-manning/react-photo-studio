@@ -4,10 +4,13 @@ import styled from "styled-components";
 import {
   enterDocument,
   exitDocument,
+  mouseDown,
+  mouseUp,
   selectCursorCanvasPosition,
+  selectCursorDown,
   setCursorPosition,
 } from "../../state/cursorSlice";
-import { addEvent } from "../../state/fileSlice";
+import { addEvent, addPoint } from "../../state/fileSlice";
 import { selectBrushSize, selectPrimaryColor } from "../../state/toolsSlice";
 
 const StyledBrush = styled.div`
@@ -23,27 +26,34 @@ const BrushEventHandler = () => {
   const cursorPosition = useSelector(selectCursorCanvasPosition);
   const brushSize = useSelector(selectBrushSize);
   const color = useSelector(selectPrimaryColor);
+  const drawing = useSelector(selectCursorDown);
   const circleColor = Number.parseInt("0x" + color.substring(1, color.length));
 
   return (
     <StyledBrush
       onMouseEnter={() => dispatch(enterDocument())}
       onMouseLeave={() => dispatch(exitDocument())}
-      onMouseMove={(e) =>
-        dispatch(setCursorPosition({ x: e.clientX, y: e.clientY }))
-      }
-      onClick={() => {
+      onMouseMove={(e) => {
+        dispatch(setCursorPosition({ x: e.clientX, y: e.clientY }));
+        if (drawing)
+          dispatch(addPoint({ x: cursorPosition.x, y: cursorPosition.y }));
+      }}
+      onMouseDown={() => {
+        dispatch(mouseDown());
         dispatch(
           addEvent({
-            type: "circle",
+            type: "line",
             layer: 0,
-            x: cursorPosition.x,
-            y: cursorPosition.y,
+            points: [{ x: cursorPosition.x, y: cursorPosition.y }],
             size: brushSize! / 2,
             color: circleColor,
           })
         );
       }}
+      onMouseUp={() => {
+        dispatch(mouseUp());
+      }}
+      onClick={() => {}}
     />
   );
 };
