@@ -16,7 +16,7 @@ const GlobalStyle = createGlobalStyle`
         --context-hover: #6b6b6b;
         --disabled: #878787;
         --expandable: #424242;
-        --color-border: #f8d1d1;
+        --color-border: #363636;
         --section-line: #3e3e3e;
         --input-border: #666666;
         --white: #ffffff;
