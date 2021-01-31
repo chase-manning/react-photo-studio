@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 const StyledColorPicker = styled.div`
   position: relative;
-  width: 100%;
+  flex: 1;
   height: 100%;
   background: linear-gradient(90deg, white, #00ff44);
 `;
