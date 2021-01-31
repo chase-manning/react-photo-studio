@@ -1,8 +1,9 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useLayoutEffect, useRef } from "react";
 import styled from "styled-components";
 import * as PIXI from "pixi.js";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { selectEvents, Event, EventType } from "../../state/fileSlice";
+import { setCanvasPosition } from "../../state/cursorSlice";
 
 const StyledCanvas = styled.div`
   width: 900px;
@@ -30,14 +31,25 @@ const Circle = (
 };
 
 const Canvas = () => {
-  const canvas = useRef<HTMLDivElement>(null);
+  const dispatch = useDispatch();
   const events = useSelector(selectEvents);
+
+  const canvas = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     if (canvas.current) canvas.current.appendChild(app.view);
     app.start();
 
     return () => app.destroy(true);
+  }, []);
+
+  useLayoutEffect(() => {
+    dispatch(
+      setCanvasPosition({
+        x: canvas.current?.getBoundingClientRect().x || 0,
+        y: canvas.current?.getBoundingClientRect().y || 0,
+      })
+    );
   }, []);
 
   app.stage.removeChildren();
