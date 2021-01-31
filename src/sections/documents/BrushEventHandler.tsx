@@ -8,7 +8,7 @@ import {
   setCursorPosition,
 } from "../../state/cursorSlice";
 import { addEvent, EventType } from "../../state/fileSlice";
-import { selectBrushSize } from "../../state/toolsSlice";
+import { selectBrushSize, selectPrimaryColor } from "../../state/toolsSlice";
 
 const StyledBrush = styled.div`
   position: absolute;
@@ -22,6 +22,8 @@ const BrushEventHandler = () => {
   const dispatch = useDispatch();
   const cursorPosition = useSelector(selectCursorPosition);
   const brushSize = useSelector(selectBrushSize);
+  const color = useSelector(selectPrimaryColor);
+  const circleColor = Number.parseInt("0x" + color.substring(1, color.length));
 
   return (
     <StyledBrush
@@ -38,7 +40,7 @@ const BrushEventHandler = () => {
             x: cursorPosition.x,
             y: cursorPosition.y,
             size: brushSize,
-            color: 0xe74c3c,
+            color: circleColor,
           })
         );
       }}
