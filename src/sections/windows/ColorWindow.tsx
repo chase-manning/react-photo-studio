@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import ColorPicker from "../../shared/ColorPicker";
 
 const StyledColorWindow = styled.div`
   width: 100%;
@@ -7,7 +8,11 @@ const StyledColorWindow = styled.div`
 `;
 
 const ColorWindow = () => {
-  return <StyledColorWindow>meow</StyledColorWindow>;
+  return (
+    <StyledColorWindow>
+      <ColorPicker />
+    </StyledColorWindow>
+  );
 };
 
 export default ColorWindow;
