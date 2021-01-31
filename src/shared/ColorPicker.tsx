@@ -8,6 +8,7 @@ const StyledColorPicker = styled.div`
   flex: 1;
   height: 100%;
   background: linear-gradient(90deg, white, #00ff44);
+  overflow: hidden;
 `;
 
 const DarkOverlay = styled.div`
@@ -19,6 +20,17 @@ const DarkOverlay = styled.div`
   background: linear-gradient(rgba(0, 0, 0, 0), black);
 `;
 
+const Selection = styled.div`
+  position: absolute;
+  left: 0;
+  top: 100%;
+  border: solid 1px white;
+  width: 1.4rem;
+  height: 1.4rem;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+`;
+
 const ColorPicker = () => {
   const dispatch = useDispatch();
   return (
@@ -26,6 +38,7 @@ const ColorPicker = () => {
       onClick={() => dispatch(requestFeature("Windows/Color/ColorPicker"))}
     >
       <DarkOverlay />
+      <Selection />
     </StyledColorPicker>
   );
 };
