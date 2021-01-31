@@ -99,13 +99,13 @@ const Colors = (props: Props) => {
       <Squares>
         <SecondarySquare
           onClick={() =>
-            dispatch(requestFeature(props.parent + "/Set Primary Color"))
+            dispatch(requestFeature(props.parent + "/Set Secondary Color"))
           }
           color={secondaryColor}
         />
         <PrimarySqaure
           onClick={() =>
-            dispatch(requestFeature(props.parent + "/Set Secondary Color"))
+            dispatch(requestFeature(props.parent + "/Set Primary Color"))
           }
           color={primaryColor}
         />
