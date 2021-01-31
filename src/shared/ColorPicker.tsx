@@ -9,6 +9,7 @@ const StyledColorPicker = styled.div`
   height: 100%;
   background: linear-gradient(90deg, white, #00ff44);
   overflow: hidden;
+  cursor: url("cursors/color-picker.png"), auto;
 `;
 
 const DarkOverlay = styled.div`
