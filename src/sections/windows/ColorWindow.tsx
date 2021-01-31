@@ -12,7 +12,7 @@ const StyledColorWindow = styled.div`
 `;
 
 const ColorContainer = styled.div`
-  width: 4.6rem;
+  width: 4.2rem;
 `;
 
 const ColorWindow = () => {
