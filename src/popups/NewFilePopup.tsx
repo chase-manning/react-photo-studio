@@ -16,7 +16,7 @@ let tabs: NewFileTabType[] = [
   },
   {
     label: "Photo",
-    active: false,
+    active: true,
   },
   {
     label: "Print",
