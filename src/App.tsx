@@ -7,6 +7,7 @@ import Tools from "./sections/tools/Tools";
 import Windows from "./sections/windows/Windows";
 import ReactGA from "react-ga";
 import InDevelopment from "./shared/InDevelopment";
+import FileUpload from "./shared/FileUpload";
 
 ReactGA.initialize("UA-186400691-2");
 ReactGA.pageview("/");
@@ -41,6 +42,7 @@ const App = () => {
         <Windows />
       </Horizontal>
       <InDevelopment />
+      <FileUpload />
     </StyledApp>
   );
 };
