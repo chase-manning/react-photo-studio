@@ -8,6 +8,8 @@ import Windows from "./sections/windows/Windows";
 import ReactGA from "react-ga";
 import InDevelopment from "./shared/InDevelopment";
 import FileUpload from "./popups/FileUpload";
+import Popup from "./popups/Popup";
+import Popups from "./popups/Popups";
 
 ReactGA.initialize("UA-186400691-2");
 ReactGA.pageview("/");
@@ -43,6 +45,7 @@ const App = () => {
       </Horizontal>
       <InDevelopment />
       <FileUpload />
+      <Popups />
     </StyledApp>
   );
 };
