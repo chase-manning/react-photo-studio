@@ -9,7 +9,8 @@ type OutlineProps = {
 const Outline = styled.div`
   position: relative;
   border: solid 1px
-    ${(props: OutlineProps) => (props.active ? "var(--white)" : "none")};
+    ${(props: OutlineProps) =>
+      props.active ? "var(--white)" : "rgba(0,0,0,0)"};
   padding: 1px;
 `;
 
