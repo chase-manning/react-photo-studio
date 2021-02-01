@@ -34,7 +34,12 @@ const Content = styled.div`
   flex: 1;
 `;
 
-const Popup = () => {
+type Props = {
+  header: string;
+  content: JSX.Element;
+};
+
+const Popup = (props: Props) => {
   return (
     <StyledPopup>
       <Window>
