@@ -1,5 +1,4 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { layer } from "../sections/menu/schema/layer";
 import generateGuid from "../services/GuidService";
 import { RootState } from "./store";
 
