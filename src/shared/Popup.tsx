@@ -66,6 +66,7 @@ class State {
 }
 
 type Props = {
+  open: boolean;
   header: string;
   content: JSX.Element;
 };
@@ -73,23 +74,30 @@ type Props = {
 const Popup = (props: Props) => {
   const [state, setState] = useState(new State());
 
+  const movementTransform = {
+    x: state.lastTransform.x + state.transform.x,
+    y: state.lastTransform.y + state.transform.y,
+  };
+
   const EndMove = () => {
     if (state.grabbing)
       setState({
         ...state,
         grabbing: false,
         init: false,
-        lastTransform: state.transform,
+        lastTransform: movementTransform,
         transform: pos,
       });
   };
 
+  if (!props.open) return;
+
   return (
     <StyledPopup
       style={{
-        transform: `translate(${
-          state.lastTransform.x + state.transform.x + "px"
-        }, ${state.lastTransform.y + state.transform.y + "px"})`,
+        transform: `translate(${movementTransform.x + "px"}, ${
+          movementTransform.y + "px"
+        })`,
       }}
     >
       <Window>
