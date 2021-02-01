@@ -1,6 +1,7 @@
-import React, { useRef, useState } from "react";
-import { useDispatch } from "react-redux";
+import React, { useEffect, useRef } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import styled from "styled-components";
+import { fileOpened, selectFileOpen } from "../state/actionsSlice";
 import { requestFeature } from "../state/featureSlice";
 
 const StyledFileUploads = styled.div``;
@@ -11,7 +12,12 @@ const FileInput = styled.input`
 
 const FileUpload = () => {
   const dispatch = useDispatch();
+  const fileOpen = useSelector(selectFileOpen);
   const inputFile = useRef<HTMLInputElement>(null);
+
+  useEffect(() => {
+    if (fileOpen && inputFile.current) inputFile.current.click();
+  }, [fileOpen]);
 
   const handleFileUpload = (e: any) => {
     const { files } = e.target;
@@ -21,10 +27,7 @@ const FileUpload = () => {
       const fileType = parts[parts.length - 1];
       dispatch(requestFeature("Menu/File/Open/" + fileType));
     }
-  };
-
-  const onButtonClick = () => {
-    if (inputFile.current) inputFile.current.click();
+    dispatch(fileOpened());
   };
 
   return (
@@ -34,9 +37,6 @@ const FileUpload = () => {
         onChange={(e) => handleFileUpload(e)}
         type="file"
       />
-      <div className="button" onClick={onButtonClick}>
-        Upload
-      </div>
     </StyledFileUploads>
   );
 };
