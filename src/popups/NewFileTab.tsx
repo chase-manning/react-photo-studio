@@ -35,11 +35,12 @@ export type NewFileTabType = {
 
 type Props = {
   tab: NewFileTabType;
+  select: () => void;
 };
 
 const NewFileTab = (props: Props) => {
   return (
-    <Tab active={props.tab.active}>
+    <Tab onClick={() => props.select()} active={props.tab.active}>
       {props.tab.label}
       {props.tab.active && <Underline />}
     </Tab>
