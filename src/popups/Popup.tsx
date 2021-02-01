@@ -14,7 +14,7 @@ const StyledPopup = styled.div`
 `;
 
 const Window = styled.div`
-  width: 50%;
+  max-width: 70%;
   height: 50%;
   background-color: var(--popup-new-bg);
   border-radius: 10px;
@@ -90,7 +90,7 @@ const Popup = (props: Props) => {
       });
   };
 
-  if (!props.open) return;
+  if (!props.open) return null;
 
   return (
     <StyledPopup
