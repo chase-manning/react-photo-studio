@@ -57,7 +57,7 @@ const Option = (props: Props) => {
                     "/Hover Menu"
                 )
               ),
-            1000
+            2000
           )
         )
       }
