@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import { LayerType } from "../../state/layersSlice";
+import { LayerType, setActiveLayer } from "../../state/layersSlice";
 import eye from "../../assets/svgs/layers/eye.svg";
 import lock from "../../assets/svgs/layers/lock.svg";
 import LayerCanvas from "./LayerCanvas";
@@ -107,7 +107,7 @@ const Layer = (props: Props) => {
         <Eye src={eye} alt="eye" />
       </Visibility>
       <Content
-        onClick={() => dispatch(requestFeature("Windows/Layers/Layer/Select"))}
+        onClick={() => dispatch(setActiveLayer(props.layer.id))}
         grabbing={grabbing && moving}
         selected={props.layer.selected}
       >
