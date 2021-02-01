@@ -32,7 +32,7 @@ const Tool = (props: Props) => {
           window.setTimeout(
             () =>
               dispatch(requestFeature("Tools/" + tool.name + "/Hover Menu")),
-            1000
+            2000
           )
         )
       }
