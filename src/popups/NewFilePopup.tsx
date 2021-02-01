@@ -8,10 +8,7 @@ import NewFileTab, { NewFileTabType } from "./NewFileTab";
 import newFileTabsSchema from "./newFileTabsSchema";
 import Popup from "./Popup";
 
-const Content = styled.div`
-  height: 50vh;
-  width: 50vw;
-`;
+const Content = styled.div``;
 
 const Header = styled.div`
   width: 100%;
