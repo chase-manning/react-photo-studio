@@ -20,6 +20,7 @@ const Window = styled.div`
   overflow: hidden;
   display: flex;
   flex-direction: column;
+  box-shadow: 5px 5px 30px 5px rgba(0, 0, 0, 0.4);
 `;
 
 const Header = styled.div`
