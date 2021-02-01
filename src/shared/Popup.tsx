@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
+import { Position } from "../state/cursorSlice";
 
 const StyledPopup = styled.div`
   position: fixed;
@@ -33,6 +34,7 @@ const Header = styled.div`
   font-size: 1.3rem;
   font-weight: 600;
   color: var(--popup-new-text);
+  user-select: none;
 `;
 
 const Content = styled.div`
@@ -45,16 +47,70 @@ const Content = styled.div`
   border-bottom-right-radius: 10px;
 `;
 
+const pos = { x: 0, y: 0 };
+
+class State {
+  grabbing: boolean = false;
+  init: boolean = false;
+  start: Position = pos;
+  transform: Position = pos;
+  lastTransform: Position = pos;
+}
+
 type Props = {
   header: string;
   content: JSX.Element;
 };
 
 const Popup = (props: Props) => {
+  const [state, setState] = useState(new State());
+
+  const EndMove = () => {
+    if (state.grabbing)
+      setState({
+        ...state,
+        grabbing: false,
+        init: false,
+        lastTransform: state.transform,
+        transform: pos,
+      });
+  };
+
   return (
-    <StyledPopup>
+    <StyledPopup
+      style={{
+        transform: `translate(${
+          state.lastTransform.x + state.transform.x + "px"
+        }, ${state.lastTransform.y + state.transform.y + "px"})`,
+      }}
+    >
       <Window>
-        <Header>{props.header}</Header>
+        <Header
+          onMouseDown={() => setState({ ...state, grabbing: true })}
+          onMouseUp={() => EndMove()}
+          onMouseLeave={() => EndMove()}
+          onMouseMove={(e) => {
+            if (state.grabbing) {
+              if (!state.init) {
+                setState({
+                  ...state,
+                  start: { x: e.clientX, y: e.clientY },
+                  init: true,
+                });
+              } else {
+                setState({
+                  ...state,
+                  transform: {
+                    x: e.clientX - state.start.x,
+                    y: e.clientY - state.start.y,
+                  },
+                });
+              }
+            }
+          }}
+        >
+          {props.header}
+        </Header>
         <Content></Content>
       </Window>
     </StyledPopup>
