@@ -38,6 +38,7 @@ const GlobalStyle = createGlobalStyle`
         --popup-new-header: #f9f0f1;
         --popup-new-text: #4c4849;
         --popup-new-border: #464646;
+        --new-file-tab-text: #b9b9ba;
     }
   
     * {
