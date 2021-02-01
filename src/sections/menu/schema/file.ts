@@ -1,4 +1,5 @@
 import { Action } from "../../../state/actionSchema";
+import { openFile } from "../../../state/actionsSlice";
 import { requestFeature } from "../../../state/featureSlice";
 import { ItemType } from "./menu-items";
 
@@ -15,7 +16,7 @@ export const file: ItemType = {
         {
           type: Action.OPEN_FILE,
           name: "Open...",
-          action: () => requestFeature("Menu/File/Open..."),
+          action: () => openFile(),
         },
         {
           name: "Open as Smart Object...",
