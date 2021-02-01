@@ -47,6 +47,14 @@ const Content = styled.div`
   border-bottom-right-radius: 10px;
 `;
 
+const EventHander = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+`;
+
 const pos = { x: 0, y: 0 };
 
 class State {
@@ -85,34 +93,33 @@ const Popup = (props: Props) => {
       }}
     >
       <Window>
-        <Header
-          onMouseDown={() => setState({ ...state, grabbing: true })}
-          onMouseUp={() => EndMove()}
-          onMouseLeave={() => EndMove()}
-          onMouseMove={(e) => {
-            if (state.grabbing) {
-              if (!state.init) {
-                setState({
-                  ...state,
-                  start: { x: e.clientX, y: e.clientY },
-                  init: true,
-                });
-              } else {
-                setState({
-                  ...state,
-                  transform: {
-                    x: e.clientX - state.start.x,
-                    y: e.clientY - state.start.y,
-                  },
-                });
-              }
-            }
-          }}
-        >
+        <Header onMouseDown={() => setState({ ...state, grabbing: true })}>
           {props.header}
         </Header>
         <Content></Content>
       </Window>
+      {state.grabbing && (
+        <EventHander
+          onMouseUp={() => EndMove()}
+          onMouseMove={(e) => {
+            if (!state.init) {
+              setState({
+                ...state,
+                start: { x: e.clientX, y: e.clientY },
+                init: true,
+              });
+            } else {
+              setState({
+                ...state,
+                transform: {
+                  x: e.clientX - state.start.x,
+                  y: e.clientY - state.start.y,
+                },
+              });
+            }
+          }}
+        />
+      )}
     </StyledPopup>
   );
 };
