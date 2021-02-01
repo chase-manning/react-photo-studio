@@ -7,10 +7,15 @@ type TabProps = {
 
 const Tab = styled.button`
   position: relative;
-  color: ${(props: TabProps) =>
-    props.active ? "var(--white)" : "var(--new-file-tab-text)"};
   font-size: 1.4rem;
   padding: 2rem 1rem;
+  cursor: pointer;
+
+  color: ${(props: TabProps) =>
+    props.active ? "var(--white)" : "var(--new-file-tab-text)"};
+  :hover {
+    color: var(--white);
+  }
 `;
 
 const Underline = styled.div`
