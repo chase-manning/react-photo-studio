@@ -30,7 +30,7 @@ const NewFilePopup = () => {
 
   return (
     <Popup
-      open={true}
+      open={open}
       header={"New Document"}
       content={
         <Content>
