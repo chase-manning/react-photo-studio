@@ -26,6 +26,7 @@ export const file: ItemType = {
           name: "Open Recent",
           itemSets: [],
           action: () => requestFeature("Menu/File/Open Recent"),
+          disabled: false,
         },
       ],
     },
