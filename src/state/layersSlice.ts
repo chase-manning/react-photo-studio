@@ -26,14 +26,6 @@ const initialState: LayersSlice = {
       visible: true,
       locked: true,
     },
-    {
-      id: generateGuid(),
-      name: "Layer 1",
-      active: false,
-      selected: false,
-      visible: true,
-      locked: true,
-    },
   ],
 };
 
