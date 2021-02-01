@@ -4,6 +4,7 @@ import { ItemType } from "../sections/menu/schema/menu-items";
 import { ReactComponent as ArrowIcon } from "../assets/svgs/navigation/triangle-right.svg";
 import ContextMenu from "./ContextMenu";
 import { useDispatch } from "react-redux";
+import Disable from "../styles/Disabled";
 
 const StyledContextMenuItem = styled.div`
   position: relative;
@@ -47,7 +48,9 @@ const ContextMenuItem = (props: Props) => {
 
   return (
     <StyledContextMenuItem
-      onMouseEnter={() => setOpen(true)}
+      onMouseEnter={() => {
+        if (!props.menuItem.disabled) setOpen(true);
+      }}
       onMouseLeave={() => setOpen(false)}
     >
       <Button
@@ -70,6 +73,7 @@ const ContextMenuItem = (props: Props) => {
           subMenu={true}
         />
       )}
+      {props.menuItem.disabled && <Disable />}
     </StyledContextMenuItem>
   );
 };
