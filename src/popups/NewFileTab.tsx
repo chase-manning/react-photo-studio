@@ -5,7 +5,7 @@ type TabProps = {
   active: boolean;
 };
 
-const Tab = styled.div`
+const Tab = styled.button`
   position: relative;
   color: ${(props: TabProps) =>
     props.active ? "var(--white)" : "var(--new-file-tab-text)"};
