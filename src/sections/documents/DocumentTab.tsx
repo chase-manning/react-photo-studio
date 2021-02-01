@@ -48,7 +48,7 @@ const DocumentTab = () => {
         setTimer(
           window.setTimeout(
             () => dispatch(requestFeature("Documents/Tabs/Tab/Hover Menu")),
-            1000
+            2000
           )
         )
       }
