@@ -27,6 +27,12 @@ const Header = styled.div`
   width: 100%;
   height: 3rem;
   background-color: var(--popup-new-header);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--popup-new-text);
 `;
 
 const Content = styled.div`
@@ -43,7 +49,7 @@ const Popup = (props: Props) => {
   return (
     <StyledPopup>
       <Window>
-        <Header></Header>
+        <Header>{props.header}</Header>
         <Content></Content>
       </Window>
     </StyledPopup>
