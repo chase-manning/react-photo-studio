@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useSelector } from "react-redux";
 import styled from "styled-components";
 import { selectNewFilePopupOpen } from "../state/actionsSlice";
+import NewFileDetails from "./NewFileDetails";
 import NewFilePresets from "./NewFilePresets";
 import NewFileTab, { NewFileTabType } from "./NewFileTab";
 import newFileTabsSchema from "./newFileTabsSchema";
@@ -48,6 +49,7 @@ const NewFilePopup = () => {
             ))}
           </Header>
           <NewFilePresets />
+          <NewFileDetails />
         </Content>
       }
     />
