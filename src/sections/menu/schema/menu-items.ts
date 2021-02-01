@@ -22,6 +22,7 @@ export type ItemType = {
   action?: () => void;
   macShortcut?: string;
   windowsShortcut?: string;
+  disabled?: boolean;
 };
 
 export const menuItems: ItemType[] = [
