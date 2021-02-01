@@ -1,5 +1,7 @@
 import React, { useRef, useState } from "react";
+import { useDispatch } from "react-redux";
 import styled from "styled-components";
+import { requestFeature } from "../state/featureSlice";
 
 const StyledFileUploads = styled.div``;
 
@@ -8,17 +10,16 @@ const FileInput = styled.input`
 `;
 
 const FileUpload = () => {
-  const [image, setImage] = useState("");
+  const dispatch = useDispatch();
   const inputFile = useRef<HTMLInputElement>(null);
 
   const handleFileUpload = (e: any) => {
     const { files } = e.target;
     if (files && files.length) {
       const filename = files[0].name;
-
       var parts = filename.split(".");
       const fileType = parts[parts.length - 1];
-      console.log("fileType", fileType); //ex: zip, rar, jpg, svg etc.
+      dispatch(requestFeature("Menu/File/Open/" + fileType));
     }
   };
 
@@ -29,7 +30,6 @@ const FileUpload = () => {
   return (
     <StyledFileUploads>
       <FileInput
-        // accept=".zip,.rar"
         ref={inputFile}
         onChange={(e) => handleFileUpload(e)}
         type="file"
