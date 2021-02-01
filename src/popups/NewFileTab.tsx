@@ -7,8 +7,8 @@ type TabProps = {
 
 const Tab = styled.button`
   position: relative;
-  font-size: 1.4rem;
-  margin: 2rem 1rem;
+  font-size: 1.3rem;
+  margin: 1.7rem 1rem 1.6rem 1rem;
   cursor: pointer;
 
   color: ${(props: TabProps) =>
@@ -22,7 +22,7 @@ const Underline = styled.div`
   position: absolute;
   left: 0;
   width: 100%;
-  bottom: -2rem;
+  bottom: -1.8rem;
   height: 2px;
   background-color: var(--white);
   border-radius: 1px;
