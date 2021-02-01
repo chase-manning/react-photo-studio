@@ -9,7 +9,7 @@ const Tab = styled.div`
   position: relative;
   color: ${(props: TabProps) =>
     props.active ? "var(--white)" : "var(--new-file-tab-text)"};
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   padding: 2rem 1rem;
 `;
 
