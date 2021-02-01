@@ -38,6 +38,11 @@ const Header = styled.div`
 const Content = styled.div`
   width: 100%;
   flex: 1;
+  border-right: solid 1px var(--popup-new-border);
+  border-left: solid 1px var(--popup-new-border);
+  border-bottom: solid 1px var(--popup-new-border);
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
 `;
 
 type Props = {
