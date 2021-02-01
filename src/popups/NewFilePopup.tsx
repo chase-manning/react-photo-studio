@@ -49,6 +49,7 @@ const Header = styled.div`
   width: 100%;
   display: flex;
   border-bottom: solid 2px var(--menu-border);
+  padding-left: 1.4rem;
 `;
 
 const NewFilePopup = () => {
