@@ -14,8 +14,6 @@ const StyledPopup = styled.div`
 `;
 
 const Window = styled.div`
-  max-width: 70%;
-  height: 50%;
   background-color: var(--popup-new-bg);
   border-radius: 10px;
   overflow: hidden;
@@ -104,7 +102,7 @@ const Popup = (props: Props) => {
         <Header onMouseDown={() => setState({ ...state, grabbing: true })}>
           {props.header}
         </Header>
-        <Content></Content>
+        <Content>{props.content}</Content>
       </Window>
       {state.grabbing && (
         <EventHander
