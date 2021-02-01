@@ -2,8 +2,8 @@ import React from "react";
 import styled from "styled-components";
 
 const Details = styled.div`
-  height: 30rem;
-  width: 10rem;
+  height: 60rem;
+  width: 30rem;
 `;
 
 const NewFileDetails = () => {

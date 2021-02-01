@@ -8,13 +8,20 @@ import NewFileTab, { NewFileTabType } from "./NewFileTab";
 import newFileTabsSchema from "./newFileTabsSchema";
 import Popup from "./Popup";
 
-const Content = styled.div``;
+const Content = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
 
 const Header = styled.div`
   width: 100%;
   display: flex;
   border-bottom: solid 2px var(--menu-border);
   padding-left: 1.4rem;
+`;
+
+const Main = styled.div`
+  display: flex;
 `;
 
 const NewFilePopup = () => {
@@ -45,8 +52,10 @@ const NewFilePopup = () => {
               />
             ))}
           </Header>
-          <NewFilePresets />
-          <NewFileDetails />
+          <Main>
+            <NewFilePresets />
+            <NewFileDetails />
+          </Main>
         </Content>
       }
     />

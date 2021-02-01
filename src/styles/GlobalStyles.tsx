@@ -39,6 +39,7 @@ const GlobalStyle = createGlobalStyle`
         --popup-new-text: #4c4849;
         --popup-new-border: #464646;
         --new-file-tab-text: #b9b9ba;
+        --popup-new-inner-bg: #252525;
     }
   
     * {
