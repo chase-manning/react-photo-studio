@@ -18,10 +18,6 @@ export const file: ItemType = {
           action: () => requestFeature("Menu/File/Open..."),
         },
         {
-          name: "Browse in Bridge...",
-          action: () => requestFeature("Menu/File/Browse in Bridge..."),
-        },
-        {
           name: "Open as Smart Object...",
           action: () => requestFeature("Menu/File/Open as Smart Object..."),
         },
