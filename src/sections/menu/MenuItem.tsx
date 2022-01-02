@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import styled from "styled-components";
+
 import ContextMenu, { Position } from "../../shared/ContextMenu";
 import { ItemType } from "./schema/menu-items";
 
@@ -54,11 +55,11 @@ const MenuItem = (props: Props) => {
       </MenuItemButton>
       {props.menuItem.itemSets && (
         <ContextMenu
+          squareTop
           open={open}
           close={() => setOpen(false)}
           itemSets={props.menuItem.itemSets}
           position={Position.BOTTOM_LEFT}
-          squareTop={true}
         />
       )}
     </StyledMenuItem>
