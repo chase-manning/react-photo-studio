@@ -7,7 +7,7 @@ const Details = styled.div`
 `;
 
 const NewFileDetails = () => {
-  return <Details></Details>;
+  return <Details>meow</Details>;
 };
 
 export default NewFileDetails;
