@@ -112,16 +112,16 @@ const Colors = (props: Props) => {
       )}
 
       <Squares>
-        {!props.showButtons && <Selection primary={true} />}
+        {!props.showButtons && <Selection primary />}
         <SecondarySquare
           onClick={() =>
-            dispatch(requestFeature(props.parent + "/Set Secondary Color"))
+            dispatch(requestFeature(`${props.parent}/Set Secondary Color`))
           }
           color={secondaryColor}
         />
         <PrimarySqaure
           onClick={() =>
-            dispatch(requestFeature(props.parent + "/Set Primary Color"))
+            dispatch(requestFeature(`${props.parent}/Set Primary Color`))
           }
           color={primaryColor}
         />
