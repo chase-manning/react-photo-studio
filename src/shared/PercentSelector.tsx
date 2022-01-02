@@ -50,13 +50,13 @@ const PercentSelector = (props: Props) => {
         scrubCursor
         onClick={() => dispatch(requestFeature("Percent Selector/Label Scrub"))}
       >
-        {props.label + ":"}
+        {`${props.label}:`}
       </Label>
       <InputContainer>
         <Input
           onClick={() => dispatch(requestFeature("Percent Selector/Text Edit"))}
         >
-          {props.value + "%"}
+          {`${props.value}%`}
         </Input>
         <Button
           onClick={() => dispatch(requestFeature("Percent Selector/Dropdown"))}
