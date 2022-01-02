@@ -19,7 +19,7 @@ const ColorWindow = () => {
   return (
     <StyledColorWindow>
       <ColorContainer>
-        <Colors parent={"Windows/Color"} showButtons={false} />
+        <Colors parent="Windows/Color" showButtons={false} />
       </ColorContainer>
       <ColorPicker />
       <HuePicker />
