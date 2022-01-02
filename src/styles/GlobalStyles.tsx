@@ -57,8 +57,6 @@ const GlobalStyle = createGlobalStyle`
     }
   `;
 
-function GlobalStyles() {
-  return <GlobalStyle />;
-}
+const GlobalStyles = () => <GlobalStyle />;
 
 export default GlobalStyles;
