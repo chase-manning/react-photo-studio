@@ -120,7 +120,7 @@ const Tabs = (props: Props) => {
             onClick={() => {
               if (tab.implemented) setActiveIndex(index);
               else
-                dispatch(requestFeature("Windows/" + props.tabs[index].label));
+                dispatch(requestFeature(`Windows/${props.tabs[index].label}`));
             }}
             active={index === activeIndex}
             onDoubleClick={() =>
