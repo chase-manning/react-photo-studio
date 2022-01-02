@@ -29,7 +29,7 @@ const BrushEventHandler = () => {
   const color = useSelector(selectPrimaryColor);
   const drawing = useSelector(selectCursorDown);
   const canvasPosition = useSelector(selectCanvasPosition);
-  const circleColor = Number.parseInt("0x" + color.substring(1, color.length));
+  const circleColor = parseInt(`0x${color.substring(1, color.length)}`, 16);
 
   return (
     <StyledBrush
@@ -60,7 +60,6 @@ const BrushEventHandler = () => {
       onMouseUp={() => {
         dispatch(mouseUp());
       }}
-      onClick={() => {}}
     />
   );
 };
