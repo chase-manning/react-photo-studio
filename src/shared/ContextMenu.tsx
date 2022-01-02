@@ -16,13 +16,13 @@ const StyledContextMenu = styled.div`
   position: absolute;
   left: ${(props: StyledContextMenuProps) => {
     if (props.position === Position.BOTTOM_LEFT) return "0";
-    else if (props.position === Position.TOP_RIGHT) return "100%";
-    else throw new Error("Position Not Supported");
+    if (props.position === Position.TOP_RIGHT) return "100%";
+    throw new Error("Position Not Supported");
   }};
   top: ${(props: StyledContextMenuProps) => {
     if (props.position === Position.BOTTOM_LEFT) return "100%";
-    else if (props.position === Position.TOP_RIGHT) return "0";
-    else throw new Error("Position Not Supported");
+    if (props.position === Position.TOP_RIGHT) return "0";
+    throw new Error("Position Not Supported");
   }};
 `;
 
