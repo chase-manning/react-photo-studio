@@ -31,7 +31,7 @@ const Selected = styled.div`
   flex: 1;
   color: var(--input-text);
   padding: 0.2rem 0.7rem 0.2rem 0;
-  width: ${(props: SelectedProps) => props.width + "rem"};
+  width: ${(props: SelectedProps) => `${props.width}rem`};
 `;
 
 const Button = styled.button`
@@ -60,7 +60,7 @@ const Dropdown = (props: Props) => {
 
   return (
     <StyledDropdown>
-      {props.label && <Label>{props.label + ":"}</Label>}
+      {props.label && <Label>{`${props.label}:`}</Label>}
       <SelectedContainer>
         {props.icon && <Icon src={props.icon} alt="icon" />}
         <Selected width={width}>{props.selected}</Selected>
