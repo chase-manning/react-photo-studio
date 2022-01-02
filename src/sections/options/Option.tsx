@@ -78,11 +78,13 @@ const Option = (props: Props) => {
       {props.option.option === OptionOption.MODE && (
         <Dropdown
           label="Mode"
+          // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
           selected={getBlendingModeText(props.option.blendingMode!)}
           options={["Linear Dodge (Add)"]}
         />
       )}
       {props.option.option === OptionOption.OPACITY && (
+        // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
         <PercentSelector label="Opacity" value={props.option.value!} />
       )}
       {props.option.option === OptionOption.PRESSURE_FOR_OPACITY && (
@@ -97,6 +99,7 @@ const Option = (props: Props) => {
         </Button>
       )}
       {props.option.option === OptionOption.FLOW && (
+        // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
         <PercentSelector label="Flow" value={props.option.value!} />
       )}
       {props.option.option === OptionOption.AIRBRUSH && (
@@ -109,6 +112,7 @@ const Option = (props: Props) => {
         </Button>
       )}
       {props.option.option === OptionOption.SMOOTHING && (
+        // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
         <PercentSelector label="Smoothing" value={props.option.value!} />
       )}
       {props.option.option === OptionOption.SMOOTHING_OPTIONS && (
@@ -124,6 +128,7 @@ const Option = (props: Props) => {
         </Button>
       )}
       {props.option.option === OptionOption.ANGLE && (
+        // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
         <AngleSelector value={props.option.value!} />
       )}
       {props.option.option === OptionOption.PRESSURE_FOR_SIZE && (
