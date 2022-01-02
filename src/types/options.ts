@@ -28,7 +28,7 @@ export type OptionSectionType = {
   options: OptionType[];
 };
 
-export const getOptionName = (option: OptionOption) => {
+export const getOptionName = (option: OptionOption): string => {
   switch (option) {
     case OptionOption.PRESET:
       return "Preset";
