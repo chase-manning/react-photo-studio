@@ -1,10 +1,11 @@
 import React, { useState } from "react";
+import { useDispatch } from "react-redux";
 import styled from "styled-components";
+
 import Expandable from "../../shared/Expandable";
 import Tabs, { TabType } from "../../shared/Tabs";
 import windows from "./windowSchema";
 import Window from "./Window";
-import { useDispatch } from "react-redux";
 import { requestFeature } from "../../state/featureSlice";
 
 const StyledWindows = styled.div`
@@ -37,15 +38,15 @@ const Windows = () => {
   return (
     <StyledWindows>
       <Expandable
-        open={true}
-        right={true}
+        open
+        right
         toggle={() => dispatch(requestFeature("Windows/Expandable"))}
       />
       {windows.map((window: string[], index: number) => {
         const tabs: TabType[] = [];
         window.forEach((label: string) =>
           tabs.push({
-            label: label,
+            label,
             content: <Window window={label} />,
             implemented: isImplemented(label),
           })
@@ -54,7 +55,7 @@ const Windows = () => {
           <Tabs
             key={index}
             tabs={tabs}
-            height={heights[index] + "%"}
+            height={`${heights[index]}%`}
             bottom={index === windows.length - 1}
           />
         );
