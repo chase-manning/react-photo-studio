@@ -1,5 +1,7 @@
 import React from "react";
 import styled from "styled-components";
+import { useDispatch, useSelector } from "react-redux";
+
 import lock from "../../assets/svgs/layers/lock.svg";
 import PercentSelector from "../../shared/PercentSelector";
 import Button from "../../styles/Button";
@@ -9,7 +11,6 @@ import transparent from "../../assets/pngs/transparent.png";
 import brush from "../../assets/svgs/tools/brush.svg";
 import move from "../../assets/svgs/tools/move.svg";
 import artboardNesting from "../../assets/pngs/artboard-nesting.png";
-import { useDispatch, useSelector } from "react-redux";
 import { selectActiveLayer } from "../../state/layersSlice";
 import Disable from "../../styles/Disabled";
 import { requestFeature } from "../../state/featureSlice";
@@ -87,7 +88,7 @@ const LayerLock = () => {
           <ButtonAsset src={lock} alt="lock" />
         </Button>
       </Buttons>
-      <PercentSelector label={"Fill"} value={100}></PercentSelector>
+      <PercentSelector label="Fill" value={100} />
       {!enabled && <Disable />}
     </Lock>
   );
