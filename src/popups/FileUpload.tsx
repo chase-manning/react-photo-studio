@@ -23,9 +23,9 @@ const FileUpload = () => {
     const { files } = e.target;
     if (files && files.length) {
       const filename = files[0].name;
-      var parts = filename.split(".");
+      const parts = filename.split(".");
       const fileType = parts[parts.length - 1];
-      dispatch(requestFeature("Menu/File/Open/" + fileType));
+      dispatch(requestFeature(`Menu/File/Open/${fileType}`));
     }
     dispatch(fileOpened());
   };
