@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
+import { useDispatch } from "react-redux";
+
 import Dropdown from "../../shared/Dropdown";
 import Button from "../../styles/Button";
 
@@ -11,7 +13,6 @@ import smartObject from "../../assets/pngs/smart-object.png";
 import layerFiltersOn from "../../assets/pngs/layer-filters-on.png";
 import layerFiltersOff from "../../assets/pngs/layer-filters-off.png";
 import search from "../../assets/svgs/navigation/search.svg";
-import { useDispatch } from "react-redux";
 import { requestFeature } from "../../state/featureSlice";
 
 const Filters = styled.div`
@@ -47,7 +48,7 @@ const LayerFilters = () => {
 
   return (
     <Filters>
-      <Dropdown selected={"Kind"} options={["meow meo"]} icon={search} />
+      <Dropdown selected="Kind" options={["meow meo"]} icon={search} />
       <Buttons>
         <Button
           onClick={() =>
