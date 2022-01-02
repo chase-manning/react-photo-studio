@@ -1,0 +1,110 @@
+{
+  "env": {
+    "browser": true,
+    "es6": true
+  },
+  "extends": [
+    "airbnb",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:prettier/recommended",
+    "plugin:react/recommended",
+    "plugin:import/typescript"
+  ],
+  "globals": {
+    "Atomics": "readonly",
+    "SharedArrayBuffer": "readonly"
+  },
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaVersion": 2018,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "jsx": true
+  },
+  "plugins": ["@typescript-eslint", "prettier", "import", "jsx-a11y", "react", "react-hooks"],
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "extensions": [".js", ".jsx", ".ts", ".tsx"]
+      }
+    },
+    "react": {
+      "version": "detect"
+    }
+  },
+  "rules": {
+    "class-methods-use-this": "off",
+    "import/no-unresolved": "off",
+    "import/no-extraneous-dependencies": "off",
+    "camelcase": "off",
+    "@typescript-eslint/ban-ts-ignore": "off",
+    "@typescript-eslint/camelcase": "off",
+    "@typescript-eslint/explicit-function-return-type": "off",
+    "@typescript-eslint/no-explicit-any": "off",
+    "@typescript-eslint/no-this-alias": "off",
+    "@typescript-eslint/no-unused-vars": "off",
+    "consistent-return": "off",
+    "import/extensions": [
+      "error",
+      "ignorePackages",
+      {
+        "js": "never",
+        "jsx": "never",
+        "ts": "never",
+        "tsx": "never"
+      }
+    ],
+    "import/prefer-default-export": "off",
+    "import/no-cycle": "off",
+    "no-alert": "off",
+    "no-bitwise": "off",
+    "no-case-declarations": "off",
+    "no-cond-assign": "off",
+    "no-console": "off",
+    "no-irregular-whitespace": "off",
+    "no-loop-func": "off",
+    "no-nested-ternary": "off",
+    "no-plusplus": "off",
+    "no-param-reassign": "off",
+    "no-return-assign": "off",
+    "no-shadow": "off",
+    "no-use-before-define": "off",
+    "no-underscore-dangle": "off",
+    "no-unused-expressions": "off",
+    "no-useless-return": "off",
+    "prettier/prettier": ["error", { "endOfLine": "auto" }],
+    "import/first": "error",
+    "import/no-amd": "error",
+    "import/no-webpack-loader-syntax": "error",
+    "react/destructuring-assignment": "off",
+    "react/forbid-prop-types": "off",
+    "react/jsx-curly-newline": "off",
+    "react/jsx-filename-extension": [
+      1,
+      {
+        "extensions": [".js", ".jsx", ".ts", ".tsx"]
+      }
+    ],
+    "react/jsx-indent": "off",
+    "react/jsx-indent-props": "off",
+    "react/jsx-key": "off",
+    "react/jsx-one-expression-per-line": "off",
+    "react/jsx-props-no-spreading": "off",
+    "react/no-access-state-in-setstate": "off",
+    "react/no-array-index-key": "off",
+    "react/no-unescaped-entities": "off",
+    "react/prop-types": "off",
+    "react/require-default-props": "off",
+    "react/function-component-definition": [
+      2,
+      {
+        "namedComponents": "arrow-function",
+        "unnamedComponents": "arrow-function"
+      }
+    ],
+    "react/react-in-jsx-scope": "off"
+  }
+}
