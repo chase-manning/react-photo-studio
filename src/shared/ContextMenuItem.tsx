@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import styled from "styled-components";
+import { useDispatch } from "react-redux";
+
 import { ItemType } from "../sections/menu/schema/menu-items";
 import { ReactComponent as ArrowIcon } from "../assets/svgs/navigation/triangle-right.svg";
 import ContextMenu from "./ContextMenu";
-import { useDispatch } from "react-redux";
 import Disable from "../styles/Disabled";
 
 const StyledContextMenuItem = styled.div`
@@ -64,13 +65,13 @@ const ContextMenuItem = (props: Props) => {
       </Button>
       {props.menuItem.itemSets && (
         <ContextMenu
+          subMenu
           open={open}
           itemSets={props.menuItem.itemSets}
           close={() => {
             setOpen(false);
             props.close();
           }}
-          subMenu={true}
         />
       )}
       {props.menuItem.disabled && <Disable />}
