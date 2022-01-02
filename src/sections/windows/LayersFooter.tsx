@@ -1,5 +1,7 @@
 import React from "react";
+import { useDispatch, useSelector } from "react-redux";
 import styled from "styled-components";
+
 import Button from "../../styles/Button";
 import ContextIndicator from "../../styles/ContextIndicator";
 
@@ -10,7 +12,6 @@ import mask from "../../assets/pngs/mask.png";
 import folder from "../../assets/svgs/layers/folder.svg";
 import newLayer from "../../assets/pngs/new.png";
 import trash from "../../assets/svgs/layers/trash.svg";
-import { useDispatch, useSelector } from "react-redux";
 import {
   selectActiveLayer,
   selectSelectedLayers,
