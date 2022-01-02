@@ -1,7 +1,7 @@
 {
   "name": "photoshop-online",
   "version": "0.2.0",
-  "private": true,
+  "private": false,
   "dependencies": {
     "@reduxjs/toolkit": "^1.5.0",
     "@testing-library/jest-dom": "^5.11.4",
