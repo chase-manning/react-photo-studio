@@ -1,5 +1,7 @@
 import React, { useState } from "react";
+import { useDispatch } from "react-redux";
 import styled from "styled-components";
+
 import PercentSelector from "../../shared/PercentSelector";
 import Button from "../../styles/Button";
 import BrushOption from "./BrushOption";
@@ -16,7 +18,6 @@ import pressureForSize from "../../assets/options/pressure-for-size.png";
 import symmetry from "../../assets/options/symmetry.png";
 import { getOptionName, OptionOption, OptionType } from "../../types/options";
 import ContextIndicator from "../../styles/ContextIndicator";
-import { useDispatch } from "react-redux";
 import { requestFeature } from "../../state/featureSlice";
 
 const StyledOption = styled.div`
@@ -52,9 +53,7 @@ const Option = (props: Props) => {
             () =>
               dispatch(
                 requestFeature(
-                  "Options/" +
-                    getOptionName(props.option.option) +
-                    "/Hover Menu"
+                  `Options/${getOptionName(props.option.option)}/Hover Menu`
                 )
               ),
             2000
@@ -70,57 +69,57 @@ const Option = (props: Props) => {
       {props.option.option === OptionOption.SETTINGS && (
         <Button
           onClick={() => dispatch(requestFeature("Menu/Window/Brush Settings"))}
-          selected={props.option.enabled!!}
-          width={"auto"}
+          selected={props.option.enabled}
+          width="auto"
         >
           <Image src={brushSettings} alt="brush settings" />
         </Button>
       )}
       {props.option.option === OptionOption.MODE && (
         <Dropdown
-          label={"Mode"}
+          label="Mode"
           selected={getBlendingModeText(props.option.blendingMode!)}
           options={["Linear Dodge (Add)"]}
         />
       )}
       {props.option.option === OptionOption.OPACITY && (
-        <PercentSelector label={"Opacity"} value={props.option.value!} />
+        <PercentSelector label="Opacity" value={props.option.value!} />
       )}
       {props.option.option === OptionOption.PRESSURE_FOR_OPACITY && (
         <Button
           onClick={() =>
             dispatch(requestFeature("Options/Brush/Pressure for Opacity"))
           }
-          selected={props.option.enabled!!}
-          width={"auto"}
+          selected={props.option.enabled}
+          width="auto"
         >
           <Image src={pressureForOpacity} alt="pressure for opacity" />
         </Button>
       )}
       {props.option.option === OptionOption.FLOW && (
-        <PercentSelector label={"Flow"} value={props.option.value!} />
+        <PercentSelector label="Flow" value={props.option.value!} />
       )}
       {props.option.option === OptionOption.AIRBRUSH && (
         <Button
           onClick={() => dispatch(requestFeature("Options/Brush/Airbrush"))}
-          selected={props.option.enabled!!}
-          width={"auto"}
+          selected={props.option.enabled}
+          width="auto"
         >
           <Image src={airbrush} alt="airbrush" />
         </Button>
       )}
       {props.option.option === OptionOption.SMOOTHING && (
-        <PercentSelector label={"Smoothing"} value={props.option.value!} />
+        <PercentSelector label="Smoothing" value={props.option.value!} />
       )}
       {props.option.option === OptionOption.SMOOTHING_OPTIONS && (
         <Button
           onClick={() =>
             dispatch(requestFeature("Options/Brush/Smoothing Options"))
           }
-          selected={props.option.enabled!!}
-          width={"auto"}
+          selected={props.option.enabled}
+          width="auto"
         >
-          <Image src={settings} small alt="settings" />
+          <Image small src={settings} alt="settings" />
           <ContextIndicator />
         </Button>
       )}
@@ -132,8 +131,8 @@ const Option = (props: Props) => {
           onClick={() =>
             dispatch(requestFeature("Options/Brush/Pressure for Size"))
           }
-          selected={props.option.enabled!!}
-          width={"auto"}
+          selected={props.option.enabled}
+          width="auto"
         >
           <Image src={pressureForSize} alt="pressure for size" />
         </Button>
@@ -141,8 +140,8 @@ const Option = (props: Props) => {
       {props.option.option === OptionOption.SYMMETRY && (
         <Button
           onClick={() => dispatch(requestFeature("Options/Brush/Symmetry"))}
-          selected={props.option.enabled!!}
-          width={"auto"}
+          selected={props.option.enabled}
+          width="auto"
         >
           <Image src={symmetry} alt="symmetry" />
           <ContextIndicator />
