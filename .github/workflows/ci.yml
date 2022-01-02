@@ -1,0 +1,27 @@
+name: Build on PR
+"on": pull_request
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Installing Dependencies
+        run: yarn
+      - name: Building App
+        run: yarn run build
+  preview_deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Installing Dependencies
+        run: yarn
+      - name: Building App
+        run: yarn run build
+      - name: Deploy to Preview Channel
+        uses: FirebaseExtended/action-hosting-deploy@v0
+        with:
+          repoToken: "${{ secrets.GITHUB_TOKEN }}"
+          firebaseServiceAccount: "${{ secrets.FIREBASE_SERVICE_ACCOUNT_PHOTOSHOP_ONLINE_3635D }}"
+          expires: 4d
+          projectId: photoshop-online-3635d

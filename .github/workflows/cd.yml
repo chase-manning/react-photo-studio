@@ -1,0 +1,19 @@
+name: Deploy to Firebase Hosting on merge
+"on":
+  push:
+    branches:
+      - master
+jobs:
+  deploy:
+    needs: [build]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Installing Dependencies
+        run: yarn
+      - name: Building App
+        run: yarn run build
+      - name: Install Firebase Tools
+        run: npm install -g firebase-tools
+      - name: Deploying to Firebase
+        run: firebase deploy --token "${{ secrets.FIREBASE_SECRET }}"
