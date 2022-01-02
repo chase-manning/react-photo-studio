@@ -1,6 +1,6 @@
-import { ActionType } from "../state/actionSchema";
-
 import { isMacOs } from "react-device-detect";
+
+import { ActionType } from "../state/actionSchema";
 
 export const DeviceShortcut = (shortcut: ActionType) =>
   isMacOs ? shortcut.macShortcut : shortcut.windowsShortcut;
