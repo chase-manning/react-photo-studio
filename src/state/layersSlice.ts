@@ -33,15 +33,15 @@ export const layersSlice = createSlice({
   initialState,
   reducers: {
     toggleLayerVisibility: (state, action: PayloadAction<number>) => {
-      state.schema[action.payload].visible = !state.schema[action.payload]
-        .visible;
+      state.schema[action.payload].visible =
+        !state.schema[action.payload].visible;
     },
     setActiveLayer: (state, action: PayloadAction<string>) => {
       state.schema.forEach((layer: LayerType) => {
         layer.active = false;
         layer.selected = false;
       });
-      let layer = state.schema.filter(
+      const layer = state.schema.filter(
         (layer: LayerType) => layer.id === action.payload
       )[0];
       layer.active = true;
