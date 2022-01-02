@@ -27,11 +27,8 @@ export const featureSlice = createSlice({
   },
 });
 
-export const {
-  requestFeature,
-  featureRequested,
-  clearFeatureRequest,
-} = featureSlice.actions;
+export const { requestFeature, featureRequested, clearFeatureRequest } =
+  featureSlice.actions;
 
 export const selectFeatureRequests = (state: RootState) =>
   state.features.requested;
