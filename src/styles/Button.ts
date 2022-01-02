@@ -29,8 +29,8 @@ const Button = styled.button`
   :hover {
     background-color: ${(props: Props) => {
       if (props.disabled) return "var(--panel)";
-      else if (props.selected) return "var(--selected)";
-      else return "var(--hover-bg)";
+      if (props.selected) return "var(--selected)";
+      return "var(--hover-bg)";
     }};
     border: ${(props: Props) =>
       props.disabled ? "solid 1px none" : "solid 1px var(--hover-border)"};
