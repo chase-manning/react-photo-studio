@@ -43,13 +43,13 @@ const Tools = () => {
         toggle={() => dispatch(requestFeature("Tools/Expand"))}
       />
       <Container>
-        <Handle component={"Tools"} />
+        <Handle component="Tools" />
         <ToolsContainer>
           {tools.map((tool: ToolCollection, index: number) => (
             <Tool key={index} collection={tool} />
           ))}
         </ToolsContainer>
-        <Colors parent={"Tools"} showButtons={true} />
+        <Colors showButtons parent="Tools" />
       </Container>
     </StyledTools>
   );
