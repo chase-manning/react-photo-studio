@@ -37,7 +37,7 @@ type Props = {
 const Expandable = (props: Props) => {
   const arrows = () => {
     if (props.right) return props.open ? ">>" : "<<";
-    else return props.open ? "<<" : ">>";
+    return props.open ? "<<" : ">>";
   };
 
   return (
