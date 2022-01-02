@@ -1,6 +1,7 @@
 import React from "react";
 import { useDispatch } from "react-redux";
 import styled from "styled-components";
+
 import { requestFeature } from "../../state/featureSlice";
 import { OptionType } from "../../types/options";
 
@@ -23,8 +24,8 @@ type BrushProps = {
 };
 
 const Brush = styled.div`
-  height: ${(props: BrushProps) => props.size + "rem"};
-  width: ${(props: BrushProps) => props.size + "rem"};
+  height: ${(props: BrushProps) => `${props.size}rem`};
+  width: ${(props: BrushProps) => `${props.size}rem`};
   border-radius: 50%;
   background-color: var(--white);
 `;
@@ -56,7 +57,7 @@ type Props = {
 
 const BrushOption = (props: Props) => {
   const dispatch = useDispatch();
-  const brushSize = Math.max(1.6 * (props.option.value! / 40), 1);
+  const brushSize = Math.max(1.6 * ((props.option.value || 0) / 40), 1);
 
   return (
     <StyledBrushOption
