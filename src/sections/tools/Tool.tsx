@@ -30,8 +30,7 @@ const Tool = (props: Props) => {
       onMouseEnter={() =>
         setTimer(
           window.setTimeout(
-            () =>
-              dispatch(requestFeature("Tools/" + tool.name + "/Hover Menu")),
+            () => dispatch(requestFeature(`Tools/${tool.name}/Hover Menu`)),
             2000
           )
         )
@@ -41,12 +40,12 @@ const Tool = (props: Props) => {
       <Button
         onClick={() => {
           if (tool.implemented) dispatch(setActiveTool(tool.option));
-          else dispatch(requestFeature("Tools/" + tool.name));
+          else dispatch(requestFeature(`Tools/${tool.name}`));
         }}
         onContextMenu={(event: SyntheticEvent) => {
           event.preventDefault();
           if (props.collection.tools.length === 1) return;
-          dispatch(requestFeature("Tools/" + tool.name + "/Context Menu"));
+          dispatch(requestFeature(`Tools/${tool.name}/Context Menu`));
         }}
         selected={props.collection.active}
       >
