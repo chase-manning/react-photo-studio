@@ -79,8 +79,8 @@ interface Props {
   option: ToolOption;
 }
 
-const ToolIcon = (props: Props) => {
-  return <StyledToolIcon src={GetIcon(props.option)} alt="tool" />;
+const ToolIcon = ({ option }: Props) => {
+  return <StyledToolIcon src={GetIcon(option)} alt="tool" />;
 };
 
 export default ToolIcon;

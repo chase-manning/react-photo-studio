@@ -52,17 +52,17 @@ interface Props {
   icon?: string;
 }
 
-const Dropdown = (props: Props) => {
+const Dropdown = ({ label, selected, options, icon }: Props) => {
   const dispatch = useDispatch();
-  const optionLenghts = props.options.map((option: string) => option.length);
-  const width = Math.max(...optionLenghts) * 0.57 + (props.icon ? 1.3 : 0);
+  const optionLenghts = options.map((option: string) => option.length);
+  const width = Math.max(...optionLenghts) * 0.57 + (icon ? 1.3 : 0);
 
   return (
     <StyledDropdown>
-      {props.label && <Label>{`${props.label}:`}</Label>}
+      {label && <Label>{`${label}:`}</Label>}
       <SelectedContainer>
-        {props.icon && <Icon src={props.icon} alt="icon" />}
-        <Selected width={width}>{props.selected}</Selected>
+        {icon && <Icon src={icon} alt="icon" />}
+        <Selected width={width}>{selected}</Selected>
         <Button onClick={() => dispatch(requestFeature("Dropdown"))}>
           <Arrow>{">"}</Arrow>
         </Button>

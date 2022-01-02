@@ -75,20 +75,27 @@ interface Props {
   squareTop?: boolean;
 }
 
-const ContextMenu = (props: Props) => {
-  if (!props.open) return null;
+const ContextMenu = ({
+  open,
+  close,
+  itemSets,
+  subMenu,
+  position,
+  squareTop,
+}: Props) => {
+  if (!open) return null;
 
   return (
-    <StyledContextMenu position={props.position || Position.TOP_RIGHT}>
-      {!props.subMenu && <Exit onClick={() => props.close()} />}
-      <Menu squareTop={!!props.squareTop}>
-        {props.itemSets.map((itemSet: ItemSetType, index: number) => (
-          <ItemSet key={index} last={index === props.itemSets.length - 1}>
+    <StyledContextMenu position={position || Position.TOP_RIGHT}>
+      {!subMenu && <Exit onClick={() => close()} />}
+      <Menu squareTop={!!squareTop}>
+        {itemSets.map((itemSet: ItemSetType, index: number) => (
+          <ItemSet key={index} last={index === itemSets.length - 1}>
             {itemSet.items.map((item: ItemType) => (
               <ContextMenuItem
                 key={item.name}
                 menuItem={item}
-                close={() => props.close()}
+                close={() => close()}
               />
             ))}
           </ItemSet>

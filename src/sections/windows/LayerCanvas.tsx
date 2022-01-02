@@ -60,10 +60,10 @@ interface Props {
   layer: LayerType;
 }
 
-const LayerCanvas = (props: Props) => {
+const LayerCanvas = ({ layer }: Props) => {
   return (
-    <Outline active={props.layer.active}>
-      {props.layer.active && (
+    <Outline active={layer.active}>
+      {layer.active && (
         <>
           <BreakLeft />
           <BreakTop />

@@ -5,8 +5,8 @@ interface Props {
   window: string;
 }
 
-const Window = (props: Props) => {
-  switch (props.window) {
+const Window = ({ window }: Props) => {
+  switch (window) {
     case "Color":
       return <ColorWindow />;
     case "Swatches":

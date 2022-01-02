@@ -73,7 +73,7 @@ interface Props {
   content: JSX.Element;
 }
 
-const Popup = (props: Props) => {
+const Popup = ({ open, header, content }: Props) => {
   const [state, setState] = useState(new State());
 
   const movementTransform = {
@@ -92,7 +92,7 @@ const Popup = (props: Props) => {
       });
   };
 
-  if (!props.open) return null;
+  if (!open) return null;
 
   return (
     <StyledPopup
@@ -102,9 +102,9 @@ const Popup = (props: Props) => {
     >
       <Window>
         <Header onMouseDown={() => setState({ ...state, grabbing: true })}>
-          {props.header}
+          {header}
         </Header>
-        <Content>{props.content}</Content>
+        <Content>{content}</Content>
       </Window>
       {state.grabbing && (
         <EventHander

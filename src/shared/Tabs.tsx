@@ -107,20 +107,19 @@ interface Props {
   bottom: boolean;
 }
 
-const Tabs = (props: Props) => {
+const Tabs = ({ tabs, height, bottom }: Props) => {
   const dispatch = useDispatch();
   const [activeIndex, setActiveIndex] = useState(0);
 
   return (
-    <StyledTabs height={props.height} bottom={props.bottom}>
+    <StyledTabs height={height} bottom={bottom}>
       <Header>
-        {props.tabs.map((tab: TabType, index: number) => (
+        {tabs.map((tab: TabType, index: number) => (
           <HeaderItem
             key={tab.label}
             onClick={() => {
               if (tab.implemented) setActiveIndex(index);
-              else
-                dispatch(requestFeature(`Windows/${props.tabs[index].label}`));
+              else dispatch(requestFeature(`Windows/${tabs[index].label}`));
             }}
             active={index === activeIndex}
             onDoubleClick={() =>
@@ -140,8 +139,8 @@ const Tabs = (props: Props) => {
           </Menu>
         </MenuContainer>
       </Header>
-      {props.tabs[activeIndex].content}
-      {!props.bottom && (
+      {tabs[activeIndex].content}
+      {!bottom && (
         <WindowResize
           onClick={() => dispatch(requestFeature("Windows/Tabs/Resize"))}
         />

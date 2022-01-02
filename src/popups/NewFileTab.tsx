@@ -37,11 +37,11 @@ interface Props {
   select: () => void;
 }
 
-const NewFileTab = (props: Props) => {
+const NewFileTab = ({ tab, select }: Props) => {
   return (
-    <Tab onClick={() => props.select()} active={props.tab.active}>
-      {props.tab.label}
-      {props.tab.active && <Underline />}
+    <Tab onClick={() => select()} active={tab.active}>
+      {tab.label}
+      {tab.active && <Underline />}
     </Tab>
   );
 };

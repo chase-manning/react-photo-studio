@@ -38,7 +38,7 @@ interface Props {
   menuItem: ItemType;
 }
 
-const MenuItem = (props: Props) => {
+const MenuItem = ({ menuItem }: Props) => {
   const dispatch = useDispatch();
   const [open, setOpen] = useState(false);
 
@@ -46,19 +46,19 @@ const MenuItem = (props: Props) => {
     <StyledMenuItem>
       <MenuItemButton
         onClick={() => {
-          if (props.menuItem.action) dispatch(props.menuItem.action());
+          if (menuItem.action) dispatch(menuItem.action());
           else setOpen(true);
         }}
         open={open}
       >
-        {props.menuItem.name}
+        {menuItem.name}
       </MenuItemButton>
-      {props.menuItem.itemSets && (
+      {menuItem.itemSets && (
         <ContextMenu
           squareTop
           open={open}
           close={() => setOpen(false)}
-          itemSets={props.menuItem.itemSets}
+          itemSets={menuItem.itemSets}
           position={Position.BOTTOM_LEFT}
         />
       )}

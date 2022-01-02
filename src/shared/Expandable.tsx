@@ -33,16 +33,16 @@ interface Props {
   toggle: () => void;
 }
 
-const Expandable = (props: Props) => {
+const Expandable = ({ open, right, toggle }: Props) => {
   const arrows = () => {
-    if (props.right) return props.open ? ">>" : "<<";
-    return props.open ? "<<" : ">>";
+    if (right) return open ? ">>" : "<<";
+    return open ? "<<" : ">>";
   };
 
   return (
     <StyledExpandable>
-      {props.right && <div />}
-      <ToggleButton onClick={() => props.toggle()}>{arrows()}</ToggleButton>
+      {right && <div />}
+      <ToggleButton onClick={() => toggle()}>{arrows()}</ToggleButton>
     </StyledExpandable>
   );
 };

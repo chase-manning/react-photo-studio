@@ -32,7 +32,7 @@ interface Props {
   value: number;
 }
 
-const AngleSelector = (props: Props) => {
+const AngleSelector = ({ value }: Props) => {
   const dispatch = useDispatch();
 
   return (
@@ -45,7 +45,7 @@ const AngleSelector = (props: Props) => {
       <Input
         onClick={() => dispatch(requestFeature("Angle Selector/Text Edit"))}
       >
-        {`${props.value}°`}
+        {`${value}°`}
       </Input>
     </StyledAngleSelector>
   );

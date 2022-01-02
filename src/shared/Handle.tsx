@@ -34,25 +34,25 @@ interface Props {
   sideways?: boolean;
 }
 
-const Handle = (props: Props) => {
+const Handle = ({ component, sideways }: Props) => {
   const dispatch = useDispatch();
 
   return (
     <StyledHandle
-      onClick={() => dispatch(requestFeature(`${props.component}/Handle`))}
-      sideways={props.sideways}
+      onClick={() => dispatch(requestFeature(`${component}/Handle`))}
+      sideways={sideways}
     >
-      <Lines sideways={props.sideways}>
-        <Line sideways={props.sideways} />
-        <Line sideways={props.sideways} />
-        <Line sideways={props.sideways} />
-        <Line sideways={props.sideways} />
-        <Line sideways={props.sideways} />
-        <Line sideways={props.sideways} />
-        <Line sideways={props.sideways} />
-        <Line sideways={props.sideways} />
-        <Line sideways={props.sideways} />
-        <Line sideways={props.sideways} />
+      <Lines sideways={sideways}>
+        <Line sideways={sideways} />
+        <Line sideways={sideways} />
+        <Line sideways={sideways} />
+        <Line sideways={sideways} />
+        <Line sideways={sideways} />
+        <Line sideways={sideways} />
+        <Line sideways={sideways} />
+        <Line sideways={sideways} />
+        <Line sideways={sideways} />
+        <Line sideways={sideways} />
       </Lines>
     </StyledHandle>
   );

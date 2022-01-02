@@ -18,12 +18,10 @@ interface Props {
   collection: ToolCollection;
 }
 
-const Tool = (props: Props) => {
+const Tool = ({ collection }: Props) => {
   const dispatch = useDispatch();
   const [timer, setTimer] = useState(0);
-  const tool = props.collection.tools.filter(
-    (tool: ToolType) => tool.selected
-  )[0];
+  const tool = collection.tools.filter((tool: ToolType) => tool.selected)[0];
 
   return (
     <StyledTool
@@ -44,13 +42,13 @@ const Tool = (props: Props) => {
         }}
         onContextMenu={(event: SyntheticEvent) => {
           event.preventDefault();
-          if (props.collection.tools.length === 1) return;
+          if (collection.tools.length === 1) return;
           dispatch(requestFeature(`Tools/${tool.name}/Context Menu`));
         }}
-        selected={props.collection.active}
+        selected={collection.active}
       >
         <ToolIcon option={tool.option} />
-        {props.collection.tools.length > 1 && <ContextIndicator />}
+        {collection.tools.length > 1 && <ContextIndicator />}
       </Button>
     </StyledTool>
   );

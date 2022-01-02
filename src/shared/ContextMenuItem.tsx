@@ -43,38 +43,38 @@ interface Props {
   close: () => void;
 }
 
-const ContextMenuItem = (props: Props) => {
+const ContextMenuItem = ({ menuItem, close }: Props) => {
   const dispatch = useDispatch();
   const [open, setOpen] = useState(false);
 
   return (
     <StyledContextMenuItem
       onMouseEnter={() => {
-        if (!props.menuItem.disabled) setOpen(true);
+        if (!menuItem.disabled) setOpen(true);
       }}
       onMouseLeave={() => setOpen(false)}
     >
       <Button
         onClick={() => {
-          if (props.menuItem.action) dispatch(props.menuItem.action());
-          props.close();
+          if (menuItem.action) dispatch(menuItem.action());
+          close();
         }}
       >
-        <ItemText>{props.menuItem.name}</ItemText>
-        <Icon>{props.menuItem.itemSets && <Arrow />}</Icon>
+        <ItemText>{menuItem.name}</ItemText>
+        <Icon>{menuItem.itemSets && <Arrow />}</Icon>
       </Button>
-      {props.menuItem.itemSets && (
+      {menuItem.itemSets && (
         <ContextMenu
           subMenu
           open={open}
-          itemSets={props.menuItem.itemSets}
+          itemSets={menuItem.itemSets}
           close={() => {
             setOpen(false);
-            props.close();
+            close();
           }}
         />
       )}
-      {props.menuItem.disabled && <Disable />}
+      {menuItem.disabled && <Disable />}
     </StyledContextMenuItem>
   );
 };

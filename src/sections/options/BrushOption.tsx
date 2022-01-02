@@ -54,9 +54,9 @@ interface Props {
   option: OptionType;
 }
 
-const BrushOption = (props: Props) => {
+const BrushOption = ({ option }: Props) => {
   const dispatch = useDispatch();
-  const brushSize = Math.max(1.6 * ((props.option.value || 0) / 40), 1);
+  const brushSize = Math.max(1.6 * ((option.value || 0) / 40), 1);
 
   return (
     <StyledBrushOption
@@ -64,7 +64,7 @@ const BrushOption = (props: Props) => {
     >
       <BrushContainer>
         <Brush size={brushSize} />
-        <Label>{props.option.value}</Label>
+        <Label>{option.value}</Label>
       </BrushContainer>
       <Button>
         <Arrow>{">"}</Arrow>

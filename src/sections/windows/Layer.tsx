@@ -80,7 +80,7 @@ interface Props {
   layer: LayerType;
 }
 
-const Layer = (props: Props) => {
+const Layer = ({ layer }: Props) => {
   const dispatch = useDispatch();
   const [grabbing, setGrabbing] = useState(false);
   const [moving, setMoving] = useState(false);
@@ -108,21 +108,21 @@ const Layer = (props: Props) => {
         <Eye src={eye} alt="eye" />
       </Visibility>
       <Content
-        onClick={() => dispatch(setActiveLayer(props.layer.id))}
+        onClick={() => dispatch(setActiveLayer(layer.id))}
         grabbing={grabbing && moving}
-        selected={props.layer.selected}
+        selected={layer.selected}
       >
-        <LayerCanvas layer={props.layer} />
+        <LayerCanvas layer={layer} />
         <LayerName
           onDoubleClick={() =>
             dispatch(requestFeature("Windows/Layers/Layer/ChangeName"))
           }
         >
-          {props.layer.name}
+          {layer.name}
         </LayerName>
       </Content>
-      <LockButton grabbing={grabbing && moving} selected={props.layer.selected}>
-        {props.layer.locked && (
+      <LockButton grabbing={grabbing && moving} selected={layer.selected}>
+        {layer.locked && (
           <Lock
             onClick={() =>
               dispatch(requestFeature("Windows/Layers/Layer/Lock"))
