@@ -1,6 +1,7 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import styled from "styled-components";
+
 import Handle from "../../shared/Handle";
 import { selectOptionSections } from "../../state/toolsSlice";
 import { OptionSectionType, OptionType } from "../../types/options";
@@ -30,7 +31,7 @@ const Options = () => {
 
   return (
     <StyledOptions>
-      <Handle component={"Options"} sideways={true} />
+      <Handle sideways component="Options" />
       {sections.map((section: OptionSectionType, index: number) => (
         <OptionSection key={index}>
           {section.options.map((option: OptionType, index: number) => (
