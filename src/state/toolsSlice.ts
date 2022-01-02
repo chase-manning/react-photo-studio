@@ -82,7 +82,7 @@ export const selectBrushSize = (state: RootState) => {
   const brushOptions = options.filter(
     (option: OptionType) => option.option === OptionOption.BRUSH
   );
-  if (brushOptions.length > 0) return brushOptions[0].value;
+  if (brushOptions.length > 0) return brushOptions[0].value || 0;
   return 0;
 };
 
