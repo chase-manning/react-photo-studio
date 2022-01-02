@@ -1,4 +1,3 @@
-import React from "react";
 import styled from "styled-components";
 import ColorPicker from "../../shared/ColorPicker";
 import Colors from "../../shared/Colors";

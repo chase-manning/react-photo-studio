@@ -1,4 +1,3 @@
-import React from "react";
 import ColorWindow from "./ColorWindow";
 import LayersWindow from "./LayersWindow";
 

@@ -1,4 +1,3 @@
-import React from "react";
 import styled from "styled-components";
 import { ToolOption } from "../../state/toolSchema";
 import move from "../../assets/svgs/tools/move.svg";

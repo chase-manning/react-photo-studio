@@ -1,4 +1,3 @@
-import React from "react";
 import styled from "styled-components";
 import logo from "../../assets/images/photoshop-logo-small.png";
 import { ItemType, menuItems } from "./schema/menu-items";

@@ -1,4 +1,4 @@
-import React, { useEffect, useLayoutEffect, useRef } from "react";
+import { useEffect, useLayoutEffect, useRef } from "react";
 import styled from "styled-components";
 import * as PIXI from "pixi.js";
 import { useDispatch, useSelector } from "react-redux";

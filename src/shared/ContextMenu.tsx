@@ -1,4 +1,3 @@
-import React from "react";
 import styled from "styled-components";
 import { ItemSetType, ItemType } from "../sections/menu/schema/menu-items";
 import ContextMenuItem from "./ContextMenuItem";

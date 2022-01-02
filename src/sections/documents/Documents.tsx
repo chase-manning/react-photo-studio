@@ -1,4 +1,3 @@
-import React from "react";
 import styled from "styled-components";
 import Document from "./Document";
 import DocumentFooter from "./DocumentFooter";
