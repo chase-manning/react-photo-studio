@@ -57,9 +57,13 @@ const pos = { x: 0, y: 0 };
 
 class State {
   grabbing: boolean = false;
+
   init: boolean = false;
+
   start: Position = pos;
+
   transform: Position = pos;
+
   lastTransform: Position = pos;
 }
 
@@ -93,9 +97,7 @@ const Popup = (props: Props) => {
   return (
     <StyledPopup
       style={{
-        transform: `translate(${movementTransform.x + "px"}, ${
-          movementTransform.y + "px"
-        })`,
+        transform: `translate(${movementTransform.x}px, ${movementTransform.y}px)`,
       }}
     >
       <Window>
