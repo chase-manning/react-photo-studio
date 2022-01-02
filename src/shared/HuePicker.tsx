@@ -39,7 +39,7 @@ const HuePicker = () => {
       onClick={() => dispatch(requestFeature("Windows/Color/Hue"))}
     >
       <Colors />
-      <HueIndicator src={hueIndicator} alt={"Hue Indicator"} />
+      <HueIndicator src={hueIndicator} alt="Hue Indicator" />
     </StyledHuePicker>
   );
 };
