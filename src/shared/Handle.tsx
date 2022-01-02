@@ -40,7 +40,7 @@ const Handle = (props: Props) => {
 
   return (
     <StyledHandle
-      onClick={() => dispatch(requestFeature(props.component + "/Handle"))}
+      onClick={() => dispatch(requestFeature(`${props.component}/Handle`))}
       sideways={props.sideways}
     >
       <Lines sideways={props.sideways}>
