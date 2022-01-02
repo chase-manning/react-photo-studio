@@ -1,10 +1,11 @@
 import React, { useState } from "react";
+import { useDispatch } from "react-redux";
 import styled from "styled-components";
+
 import { LayerType, setActiveLayer } from "../../state/layersSlice";
 import eye from "../../assets/svgs/layers/eye.svg";
 import lock from "../../assets/svgs/layers/lock.svg";
 import LayerCanvas from "./LayerCanvas";
-import { useDispatch } from "react-redux";
 import { requestFeature } from "../../state/featureSlice";
 
 const StyledLayer = styled.div`
