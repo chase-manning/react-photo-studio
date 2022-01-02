@@ -28,7 +28,7 @@ enum BlendingModeOption {
   LUNIMOSITY,
 }
 
-export const getBlendingModeText = (mode: BlendingModeOption) => {
+export const getBlendingModeText = (mode: BlendingModeOption): string => {
   switch (mode) {
     case BlendingModeOption.NORMAL:
       return "Normal";
