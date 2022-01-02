@@ -2,6 +2,12 @@
   "name": "photoshop-online",
   "version": "0.2.0",
   "private": false,
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
   "dependencies": {
     "@reduxjs/toolkit": "^1.5.0",
     "@testing-library/jest-dom": "^5.11.4",
@@ -25,11 +31,9 @@
     "typescript": "^4.0.3",
     "web-vitals": "^0.2.4"
   },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+  "devDependencies": {
+    "@types/react-redux": "^7.1.15",
+    "@types/styled-components": "^5.1.7"
   },
   "eslintConfig": {
     "extends": [
@@ -48,9 +52,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "devDependencies": {
-    "@types/react-redux": "^7.1.15",
-    "@types/styled-components": "^5.1.7"
   }
 }
