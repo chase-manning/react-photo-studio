@@ -6,9 +6,9 @@ import Canvas from "./Canvas";
 import Cursor from "./Cursor";
 import EventHanders from "./EventHandlers";
 
-type DocumentProps = {
+interface DocumentProps {
   cursor: string;
-};
+}
 
 const StyledDocument = styled.div`
   position: relative;

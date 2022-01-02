@@ -22,9 +22,9 @@ const Icon = styled.img`
   margin-right: 0.2rem;
 `;
 
-type SelectedProps = {
+interface SelectedProps {
   width: number;
-};
+}
 
 const Selected = styled.div`
   flex: 1;
@@ -45,12 +45,12 @@ const Arrow = styled.div`
   color: var(--icon);
 `;
 
-type Props = {
+interface Props {
   label?: string;
   selected: string;
   options: string[];
   icon?: string;
-};
+}
 
 const Dropdown = (props: Props) => {
   const dispatch = useDispatch();

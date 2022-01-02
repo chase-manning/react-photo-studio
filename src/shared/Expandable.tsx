@@ -27,11 +27,11 @@ const ToggleButton = styled.button`
   }
 `;
 
-type Props = {
+interface Props {
   open: boolean;
   right?: boolean;
   toggle: () => void;
-};
+}
 
 const Expandable = (props: Props) => {
   const arrows = () => {

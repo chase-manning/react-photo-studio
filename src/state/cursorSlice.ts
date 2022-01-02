@@ -1,10 +1,10 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { RootState } from "./store";
 
-export type Position = {
+export interface Position {
   x: number;
   y: number;
-};
+}
 
 export interface CursorSlice {
   position: Position;

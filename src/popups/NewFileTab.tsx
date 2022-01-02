@@ -1,8 +1,8 @@
 import styled from "styled-components";
 
-type TabProps = {
+interface TabProps {
   active: boolean;
-};
+}
 
 const Tab = styled.button`
   position: relative;
@@ -27,15 +27,15 @@ const Underline = styled.div`
   border-radius: 1px;
 `;
 
-export type NewFileTabType = {
+export interface NewFileTabType {
   label: string;
   active: boolean;
-};
+}
 
-type Props = {
+interface Props {
   tab: NewFileTabType;
   select: () => void;
-};
+}
 
 const NewFileTab = (props: Props) => {
   return (

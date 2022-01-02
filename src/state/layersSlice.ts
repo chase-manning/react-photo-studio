@@ -2,14 +2,14 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import generateGuid from "../services/GuidService";
 import { RootState } from "./store";
 
-export type LayerType = {
+export interface LayerType {
   id: string;
   name: string;
   active: boolean;
   selected: boolean;
   visible: boolean;
   locked: boolean;
-};
+}
 
 export interface LayersSlice {
   schema: LayerType[];

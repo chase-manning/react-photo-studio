@@ -28,9 +28,9 @@ const Icon = styled.img`
   height: 1rem;
 `;
 
-type Props = {
+interface Props {
   value: number;
-};
+}
 
 const AngleSelector = (props: Props) => {
   const dispatch = useDispatch();

@@ -18,9 +18,9 @@ const BrushContainer = styled.div`
   margin: 0 0.6rem;
 `;
 
-type BrushProps = {
+interface BrushProps {
   size: number;
-};
+}
 
 const Brush = styled.div`
   height: ${(props: BrushProps) => `${props.size}rem`};
@@ -50,9 +50,9 @@ const Arrow = styled.div`
   color: var(--icon);
 `;
 
-type Props = {
+interface Props {
   option: OptionType;
-};
+}
 
 const BrushOption = (props: Props) => {
   const dispatch = useDispatch();

@@ -3,10 +3,10 @@ import { useDispatch } from "react-redux";
 import styled from "styled-components";
 import { requestFeature } from "../state/featureSlice";
 
-type TabsProps = {
+interface TabsProps {
   height: string;
   bottom: boolean;
-};
+}
 
 const StyledTabs = styled.div`
   position: relative;
@@ -29,9 +29,9 @@ const Header = styled.div`
   background-color: var(--expandable);
 `;
 
-type ItemProps = {
+interface ItemProps {
   active?: boolean;
-};
+}
 
 const HeaderItem = styled.button`
   height: 100%;
@@ -95,17 +95,17 @@ const WindowResize = styled.div`
   cursor: ns-resize;
 `;
 
-export type TabType = {
+export interface TabType {
   label: string;
   content: JSX.Element;
   implemented: boolean;
-};
+}
 
-type Props = {
+interface Props {
   tabs: TabType[];
   height: string;
   bottom: boolean;
-};
+}
 
 const Tabs = (props: Props) => {
   const dispatch = useDispatch();

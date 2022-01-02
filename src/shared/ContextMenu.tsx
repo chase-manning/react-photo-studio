@@ -7,9 +7,9 @@ export enum Position {
   BOTTOM_LEFT,
 }
 
-type StyledContextMenuProps = {
+interface StyledContextMenuProps {
   position: Position;
-};
+}
 
 const StyledContextMenu = styled.div`
   position: absolute;
@@ -34,9 +34,9 @@ const Exit = styled.div`
   z-index: 1;
 `;
 
-type MenuProps = {
+interface MenuProps {
   squareTop: boolean;
-};
+}
 
 const Menu = styled.div`
   padding: 0.2rem 0 0.4rem 0;
@@ -55,9 +55,9 @@ const Menu = styled.div`
   box-shadow: 0.2rem 0.2rem 2rem rgba(0, 0, 0, 0.2);
 `;
 
-type ItemSetProps = {
+interface ItemSetProps {
   last: boolean;
-};
+}
 
 const ItemSet = styled.div`
   padding-bottom: ${(props: ItemSetProps) => (props.last ? "0" : "0.4rem")};
@@ -66,14 +66,14 @@ const ItemSet = styled.div`
   margin-bottom: ${(props: ItemSetProps) => (props.last ? "0" : "0.4rem")};
 `;
 
-type Props = {
+interface Props {
   open: boolean;
   close: () => void;
   itemSets: ItemSetType[];
   subMenu?: boolean;
   position?: Position;
   squareTop?: boolean;
-};
+}
 
 const ContextMenu = (props: Props) => {
   if (!props.open) return null;

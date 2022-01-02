@@ -1,12 +1,12 @@
 import styled from "styled-components";
 
-type Props = {
+interface Props {
   selected?: boolean;
   height?: string;
   width?: string;
   square?: boolean;
   disabled?: boolean;
-};
+}
 
 const Button = styled.button`
   position: relative;

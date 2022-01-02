@@ -67,11 +67,11 @@ class State {
   lastTransform: Position = pos;
 }
 
-type Props = {
+interface Props {
   open: boolean;
   header: string;
   content: JSX.Element;
-};
+}
 
 const Popup = (props: Props) => {
   const [state, setState] = useState(new State());

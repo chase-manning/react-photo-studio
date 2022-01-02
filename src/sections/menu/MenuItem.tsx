@@ -10,9 +10,9 @@ const StyledMenuItem = styled.div`
   height: 100%;
 `;
 
-type MenuItemProps = {
+interface MenuItemProps {
   open: boolean;
-};
+}
 
 const MenuItemButton = styled.button`
   height: 100%;
@@ -34,9 +34,9 @@ const MenuItemButton = styled.button`
   }
 `;
 
-type Props = {
+interface Props {
   menuItem: ItemType;
-};
+}
 
 const MenuItem = (props: Props) => {
   const dispatch = useDispatch();

@@ -35,10 +35,10 @@ const Icon = styled.div`
   color: var(--icon);
 `;
 
-type Props = {
+interface Props {
   label: string;
   value: number;
-};
+}
 
 const PercentSelector = (props: Props) => {
   const dispatch = useDispatch();

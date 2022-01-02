@@ -47,9 +47,9 @@ const Squares = styled.div`
   height: 3rem;
 `;
 
-type SquareProps = {
+interface SquareProps {
   color: string;
-};
+}
 
 const Square = styled.button`
   position: absolute;
@@ -60,9 +60,9 @@ const Square = styled.button`
   background-color: ${(props: SquareProps) => props.color};
 `;
 
-type SelectionProps = {
+interface SelectionProps {
   primary: boolean;
-};
+}
 
 const Selection = styled.div`
   position: absolute;
@@ -87,10 +87,10 @@ const SecondarySquare = styled(Square)`
   bottom: 0;
 `;
 
-type Props = {
+interface Props {
   parent: string;
   showButtons: boolean;
-};
+}
 
 const Colors = (props: Props) => {
   const dispatch = useDispatch();

@@ -28,18 +28,18 @@ const StyledOption = styled.div`
   padding: 0 0.3rem;
 `;
 
-type ImageProps = {
+interface ImageProps {
   small?: boolean;
-};
+}
 
 const Image = styled.img`
   height: ${(props: ImageProps) => (props.small ? "1.5rem" : "1.9rem")};
   width: ${(props: ImageProps) => (props.small ? "1.5rem" : "1.9rem")};
 `;
 
-type Props = {
+interface Props {
   option: OptionType;
-};
+}
 
 const Option = (props: Props) => {
   const dispatch = useDispatch();

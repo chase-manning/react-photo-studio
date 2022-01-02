@@ -1,9 +1,9 @@
 import ColorWindow from "./ColorWindow";
 import LayersWindow from "./LayersWindow";
 
-type Props = {
+interface Props {
   window: string;
-};
+}
 
 const Window = (props: Props) => {
   switch (props.window) {

@@ -16,9 +16,9 @@ const StyledLayer = styled.div`
   align-items: center;
 `;
 
-type VisibilityProps = {
+interface VisibilityProps {
   grabbing: boolean;
-};
+}
 
 const Visibility = styled.button`
   height: 100%;
@@ -35,10 +35,10 @@ const Eye = styled.img`
   height: 0.9rem;
 `;
 
-type ContentProps = {
+interface ContentProps {
   grabbing: boolean;
   selected: boolean;
-};
+}
 
 const Content = styled.button`
   flex: 1;
@@ -56,10 +56,10 @@ const LayerName = styled.div`
   margin-left: 0.7rem;
 `;
 
-type LockProps = {
+interface LockProps {
   grabbing: boolean;
   selected: boolean;
-};
+}
 
 const LockButton = styled.button`
   height: 100%;
@@ -76,9 +76,9 @@ const Lock = styled.img`
   transform: translateY(-0.1rem);
 `;
 
-type Props = {
+interface Props {
   layer: LayerType;
-};
+}
 
 const Layer = (props: Props) => {
   const dispatch = useDispatch();

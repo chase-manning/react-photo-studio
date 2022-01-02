@@ -2,9 +2,9 @@ import { useDispatch } from "react-redux";
 import styled from "styled-components";
 import { requestFeature } from "../state/featureSlice";
 
-type StyleProps = {
+interface StyleProps {
   sideways?: boolean;
-};
+}
 
 const StyledHandle = styled.button`
   width: ${(props: StyleProps) => (props.sideways ? "1rem" : "100%")};
@@ -29,10 +29,10 @@ const Line = styled.div`
   background-color: var(--expandable);
 `;
 
-type Props = {
+interface Props {
   component: string;
   sideways?: boolean;
-};
+}
 
 const Handle = (props: Props) => {
   const dispatch = useDispatch();

@@ -14,9 +14,9 @@ const StyledTool = styled.div`
   padding: 0 0.2rem;
 `;
 
-type Props = {
+interface Props {
   collection: ToolCollection;
-};
+}
 
 const Tool = (props: Props) => {
   const dispatch = useDispatch();

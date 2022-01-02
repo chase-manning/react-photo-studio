@@ -38,10 +38,10 @@ const Arrow = styled(ArrowIcon)`
   fill: var(--text);
 `;
 
-type Props = {
+interface Props {
   menuItem: ItemType;
   close: () => void;
-};
+}
 
 const ContextMenuItem = (props: Props) => {
   const dispatch = useDispatch();

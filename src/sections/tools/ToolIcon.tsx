@@ -75,9 +75,9 @@ const GetIcon = (option: ToolOption): string => {
   }
 };
 
-type Props = {
+interface Props {
   option: ToolOption;
-};
+}
 
 const ToolIcon = (props: Props) => {
   return <StyledToolIcon src={GetIcon(props.option)} alt="tool" />;

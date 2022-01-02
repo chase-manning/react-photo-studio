@@ -16,17 +16,17 @@ export enum OptionOption {
   SYMMETRY,
 }
 
-export type OptionType = {
+export interface OptionType {
   option: OptionOption;
   enabled?: boolean;
   value?: number;
   hardness?: number;
   blendingMode?: BlendingModeOption;
-};
+}
 
-export type OptionSectionType = {
+export interface OptionSectionType {
   options: OptionType[];
-};
+}
 
 export const getOptionName = (option: OptionOption): string => {
   switch (option) {

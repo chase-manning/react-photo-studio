@@ -12,9 +12,9 @@ const StyledCursor = styled.div`
   left: 0;
 `;
 
-type BrushCircleProps = {
+interface BrushCircleProps {
   size: number;
-};
+}
 
 const BrushCircle = styled.div`
   position: absolute;
