@@ -1,4 +1,3 @@
-import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import styled from "styled-components";
 import {
@@ -48,9 +47,9 @@ const Squares = styled.div`
   height: 3rem;
 `;
 
-type SquareProps = {
+interface SquareProps {
   color: string;
-};
+}
 
 const Square = styled.button`
   position: absolute;
@@ -61,9 +60,9 @@ const Square = styled.button`
   background-color: ${(props: SquareProps) => props.color};
 `;
 
-type SelectionProps = {
+interface SelectionProps {
   primary: boolean;
-};
+}
 
 const Selection = styled.div`
   position: absolute;
@@ -88,10 +87,10 @@ const SecondarySquare = styled(Square)`
   bottom: 0;
 `;
 
-type Props = {
+interface Props {
   parent: string;
   showButtons: boolean;
-};
+}
 
 const Colors = (props: Props) => {
   const dispatch = useDispatch();
@@ -112,16 +111,16 @@ const Colors = (props: Props) => {
       )}
 
       <Squares>
-        {!props.showButtons && <Selection primary={true} />}
+        {!props.showButtons && <Selection primary />}
         <SecondarySquare
           onClick={() =>
-            dispatch(requestFeature(props.parent + "/Set Secondary Color"))
+            dispatch(requestFeature(`${props.parent}/Set Secondary Color`))
           }
           color={secondaryColor}
         />
         <PrimarySqaure
           onClick={() =>
-            dispatch(requestFeature(props.parent + "/Set Primary Color"))
+            dispatch(requestFeature(`${props.parent}/Set Primary Color`))
           }
           color={primaryColor}
         />

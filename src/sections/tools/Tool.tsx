@@ -1,4 +1,4 @@
-import React, { SyntheticEvent, useState } from "react";
+import { SyntheticEvent, useState } from "react";
 import { useDispatch } from "react-redux";
 import styled from "styled-components";
 import { setActiveTool } from "../../state/toolsSlice";
@@ -14,24 +14,21 @@ const StyledTool = styled.div`
   padding: 0 0.2rem;
 `;
 
-type Props = {
+interface Props {
   collection: ToolCollection;
-};
+}
 
-const Tool = (props: Props) => {
+const Tool = ({ collection }: Props) => {
   const dispatch = useDispatch();
   const [timer, setTimer] = useState(0);
-  const tool = props.collection.tools.filter(
-    (tool: ToolType) => tool.selected
-  )[0];
+  const tool = collection.tools.filter((tool: ToolType) => tool.selected)[0];
 
   return (
     <StyledTool
       onMouseEnter={() =>
         setTimer(
           window.setTimeout(
-            () =>
-              dispatch(requestFeature("Tools/" + tool.name + "/Hover Menu")),
+            () => dispatch(requestFeature(`Tools/${tool.name}/Hover Menu`)),
             2000
           )
         )
@@ -41,17 +38,17 @@ const Tool = (props: Props) => {
       <Button
         onClick={() => {
           if (tool.implemented) dispatch(setActiveTool(tool.option));
-          else dispatch(requestFeature("Tools/" + tool.name));
+          else dispatch(requestFeature(`Tools/${tool.name}`));
         }}
         onContextMenu={(event: SyntheticEvent) => {
           event.preventDefault();
-          if (props.collection.tools.length === 1) return;
-          dispatch(requestFeature("Tools/" + tool.name + "/Context Menu"));
+          if (collection.tools.length === 1) return;
+          dispatch(requestFeature(`Tools/${tool.name}/Context Menu`));
         }}
-        selected={props.collection.active}
+        selected={collection.active}
       >
         <ToolIcon option={tool.option} />
-        {props.collection.tools.length > 1 && <ContextIndicator />}
+        {collection.tools.length > 1 && <ContextIndicator />}
       </Button>
     </StyledTool>
   );

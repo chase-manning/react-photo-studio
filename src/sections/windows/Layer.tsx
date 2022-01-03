@@ -1,10 +1,11 @@
-import React, { useState } from "react";
+import { useState } from "react";
+import { useDispatch } from "react-redux";
 import styled from "styled-components";
+
 import { LayerType, setActiveLayer } from "../../state/layersSlice";
 import eye from "../../assets/svgs/layers/eye.svg";
 import lock from "../../assets/svgs/layers/lock.svg";
 import LayerCanvas from "./LayerCanvas";
-import { useDispatch } from "react-redux";
 import { requestFeature } from "../../state/featureSlice";
 
 const StyledLayer = styled.div`
@@ -15,9 +16,9 @@ const StyledLayer = styled.div`
   align-items: center;
 `;
 
-type VisibilityProps = {
+interface VisibilityProps {
   grabbing: boolean;
-};
+}
 
 const Visibility = styled.button`
   height: 100%;
@@ -34,10 +35,10 @@ const Eye = styled.img`
   height: 0.9rem;
 `;
 
-type ContentProps = {
+interface ContentProps {
   grabbing: boolean;
   selected: boolean;
-};
+}
 
 const Content = styled.button`
   flex: 1;
@@ -55,10 +56,10 @@ const LayerName = styled.div`
   margin-left: 0.7rem;
 `;
 
-type LockProps = {
+interface LockProps {
   grabbing: boolean;
   selected: boolean;
-};
+}
 
 const LockButton = styled.button`
   height: 100%;
@@ -75,11 +76,11 @@ const Lock = styled.img`
   transform: translateY(-0.1rem);
 `;
 
-type Props = {
+interface Props {
   layer: LayerType;
-};
+}
 
-const Layer = (props: Props) => {
+const Layer = ({ layer }: Props) => {
   const dispatch = useDispatch();
   const [grabbing, setGrabbing] = useState(false);
   const [moving, setMoving] = useState(false);
@@ -107,21 +108,21 @@ const Layer = (props: Props) => {
         <Eye src={eye} alt="eye" />
       </Visibility>
       <Content
-        onClick={() => dispatch(setActiveLayer(props.layer.id))}
+        onClick={() => dispatch(setActiveLayer(layer.id))}
         grabbing={grabbing && moving}
-        selected={props.layer.selected}
+        selected={layer.selected}
       >
-        <LayerCanvas layer={props.layer} />
+        <LayerCanvas layer={layer} />
         <LayerName
           onDoubleClick={() =>
             dispatch(requestFeature("Windows/Layers/Layer/ChangeName"))
           }
         >
-          {props.layer.name}
+          {layer.name}
         </LayerName>
       </Content>
-      <LockButton grabbing={grabbing && moving} selected={props.layer.selected}>
-        {props.layer.locked && (
+      <LockButton grabbing={grabbing && moving} selected={layer.selected}>
+        {layer.locked && (
           <Lock
             onClick={() =>
               dispatch(requestFeature("Windows/Layers/Layer/Lock"))

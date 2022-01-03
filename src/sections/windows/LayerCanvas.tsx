@@ -1,10 +1,9 @@
-import React from "react";
 import styled from "styled-components";
 import { LayerType } from "../../state/layersSlice";
 
-type OutlineProps = {
+interface OutlineProps {
   active: boolean;
-};
+}
 
 const Outline = styled.div`
   position: relative;
@@ -57,14 +56,14 @@ const Canvas = styled.div`
   border: solid 1px var(--layer-border);
 `;
 
-type Props = {
+interface Props {
   layer: LayerType;
-};
+}
 
-const LayerCanvas = (props: Props) => {
+const LayerCanvas = ({ layer }: Props) => {
   return (
-    <Outline active={props.layer.active}>
-      {props.layer.active && (
+    <Outline active={layer.active}>
+      {layer.active && (
         <>
           <BreakLeft />
           <BreakTop />

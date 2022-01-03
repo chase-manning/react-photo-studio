@@ -1,6 +1,6 @@
-import React from "react";
 import { useDispatch } from "react-redux";
 import styled from "styled-components";
+
 import { requestFeature } from "../../state/featureSlice";
 import { OptionType } from "../../types/options";
 
@@ -18,13 +18,13 @@ const BrushContainer = styled.div`
   margin: 0 0.6rem;
 `;
 
-type BrushProps = {
+interface BrushProps {
   size: number;
-};
+}
 
 const Brush = styled.div`
-  height: ${(props: BrushProps) => props.size + "rem"};
-  width: ${(props: BrushProps) => props.size + "rem"};
+  height: ${(props: BrushProps) => `${props.size}rem`};
+  width: ${(props: BrushProps) => `${props.size}rem`};
   border-radius: 50%;
   background-color: var(--white);
 `;
@@ -50,13 +50,13 @@ const Arrow = styled.div`
   color: var(--icon);
 `;
 
-type Props = {
+interface Props {
   option: OptionType;
-};
+}
 
-const BrushOption = (props: Props) => {
+const BrushOption = ({ option }: Props) => {
   const dispatch = useDispatch();
-  const brushSize = Math.max(1.6 * (props.option.value! / 40), 1);
+  const brushSize = Math.max(1.6 * ((option.value || 0) / 40), 1);
 
   return (
     <StyledBrushOption
@@ -64,7 +64,7 @@ const BrushOption = (props: Props) => {
     >
       <BrushContainer>
         <Brush size={brushSize} />
-        <Label>{props.option.value}</Label>
+        <Label>{option.value}</Label>
       </BrushContainer>
       <Button>
         <Arrow>{">"}</Arrow>

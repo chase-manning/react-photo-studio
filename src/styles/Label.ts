@@ -1,8 +1,8 @@
 import styled from "styled-components";
 
-type Props = {
+interface Props {
   scrubCursor?: boolean;
-};
+}
 
 const Label = styled.div`
   color: var(--label);

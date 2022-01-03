@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import styled from "styled-components";
 import { Position } from "../state/cursorSlice";
 
@@ -57,19 +57,23 @@ const pos = { x: 0, y: 0 };
 
 class State {
   grabbing: boolean = false;
+
   init: boolean = false;
+
   start: Position = pos;
+
   transform: Position = pos;
+
   lastTransform: Position = pos;
 }
 
-type Props = {
+interface Props {
   open: boolean;
   header: string;
   content: JSX.Element;
-};
+}
 
-const Popup = (props: Props) => {
+const Popup = ({ open, header, content }: Props) => {
   const [state, setState] = useState(new State());
 
   const movementTransform = {
@@ -88,21 +92,19 @@ const Popup = (props: Props) => {
       });
   };
 
-  if (!props.open) return null;
+  if (!open) return null;
 
   return (
     <StyledPopup
       style={{
-        transform: `translate(${movementTransform.x + "px"}, ${
-          movementTransform.y + "px"
-        })`,
+        transform: `translate(${movementTransform.x}px, ${movementTransform.y}px)`,
       }}
     >
       <Window>
         <Header onMouseDown={() => setState({ ...state, grabbing: true })}>
-          {props.header}
+          {header}
         </Header>
-        <Content>{props.content}</Content>
+        <Content>{content}</Content>
       </Window>
       {state.grabbing && (
         <EventHander

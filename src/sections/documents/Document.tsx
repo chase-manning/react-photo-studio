@@ -1,4 +1,3 @@
-import React from "react";
 import { useSelector } from "react-redux";
 import styled from "styled-components";
 import { ToolOption } from "../../state/toolSchema";
@@ -7,9 +6,9 @@ import Canvas from "./Canvas";
 import Cursor from "./Cursor";
 import EventHanders from "./EventHandlers";
 
-type DocumentProps = {
+interface DocumentProps {
   cursor: string;
-};
+}
 
 const StyledDocument = styled.div`
   position: relative;

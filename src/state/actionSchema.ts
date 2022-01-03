@@ -5,12 +5,12 @@ export enum Action {
   OPEN_FILE,
 }
 
-export type ActionType = {
+export interface ActionType {
   type: Action;
   macShortcut: string;
   windowsShortcut: string;
   action: () => void;
-};
+}
 
 export const actionSchema: ActionType[] = [
   {

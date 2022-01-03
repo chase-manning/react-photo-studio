@@ -73,18 +73,18 @@ export enum ToolOption {
   ZOOM,
 }
 
-export type ToolType = {
+export interface ToolType {
   name: string;
   option: ToolOption;
   selected: boolean;
   implemented: boolean;
   optionSections: OptionSectionType[];
-};
+}
 
-export type ToolCollection = {
+export interface ToolCollection {
   active: boolean;
   tools: ToolType[];
-};
+}
 
 export const tools: ToolCollection[] = [
   {

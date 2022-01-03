@@ -2,7 +2,7 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { Position } from "./cursorSlice";
 import { RootState } from "./store";
 
-export type Event = {
+export interface Event {
   type: string;
   layer: number;
   x?: number;
@@ -10,7 +10,7 @@ export type Event = {
   size?: number;
   color?: number;
   points?: Position[];
-};
+}
 
 export interface FileSlice {
   name: string;

@@ -1,12 +1,12 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { useDispatch } from "react-redux";
 import styled from "styled-components";
 import { requestFeature } from "../state/featureSlice";
 
-type TabsProps = {
+interface TabsProps {
   height: string;
   bottom: boolean;
-};
+}
 
 const StyledTabs = styled.div`
   position: relative;
@@ -29,9 +29,9 @@ const Header = styled.div`
   background-color: var(--expandable);
 `;
 
-type ItemProps = {
+interface ItemProps {
   active?: boolean;
-};
+}
 
 const HeaderItem = styled.button`
   height: 100%;
@@ -95,32 +95,31 @@ const WindowResize = styled.div`
   cursor: ns-resize;
 `;
 
-export type TabType = {
+export interface TabType {
   label: string;
   content: JSX.Element;
   implemented: boolean;
-};
+}
 
-type Props = {
+interface Props {
   tabs: TabType[];
   height: string;
   bottom: boolean;
-};
+}
 
-const Tabs = (props: Props) => {
+const Tabs = ({ tabs, height, bottom }: Props) => {
   const dispatch = useDispatch();
   const [activeIndex, setActiveIndex] = useState(0);
 
   return (
-    <StyledTabs height={props.height} bottom={props.bottom}>
+    <StyledTabs height={height} bottom={bottom}>
       <Header>
-        {props.tabs.map((tab: TabType, index: number) => (
+        {tabs.map((tab: TabType, index: number) => (
           <HeaderItem
             key={tab.label}
             onClick={() => {
               if (tab.implemented) setActiveIndex(index);
-              else
-                dispatch(requestFeature("Windows/" + props.tabs[index].label));
+              else dispatch(requestFeature(`Windows/${tabs[index].label}`));
             }}
             active={index === activeIndex}
             onDoubleClick={() =>
@@ -140,8 +139,8 @@ const Tabs = (props: Props) => {
           </Menu>
         </MenuContainer>
       </Header>
-      {props.tabs[activeIndex].content}
-      {!props.bottom && (
+      {tabs[activeIndex].content}
+      {!bottom && (
         <WindowResize
           onClick={() => dispatch(requestFeature("Windows/Tabs/Resize"))}
         />

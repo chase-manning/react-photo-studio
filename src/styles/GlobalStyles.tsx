@@ -1,4 +1,3 @@
-import React from "react";
 import { createGlobalStyle } from "styled-components";
 
 const GlobalStyle = createGlobalStyle`
@@ -57,8 +56,6 @@ const GlobalStyle = createGlobalStyle`
     }
   `;
 
-function GlobalStyles() {
-  return <GlobalStyle />;
-}
+const GlobalStyles = () => <GlobalStyle />;
 
 export default GlobalStyles;

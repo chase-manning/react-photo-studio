@@ -1,6 +1,6 @@
-import React from "react";
 import { useSelector } from "react-redux";
 import styled from "styled-components";
+
 import Dropdown from "../../shared/Dropdown";
 import PercentSelector from "../../shared/PercentSelector";
 import { selectActiveLayer } from "../../state/layersSlice";
@@ -27,8 +27,8 @@ const LayerBlending = () => {
 
   return (
     <Blending>
-      <Dropdown selected={"Normal"} options={["Meow meow meow meow"]} />
-      <PercentSelector label={"Opacity"} value={100} />
+      <Dropdown selected="Normal" options={["Meow meow meow meow"]} />
+      <PercentSelector label="Opacity" value={100} />
       {!enabled && <Disable />}
     </Blending>
   );

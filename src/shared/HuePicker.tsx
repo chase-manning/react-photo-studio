@@ -1,4 +1,3 @@
-import React from "react";
 import { useDispatch } from "react-redux";
 import styled from "styled-components";
 import { requestFeature } from "../state/featureSlice";
@@ -39,7 +38,7 @@ const HuePicker = () => {
       onClick={() => dispatch(requestFeature("Windows/Color/Hue"))}
     >
       <Colors />
-      <HueIndicator src={hueIndicator} alt={"Hue Indicator"} />
+      <HueIndicator src={hueIndicator} alt="Hue Indicator" />
     </StyledHuePicker>
   );
 };

@@ -1,4 +1,3 @@
-import React from "react";
 import styled from "styled-components";
 
 const StyledExpandable = styled.div`
@@ -28,22 +27,22 @@ const ToggleButton = styled.button`
   }
 `;
 
-type Props = {
+interface Props {
   open: boolean;
   right?: boolean;
   toggle: () => void;
-};
+}
 
-const Expandable = (props: Props) => {
+const Expandable = ({ open, right, toggle }: Props) => {
   const arrows = () => {
-    if (props.right) return props.open ? ">>" : "<<";
-    else return props.open ? "<<" : ">>";
+    if (right) return open ? ">>" : "<<";
+    return open ? "<<" : ">>";
   };
 
   return (
     <StyledExpandable>
-      {props.right && <div />}
-      <ToggleButton onClick={() => props.toggle()}>{arrows()}</ToggleButton>
+      {right && <div />}
+      <ToggleButton onClick={() => toggle()}>{arrows()}</ToggleButton>
     </StyledExpandable>
   );
 };

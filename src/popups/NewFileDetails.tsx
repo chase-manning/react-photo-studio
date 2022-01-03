@@ -1,4 +1,3 @@
-import React from "react";
 import styled from "styled-components";
 
 const Details = styled.div`
@@ -7,7 +6,7 @@ const Details = styled.div`
 `;
 
 const NewFileDetails = () => {
-  return <Details></Details>;
+  return <Details>meow</Details>;
 };
 
 export default NewFileDetails;

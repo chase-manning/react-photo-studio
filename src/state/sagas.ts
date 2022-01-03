@@ -15,6 +15,7 @@ function* watchRequestFeature() {
 
 /* ACTIONS */
 const delay = (time: number) =>
+  // eslint-disable-next-line
   new Promise((resolve) => setTimeout(resolve, time));
 
 function* trackFeatureRequest() {

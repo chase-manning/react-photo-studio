@@ -1,4 +1,3 @@
-import React from "react";
 import styled from "styled-components";
 import { ToolOption } from "../../state/toolSchema";
 import move from "../../assets/svgs/tools/move.svg";
@@ -76,12 +75,12 @@ const GetIcon = (option: ToolOption): string => {
   }
 };
 
-type Props = {
+interface Props {
   option: ToolOption;
-};
+}
 
-const ToolIcon = (props: Props) => {
-  return <StyledToolIcon src={GetIcon(props.option)} alt="tool" />;
+const ToolIcon = ({ option }: Props) => {
+  return <StyledToolIcon src={GetIcon(option)} alt="tool" />;
 };
 
 export default ToolIcon;

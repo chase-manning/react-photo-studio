@@ -1,9 +1,8 @@
-import React from "react";
 import styled from "styled-components";
 
-type TabProps = {
+interface TabProps {
   active: boolean;
-};
+}
 
 const Tab = styled.button`
   position: relative;
@@ -28,21 +27,21 @@ const Underline = styled.div`
   border-radius: 1px;
 `;
 
-export type NewFileTabType = {
+export interface NewFileTabType {
   label: string;
   active: boolean;
-};
+}
 
-type Props = {
+interface Props {
   tab: NewFileTabType;
   select: () => void;
-};
+}
 
-const NewFileTab = (props: Props) => {
+const NewFileTab = ({ tab, select }: Props) => {
   return (
-    <Tab onClick={() => props.select()} active={props.tab.active}>
-      {props.tab.label}
-      {props.tab.active && <Underline />}
+    <Tab onClick={() => select()} active={tab.active}>
+      {tab.label}
+      {tab.active && <Underline />}
     </Tab>
   );
 };

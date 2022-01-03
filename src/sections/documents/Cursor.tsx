@@ -1,4 +1,3 @@
-import React from "react";
 import { useSelector } from "react-redux";
 import styled from "styled-components";
 import {
@@ -13,16 +12,16 @@ const StyledCursor = styled.div`
   left: 0;
 `;
 
-type BrushCircleProps = {
+interface BrushCircleProps {
   size: number;
-};
+}
 
 const BrushCircle = styled.div`
   position: absolute;
   top: 0;
   left: 0;
-  width: ${(props: BrushCircleProps) => props.size + "px"};
-  height: ${(props: BrushCircleProps) => props.size + "px"};
+  width: ${(props: BrushCircleProps) => `${props.size}px`};
+  height: ${(props: BrushCircleProps) => `${props.size}px`};
   border: solid 1px black;
   border-radius: 50%;
   transform: translate(-50%, -50%);
@@ -38,12 +37,10 @@ const Cursor = () => {
   return (
     <StyledCursor
       style={{
-        transform: `translate(${cursorPosition.x + "px"},${
-          cursorPosition.y + "px"
-        })`,
+        transform: `translate(${cursorPosition.x}px, ${cursorPosition.y}px)`,
       }}
     >
-      <BrushCircle size={brushSize!} />
+      <BrushCircle size={brushSize} />
     </StyledCursor>
   );
 };

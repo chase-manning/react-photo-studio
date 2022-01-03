@@ -1,4 +1,3 @@
-import React from "react";
 import { useDispatch } from "react-redux";
 import styled from "styled-components";
 import { requestFeature } from "../state/featureSlice";
@@ -23,15 +22,15 @@ const Icon = styled.img`
   margin-right: 0.2rem;
 `;
 
-type SelectedProps = {
+interface SelectedProps {
   width: number;
-};
+}
 
 const Selected = styled.div`
   flex: 1;
   color: var(--input-text);
   padding: 0.2rem 0.7rem 0.2rem 0;
-  width: ${(props: SelectedProps) => props.width + "rem"};
+  width: ${(props: SelectedProps) => `${props.width}rem`};
 `;
 
 const Button = styled.button`
@@ -46,24 +45,24 @@ const Arrow = styled.div`
   color: var(--icon);
 `;
 
-type Props = {
+interface Props {
   label?: string;
   selected: string;
   options: string[];
   icon?: string;
-};
+}
 
-const Dropdown = (props: Props) => {
+const Dropdown = ({ label, selected, options, icon }: Props) => {
   const dispatch = useDispatch();
-  const optionLenghts = props.options.map((option: string) => option.length);
-  const width = Math.max(...optionLenghts) * 0.57 + (props.icon ? 1.3 : 0);
+  const optionLenghts = options.map((option: string) => option.length);
+  const width = Math.max(...optionLenghts) * 0.57 + (icon ? 1.3 : 0);
 
   return (
     <StyledDropdown>
-      {props.label && <Label>{props.label + ":"}</Label>}
+      {label && <Label>{`${label}:`}</Label>}
       <SelectedContainer>
-        {props.icon && <Icon src={props.icon} alt="icon" />}
-        <Selected width={width}>{props.selected}</Selected>
+        {icon && <Icon src={icon} alt="icon" />}
+        <Selected width={width}>{selected}</Selected>
         <Button onClick={() => dispatch(requestFeature("Dropdown"))}>
           <Arrow>{">"}</Arrow>
         </Button>

@@ -1,4 +1,4 @@
-import React, { useEffect, useLayoutEffect, useRef } from "react";
+import { useEffect, useLayoutEffect, useRef } from "react";
 import styled from "styled-components";
 import * as PIXI from "pixi.js";
 import { useDispatch, useSelector } from "react-redux";
@@ -61,17 +61,17 @@ const Canvas = () => {
     if (event.type === "line") {
       if (!event.points || event.points.length === 0) return;
       if (event.points.length === 1) {
-        var circle = new PIXI.Graphics();
+        const circle = new PIXI.Graphics();
         Circle(
           circle,
-          event.points[0].x!,
-          event.points[0].y!,
+          event.points[0].x || 0,
+          event.points[0].y || 0,
           (event.size || 40) / 2,
           event.color
         );
         layer.addChild(circle);
       } else {
-        var line = new PIXI.Graphics();
+        const line = new PIXI.Graphics();
         line.lineTextureStyle({
           width: event.size,
           color: event.color,

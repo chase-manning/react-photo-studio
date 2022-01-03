@@ -1,11 +1,11 @@
-import React from "react";
 import styled from "styled-components";
+import ReactGA from "react-ga";
+
 import Documents from "./sections/documents/Documents";
 import Menu from "./sections/menu/Menu";
 import Options from "./sections/options/Options";
 import Tools from "./sections/tools/Tools";
 import Windows from "./sections/windows/Windows";
-import ReactGA from "react-ga";
 import InDevelopment from "./shared/InDevelopment";
 import FileUpload from "./popups/FileUpload";
 import Popups from "./popups/Popups";

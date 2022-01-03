@@ -1,11 +1,10 @@
-import React from "react";
 import { useSelector } from "react-redux";
 import styled from "styled-components";
 import { selectedFeatureRequesting } from "../state/featureSlice";
 
-type Props = {
+interface Props {
   show: boolean;
-};
+}
 
 const StyledInDevelopment = styled.div`
   position: fixed;

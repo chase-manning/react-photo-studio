@@ -1,4 +1,3 @@
-import React from "react";
 import styled from "styled-components";
 import { ItemSetType, ItemType } from "../sections/menu/schema/menu-items";
 import ContextMenuItem from "./ContextMenuItem";
@@ -8,21 +7,21 @@ export enum Position {
   BOTTOM_LEFT,
 }
 
-type StyledContextMenuProps = {
+interface StyledContextMenuProps {
   position: Position;
-};
+}
 
 const StyledContextMenu = styled.div`
   position: absolute;
   left: ${(props: StyledContextMenuProps) => {
     if (props.position === Position.BOTTOM_LEFT) return "0";
-    else if (props.position === Position.TOP_RIGHT) return "100%";
-    else throw new Error("Position Not Supported");
+    if (props.position === Position.TOP_RIGHT) return "100%";
+    throw new Error("Position Not Supported");
   }};
   top: ${(props: StyledContextMenuProps) => {
     if (props.position === Position.BOTTOM_LEFT) return "100%";
-    else if (props.position === Position.TOP_RIGHT) return "0";
-    else throw new Error("Position Not Supported");
+    if (props.position === Position.TOP_RIGHT) return "0";
+    throw new Error("Position Not Supported");
   }};
 `;
 
@@ -35,9 +34,9 @@ const Exit = styled.div`
   z-index: 1;
 `;
 
-type MenuProps = {
+interface MenuProps {
   squareTop: boolean;
-};
+}
 
 const Menu = styled.div`
   padding: 0.2rem 0 0.4rem 0;
@@ -56,9 +55,9 @@ const Menu = styled.div`
   box-shadow: 0.2rem 0.2rem 2rem rgba(0, 0, 0, 0.2);
 `;
 
-type ItemSetProps = {
+interface ItemSetProps {
   last: boolean;
-};
+}
 
 const ItemSet = styled.div`
   padding-bottom: ${(props: ItemSetProps) => (props.last ? "0" : "0.4rem")};
@@ -67,29 +66,36 @@ const ItemSet = styled.div`
   margin-bottom: ${(props: ItemSetProps) => (props.last ? "0" : "0.4rem")};
 `;
 
-type Props = {
+interface Props {
   open: boolean;
   close: () => void;
   itemSets: ItemSetType[];
   subMenu?: boolean;
   position?: Position;
   squareTop?: boolean;
-};
+}
 
-const ContextMenu = (props: Props) => {
-  if (!props.open) return null;
+const ContextMenu = ({
+  open,
+  close,
+  itemSets,
+  subMenu,
+  position,
+  squareTop,
+}: Props) => {
+  if (!open) return null;
 
   return (
-    <StyledContextMenu position={props.position || Position.TOP_RIGHT}>
-      {!props.subMenu && <Exit onClick={() => props.close()} />}
-      <Menu squareTop={!!props.squareTop}>
-        {props.itemSets.map((itemSet: ItemSetType, index: number) => (
-          <ItemSet key={index} last={index === props.itemSets.length - 1}>
+    <StyledContextMenu position={position || Position.TOP_RIGHT}>
+      {!subMenu && <Exit onClick={() => close()} />}
+      <Menu squareTop={!!squareTop}>
+        {itemSets.map((itemSet: ItemSetType, index: number) => (
+          <ItemSet key={index} last={index === itemSets.length - 1}>
             {itemSet.items.map((item: ItemType) => (
               <ContextMenuItem
                 key={item.name}
                 menuItem={item}
-                close={() => props.close()}
+                close={() => close()}
               />
             ))}
           </ItemSet>

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { useSelector } from "react-redux";
 import styled from "styled-components";
 import { selectNewFilePopupOpen } from "../state/actionsSlice";
@@ -31,7 +31,7 @@ const NewFilePopup = () => {
   return (
     <Popup
       open={open}
-      header={"New Document"}
+      header="New Document"
       content={
         <Content>
           <Header>
@@ -40,7 +40,7 @@ const NewFilePopup = () => {
                 key={tab.label}
                 tab={tab}
                 select={() => {
-                  let newTabs = [...tabs];
+                  const newTabs = [...tabs];
                   newTabs.forEach(
                     (newTab: NewFileTabType) => (newTab.active = false)
                   );

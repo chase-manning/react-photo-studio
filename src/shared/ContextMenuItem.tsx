@@ -1,9 +1,10 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import styled from "styled-components";
+import { useDispatch } from "react-redux";
+
 import { ItemType } from "../sections/menu/schema/menu-items";
 import { ReactComponent as ArrowIcon } from "../assets/svgs/navigation/triangle-right.svg";
 import ContextMenu from "./ContextMenu";
-import { useDispatch } from "react-redux";
 import Disable from "../styles/Disabled";
 
 const StyledContextMenuItem = styled.div`
@@ -37,43 +38,43 @@ const Arrow = styled(ArrowIcon)`
   fill: var(--text);
 `;
 
-type Props = {
+interface Props {
   menuItem: ItemType;
   close: () => void;
-};
+}
 
-const ContextMenuItem = (props: Props) => {
+const ContextMenuItem = ({ menuItem, close }: Props) => {
   const dispatch = useDispatch();
   const [open, setOpen] = useState(false);
 
   return (
     <StyledContextMenuItem
       onMouseEnter={() => {
-        if (!props.menuItem.disabled) setOpen(true);
+        if (!menuItem.disabled) setOpen(true);
       }}
       onMouseLeave={() => setOpen(false)}
     >
       <Button
         onClick={() => {
-          if (props.menuItem.action) dispatch(props.menuItem.action());
-          props.close();
+          if (menuItem.action) dispatch(menuItem.action());
+          close();
         }}
       >
-        <ItemText>{props.menuItem.name}</ItemText>
-        <Icon>{props.menuItem.itemSets && <Arrow />}</Icon>
+        <ItemText>{menuItem.name}</ItemText>
+        <Icon>{menuItem.itemSets && <Arrow />}</Icon>
       </Button>
-      {props.menuItem.itemSets && (
+      {menuItem.itemSets && (
         <ContextMenu
+          subMenu
           open={open}
-          itemSets={props.menuItem.itemSets}
+          itemSets={menuItem.itemSets}
           close={() => {
             setOpen(false);
-            props.close();
+            close();
           }}
-          subMenu={true}
         />
       )}
-      {props.menuItem.disabled && <Disable />}
+      {menuItem.disabled && <Disable />}
     </StyledContextMenuItem>
   );
 };

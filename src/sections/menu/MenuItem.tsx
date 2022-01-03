@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { useDispatch } from "react-redux";
 import styled from "styled-components";
+
 import ContextMenu, { Position } from "../../shared/ContextMenu";
 import { ItemType } from "./schema/menu-items";
 
@@ -9,9 +10,9 @@ const StyledMenuItem = styled.div`
   height: 100%;
 `;
 
-type MenuItemProps = {
+interface MenuItemProps {
   open: boolean;
-};
+}
 
 const MenuItemButton = styled.button`
   height: 100%;
@@ -33,11 +34,11 @@ const MenuItemButton = styled.button`
   }
 `;
 
-type Props = {
+interface Props {
   menuItem: ItemType;
-};
+}
 
-const MenuItem = (props: Props) => {
+const MenuItem = ({ menuItem }: Props) => {
   const dispatch = useDispatch();
   const [open, setOpen] = useState(false);
 
@@ -45,20 +46,20 @@ const MenuItem = (props: Props) => {
     <StyledMenuItem>
       <MenuItemButton
         onClick={() => {
-          if (props.menuItem.action) dispatch(props.menuItem.action());
+          if (menuItem.action) dispatch(menuItem.action());
           else setOpen(true);
         }}
         open={open}
       >
-        {props.menuItem.name}
+        {menuItem.name}
       </MenuItemButton>
-      {props.menuItem.itemSets && (
+      {menuItem.itemSets && (
         <ContextMenu
+          squareTop
           open={open}
           close={() => setOpen(false)}
-          itemSets={props.menuItem.itemSets}
+          itemSets={menuItem.itemSets}
           position={Position.BOTTOM_LEFT}
-          squareTop={true}
         />
       )}
     </StyledMenuItem>

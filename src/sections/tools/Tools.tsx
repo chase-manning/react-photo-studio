@@ -1,4 +1,3 @@
-import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import styled from "styled-components";
 import Expandable from "../../shared/Expandable";
@@ -43,13 +42,13 @@ const Tools = () => {
         toggle={() => dispatch(requestFeature("Tools/Expand"))}
       />
       <Container>
-        <Handle component={"Tools"} />
+        <Handle component="Tools" />
         <ToolsContainer>
           {tools.map((tool: ToolCollection, index: number) => (
             <Tool key={index} collection={tool} />
           ))}
         </ToolsContainer>
-        <Colors parent={"Tools"} showButtons={true} />
+        <Colors showButtons parent="Tools" />
       </Container>
     </StyledTools>
   );

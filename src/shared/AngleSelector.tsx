@@ -1,4 +1,3 @@
-import React from "react";
 import { useDispatch } from "react-redux";
 import styled from "styled-components";
 import angle from "../assets/options/angle.svg";
@@ -29,22 +28,24 @@ const Icon = styled.img`
   height: 1rem;
 `;
 
-type Props = {
+interface Props {
   value: number;
-};
+}
 
-const AngleSelector = (props: Props) => {
+const AngleSelector = ({ value }: Props) => {
   const dispatch = useDispatch();
 
   return (
     <StyledAngleSelector>
-      <Label onClick={() => "Angle Selector/Label Scrub"}>
+      <Label
+        onClick={() => dispatch(requestFeature("Angle Selector/Label Scrub"))}
+      >
         <Icon src={angle} alt="angle" />
       </Label>
       <Input
         onClick={() => dispatch(requestFeature("Angle Selector/Text Edit"))}
       >
-        {props.value + "°"}
+        {`${value}°`}
       </Input>
     </StyledAngleSelector>
   );
