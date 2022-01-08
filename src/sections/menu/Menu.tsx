@@ -50,22 +50,29 @@ const Menu = () => {
         ))}
       </Left>
       <Socials>
-        <Link href="https://twitter.com/pso_app" target="_blank">
+        <Link
+          id="twitter-link"
+          href="https://twitter.com/pso_app"
+          target="_blank"
+        >
           <Social src={twitter} alt="twitter" />
         </Link>
         <Link
+          id="facebook-link"
           href="https://www.facebook.com/photoshoponline.app.fb"
           target="_blank"
         >
           <Social src={facebook} alt="facebook" />
         </Link>
         <Link
+          id="instagram-link"
           href="https://www.instagram.com/photoshoponline.app/"
           target="_blank"
         >
           <Social src={instagram} alt="instagram" />
         </Link>
         <Link
+          id="github-link"
           href="https://github.com/chase-manning/photoshop-online"
           target="_blank"
         >
