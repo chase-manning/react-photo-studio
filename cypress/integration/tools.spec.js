@@ -22,10 +22,8 @@ describe("Brush Tool", () => {
         clientY: y + 200,
       });
       cy.get("#brush-event-handler").trigger("mouseup");
+      cy.percySnapshot();
     });
-  });
-  it("Should take Percy Snapshot", () => {
-    cy.percySnapshot();
   });
 });
 
