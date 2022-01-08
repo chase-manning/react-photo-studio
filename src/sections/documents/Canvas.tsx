@@ -16,7 +16,7 @@ const app = new PIXI.Application({
   backgroundColor: 0xffffff,
   antialias: true,
   resolution: 1,
-  preserveDrawingBuffer: true,
+  // preserveDrawingBuffer: true,
 });
 
 const Circle = (
