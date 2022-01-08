@@ -50,7 +50,7 @@ const Menu = () => {
         ))}
       </Left>
       <Socials>
-        <Link href="https://twitter.com/PhotoshopOnlin7" target="_blank">
+        <Link href="https://twitter.com/pso_app" target="_blank">
           <Social src={twitter} alt="twitter" />
         </Link>
         <Link
