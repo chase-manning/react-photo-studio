@@ -7,7 +7,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "cy:open": "cypress open",
-    "cy:run": "cypress run"
+    "cy:run": "cypress run",
+    "percy": "percy exec -- cypress run"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^1.5.0",
