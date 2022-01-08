@@ -41,4 +41,4 @@ jobs:
       - name: Installing Dependencies
         run: yarn
       - name: Run Cypress
-        run: CYPRESS_baseUrl=https://backd.fund/ npx cypress run
+        run: CYPRESS_baseUrl=https://photoshoponline.app/ npx cypress run
