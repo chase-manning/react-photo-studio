@@ -24,6 +24,9 @@ describe("Brush Tool", () => {
       cy.get("#brush-event-handler").trigger("mouseup");
     });
   });
+  it("Should take Percy Snapshot", () => {
+    cy.percySnapshot();
+  });
 });
 
 describe("Color Tool", () => {
