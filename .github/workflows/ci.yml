@@ -20,8 +20,10 @@ jobs:
         run: yarn
       - name: Starting Server
         run: yarn start & npx wait-on http://localhost:3000
-      - name: Run Cypress
-        run: yarn run cy:run
+      - name: Run Cypress with Percy
+        run: yarn run percy
+        env:
+          PERCY_TOKEN: ${{ secrets.PERCY_TOKEN }}
   preview_deploy:
     runs-on: ubuntu-latest
     steps:

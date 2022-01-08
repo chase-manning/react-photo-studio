@@ -1,3 +1,5 @@
+const { percySnapshot } = require("../support");
+
 describe("Page", () => {
   it("Should load page", () => {
     cy.visit("http://localhost:3000/");
@@ -16,6 +18,9 @@ describe("Menu", () => {
     cy.get("#quick-export-as-png-context-menu").should("not.exist");
     cy.get("#export-context-menu").trigger("mouseover");
     cy.get("#quick-export-as-png-context-menu").should("exist");
+  });
+  it("Should take Percy Snapshot", () => {
+    percySnapshot("Fully expanded menu");
   });
   it("Should close menu", () => {
     cy.get("#export-context-menu").should("exist");
