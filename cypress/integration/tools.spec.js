@@ -6,24 +6,19 @@ describe("Page", () => {
 
 describe("Brush Tool", () => {
   it("Should draw line", () => {
-    cy.document().then((doc) => {
-      const canvas = doc
-        .getElementById("document-canvas")
-        .getBoundingClientRect();
-      const y = canvas.y;
-      const x = canvas.x;
-      cy.get("#brush-event-handler").trigger("mousemove", {
-        clientX: x + 100,
-        clientY: y + 100,
-      });
-      cy.get("#brush-event-handler").trigger("mousedown");
-      cy.get("#brush-event-handler").trigger("mousemove", {
-        clientX: x + 200,
-        clientY: y + 200,
-      });
-      cy.get("#brush-event-handler").trigger("mouseup");
-      cy.percySnapshot();
+    cy.get("#brush-event-handler").trigger("mousemove", {
+      clientX: 700,
+      clientY: 400,
     });
+    cy.get("#brush-event-handler").trigger("mousedown");
+    cy.get("#brush-event-handler").trigger("mousemove", {
+      clientX: 800,
+      clientY: 500,
+    });
+    cy.get("#brush-event-handler").trigger("mouseup");
+  });
+  it("Should take Percy Snapshot", () => {
+    percySnapshot("Brush tool drawing");
   });
 });
 

@@ -18,7 +18,7 @@ describe("Menu", () => {
     cy.get("#quick-export-as-png-context-menu").should("exist");
   });
   it("Should take Percy Snapshot", () => {
-    cy.percySnapshot();
+    percySnapshot("Fully expanded menu");
   });
   it("Should close menu", () => {
     cy.get("#export-context-menu").should("exist");
