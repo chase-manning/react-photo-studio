@@ -1,3 +1,5 @@
+const { percySnapshot } = require("../support");
+
 describe("Page", () => {
   it("Should load page", () => {
     cy.visit("http://localhost:3000/");
