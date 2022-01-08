@@ -45,6 +45,7 @@ const MenuItem = ({ menuItem }: Props) => {
   return (
     <StyledMenuItem>
       <MenuItemButton
+        id={`${menuItem.name.toLowerCase()}-menu`}
         onClick={() => {
           if (menuItem.action) dispatch(menuItem.action());
           else setOpen(true);

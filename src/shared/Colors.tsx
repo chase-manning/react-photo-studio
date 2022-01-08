@@ -101,10 +101,13 @@ const Colors = (props: Props) => {
     <StyledColors>
       {props.showButtons && (
         <Buttons>
-          <Button onClick={() => dispatch(setDefaultColors())}>
+          <Button
+            id="color-tool-default"
+            onClick={() => dispatch(setDefaultColors())}
+          >
             <RotatedButtonIcon src={defaultColors} alt="default colors" />
           </Button>
-          <Button onClick={() => dispatch(swapColors())}>
+          <Button id="color-tool-swap" onClick={() => dispatch(swapColors())}>
             <ButtonIcon src={swapColorsSvg} alt="swap colors" />
           </Button>
         </Buttons>
@@ -113,12 +116,14 @@ const Colors = (props: Props) => {
       <Squares>
         {!props.showButtons && <Selection primary />}
         <SecondarySquare
+          id="color-tool-secondary-square"
           onClick={() =>
             dispatch(requestFeature(`${props.parent}/Set Secondary Color`))
           }
           color={secondaryColor}
         />
         <PrimarySqaure
+          id="color-tool-primary-square"
           onClick={() =>
             dispatch(requestFeature(`${props.parent}/Set Primary Color`))
           }
