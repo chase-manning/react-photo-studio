@@ -91,7 +91,7 @@ const Canvas = () => {
     }
   });
 
-  return <StyledCanvas ref={canvas} />;
+  return <StyledCanvas id="document-canvas" ref={canvas} />;
 };
 
 export default Canvas;

@@ -32,6 +32,7 @@ const BrushEventHandler = () => {
 
   return (
     <StyledBrush
+      id="brush-event-handler"
       onMouseEnter={() => dispatch(enterDocument())}
       onMouseLeave={() => dispatch(exitDocument())}
       onMouseMove={(e) => {
