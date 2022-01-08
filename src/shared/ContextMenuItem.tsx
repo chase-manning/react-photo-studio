@@ -49,6 +49,7 @@ const ContextMenuItem = ({ menuItem, close }: Props) => {
 
   return (
     <StyledContextMenuItem
+      id={`${menuItem.name.replaceAll(" ", "-").toLowerCase()}-context-menu`}
       onMouseEnter={() => {
         if (!menuItem.disabled) setOpen(true);
       }}

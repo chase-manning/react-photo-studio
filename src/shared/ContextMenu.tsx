@@ -86,7 +86,10 @@ const ContextMenu = ({
   if (!open) return null;
 
   return (
-    <StyledContextMenu position={position || Position.TOP_RIGHT}>
+    <StyledContextMenu
+      id="context-menu-exit"
+      position={position || Position.TOP_RIGHT}
+    >
       {!subMenu && <Exit onClick={() => close()} />}
       <Menu squareTop={!!squareTop}>
         {itemSets.map((itemSet: ItemSetType, index: number) => (
