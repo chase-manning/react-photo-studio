@@ -7,7 +7,7 @@ import { ItemType } from "./schema/menu-items";
 
 const StyledMenuItem = styled.div`
   position: relative;
-  height: 100%;
+  height: 2.9rem;
 `;
 
 interface MenuItemProps {

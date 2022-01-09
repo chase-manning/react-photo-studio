@@ -44,13 +44,20 @@ const Canvas = () => {
     return () => app.destroy(true);
   }, []);
 
-  useLayoutEffect(() => {
+  const updateCanvasPosition = () => {
     dispatch(
       setCanvasPosition({
         x: canvas.current?.getBoundingClientRect().x || 0,
         y: canvas.current?.getBoundingClientRect().y || 0,
       })
-    ); // eslint-disable-next-line react-hooks/exhaustive-deps
+    );
+  };
+
+  useLayoutEffect(() => {
+    updateCanvasPosition();
+    window.addEventListener("resize", updateCanvasPosition);
+    return () => window.removeEventListener("resize", updateCanvasPosition);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   app.stage.removeChildren();
@@ -61,6 +68,8 @@ const Canvas = () => {
     // Drawing Line
     if (event.type === "line") {
       if (!event.points || event.points.length === 0) return;
+
+      // Starting with a circle
       if (event.points.length === 1) {
         const circle = new PIXI.Graphics();
         Circle(
@@ -71,7 +80,10 @@ const Canvas = () => {
           event.color
         );
         layer.addChild(circle);
-      } else {
+      }
+
+      // Starting the line
+      else {
         const line = new PIXI.Graphics();
         line.lineTextureStyle({
           width: event.size,
@@ -80,11 +92,19 @@ const Canvas = () => {
           alpha: 1,
           join: PIXI.LINE_JOIN.ROUND,
           cap: PIXI.LINE_CAP.ROUND,
-          miterLimit: 198,
+          miterLimit: 1000,
         });
         line.moveTo(event.points[0].x, event.points[0].y);
+
+        // Adding all steps of the line
         event.points.forEach((point: Position, index: number) => {
           if (index === 0) return;
+
+          // Handling sharp edges by adding a circle
+          const circle = new PIXI.Graphics();
+          Circle(circle, point.x, point.y, (event.size || 40) / 2, event.color);
+          layer.addChild(circle);
+
           line.lineTo(point.x, point.y);
         });
         layer.addChild(line);

@@ -28,16 +28,16 @@ const Logo = styled.img`
 `;
 
 const Socials = styled.div`
+  height: 100%;
   display: flex;
+  align-items: center;
 `;
 
-const Link = styled.a`
-  height: 100%;
-`;
+const Link = styled.a``;
 
 const Social = styled.img`
-  padding: 6px;
-  height: 100%;
+  width: 1.7rem;
+  margin-right: 0.9rem;
 `;
 
 const Menu = () => {
