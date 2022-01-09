@@ -1,4 +1,6 @@
+import { useDispatch } from "react-redux";
 import styled from "styled-components";
+import { requestFeature } from "../../state/featureSlice";
 import BrushEventHandler from "./BrushEventHandler";
 
 const StyledEventHandlers = styled.div`
@@ -10,8 +12,12 @@ const StyledEventHandlers = styled.div`
 `;
 
 const EventHanders = () => {
+  const dispatch = useDispatch();
+
   return (
-    <StyledEventHandlers>
+    <StyledEventHandlers
+      onWheel={() => dispatch(requestFeature("Documents/Zoom/MouseWheel"))}
+    >
       <BrushEventHandler />
     </StyledEventHandlers>
   );
