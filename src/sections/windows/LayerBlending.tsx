@@ -16,7 +16,7 @@ const Blending = styled.div`
   align-items: center;
   padding: 0 0.3rem;
 
-  div:first-child {
+  > div:first-child {
     margin-right: 0.4rem;
   }
 `;
