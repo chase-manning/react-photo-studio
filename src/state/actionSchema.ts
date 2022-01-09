@@ -21,8 +21,8 @@ export const actionSchema: ActionType[] = [
   },
   {
     type: Action.OPEN_FILE,
-    macShortcut: "command+n",
-    windowsShortcut: "ctrl+n",
+    macShortcut: "command+o",
+    windowsShortcut: "ctrl+o",
     action: () => requestFeature("Menu/File/Open..."),
   },
 ];
