@@ -39,6 +39,8 @@ const GlobalStyle = createGlobalStyle`
         --popup-border: #464646;
         --popup-inner-bg: #252525;
         --new-file-tab-text: #b9b9ba;
+        --link: #5e9cee;
+        --link-hover: #3f81e4;
     }
   
     * {
