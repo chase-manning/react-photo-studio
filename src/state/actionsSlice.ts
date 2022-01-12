@@ -36,7 +36,13 @@ export const actionSlice = createSlice({
   },
 });
 
-export const { clearSchema, openFile, fileOpened } = actionSlice.actions;
+export const {
+  clearSchema,
+  openFile,
+  fileOpened,
+  openNewFilePopup,
+  closeNewFilePopup,
+} = actionSlice.actions;
 
 export const selectActions = (state: RootState) => state.actions.schema;
 export const selectFileOpen = (state: RootState) => state.actions.fileOpen;

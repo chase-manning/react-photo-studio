@@ -1,5 +1,5 @@
 import { Action } from "../../../state/actionSchema";
-import { openFile } from "../../../state/actionsSlice";
+import { openFile, openNewFilePopup } from "../../../state/actionsSlice";
 import { requestFeature } from "../../../state/featureSlice";
 import { ItemType } from "./menu-items";
 
@@ -11,7 +11,7 @@ export const file: ItemType = {
         {
           type: Action.NEW_FILE,
           name: "New...",
-          action: () => requestFeature("Menu/File/New..."),
+          action: () => openNewFilePopup(),
         },
         {
           type: Action.OPEN_FILE,
