@@ -33,12 +33,12 @@ const GlobalStyle = createGlobalStyle`
         --layer-bg: #4d4d4d;
         --toast-border: #6f6f6f;
         --color-selection-border: #8c8c8c;
-        --popup-new-bg: #323232;
-        --popup-new-header: #f9f0f1;
-        --popup-new-text: #4c4849;
-        --popup-new-border: #464646;
+        --popup-bg: #323232;
+        --popup-header: #f9f0f1;
+        --popup-text: #4c4849;
+        --popup-border: #464646;
+        --popup-inner-bg: #252525;
         --new-file-tab-text: #b9b9ba;
-        --popup-new-inner-bg: #252525;
     }
   
     * {

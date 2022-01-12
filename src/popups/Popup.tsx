@@ -14,7 +14,7 @@ const StyledPopup = styled.div`
 `;
 
 const Window = styled.div`
-  background-color: var(--popup-new-bg);
+  background-color: var(--popup-bg);
   border-radius: 10px;
   overflow: hidden;
   display: flex;
@@ -25,22 +25,22 @@ const Window = styled.div`
 const Header = styled.div`
   width: 100%;
   height: 3rem;
-  background-color: var(--popup-new-header);
+  background-color: var(--popup-header);
   display: flex;
   justify-content: center;
   align-items: center;
   font-size: 1.3rem;
   font-weight: 600;
-  color: var(--popup-new-text);
+  color: var(--popup-text);
   user-select: none;
 `;
 
 const Content = styled.div`
   width: 100%;
   flex: 1;
-  border-right: solid 1px var(--popup-new-border);
-  border-left: solid 1px var(--popup-new-border);
-  border-bottom: solid 1px var(--popup-new-border);
+  border-right: solid 1px var(--popup-border);
+  border-left: solid 1px var(--popup-border);
+  border-bottom: solid 1px var(--popup-border);
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
 `;
