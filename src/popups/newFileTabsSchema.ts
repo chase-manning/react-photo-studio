@@ -3,7 +3,7 @@ import { NewFileTabType } from "./NewFileTab";
 const newFileTabsSchema: NewFileTabType[] = [
   {
     label: "Recent",
-    active: false,
+    active: true,
   },
   {
     label: "Saved",
@@ -11,7 +11,7 @@ const newFileTabsSchema: NewFileTabType[] = [
   },
   {
     label: "Photo",
-    active: true,
+    active: false,
   },
   {
     label: "Print",
