@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import logo from "../../assets/images/photoshop-logo-small.png";
 import { ItemType, menuItems } from "./schema/menu-items";
 import MenuItem from "./MenuItem";
 
@@ -21,12 +20,6 @@ const Left = styled.div`
   display: flex;
 `;
 
-const Logo = styled.img`
-  padding: 5px;
-  height: 100%;
-  margin-right: 1rem;
-`;
-
 const Socials = styled.div`
   height: 100%;
   display: flex;
@@ -44,41 +37,12 @@ const Menu = () => {
   return (
     <StyledMenu>
       <Left>
-        <Logo src={logo} alt="logo" />
+        
         {menuItems.map((menuItem: ItemType) => (
           <MenuItem key={menuItem.name} menuItem={menuItem} />
         ))}
       </Left>
-      <Socials>
-        <Link
-          id="twitter-link"
-          href="https://twitter.com/pso_app"
-          target="_blank"
-        >
-          <Social src={twitter} alt="twitter" />
-        </Link>
-        <Link
-          id="facebook-link"
-          href="https://www.facebook.com/photoshoponline.app.fb"
-          target="_blank"
-        >
-          <Social src={facebook} alt="facebook" />
-        </Link>
-        <Link
-          id="instagram-link"
-          href="https://www.instagram.com/photoshoponline.app/"
-          target="_blank"
-        >
-          <Social src={instagram} alt="instagram" />
-        </Link>
-        <Link
-          id="github-link"
-          href="https://github.com/chase-manning/photoshop-online"
-          target="_blank"
-        >
-          <Social src={gitHub} alt="github" />
-        </Link>
-      </Socials>
+     
     </StyledMenu>
   );
 };
