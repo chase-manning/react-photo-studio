@@ -1,6 +1,6 @@
 # Contribution Guide
 
-Hi and welcome to the Photoshop Online contribution guide!  
+Hi and welcome to the React Photo Studio contribution guide!  
 Thanks for considering to contribute! :tada:
 
 ## Found a Bug
@@ -18,9 +18,9 @@ If it improves the site for visitors, assign it the `enhancement` tag, or if it 
 
 ## Issues
 
-There are a bunch of [open issues](https://github.com/chase-manning/photoshop-online/issues) that would be great if you could help with.  
+There are a bunch of [open issues](https://github.com/chase-manning/react-photo-studio/issues) that would be great if you could help with.  
 Feel free to work on any issue that isn't already assigned to someone.  
-Issues that are tagged with [good first issue](https://github.com/chase-manning/photoshop-online/labels/good%20first%20issue) are the best place to start.
+Issues that are tagged with [good first issue](https://github.com/chase-manning/react-photo-studio/labels/good%20first%20issue) are the best place to start.
 
 ## Development Workflow
 
@@ -29,6 +29,6 @@ Make your changes in this forked repository or a branch off it until you are hap
 And then create a PR back into Master.  
 Please also link the Issue that the PR relates to, and include a screenshot of your changes if relevant
 
-Before any PR can be merged, all tests must be passing and all visual changes must be approved in Percy.  
+Before any PR can be merged, all tests must be passing.
 These are all visible within the PR view so you can easily see if there are any issues.  
 Each PR will deploy the site and provide a link to the deployed version so it is easy to view your changes.

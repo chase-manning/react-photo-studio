@@ -50,10 +50,10 @@ const InDevelopment = () => {
     <StyledInDevelopment show={!!requesting}>
       <Header>Feature In Development</Header>
       <Text>
-        Photoshop Online is in Beta and some features are still in development.
-        Check back soon, or view{" "}
+        React Photo Studio is in Beta and some features are still in
+        development. Check back soon, or view{" "}
         <Link
-          href="https://github.com/chase-manning/photoshop-online"
+          href="https://github.com/chase-manning/react-photo-studio"
           target="_blank"
         >
           our GitHub

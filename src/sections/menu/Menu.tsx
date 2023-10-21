@@ -1,11 +1,8 @@
 import styled from "styled-components";
-import logo from "../../assets/images/photoshop-logo-small.png";
+import logo from "../../assets/images/logo.png";
 import { ItemType, menuItems } from "./schema/menu-items";
 import MenuItem from "./MenuItem";
 
-import facebook from "../../assets/socials/facebook.svg";
-import instagram from "../../assets/socials/instagram.svg";
-import twitter from "../../assets/socials/twitter.svg";
 import gitHub from "../../assets/socials/github.svg";
 
 const StyledMenu = styled.div`
@@ -51,29 +48,8 @@ const Menu = () => {
       </Left>
       <Socials>
         <Link
-          id="twitter-link"
-          href="https://twitter.com/pso_app"
-          target="_blank"
-        >
-          <Social src={twitter} alt="twitter" />
-        </Link>
-        <Link
-          id="facebook-link"
-          href="https://www.facebook.com/photoshoponline.app.fb"
-          target="_blank"
-        >
-          <Social src={facebook} alt="facebook" />
-        </Link>
-        <Link
-          id="instagram-link"
-          href="https://www.instagram.com/photoshoponline.app/"
-          target="_blank"
-        >
-          <Social src={instagram} alt="instagram" />
-        </Link>
-        <Link
           id="github-link"
-          href="https://github.com/chase-manning/photoshop-online"
+          href="https://github.com/chase-manning/react-photo-studio"
           target="_blank"
         >
           <Social src={gitHub} alt="github" />
