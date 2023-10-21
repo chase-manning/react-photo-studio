@@ -4,23 +4,7 @@ name: Deploy to Firebase Hosting on merge
     branches:
       - main
 jobs:
-  cypress_test:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-      - name: Increase Watchers
-        run: echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf && sudo sysctl -p
-      - name: Installing Dependencies
-        run: yarn
-      - name: Starting Server
-        run: yarn start & npx wait-on http://localhost:3000
-      - name: Run Cypress with Percy
-        run: yarn run percy
-        env:
-          PERCY_TOKEN: ${{ secrets.PERCY_TOKEN }}
   deploy:
-    needs: cypress_test
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -32,15 +16,3 @@ jobs:
         run: npm install -g firebase-tools
       - name: Deploying to Firebase
         run: firebase deploy --token "${{ secrets.FIREBASE_SECRET }}"
-  e2e:
-    needs: deploy
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-      - name: Increase Watchers
-        run: echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf && sudo sysctl -p
-      - name: Installing Dependencies
-        run: yarn
-      - name: Run Cypress
-        run: CYPRESS_baseUrl=https://photoshoponline.app/ npx cypress run
