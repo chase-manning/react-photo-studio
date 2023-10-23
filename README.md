@@ -24,4 +24,4 @@ If you are interested in contributing please check out our [Contribution Guide](
 
 ## Disclaimer
 
-React Photo Studio is an independent project developed by Chase Manning. This project is not affiliated with, endorsed by, or sponsored by Adobe Inc. or any of its affiliates. The term "Photo Studio" used in the name of this project is generic and does not imply any association with Adobe Inc.'s Photoshop or any other products or trademarks owned by Adobe Inc. All product names, logos, and brands are property of their respective owners. All company, product, and service names used in this project are for identification purposes only. Use of these names, logos, and brands does not imply endorsement.
+React Photo Studio is an independent project developed by Chase Manning. This project is not affiliated with, endorsed by, or sponsored by any other photo studio products, brands, or companies. This product is entirely independent and separate from any other entities operating in the photography and studio equipment industry. Any resemblance or similarity to other products is purely coincidental and stems from the industry's standard practices and technology
