@@ -6,7 +6,7 @@ import ContextIndicator from "../../styles/ContextIndicator";
 
 import contrast from "../../assets/pngs/contrast.png";
 import link from "../../assets/pngs/link.png";
-import style from "../../assets/pngs/style.png";
+import style from "../../assets/svgs/layers/style.svg";
 import mask from "../../assets/pngs/mask.png";
 import folder from "../../assets/svgs/layers/folder.svg";
 import newLayer from "../../assets/pngs/new.png";
