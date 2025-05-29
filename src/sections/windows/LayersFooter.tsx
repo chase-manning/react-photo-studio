@@ -5,11 +5,11 @@ import Button from "../../styles/Button";
 import ContextIndicator from "../../styles/ContextIndicator";
 
 import contrast from "../../assets/pngs/contrast.png";
-import link from "../../assets/pngs/link.png";
+import link from "../../assets/svgs/layers/link.svg";
 import style from "../../assets/pngs/style.png";
-import mask from "../../assets/pngs/mask.png";
+import mask from "../../assets/svgs/layers/mask.svg";
 import folder from "../../assets/svgs/layers/folder.svg";
-import newLayer from "../../assets/pngs/new.png";
+import newLayer from "../../assets/svgs/layers/new.svg";
 import trash from "../../assets/svgs/layers/trash.svg";
 import {
   selectActiveLayer,
